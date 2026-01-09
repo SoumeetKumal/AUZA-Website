@@ -381,7 +381,7 @@
           </div>
           <div class="process-step" data-step="1">
             <div class="step-header">
-              <div class="step-left"><span class="step-num">02</span><span class="step-title">strategise</span></div>
+              <div class="step-left"><span class="step-num">02</span><span class="step-title">Strategise</span></div>
               <span class="step-duration">1-2 weeks</span>
             </div>
           </div>
@@ -466,12 +466,17 @@
           <p class="contact-location">Mauritius • Working Globally</p>
         </div>
         <div>
-          <div class="form-grid">
-            <div class="form-group"><label class="form-label">Name *</label><input type="text" class="form-input"
-                placeholder="Your name"></div>
-            <div class="form-group"><label class="form-label">Email *</label><input type="email" class="form-input"
-                placeholder="you@company.com"></div>
-            <div class="form-group"><label class="form-label">Project Type</label><select class="form-select">
+          <form class="form-grid" action="https://formsubmit.co/soumeetkumal@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="">
+            <input type="hidden" name="_subject" value="New Inquiry from AUZA Website">
+
+            <div class="form-group"><label class="form-label">Name *</label><input type="text" name="name"
+                class="form-input" placeholder="Your name" required></div>
+            <div class="form-group"><label class="form-label">Email *</label><input type="email" name="email"
+                class="form-input" placeholder="you@company.com" required></div>
+            <div class="form-group"><label class="form-label">Project Type</label><select name="project_type"
+                class="form-select">
                 <option value="">Select...</option>
                 <option>New Website</option>
                 <option>Website Redesign</option>
@@ -479,7 +484,8 @@
                 <option>Accessibility Audit</option>
                 <option>Ongoing Support</option>
               </select></div>
-            <div class="form-group"><label class="form-label">Budget Range</label><select class="form-select">
+            <div class="form-group"><label class="form-label">Budget Range</label><select name="budget"
+                class="form-select">
                 <option value="">Select...</option>
                 <option>$10k - $25k</option>
                 <option>$25k - $50k</option>
@@ -487,9 +493,10 @@
                 <option>$100k+</option>
               </select></div>
             <div class="form-group full"><label class="form-label">Tell us about your project *</label><textarea
-                class="form-textarea" placeholder="Goals, challenges, timeline..."></textarea></div>
+                name="message" class="form-textarea" placeholder="Goals, challenges, timeline..." required></textarea>
+            </div>
             <div class="form-group full"><label class="form-label">How did you hear about us?</label><select
-                class="form-select">
+                name="source" class="form-select">
                 <option value="">Select...</option>
                 <option>Google Search</option>
                 <option>LinkedIn</option>
@@ -497,8 +504,8 @@
                 <option>Social Media</option>
                 <option>Other</option>
               </select></div>
-            <div class="form-group full"><button class="btn btn-primary">Send Inquiry →</button></div>
-          </div>
+            <div class="form-group full"><button type="submit" class="btn btn-primary">Send Inquiry →</button></div>
+          </form>
         </div>
       </div>
     </div>
@@ -537,6 +544,14 @@
       </div>
     </div>
   </footer>
+
+  <div id="toast" class="toast">
+    <div class="toast-icon">✓</div>
+    <div class="toast-content">
+      <div class="toast-title">Message Sent!</div>
+      <div class="toast-message">We'll be in touch shortly.</div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
