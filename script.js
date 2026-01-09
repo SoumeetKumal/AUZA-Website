@@ -59,6 +59,28 @@ if (hero) {
   });
 }
 
+// Scroll Indicator Fade Out
+const scrollIndicator = document.querySelector('.scroll-indicator');
+if (scrollIndicator) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      scrollIndicator.classList.add('hidden');
+    } else {
+      scrollIndicator.classList.remove('hidden');
+    }
+  });
+
+  scrollIndicator.addEventListener('click', () => {
+    // Scroll to the next section or just a bit down
+    const workSection = document.getElementById('work'); // Assuming work is next or roughly next
+    // Or just a viewport height
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+  });
+}
+
 // AJAX Form Submission
 const contactForm = document.querySelector('form.form-grid');
 const toast = document.getElementById('toast');
