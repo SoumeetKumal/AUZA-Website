@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About AUZA | Functional Design Studio</title>
+    <meta name="description"
+        content="We are a Mauritius-based digital design studio building functional, accessible, and performance-driven websites for global brands.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="icon" type="image/png" href="images/AUZA Logo White.png">
+
+    <style>
+        .about-hero {
+            padding: 180px 8vw 100px;
+            background: #111;
+            color: white;
+        }
+
+        .about-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 40px;
+            max-width: 900px;
+        }
+
+        .about-hero p {
+            font-size: 1.5rem;
+            color: #ccc;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        .story-section {
+            padding: 100px 8vw;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .story-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 24px;
+        }
+
+        .story-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 24px;
+        }
+
+        .story-image {
+            background: #f0f0f0;
+            height: 600px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .story-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: 0.5s;
+        }
+
+        .story-image:hover img {
+            filter: grayscale(0%);
+        }
+
+        .values-section {
+            padding: 100px 8vw;
+            background: #f8f8f8;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .value-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            color: #111;
+        }
+
+        .value-card p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        @media(max-width: 900px) {
+            .story-section {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-bg"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">
+                <div style="position: relative;">
+                    <div class="logo-full">
+                        <img src="images/AUZA Wordmark White.png" alt="auza-logo" width="100">
+                    </div>
+                    <div class="logo-compact">
+                        <img src="images/AUZA Logo White.png" alt="auza-logo" width="25">
+                    </div>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html#work" class="nav-link">Work</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="index.html#process" class="nav-link">Process</a>
+                <a href="index.html#investment" class="nav-link">Investment</a>
+                <a href="index.html#contact" class="nav-link active">Contact</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <div class="mobile-menu-inner">
+            <a href="index.html#work" class="mobile-nav-link">Work</a>
+            <a href="services.html" class="mobile-nav-link">Services</a>
+            <a href="index.html#process" class="mobile-nav-link">Process</a>
+            <a href="index.html#investment" class="mobile-nav-link">Investment</a>
+            <a href="index.html#contact" class="mobile-nav-link active">Contact</a>
+            <a href="index.html#contact" class="mobile-nav-link highlight">Let's Talk</a>
+        </div>
+    </div>
+
+    <section class="about-hero">
+        <div class="fade-up">
+            <h1>We build digital products that respect the user.</h1>
+            <p>No dark patterns. No bloated code. Just clean, functional design that solves real business problems.</p>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <div class="story-content fade-up">
+            <span class="badge-text"
+                style="color: var(--crimson); font-weight: 700; letter-spacing: 0.2em; display: block; margin-bottom: 20px;">OUR
+                STORY</span>
+            <h2>Mauritius Roots, Global Standards</h2>
+            <p>AUZA was founded on a simple frustration: the web is becoming unusable. Between intrusive pop-ups, slow
+                loading times, and inaccessible interfaces, users are being ignored in favor of vanity metrics.</p>
+            <p>We started AUZA to push back. Based in Mauritius, we bring a unique perspective—blending island calmness
+                with international technical rigor. We believe that good design is invisible; it should facilitate your
+                user's goal, not get in the way.</p>
+            <p>Today, we work with ambitious businesses across the globe who share our belief that ethical, accessible,
+                and high-performance design is the only way to build a sustainable digital future.</p>
+        </div>
+        <div class="story-image fade-up">
+            <!-- Placeholder for team/studio image -->
+            <div
+                style="width: 100%; height: 100%; background: #ddd; display: flex; align-items: center; justify-content: center; color: #888;">
+                <img src="images/consulting-mockup.png" style="object-fit: cover; opacity: 0.8;">
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <span class="badge-text"
+                style="color: var(--crimson); font-weight: 700; letter-spacing: 0.2em; display: block; margin-bottom: 20px;">OUR
+                PHILOSOPHY</span>
+            <h2 style="font-size: 2.5rem;">The Principles We Live By</h2>
+        </div>
+
+        <div class="values-grid">
+            <div class="value-card fade-up">
+                <h3>1. Accessibility First</h3>
+                <p>We don't treat accessibility as a compliance checkbox at the end of a project. It's a constraint we
+                    design with from day one. If a user can't use it, it's broken.</p>
+            </div>
+            <div class="value-card fade-up" style="animation-delay: 0.1s;">
+                <h3>2. Radical Transparency</h3>
+                <p>No black boxes. We explain our decisions, share our process, and are upfront about costs. We see
+                    ourselves as partners, not just vendors.</p>
+            </div>
+            <div class="value-card fade-up" style="animation-delay: 0.2s;">
+                <h3>3. Performance is Respect</h3>
+                <p>Wasting a user's data plan or battery life with bloated code is disrespectful. We write efficient,
+                    semantic HTML/CSS that loads instantly.</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 100px 8vw; background: #111; color: white; text-align: center;">
+        <h2 style="font-size: 3rem; margin-bottom: 40px;">Ready to build something real?</h2>
+        <a href="index.html#contact" class="btn btn-primary">Start a Conversation</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div><a href="index.html" class="logo"><img src="images/AUZA Wordmark White.png" alt="auza-logo"
+                            width="50"></a>
+                    <p class="footer-brand-desc">Functional, accessible design for ambitious businesses.<br>Based in
+                        Mauritius,
+                        working globally.</p>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Navigation</h4>
+                    <div class="footer-links"><a href="index.html#work" class="footer-link">Work</a><a
+                            href="services.html" class="footer-link">Services</a><a href="index.html#process"
+                            class="footer-link">Process</a><a href="index.html#investment"
+                            class="footer-link">Investment</a><a href="index.html#contact"
+                            class="footer-link">Contact</a></div>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Services</h4>
+                    <div class="footer-links"><a href="web-design.html" class="footer-link">Web Design</a><a
+                            href="development.html" class="footer-link">Development</a><a href="brand-strategy.html"
+                            class="footer-link">Brand Strategy</a><a href="accessibility-service.html"
+                            class="footer-link">Accessibility</a></div>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Connect</h4>
+                    <div class="footer-links"><a href="mailto:hello@auza.mu" class="footer-link">hello@auza.mu</a><a
+                            href="https://www.linkedin.com/company/auza" class="footer-link">LinkedIn</a><a href="#"
+                            class="footer-link">Instagram</a></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2026 AUZA. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
+                    <a href="terms-of-service.html" class="footer-legal-link">Terms of Service</a>
+                    <a href="accessibility.html" class="footer-legal-link">Accessibility Statement</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

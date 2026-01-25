@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services & Investment | AUZA - Functional Design</title>
+    <meta name="description"
+        content="Clear, transparent pricing packages for web design and development. Compare our Essentials, Foundation, and Growth plans.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="icon" type="image/png" href="images/AUZA Logo White.png">
+
+    <style>
+        .services-hero {
+            padding: 180px 8vw 100px;
+            background: #111;
+            color: white;
+            text-align: center;
+        }
+
+        .services-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 24px;
+        }
+
+        .services-hero p {
+            font-size: 1.25rem;
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .comparison-section {
+            padding: 100px 8vw;
+            background: #f8f8f8;
+        }
+
+        .comparison-table-wrapper {
+            overflow-x: auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
+        }
+
+        th,
+        td {
+            padding: 24px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        th:first-child,
+        td:first-child {
+            text-align: left;
+            font-weight: 600;
+            color: #111;
+            position: sticky;
+            left: 0;
+            background: white;
+            z-index: 10;
+        }
+
+        thead th {
+            font-size: 1.5rem;
+            color: #111;
+        }
+
+        .price-row td {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--crimson);
+        }
+
+        .check {
+            color: var(--crimson);
+            font-weight: 800;
+        }
+
+        .dash {
+            color: #ddd;
+        }
+
+        .methodology {
+            padding: 100px 8vw;
+        }
+
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
+            margin-top: 60px;
+        }
+
+        @media(max-width: 900px) {
+            .method-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-bg"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">
+                <div style="position: relative;">
+                    <div class="logo-full">
+                        <img src="images/AUZA Wordmark White.png" alt="auza-logo" width="100">
+                    </div>
+                    <div class="logo-compact">
+                        <img src="images/AUZA Logo White.png" alt="auza-logo" width="25">
+                    </div>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html#work" class="nav-link">Work</a>
+                <a href="index.html#services" class="nav-link active">Services</a>
+                <a href="index.html#process" class="nav-link">Process</a>
+                <a href="index.html#investment" class="nav-link">Investment</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <div class="mobile-menu-inner">
+            <a href="index.html#work" class="mobile-nav-link">Work</a>
+            <a href="index.html#services" class="mobile-nav-link active">Services</a>
+            <a href="index.html#process" class="mobile-nav-link">Process</a>
+            <a href="index.html#investment" class="mobile-nav-link">Investment</a>
+            <a href="index.html#contact" class="mobile-nav-link">Contact</a>
+            <a href="index.html#contact" class="mobile-nav-link highlight">Let's Talk</a>
+        </div>
+    </div>
+
+    <section class="services-hero">
+        <div class="fade-up">
+            <span class="badge-text"
+                style="color: var(--crimson); margin-bottom: 20px; display: block; font-weight: 700; letter-spacing: 0.2em;">TRANSPARENT
+                PRICING</span>
+            <h1>Investment & Packages</h1>
+            <p>Choose the level of engagement that fits your growth stage. No hidden fees, just clear deliverables and
+                measurable results.</p>
+        </div>
+    </section>
+
+    <section class="comparison-section">
+        <div class="comparison-table-wrapper fade-up">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Features</th>
+                        <th>Essentials</th>
+                        <th style="color: var(--crimson);">Foundation</th>
+                        <th>Growth</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="price-row">
+                        <td>Starting Investment</td>
+                        <td>$3,200</td>
+                        <td style="color: var(--crimson);">$7,500</td>
+                        <td>$15,000+</td>
+                    </tr>
+                    <tr>
+                        <td>Ideal For</td>
+                        <td>Established Brands</td>
+                        <td>Growing Businesses</td>
+                        <td>Industry Leaders</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Core Deliverables</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Custom Pages</td>
+                        <td>5-6 Pages</td>
+                        <td>6-8 Pages</td>
+                        <td>10+ Pages</td>
+                    </tr>
+                    <tr>
+                        <td>Figma Design System</td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Responsive Development</td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>CMS Integration</td>
+                        <td>Basic</td>
+                        <td>Advanced</td>
+                        <td>Enterprise</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Brand & Strategy</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Visual Identity System</td>
+                        <td><span class="dash">—</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Strategy Workshop</td>
+                        <td><span class="dash">—</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td>Multiple Sessions</td>
+                    </tr>
+                    <tr>
+                        <td>Copywriting Support</td>
+                        <td><span class="dash">—</span></td>
+                        <td>Content Guidelines</td>
+                        <td>Full Copywriting</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tech & Compliance</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>WCAG 2.1 AA Compliance</td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>SEO Foundation</td>
+                        <td>Basic Tags</td>
+                        <td>Technical SEO</td>
+                        <td>Advanced Strategy</td>
+                    </tr>
+                    <tr>
+                        <td>Performance Optimization</td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="index.html#contact" class="btn btn-primary">Book a Free Consultation</a>
+        </div>
+    </section>
+
+    <section class="methodology">
+        <div class="section-header">
+            <span class="section-label">HOW WE WORK</span>
+            <h2 class="section-title">The "Functional Design" Methodology</h2>
+            <p class="section-desc">We don't just make things look good. We build digital assets that perform.</p>
+        </div>
+
+        <div class="method-grid">
+            <div>
+                <h3 style="font-size: 1.5rem; margin-bottom: 20px;">1. Inclusion as Standard</h3>
+                <p style="line-height: 1.6; color: #555;">Most agencies charge extra for accessibility. We don't. Every
+                    line of code we write adheres to WCAG 2.1 AA standards because we believe the web should be open to
+                    everyone. This also protects you from legal risk and boosts your SEO.</p>
+            </div>
+            <div>
+                <h3 style="font-size: 1.5rem; margin-bottom: 20px;">2. Performance is UX</h3>
+                <p style="line-height: 1.6; color: #555;">A slow site is a broken site. We optimize images, minify code,
+                    and use modern formats like WebP to ensure your site loads in under 2 seconds. This improves
+                    conversion rates and Google rankings.</p>
+            </div>
+            <div>
+                <h3 style="font-size: 1.5rem; margin-bottom: 20px;">3. Strategy Before Pixels</h3>
+                <p style="line-height: 1.6; color: #555;">We never open design software without first understanding your
+                    business goals. Who is your audience? What specific action do you want them to take? Your design
+                    will be a direct answer to these questions.</p>
+            </div>
+            <div>
+                <h3 style="font-size: 1.5rem; margin-bottom: 20px;">4. Component-Based Build</h3>
+                <p style="line-height: 1.6; color: #555;">We build scalable design systems, not just static pages. This
+                    means your website can grow with your business. Adding new pages or features later becomes cheaper
+                    and faster because the foundation is solid.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div><a href="index.html" class="logo"><img src="images/AUZA Wordmark White.png" alt="auza-logo"
+                            width="50"></a>
+                    <p class="footer-brand-desc">Functional, accessible design for ambitious businesses.<br>Based in
+                        Mauritius,
+                        working globally.</p>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Navigation</h4>
+                    <div class="footer-links"><a href="index.html#work" class="footer-link">Work</a><a
+                            href="services.html" class="footer-link active">Services</a><a href="index.html#process"
+                            class="footer-link">Process</a><a href="index.html#investment"
+                            class="footer-link">Investment</a><a href="index.html#contact"
+                            class="footer-link">Contact</a></div>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Services</h4>
+                    <div class="footer-links"><a href="web-design.html" class="footer-link">Web Design</a><a
+                            href="development.html" class="footer-link">Development</a><a href="brand-strategy.html"
+                            class="footer-link">Brand Strategy</a><a href="accessibility-service.html"
+                            class="footer-link">Accessibility</a></div>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Connect</h4>
+                    <div class="footer-links"><a href="mailto:hello@auza.mu" class="footer-link">hello@auza.mu</a><a
+                            href="https://www.linkedin.com/company/auza" class="footer-link">LinkedIn</a><a href="#"
+                            class="footer-link">Instagram</a></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2026 AUZA. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
+                    <a href="terms-of-service.html" class="footer-legal-link">Terms of Service</a>
+                    <a href="accessibility.html" class="footer-legal-link">Accessibility Statement</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
