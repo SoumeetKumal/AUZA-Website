@@ -135,3 +135,32 @@ function showToast() {
     }, 4000);
   }
 }
+
+// Go to Top Button Implementation
+document.addEventListener('DOMContentLoaded', () => {
+  const goTopBtn = document.createElement('div');
+  goTopBtn.className = 'go-to-top';
+  goTopBtn.setAttribute('aria-label', 'Go to top');
+  goTopBtn.setAttribute('role', 'button');
+  goTopBtn.innerHTML = `
+    <svg viewBox="0 0 24 24">
+      <path d="M12 19V5M5 12l7-7 7 7" />
+    </svg>
+  `;
+  document.body.appendChild(goTopBtn);
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      goTopBtn.classList.add('visible');
+    } else {
+      goTopBtn.classList.remove('visible');
+    }
+  });
+
+  goTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+});

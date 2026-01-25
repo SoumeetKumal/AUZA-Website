@@ -9,11 +9,25 @@
         rel="stylesheet">
     <style>
         :root {
-            --bg-color: #F4F4F0;
-            --text-color: #1A1A1A;
+            --bg-color: #F8F9FA;
+            --text-color: #121212;
             --accent-blue: #0047AB;
+            --accent-light: #E0E7FF;
             --heading-font: 'Space Grotesk', sans-serif;
             --body-font: 'Inter', sans-serif;
+            --section-padding: 100px 8vw;
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(0, 71, 171, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -21,20 +35,71 @@
             color: var(--text-color);
             font-family: var(--body-font);
             padding-top: 40px;
-            /* Layout fix for concept bar */
+            overflow-x: hidden;
+            line-height: 1.7;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 40px;
+            padding: 0 4vw;
+        }
+
+        /* Animations */
+        @keyframes revealUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes imageReveal {
+            from {
+                transform: scale(1.1);
+                filter: grayscale(1) blur(10px);
+            }
+
+            to {
+                transform: scale(1);
+                filter: grayscale(0.5) blur(0);
+            }
+        }
+
+        .fade-up {
+            opacity: 0;
+            animation: revealUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+
+        /* Content Bar */
+        .concept-bar {
+            background: #DC143C;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            font-weight: 700;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
 
         /* Hero Split Layout */
         .hero {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1.1fr;
             min-height: 100vh;
+            background: #fff;
+            position: relative;
         }
 
         .hero-visual {
@@ -50,133 +115,355 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            opacity: 0.6;
+            filter: saturate(0.5);
+            animation: imageReveal 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            transition: 1s ease-out;
+        }
+
+        .hero:hover .hero-visual img {
+            transform: scale(1.05);
             opacity: 0.8;
+            filter: saturate(0.8);
         }
 
         .hero-content {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 8vw;
+            padding: 100px 10vw;
             position: relative;
+            background: #fff;
         }
 
         .tagline {
             font-family: var(--body-font);
-            font-size: 14px;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 0.2em;
-            margin-bottom: 24px;
+            letter-spacing: 0.4em;
+            margin-bottom: 40px;
             color: var(--accent-blue);
-            font-weight: 700;
+            font-weight: 800;
+            display: block;
+            border-left: 2px solid var(--accent-blue);
+            padding-left: 20px;
         }
 
         h1 {
             font-family: var(--heading-font);
-            font-size: clamp(3rem, 5vw, 6rem);
-            line-height: 0.9;
+            font-size: clamp(3.5rem, 6.5vw, 7.5rem);
+            line-height: 0.82;
             text-transform: uppercase;
-            margin-bottom: 40px;
+            margin-bottom: 48px;
             font-weight: 700;
+            letter-spacing: -0.04em;
         }
 
         .description {
-            font-size: 1.125rem;
+            font-size: 1.35rem;
             line-height: 1.6;
-            max-width: 500px;
-            margin-bottom: 56px;
+            max-width: 580px;
+            margin-bottom: 64px;
             color: #444;
+            font-weight: 400;
         }
 
         .btn-consult {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
             background: var(--accent-blue);
             color: white;
-            padding: 20px 48px;
+            padding: 26px 56px;
             font-family: var(--heading-font);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 600;
-            transition: 0.3s;
+            letter-spacing: 0.15em;
+            font-weight: 700;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
+            width: fit-content;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .btn-consult::after {
+            content: '→';
+            margin-left: 12px;
+            transition: transform 0.4s;
+        }
+
+        .btn-consult:hover {
+            background: #003380;
+            box-shadow: 0 15px 30px rgba(0, 71, 171, 0.2);
+            padding-left: 64px;
+            padding-right: 48px;
+        }
+
+        .btn-consult:hover::after {
+            transform: translateX(8px);
         }
 
         .section {
-            padding: 120px 0;
+            padding: var(--section-padding);
         }
 
         /* Services Grid */
         .services {
-            padding: 120px 8vw;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            background: #fff;
+            position: relative;
         }
 
         .section-header {
-            margin-bottom: 80px;
+            margin-bottom: 120px;
+            max-width: 900px;
         }
 
         .service-list {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
-            background: rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(0, 0, 0, 0.1);
+            gap: 30px;
         }
 
         .service-item {
-            background: var(--bg-color);
-            padding: 60px 40px;
-            transition: 0.3s;
+            background: var(--glass-bg);
+            backdrop-filter: blur(8px);
+            padding: 80px 50px;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--glass-border);
+        }
+
+        .service-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: var(--accent-blue);
+            transform: scaleX(1);
+            opacity: 0.15;
+            transform-origin: left;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .service-item:hover::before {
+            opacity: 1;
+            height: 8px;
         }
 
         .service-item:hover {
-            background: white;
+            transform: translateY(-12px);
+            background: #fff;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+            border-color: transparent;
+        }
+
+        .service-item:hover::before {
+            transform: scaleX(1);
         }
 
         .service-num {
             font-family: var(--heading-font);
-            font-size: 2rem;
-            margin-bottom: 24px;
+            font-size: 4rem;
+            margin-bottom: 40px;
+            color: rgba(0, 71, 171, 0.2);
+            transition: all 0.4s;
+            line-height: 1;
+        }
+
+        .service-item:hover .service-num {
             color: var(--accent-blue);
+            transform: scale(0.9) translateX(-10px);
         }
 
         .service-title {
             font-family: var(--heading-font);
-            font-size: 1.5rem;
-            margin-bottom: 16px;
+            font-size: 1.85rem;
+            margin-bottom: 24px;
             text-transform: uppercase;
-        }
-
-        .concept-bar {
-            background: #DC143C;
-            color: white;
-            text-align: center;
-            padding: 10px;
             font-weight: 700;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
+            letter-spacing: -0.01em;
         }
 
-        @media (max-width: 900px) {
+        .service-item p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* Process Section */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 100px;
+        }
+
+        .process-step {
+            padding: 60px 50px;
+            background: #fff;
+            border: 1px solid #eee;
+            transition: 0.4s;
+            position: relative;
+        }
+
+        .process-step:hover {
+            border-color: var(--accent-blue);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .process-step h3 {
+            font-family: var(--heading-font);
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            color: var(--accent-blue);
+            font-size: 1.5rem;
+        }
+
+        .process-step p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .phase-marker {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: #ddd;
+            margin-bottom: 32px;
+            letter-spacing: 0.2em;
+            display: block;
+        }
+
+        .process-step:hover .phase-marker {
+            color: var(--accent-blue);
+            opacity: 0.5;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: #111;
+            color: white;
+            padding: 160px 8vw;
+            position: relative;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 60px;
+            text-align: center;
+        }
+
+        .stat-val {
+            font-family: var(--heading-font);
+            font-size: clamp(3.5rem, 6vw, 6rem);
+            line-height: 0.9;
+            margin-bottom: 20px;
+            color: #fff;
+            letter-spacing: -0.04em;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--accent-blue);
+            font-weight: 800;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            color: white;
+            padding: 120px 8vw 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 100px;
+        }
+
+        .footer-brand h2 {
+            font-size: 3rem;
+            letter-spacing: -0.05em;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p {
+            font-size: 1.15rem;
+            color: #888;
+            max-width: 500px;
+            line-height: 1.9;
+        }
+
+        .footer-nav h4 {
+            font-family: var(--heading-font);
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.3em;
+            margin-bottom: 40px;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+        }
+
+        .footer-nav li {
+            margin-bottom: 18px;
+        }
+
+        .footer-nav a {
+            color: #555;
+            text-decoration: none;
+            font-size: 1.05rem;
+            transition: color 0.3s;
+        }
+
+        .footer-nav a:hover {
+            color: var(--accent-blue);
+        }
+
+        @media (max-width: 1100px) {
             .hero {
                 grid-template-columns: 1fr;
             }
 
             .hero-content {
-                padding: 60px 24px;
+                padding: 120px 8vw;
             }
 
             .hero-visual {
-                height: 40vh;
+                height: 50vh;
+                order: 2;
             }
 
-            .service-list {
+            .footer-grid {
                 grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .service-list,
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 4rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 100px 8vw;
             }
         }
     </style>
@@ -190,195 +477,236 @@
         <div class="hero-visual">
             <img src="images/stratosphere-hero.png" alt="Corporate Skyscraper">
         </div>
-        <div class="hero-content">
-            <span class="tagline">London / New York / Tokyo</span>
+        <div class="hero-content fade-up">
+            <span class="tagline">Global Headquarters / London</span>
             <h1>Navigate.<br>Elevate.<br>Dominate.</h1>
             <p class="description">
                 Crafting future-proof strategies for industry leaders. We blend analytical rigor with creative foresight
-                to navigate complex markets.
+                to navigate complex markets and deliver sustainable growth.
             </p>
-            <a href="#" class="btn-consult">Our Approach</a>
+            <a href="#" class="btn-consult">Explore Capabilities</a>
         </div>
     </section>
 
-    <section class="services">
-        <div class="section-header">
-            <span class="tagline">Capabilities</span>
-            <h2 style="font-family: var(--heading-font); font-size: 3rem; text-transform: uppercase;">Bespoke Strategy
-            </h2>
-        </div>
-
-        <div class="service-list">
-            <div class="service-item">
-                <div class="service-num">01</div>
-                <h3 class="service-title">Corporate Vision</h3>
-                <p>Defining the North Star for global organizations. Long-term roadmapping and market positioning.</p>
-            </div>
-            <div class="service-item">
-                <div class="service-num">02</div>
-                <h3 class="service-title">Digital Transformation</h3>
-                <p>Reinventing business models for the algorithmic age. Tech stack validation and implementation.</p>
-            </div>
-            <div class="service-item">
-                <div class="service-num">03</div>
-                <h3 class="service-title">Mergers & Acquisitions</h3>
-                <p>Due diligence and cultural integration strategies for seamless organizational blending.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" style="background: white;">
+    <section class="services section">
         <div class="container">
-            <div class="section-header">
-                <span class="tagline">Our Approach</span>
-                <h2 style="font-family: var(--heading-font); font-size: 3rem; text-transform: uppercase;">Rigorous
-                    &<br>Relentless</h2>
+            <div class="section-header fade-up">
+                <span class="tagline">Expertise</span>
+                <h2
+                    style="font-family: var(--heading-font); font-size: clamp(2.5rem, 4.5vw, 4.5rem); text-transform: uppercase; line-height: 1; letter-spacing: -0.02em;">
+                    Strategic Solutions for<br>Complex Organizations</h2>
             </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px;">
-                <div>
-                    <h3 style="font-family: var(--heading-font); font-size: 1.5rem; margin-bottom: 20px;">Data-Driven
-                        Insight</h3>
-                    <p style="margin-bottom: 20px; line-height: 1.6;">We don't guess. We analyze. Our proprietary market
-                        intelligence engine scans millions of data points to identify emerging trends before they become
-                        mainstream.</p>
+
+            <div class="service-list">
+                <div class="service-item fade-up">
+                    <div class="service-num">01</div>
+                    <h3 class="service-title">Corporate Vision</h3>
+                    <p>Defining the North Star for global organizations. Long-term roadmapping, market positioning, and
+                        competitive displacement strategies.</p>
                 </div>
-                <div>
-                    <h3 style="font-family: var(--heading-font); font-size: 1.5rem; margin-bottom: 20px;">Human-Centric
-                        Execution</h3>
-                    <p style="margin-bottom: 20px; line-height: 1.6;">Strategy is nothing without adoption. We work
-                        side-by-side with your teams to ensure new directions are understood, embraced, and championed.
-                    </p>
+                <div class="service-item fade-up" style="animation-delay: 0.1s;">
+                    <div class="service-num">02</div>
+                    <h3 class="service-title">Digital Transformation</h3>
+                    <p>Reinventing business models for the algorithmic age. Tech stack validation, legacy modernization,
+                        and AI integration paths.</p>
+                </div>
+                <div class="service-item fade-up" style="animation-delay: 0.2s;">
+                    <div class="service-num">03</div>
+                    <h3 class="service-title">Mergers & Acquisitions</h3>
+                    <p>Due diligence, cultural integration strategies, and operational synergy identification for
+                        seamless organizational blending.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Client Results / Stats -->
-    <section class="section" style="background: var(--text-color); color: white;">
+    <section class="section">
         <div class="container">
-            <div
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center;">
-                <div>
-                    <div
-                        style="font-family: var(--heading-font); font-size: 3.5rem; color: white; margin-bottom: 10px;">
-                        $50B+</div>
-                    <div style="font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase;">Value Created
-                    </div>
+            <div class="section-header fade-up">
+                <span class="tagline">Our Methodology</span>
+                <h2
+                    style="font-family: var(--heading-font); font-size: clamp(2.5rem, 4.5vw, 4.5rem); text-transform: uppercase; line-height: 1; letter-spacing: -0.02em;">
+                    A Rigorous Path<br>to Performance</h2>
+            </div>
+            <div class="process-grid">
+                <div class="process-step fade-up">
+                    <span class="phase-marker">PHASE 01</span>
+                    <h3>Discovery</h3>
+                    <p>Deep immersion into your operational DNA to identify hidden frictions and untapped leverage
+                        points in your current model.</p>
                 </div>
-                <div>
-                    <div
-                        style="font-family: var(--heading-font); font-size: 3.5rem; color: white; margin-bottom: 10px;">
-                        30</div>
-                    <div style="font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase;">Fortune 100
-                        Clients</div>
+                <div class="process-step fade-up" style="animation-delay: 0.1s;">
+                    <span class="phase-marker">PHASE 02</span>
+                    <h3>Synthesis</h3>
+                    <p>Applying proprietary analytical frameworks to distill complex market data into clear, actionable
+                        strategic directives.</p>
                 </div>
-                <div>
-                    <div
-                        style="font-family: var(--heading-font); font-size: 3.5rem; color: white; margin-bottom: 10px;">
-                        12</div>
-                    <div style="font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase;">Global Offices
-                    </div>
-                </div>
-                <div>
-                    <div
-                        style="font-family: var(--heading-font); font-size: 3.5rem; color: white; margin-bottom: 10px;">
-                        24/7</div>
-                    <div style="font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase;">Strategy Ops</div>
+                <div class="process-step fade-up" style="animation-delay: 0.2s;">
+                    <span class="phase-marker">PHASE 03</span>
+                    <h3>Execution</h3>
+                    <p>Working alongside leadership to deploy new systems, train teams, and monitor performance against
+                        calibrated KPIs.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Insights Section -->
-    <section class="section" style="background: #e8e8e8;">
+    <section class="stats-section">
         <div class="container">
-            <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end;">
+            <div class="stats-grid">
+                <div class="fade-up">
+                    <div class="stat-val">$50B+</div>
+                    <div class="stat-label">Value Created</div>
+                </div>
+                <div class="fade-up" style="animation-delay: 0.1s;">
+                    <div class="stat-val">32</div>
+                    <div class="stat-label">Fortune 100 Clients</div>
+                </div>
+                <div class="fade-up" style="animation-delay: 0.2s;">
+                    <div class="stat-val">12</div>
+                    <div class="stat-label">Global Offices</div>
+                </div>
+                <div class="fade-up" style="animation-delay: 0.3s;">
+                    <div class="stat-val">98%</div>
+                    <div class="stat-label">Retention Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: #f4f4f4;">
+        <div class="container">
+            <div class="section-header fade-up"
+                style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 40px;">
                 <div>
                     <span class="tagline">Thought Leadership</span>
-                    <h2 style="font-family: var(--heading-font); font-size: 3rem; text-transform: uppercase;">Latest
-                        Insights</h2>
+                    <h2
+                        style="font-family: var(--heading-font); font-size: clamp(2.5rem, 4.5vw, 4.5rem); text-transform: uppercase; line-height: 1; letter-spacing: -0.02em;">
+                        Latest Insights</h2>
                 </div>
                 <a href="#"
-                    style="border-bottom: 1px solid black; padding-bottom: 4px; font-weight: 500; text-decoration: none; color: black;">View
-                    All Articles</a>
+                    style="border-bottom: 2.5px solid var(--accent-blue); padding-bottom: 12px; font-weight: 800; text-decoration: none; color: black; font-family: var(--heading-font); text-transform: uppercase; font-size: 0.95rem; letter-spacing: 0.1em; transition: 0.3s;">Browse
+                    Archive</a>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                <article style="background: white; padding: 30px;">
-                    <div style="font-size: 0.8rem; color: #666; margin-bottom: 16px;">Oct 12, 2025 • Market Trends</div>
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-top: 100px;">
+                <article class="fade-up"
+                    style="background: white; padding: 60px; border: 1px solid #eee; transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); cursor: pointer; position: relative; overflow: hidden;">
+                    <div
+                        style="font-size: 0.8rem; color: #999; margin-bottom: 32px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">
+                        Oct 12, 2025 • Market Trends</div>
                     <h3
-                        style="font-family: var(--heading-font); font-size: 1.5rem; margin-bottom: 16px; line-height: 1.3;">
+                        style="font-family: var(--heading-font); font-size: 1.9rem; margin-bottom: 32px; line-height: 1.2; font-weight: 700; letter-spacing: -0.01em;">
                         The Algorithmic Boardroom: Governance in the AI Era</h3>
-                    <p style="color: #444; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;">How multinational
-                        corporations are integrating predictive AI into their core decision-making frameworks.</p>
-                    <span style="font-weight: 600; font-size: 0.9rem; color: var(--accent-blue);">Read Report →</span>
+                    <p style="color: #666; margin-bottom: 48px; font-size: 1.1rem; line-height: 1.8;">How multinational
+                        corporations are integrating predictive AI into their core decision-making frameworks for
+                        competitive edge.</p>
+                    <span
+                        style="font-weight: 800; font-size: 0.95rem; color: var(--accent-blue); text-transform: uppercase; font-family: var(--heading-font); letter-spacing: 0.1em;">Read
+                        Full Report →</span>
                 </article>
-                <article style="background: white; padding: 30px;">
-                    <div style="font-size: 0.8rem; color: #666; margin-bottom: 16px;">Sep 28, 2025 • Sustainability
-                    </div>
+                <article class="fade-up"
+                    style="animation-delay: 0.1s; background: white; padding: 60px; border: 1px solid #eee; transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); cursor: pointer; position: relative; overflow: hidden;">
+                    <div
+                        style="font-size: 0.8rem; color: #999; margin-bottom: 32px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">
+                        Sep 28, 2025 • Sustainability</div>
                     <h3
-                        style="font-family: var(--heading-font); font-size: 1.5rem; margin-bottom: 16px; line-height: 1.3;">
-                        Carbon Credit Markets: A 2030 Outlook</h3>
-                    <p style="color: #444; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;">Navigating the
-                        regulatory shifts and economic opportunities in the evolving green economy.</p>
-                    <span style="font-weight: 600; font-size: 0.9rem; color: var(--accent-blue);">Read Report →</span>
-                </article>
-                <article style="background: white; padding: 30px;">
-                    <div style="font-size: 0.8rem; color: #666; margin-bottom: 16px;">Sep 15, 2025 • Corporate Finance
-                    </div>
-                    <h3
-                        style="font-family: var(--heading-font); font-size: 1.5rem; margin-bottom: 16px; line-height: 1.3;">
-                        Capital Allocation in High-Interest Environments</h3>
-                    <p style="color: #444; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;">Strategies for
-                        maintaining liquidity and driving growth during periods of monetary tightening.</p>
-                    <span style="font-weight: 600; font-size: 0.9rem; color: var(--accent-blue);">Read Report →</span>
+                        style="font-family: var(--heading-font); font-size: 1.9rem; margin-bottom: 32px; line-height: 1.2; font-weight: 700; letter-spacing: -0.01em;">
+                        Carbon Credit Markets: A 2030 Global Outlook</h3>
+                    <p style="color: #666; margin-bottom: 48px; font-size: 1.1rem; line-height: 1.8;">Navigating the
+                        complex regulatory shifts and emerging economic opportunities in the rapidly evolving green
+                        economy.</p>
+                    <span
+                        style="font-weight: 800; font-size: 0.95rem; color: var(--accent-blue); text-transform: uppercase; font-family: var(--heading-font); letter-spacing: 0.1em;">Read
+                        Full Report →</span>
                 </article>
             </div>
         </div>
     </section>
 
     <!-- Global Reach Section -->
-    <section class="section">
-        <div class="container" style="border-top: 1px solid rgba(0,0,0,0.1); padding-top: 100px;">
-            <div class="section-header">
-                <span class="tagline">Global Reach</span>
-                <h2 style="font-family: var(--heading-font); font-size: 3rem; text-transform: uppercase;">
+    <section class="section" style="background: #fff; padding-top: 0;">
+        <div class="container" style="border-top: 1px solid #eee; padding-top: 100px;">
+            <div class="section-header fade-up">
+                <span class="tagline">Footprint</span>
+                <h2
+                    style="font-family: var(--heading-font); font-size: clamp(2.5rem, 4.5vw, 4.5rem); text-transform: uppercase; line-height: 1; letter-spacing: -0.02em;">
                     Strategically<br>Positioned</h2>
             </div>
-            <div
-                style="display: flex; flex-wrap: wrap; gap: 20px; font-family: var(--heading-font); font-size: 1.5rem; color: #aaa;">
-                <span style="color: black;">London</span> / <span>New York</span> / <span>Tokyo</span> /
-                <span>Singapore</span> / <span>Dubai</span> / <span>Zurich</span> / <span>Hong Kong</span> / <span>San
-                    Francisco</span> / <span>São Paulo</span>
+            <div class="fade-up city-list"
+                style="display: flex; flex-wrap: wrap; gap: 40px; font-family: var(--heading-font); font-size: 2.2rem; color: #eee; font-weight: 700; letter-spacing: -0.02em;">
+                <style>
+                    .city-item {
+                        color: #121212;
+                        transition: all 0.4s;
+                        cursor: default;
+                    }
+
+                    .city-item span {
+                        color: #eee;
+                        margin: 0 10px;
+                        transition: 0.4s;
+                    }
+
+                    .city-list:hover .city-item {
+                        opacity: 0.3;
+                        filter: blur(2px);
+                    }
+
+                    .city-list .city-item:hover {
+                        opacity: 1;
+                        filter: blur(0);
+                        transform: scale(1.1);
+                        color: var(--accent-blue);
+                    }
+                </style>
+                <div class="city-item">London</div> <span>/</span>
+                <div class="city-item">New York</div> <span>/</span>
+                <div class="city-item">Tokyo</div> <span>/</span>
+                <div class="city-item">Singapore</div> <span>/</span>
+                <div class="city-item">Dubai</div> <span>/</span>
+                <div class="city-item">Zurich</div> <span>/</span>
+                <div class="city-item">Hong Kong</div> <span>/</span>
+                <div class="city-item">San Francisco</div> <span>/</span>
+                <div class="city-item">São Paulo</div>
             </div>
         </div>
     </section>
 
-    <footer style="background: #0a0a0a; color: white; padding: 80px 5vw;">
-        <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 0;">
-            <div>
-                <h2 style="font-family: var(--heading-font); font-size: 2rem; margin-bottom: 20px;">STRATOSPHERE</h2>
-                <p style="color: #666; max-width: 300px;">Defining the future of business through rigorous strategy and
-                    bold vision.</p>
+    <footer class="fade-up">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h2>STRATOSPHERE</h2>
+                <p>Defining the future of business through rigorous analytical strategy and bold institutional vision.
+                    Working with leaders since 1996.</p>
             </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                <div>
-                    <h4 style="font-family: var(--heading-font); margin-bottom: 16px; color: #888;">Offices</h4>
-                    <p style="margin-bottom: 8px;">London</p>
-                    <p style="margin-bottom: 8px;">New York</p>
-                    <p style="margin-bottom: 8px;">Tokyo</p>
-                </div>
-                <div>
-                    <h4 style="font-family: var(--heading-font); margin-bottom: 16px; color: #888;">Connect</h4>
-                    <p style="margin-bottom: 8px;">LinkedIn</p>
-                    <p style="margin-bottom: 8px;">Twitter</p>
-                    <p style="margin-bottom: 8px;">Insights</p>
-                </div>
+            <div class="footer-nav">
+                <h4>Offices</h4>
+                <ul>
+                    <li><a href="#">London (HQ)</a></li>
+                    <li><a href="#">New York</a></li>
+                    <li><a href="#">Tokyo</a></li>
+                    <li><a href="#">Dubai</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h4>Network</h4>
+                <ul>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Twitter / X</a></li>
+                    <li><a href="#">Insights Portal</a></li>
+                    <li><a href="#">M&A Advisor</a></li>
+                </ul>
             </div>
         </div>
-        <div
-            style="margin-top: 60px; padding-top: 20px; border-top: 1px solid #222; color: #444; font-size: 12px; display: flex; justify-content: space-between;">
+        <div class="container"
+            style="margin-top: 100px; padding-top: 40px; border-top: 1px solid #222; color: #444; font-size: 11px; display: flex; justify-content: space-between; align-items: center; text-transform: uppercase; letter-spacing: 0.1em;">
             <span>© 2025 Stratosphere Strategy. Concept Design by AUZA.</span>
+            <div style="display: flex; gap: 32px;">
+                <a href="#" style="color: #444; text-decoration: none;">Privacy Foundation</a>
+                <a href="#" style="color: #444; text-decoration: none;">Terms of Governance</a>
+            </div>
         </div>
     </footer>
 </body>
