@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Website Audit | AUZA Strategy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="audit.css">
+    <link rel="icon" type="image/png" href="images/AUZA Logo White.png">
+</head>
+
+<body class="audit-page">
+    <div class="grid-bg"></div>
+
+    <!-- Navigation (Minimal) -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">
+                <div style="position: relative;">
+                    <div class="logo-full">
+                        <img src="images/AUZA Wordmark White.png" alt="auza-logo" width="100">
+                    </div>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="audit-container">
+        <!-- Header Section -->
+        <header class="audit-header fade-up">
+            <span class="audit-badge">Free Resource</span>
+            <h1 class="audit-main-title">10-Point Website <span class="accent">Health Audit</span></h1>
+            <p class="audit-subtitle">Discover the barriers between your website and your business growth. Get instant
+                scoring and a personalized action plan.</p>
+        </header>
+
+        <!-- Email Gate -->
+        <section id="email-gate" class="email-gate-section fade-up delay-1">
+            <div class="gate-card">
+                <div class="gate-content">
+                    <h2>Unlock the Interactive Audit</h2>
+                    <p>Enter your details to access the checklist and receive your results via email.</p>
+
+                    <form id="audit-gate-form" class="audit-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Full Name *</label>
+                            <input type="text" id="name" name="name" class="form-input" required placeholder="Jane Doe">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-input" required
+                                placeholder="jane@company.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="website" class="form-label">Your Website URL (Optional)</label>
+                            <input type="url" id="website" name="website" class="form-input"
+                                placeholder="https://yoursite.com">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary full-width">Start Free Audit →</button>
+                        <p class="privacy-note">We value your privacy. Your information is safe with us.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Checklist (Hidden by default) -->
+        <section id="audit-main" class="audit-main-section" style="display: none;">
+            <div class="audit-layout">
+                <!-- Sidebar Score -->
+                <aside class="audit-sidebar">
+                    <div class="score-card">
+                        <div class="score-circle">
+                            <span id="current-score">0</span><small>/10</small>
+                        </div>
+                        <h3 id="score-label">Needs Review</h3>
+                        <p id="score-feedback">Complete the checklist to see your rating.</p>
+                        <div class="progress-bar">
+                            <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Checklist Items -->
+                <div class="audit-checklist-wrapper">
+                    <div id="audit-items" class="audit-items-grid">
+                        <!-- Items will be injected by JavaScript -->
+                    </div>
+
+                    <div id="audit-results" class="audit-results-card" style="display: none;">
+                        <h2>Your Action Plan</h2>
+                        <div id="results-content"></div>
+                        <div class="results-cta">
+                            <p>Want a professional deep-dive into these issues?</p>
+                            <a href="index.html#contact" class="btn btn-primary">Book a Free Strategy Call</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2025 AUZA Studio. Functional Design for Growth.</p>
+                <div class="footer-legal">
+                    <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="audit.js"></script>
+</body>
+
+</html>

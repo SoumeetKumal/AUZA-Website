@@ -1,0 +1,306 @@
+/* Audit Page Specific Styles */
+
+.audit-page {
+    background-color: #0A0A0A;
+    color: #FAFAFA;
+}
+
+.audit-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 20px 80px;
+}
+
+.audit-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.audit-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(220, 20, 60, 0.1);
+    color: #DC143C;
+    border: 1px solid rgba(220, 20, 60, 0.2);
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+}
+
+.audit-main-title {
+    font-size: clamp(32px, 5vw, 64px);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    letter-spacing: -0.03em;
+}
+
+.audit-main-title .accent {
+    color: var(--crimson);
+}
+
+.audit-subtitle {
+    font-size: clamp(16px, 1.2vw, 20px);
+    color: #A0A0A0;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Email Gate */
+.email-gate-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.gate-card {
+    background: var(--nero);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 48px;
+    max-width: 520px;
+    width: 100%;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.gate-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at top right, rgba(220, 20, 60, 0.05), transparent 70%);
+    pointer-events: none;
+}
+
+.gate-content h2 {
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 900;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+}
+
+.gate-content p {
+    color: var(--gray-500);
+    margin-bottom: 32px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.audit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.full-width {
+    width: 100%;
+    height: 54px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.privacy-note {
+    font-size: 11px;
+    color: var(--gray-500);
+    text-align: center;
+    margin-top: 24px;
+    opacity: 0.7;
+}
+
+/* Audit Layout */
+.audit-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.audit-sidebar {
+    position: sticky;
+    top: 100px;
+}
+
+.score-card {
+    background: var(--nero);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.score-circle {
+    font-size: 72px;
+    font-weight: 900;
+    color: var(--crimson);
+    line-height: 1;
+    margin-bottom: 12px;
+    letter-spacing: -0.05em;
+}
+
+.score-circle small {
+    font-size: 24px;
+    color: var(--gray-700);
+}
+
+#score-label {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: var(--off-white);
+}
+
+#score-feedback {
+    font-size: 14px;
+    color: var(--gray-500);
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+.progress-bar {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--crimson);
+    width: 0%;
+    transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 0 15px var(--crimson);
+}
+
+/* Checklist Items */
+.audit-items-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.audit-item {
+    background: var(--nero);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 24px 32px;
+    display: flex;
+    gap: 24px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.audit-item:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+    transform: translateY(-2px);
+}
+
+.audit-item.checked {
+    border-color: rgba(34, 197, 94, 0.3);
+    background: rgba(34, 197, 94, 0.03);
+}
+
+.item-checkbox {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--gray-700);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.audit-item.checked .item-checkbox {
+    background: #22c55e;
+    border-color: #22c55e;
+}
+
+.item-checkbox svg {
+    width: 14px;
+    height: 14px;
+    stroke: var(--off-white);
+    stroke-width: 3px;
+    display: none;
+}
+
+.audit-item.checked .item-checkbox svg {
+    display: block;
+}
+
+.item-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--off-white);
+}
+
+.item-content p {
+    font-size: 14px;
+    color: var(--gray-500);
+    line-height: 1.5;
+}
+
+/* Results Card */
+.audit-results-card {
+    margin-top: 48px;
+    background: var(--nero);
+    border: 1px solid rgba(220, 20, 60, 0.3);
+    border-radius: 16px;
+    padding: 48px;
+    animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: 0 0 40px rgba(220, 20, 60, 0.05);
+}
+
+.audit-results-card h2 {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: var(--off-white);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.results-cta {
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+}
+
+.results-cta p {
+    margin-bottom: 24px;
+    color: var(--gray-500);
+}
+
+@media (max-width: 900px) {
+    .audit-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .audit-sidebar {
+        position: static;
+        margin-bottom: 30px;
+    }
+
+    .audit-container {
+        padding-top: 100px;
+    }
+}
