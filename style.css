@@ -2741,3 +2741,327 @@
         padding: 100px 24px 60px;
       }
     }
+
+    /* Investment Section */
+    .investment-section {
+      background: #0A0A0A;
+      padding: 120px 0;
+      position: relative;
+    }
+
+    .investment-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* Section Header */
+    .investment-section .section-header {
+      text-align: left;
+      margin-bottom: 80px;
+    }
+
+    .investment-section .section-label {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #DC143C;
+      margin-bottom: 20px;
+    }
+
+    .investment-section .section-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 900;
+      font-size: 56px;
+      letter-spacing: -0.02em;
+      color: #FAFAFA;
+      margin-bottom: 24px;
+      line-height: 1.1;
+    }
+
+    .investment-section .section-description {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #A0A0A0;
+      max-width: 700px;
+    }
+
+    /* Pricing Grid */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    /* Individual Tier */
+    .pricing-tier {
+      background: #161616;
+      padding: 40px 30px;
+      border-left: 3px solid transparent;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+      position: relative;
+    }
+
+    .pricing-tier:hover {
+      border-left-color: #DC143C;
+      transform: translateY(-5px);
+    }
+
+    .pricing-tier.tier-featured {
+      border-left-color: #DC143C;
+      background: linear-gradient(135deg, #161616 0%, #1a1a1a 100%);
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #DC143C;
+      color: #FAFAFA;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 6px 16px;
+      border-radius: 4px;
+    }
+
+    /* Tier Header */
+    .tier-header {
+      margin-bottom: 30px;
+    }
+
+    .tier-name {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      color: #FAFAFA;
+      margin-bottom: 8px;
+    }
+
+    .tier-tagline {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: #A0A0A0;
+      line-height: 1.5;
+    }
+
+    /* Tier Price */
+    .tier-price {
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid rgba(160, 160, 160, 0.2);
+    }
+
+    .price-label {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #A0A0A0;
+      margin-bottom: 8px;
+    }
+
+    .price-amount {
+      font-family: 'Inter', sans-serif;
+      font-weight: 900;
+      font-size: 48px;
+      letter-spacing: -0.03em;
+      color: #DC143C;
+      line-height: 1;
+    }
+
+    /* Tier Features */
+    .tier-features {
+      list-style: none;
+      margin-bottom: 30px;
+      padding: 0;
+    }
+
+    .tier-features li {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: #FAFAFA;
+      line-height: 2;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .tier-features li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      color: #DC143C;
+      font-weight: 700;
+    }
+
+    /* Tier CTA */
+    .tier-cta {
+      display: block;
+      width: 100%;
+      padding: 14px 24px;
+      background: transparent;
+      border: 2px solid #FAFAFA;
+      color: #FAFAFA;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .tier-cta:hover {
+      background: #FAFAFA;
+      color: #0A0A0A;
+    }
+
+    .tier-cta-primary {
+      background: #DC143C;
+      border-color: #DC143C;
+    }
+
+    .tier-cta-primary:hover {
+      background: #FAFAFA;
+      border-color: #FAFAFA;
+      color: #0A0A0A;
+    }
+
+    /* Launch Offer Callout */
+    .launch-offer {
+      background: linear-gradient(135deg, #DC143C 0%, #A00F2E 100%);
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 40px;
+      border-radius: 4px;
+    }
+
+    .offer-icon {
+      font-size: 48px;
+      color: #FAFAFA;
+      flex-shrink: 0;
+    }
+
+    .offer-content {
+      flex: 1;
+    }
+
+    .offer-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      color: #FAFAFA;
+      margin-bottom: 8px;
+    }
+
+    .offer-description {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: rgba(250, 250, 250, 0.9);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .offer-cta {
+      padding: 14px 32px;
+      background: #FAFAFA;
+      color: #DC143C;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+    }
+
+    .offer-cta:hover {
+      background: #0A0A0A;
+      color: #FAFAFA;
+    }
+
+    /* Pricing Footer */
+    .pricing-footer {
+      text-align: center;
+    }
+
+    .footer-text {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      color: #A0A0A0;
+      line-height: 1.6;
+    }
+
+    .inline-link {
+      color: #DC143C;
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+
+    .inline-link:hover {
+      color: #FAFAFA;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .investment-section {
+        padding: 80px 0;
+      }
+
+      .investment-container {
+        padding: 0 20px;
+      }
+
+      .investment-section .section-title {
+        font-size: 36px;
+      }
+
+      .investment-section .section-description {
+        font-size: 16px;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .pricing-tier {
+        padding: 30px 20px;
+      }
+
+      .launch-offer {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+      }
+
+      .offer-title {
+        font-size: 20px;
+      }
+
+      .offer-cta {
+        width: 100%;
+      }
+    }

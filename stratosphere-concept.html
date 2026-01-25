@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stratosphere Strategy | Future-Proof Business</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #F4F4F0;
+            --text-color: #1A1A1A;
+            --accent-blue: #0047AB;
+            --heading-font: 'Space Grotesk', sans-serif;
+            --body-font: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--body-font);
+            padding-top: 40px;
+            /* Layout fix for concept bar */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Hero Split Layout */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 100vh;
+        }
+
+        .hero-visual {
+            background-color: #0a0a0a;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 8vw;
+            position: relative;
+        }
+
+        .tagline {
+            font-family: var(--body-font);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 24px;
+            color: var(--accent-blue);
+            font-weight: 700;
+        }
+
+        h1 {
+            font-family: var(--heading-font);
+            font-size: clamp(3rem, 5vw, 6rem);
+            line-height: 0.9;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        .description {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            max-width: 500px;
+            margin-bottom: 56px;
+            color: #444;
+        }
+
+        .btn-consult {
+            display: inline-block;
+            background: var(--accent-blue);
+            color: white;
+            padding: 20px 48px;
+            font-family: var(--heading-font);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        /* Services Grid */
+        .services {
+            padding: 120px 8vw;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .section-header {
+            margin-bottom: 80px;
+        }
+
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .service-item {
+            background: var(--bg-color);
+            padding: 60px 40px;
+            transition: 0.3s;
+        }
+
+        .service-item:hover {
+            background: white;
+        }
+
+        .service-num {
+            font-family: var(--heading-font);
+            font-size: 2rem;
+            margin-bottom: 24px;
+            color: var(--accent-blue);
+        }
+
+        .service-title {
+            font-family: var(--heading-font);
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .concept-bar {
+            background: #DC143C;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                padding: 60px 24px;
+            }
+
+            .hero-visual {
+                height: 40vh;
+            }
+
+            .service-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="concept-bar">Design Concept By AUZA • <a href="stratosphere.html"
+            style="color: white; text-decoration: underline;">Back to Case Study</a></div>
+
+    <section class="hero">
+        <div class="hero-visual">
+            <img src="images/stratosphere-hero.png" alt="Corporate Skyscraper">
+        </div>
+        <div class="hero-content">
+            <span class="tagline">London / New York / Tokyo</span>
+            <h1>Navigate.<br>Elevate.<br>Dominate.</h1>
+            <p class="description">
+                Crafting future-proof strategies for industry leaders. We blend analytical rigor with creative foresight
+                to navigate complex markets.
+            </p>
+            <a href="#" class="btn-consult">Our Approach</a>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="section-header">
+            <span class="tagline">Capabilities</span>
+            <h2 style="font-family: var(--heading-font); font-size: 3rem; text-transform: uppercase;">Bespoke Strategy
+            </h2>
+        </div>
+
+        <div class="service-list">
+            <div class="service-item">
+                <div class="service-num">01</div>
+                <h3 class="service-title">Corporate Vision</h3>
+                <p>Defining the North Star for global organizations. Long-term roadmapping and market positioning.</p>
+            </div>
+            <div class="service-item">
+                <div class="service-num">02</div>
+                <h3 class="service-title">Digital Transformation</h3>
+                <p>Reinventing business models for the algorithmic age. Tech stack validation and implementation.</p>
+            </div>
+            <div class="service-item">
+                <div class="service-num">03</div>
+                <h3 class="service-title">Mergers & Acquisitions</h3>
+                <p>Due diligence and cultural integration strategies for seamless organizational blending.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: white;">
+        <div class="container">
+            <div class="section-header">
+                <span class="tagline">Our Approach</span>
+                <h2 style="font-family: var(--heading-font); font-size: 3rem; text-transform: uppercase;">Rigorous
+                    &<br>Relentless</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px;">
+                <div>
+                    <h3 style="font-family: var(--heading-font); font-size: 1.5rem; margin-bottom: 20px;">Data-Driven
+                        Insight</h3>
+                    <p style="margin-bottom: 20px; line-height: 1.6;">We don't guess. We analyze. Our proprietary market
+                        intelligence engine scans millions of data points to identify emerging trends before they become
+                        mainstream.</p>
+                </div>
+                <div>
+                    <h3 style="font-family: var(--heading-font); font-size: 1.5rem; margin-bottom: 20px;">Human-Centric
+                        Execution</h3>
+                    <p style="margin-bottom: 20px; line-height: 1.6;">Strategy is nothing without adoption. We work
+                        side-by-side with your teams to ensure new directions are understood, embraced, and championed.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Results / Stats -->
+    <section class="section" style="background: var(--text-color); color: white;">
+        <div class="container">
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center;">
+                <div>
+                    <div
+                        style="font-family: var(--heading-font); font-size: 3.5rem; color: white; margin-bottom: 10px;">
+                        $50B+</div>
+                    <div style="font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase;">Value Created
+                    </div>
+                </div>
+                <div>
+                    <div
+                        style="font-family: var(--heading-font); font-size: 3.5rem; color: white; margin-bottom: 10px;">
+                        30</div>
+                    <div style="font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase;">Fortune 100
+                        Clients</div>
+                </div>
+                <div>
+                    <div
+                        style="font-family: var(--heading-font); font-size: 3.5rem; color: white; margin-bottom: 10px;">
+                        12</div>
+                    <div style="font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase;">Global Offices
+                    </div>
+                </div>
+                <div>
+                    <div
+                        style="font-family: var(--heading-font); font-size: 3.5rem; color: white; margin-bottom: 10px;">
+                        24/7</div>
+                    <div style="font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase;">Strategy Ops</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights Section -->
+    <section class="section" style="background: #e8e8e8;">
+        <div class="container">
+            <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end;">
+                <div>
+                    <span class="tagline">Thought Leadership</span>
+                    <h2 style="font-family: var(--heading-font); font-size: 3rem; text-transform: uppercase;">Latest
+                        Insights</h2>
+                </div>
+                <a href="#"
+                    style="border-bottom: 1px solid black; padding-bottom: 4px; font-weight: 500; text-decoration: none; color: black;">View
+                    All Articles</a>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <article style="background: white; padding: 30px;">
+                    <div style="font-size: 0.8rem; color: #666; margin-bottom: 16px;">Oct 12, 2025 • Market Trends</div>
+                    <h3
+                        style="font-family: var(--heading-font); font-size: 1.5rem; margin-bottom: 16px; line-height: 1.3;">
+                        The Algorithmic Boardroom: Governance in the AI Era</h3>
+                    <p style="color: #444; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;">How multinational
+                        corporations are integrating predictive AI into their core decision-making frameworks.</p>
+                    <span style="font-weight: 600; font-size: 0.9rem; color: var(--accent-blue);">Read Report →</span>
+                </article>
+                <article style="background: white; padding: 30px;">
+                    <div style="font-size: 0.8rem; color: #666; margin-bottom: 16px;">Sep 28, 2025 • Sustainability
+                    </div>
+                    <h3
+                        style="font-family: var(--heading-font); font-size: 1.5rem; margin-bottom: 16px; line-height: 1.3;">
+                        Carbon Credit Markets: A 2030 Outlook</h3>
+                    <p style="color: #444; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;">Navigating the
+                        regulatory shifts and economic opportunities in the evolving green economy.</p>
+                    <span style="font-weight: 600; font-size: 0.9rem; color: var(--accent-blue);">Read Report →</span>
+                </article>
+                <article style="background: white; padding: 30px;">
+                    <div style="font-size: 0.8rem; color: #666; margin-bottom: 16px;">Sep 15, 2025 • Corporate Finance
+                    </div>
+                    <h3
+                        style="font-family: var(--heading-font); font-size: 1.5rem; margin-bottom: 16px; line-height: 1.3;">
+                        Capital Allocation in High-Interest Environments</h3>
+                    <p style="color: #444; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px;">Strategies for
+                        maintaining liquidity and driving growth during periods of monetary tightening.</p>
+                    <span style="font-weight: 600; font-size: 0.9rem; color: var(--accent-blue);">Read Report →</span>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Reach Section -->
+    <section class="section">
+        <div class="container" style="border-top: 1px solid rgba(0,0,0,0.1); padding-top: 100px;">
+            <div class="section-header">
+                <span class="tagline">Global Reach</span>
+                <h2 style="font-family: var(--heading-font); font-size: 3rem; text-transform: uppercase;">
+                    Strategically<br>Positioned</h2>
+            </div>
+            <div
+                style="display: flex; flex-wrap: wrap; gap: 20px; font-family: var(--heading-font); font-size: 1.5rem; color: #aaa;">
+                <span style="color: black;">London</span> / <span>New York</span> / <span>Tokyo</span> /
+                <span>Singapore</span> / <span>Dubai</span> / <span>Zurich</span> / <span>Hong Kong</span> / <span>San
+                    Francisco</span> / <span>São Paulo</span>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: #0a0a0a; color: white; padding: 80px 5vw;">
+        <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 0;">
+            <div>
+                <h2 style="font-family: var(--heading-font); font-size: 2rem; margin-bottom: 20px;">STRATOSPHERE</h2>
+                <p style="color: #666; max-width: 300px;">Defining the future of business through rigorous strategy and
+                    bold vision.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                    <h4 style="font-family: var(--heading-font); margin-bottom: 16px; color: #888;">Offices</h4>
+                    <p style="margin-bottom: 8px;">London</p>
+                    <p style="margin-bottom: 8px;">New York</p>
+                    <p style="margin-bottom: 8px;">Tokyo</p>
+                </div>
+                <div>
+                    <h4 style="font-family: var(--heading-font); margin-bottom: 16px; color: #888;">Connect</h4>
+                    <p style="margin-bottom: 8px;">LinkedIn</p>
+                    <p style="margin-bottom: 8px;">Twitter</p>
+                    <p style="margin-bottom: 8px;">Insights</p>
+                </div>
+            </div>
+        </div>
+        <div
+            style="margin-top: 60px; padding-top: 20px; border-top: 1px solid #222; color: #444; font-size: 12px; display: flex; justify-content: space-between;">
+            <span>© 2025 Stratosphere Strategy. Concept Design by AUZA.</span>
+        </div>
+    </footer>
+</body>
+
+</html>

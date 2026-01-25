@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanguard Legal | Modern Litigation</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #050505;
+            --text-color: #f0f0f0;
+            --accent-gold: #D4AF37;
+            --heading-font: 'Playfair Display', serif;
+            --body-font: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--body-font);
+            padding-top: 40px;
+            /* Layout fix for concept bar */
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5vw;
+            background: linear-gradient(to bottom, rgba(5, 5, 5, 0.7), rgba(5, 5, 5, 1)), url('images/vanguard-hero.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-family: var(--heading-font);
+            font-size: clamp(4rem, 10vw, 12rem);
+            line-height: 0.8;
+            margin-bottom: 2rem;
+            background: linear-gradient(180deg, #fff 0%, #aaa 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-sub {
+            font-size: clamp(1.5rem, 3vw, 3rem);
+            font-family: var(--heading-font);
+            font-style: italic;
+            color: var(--accent-gold);
+            margin-bottom: 40px;
+        }
+
+        .practice-areas {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        .area-card {
+            padding: 60px 40px;
+            border-right: 1px solid #333;
+            transition: 0.4s;
+        }
+
+        .area-card:last-child {
+            border-right: none;
+        }
+
+        .area-title {
+            font-family: var(--heading-font);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+        }
+
+        .section-label {
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        h2 {
+            font-family: var(--heading-font);
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+
+        .attorney-section {
+            padding: 120px 5vw;
+            display: flex;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .attorney-img {
+            flex: 1;
+            height: 600px;
+            background: #111;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .attorney-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .attorney-content {
+            flex: 1;
+        }
+
+        .concept-bar {
+            background: #DC143C;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        @media (max-width: 900px) {
+            .practice-areas {
+                grid-template-columns: 1fr;
+            }
+
+            .area-card {
+                border-right: none;
+                border-bottom: 1px solid #333;
+            }
+
+            .attorney-section {
+                flex-direction: column;
+            }
+
+            .attorney-img {
+                width: 100%;
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="concept-bar">Design Concept By AUZA • <a href="vanguard.html"
+            style="color: white; text-decoration: underline;">Back to Case Study</a></div>
+
+    <header class="hero">
+        <h1>VANGUARD</h1>
+        <div class="hero-sub">Modern Litigation. Redefined.</div>
+        <p style="max-width: 600px; color: #888; line-height: 1.6;">
+            We represent the world's most innovative companies in their most critical disputes.
+            Unrelenting advocacy met with strategic precision.
+        </p>
+    </header>
+
+    <section class="practice-areas">
+        <div class="area-card">
+            <h3 class="area-title">Corporate Litigation</h3>
+            <p style="color: #888; font-size: 0.9rem;">High-stakes commercial disputes requiring sophisticated strategy.
+            </p>
+        </div>
+        <div class="area-card">
+            <h3 class="area-title">Intellectual Property</h3>
+            <p style="color: #888; font-size: 0.9rem;">Protecting your most valuable assets in total market warfare.</p>
+        </div>
+        <div class="area-card">
+            <h3 class="area-title">Antitrust</h3>
+            <p style="color: #888; font-size: 0.9rem;">Navigating complex regulatory environments and competitive
+                landscapes.</p>
+        </div>
+        <div class="area-card">
+            <h3 class="area-title">White Collar</h3>
+            <p style="color: #888; font-size: 0.9rem;">Discreet, effective defense for executives and corporations.</p>
+        </div>
+    </section>
+
+    <!-- Recent Victories -->
+    <section
+        style="padding: 100px 5vw; background: #0a0a0a; border-top: 1px solid #222; border-bottom: 1px solid #222;">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <span class="section-label">Track Record</span>
+            <h2>Recent Victories</h2>
+        </div>
+        <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1px; background: #222; border: 1px solid #222;">
+            <div style="background: #0a0a0a; padding: 40px; text-align: center;">
+                <div
+                    style="font-family: var(--heading-font); font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 10px;">
+                    $4.2B</div>
+                <div
+                    style="color: #666; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">
+                    Merger Acquisition</div>
+                <p style="color: #ccc; font-size: 0.95rem;">Secured regulatory approval for landmark tech consolidation
+                    against DOJ challenge.</p>
+            </div>
+            <div style="background: #0a0a0a; padding: 40px; text-align: center;">
+                <div
+                    style="font-family: var(--heading-font); font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 10px;">
+                    Defense</div>
+                <div
+                    style="color: #666; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">
+                    Securities Fraud</div>
+                <p style="color: #ccc; font-size: 0.95rem;">Full dismissal of class action suit against Fortune 500
+                    financial institution.</p>
+            </div>
+            <div style="background: #0a0a0a; padding: 40px; text-align: center;">
+                <div
+                    style="font-family: var(--heading-font); font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 10px;">
+                    IP Rights</div>
+                <div
+                    style="color: #666; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">
+                    Patent Litigation</div>
+                <p style="color: #ccc; font-size: 0.95rem;">Successfully defended key semiconductor patents for global
+                    manufacturer.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="attorney-section">
+        <div class="attorney-img">
+            <img src="images/vanguard-attorney.png" alt="Alexander Vance">
+            <div
+                style="position: absolute; inset: 0; background: linear-gradient(to top, #050505, transparent 40%); opacity: 0.8;">
+            </div>
+            <div
+                style="position: absolute; bottom: 40px; left: 0; right: 0; z-index: 2; padding: 0 40px; text-align: center;">
+                <div style="font-family: var(--heading-font); font-size: 1.5rem; margin-bottom: 5px;">Alexander Vance
+                </div>
+                <div
+                    style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-gold);">
+                    Managing Partner</div>
+            </div>
+        </div>
+        <div class="attorney-content">
+            <span class="section-label">Leadership</span>
+            <h2>The Vanguard Standard</h2>
+            <p style="color: #ccc; margin-bottom: 20px; line-height: 1.7;">
+                Our partners are drawn from the top ranks of federal prosecutors and elite trial firms.
+                We don't just know the law; we shape how it's applied in the modern era.
+            </p>
+            <p style="color: #ccc; line-height: 1.7; margin-bottom: 40px;">
+                "In the courtroom, there is no substitute for preparation intertwined with aggression."
+            </p>
+            <a href="#"
+                style="color: var(--accent-gold); text-decoration: none; border-bottom: 1px solid var(--accent-gold); padding-bottom: 5px; font-family: var(--heading-font); font-style: italic;">Meet
+                Our Partners →</a>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section style="padding: 100px 5vw;">
+        <div
+            style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px; border-bottom: 1px solid #222; padding-bottom: 20px;">
+            <h2 style="font-family: var(--heading-font); font-size: 2rem; margin: 0;">In The News</h2>
+            <a href="#" style="color: #666; font-size: 0.9rem; text-decoration: none;">Press Archive</a>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px;">
+            <div>
+                <div
+                    style="color: var(--accent-gold); font-size: 0.8rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.1em;">
+                    The Wall Street Journal</div>
+                <a href="#"
+                    style="font-size: 1.1rem; line-height: 1.4; display: block; color: #ddd; text-decoration: none;">"Vanguard
+                    Legal secures historic settlement in cross-border antitrust case."</a>
+            </div>
+            <div>
+                <div
+                    style="color: var(--accent-gold); font-size: 0.8rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.1em;">
+                    Law360</div>
+                <a href="#"
+                    style="font-size: 1.1rem; line-height: 1.4; display: block; color: #ddd; text-decoration: none;">"Firm
+                    of the Year: How Vanguard is reshaping corporate litigation defense."</a>
+            </div>
+            <div>
+                <div
+                    style="color: var(--accent-gold); font-size: 0.8rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.1em;">
+                    Bloomberg</div>
+                <a href="#"
+                    style="font-size: 1.1rem; line-height: 1.4; display: block; color: #ddd; text-decoration: none;">"Top
+                    litigators share insights on the future of AI regulation."</a>
+            </div>
+        </div>
+    </section>
+
+    <footer style="border-top: 1px solid #222; padding: 80px 5vw; background: #050505;">
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px;">
+            <div>
+                <h2 style="font-family: var(--heading-font); font-size: 2rem; margin-bottom: 20px;">VANGUARD</h2>
+                <div style="color: #666; font-size: 0.9rem;">
+                    <p>1001 Pennsylvania Avenue, NW</p>
+                    <p>Washington, DC 20004</p>
+                    <br>
+                    <p>+1 (202) 555-0123</p>
+                </div>
+            </div>
+            <div style="display: flex; gap: 60px;">
+                <div>
+                    <h4
+                        style="color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem; margin-bottom: 16px;">
+                        Practice</h4>
+                    <ul style="list-style: none; color: #888; font-size: 0.9rem; line-height: 2; padding: 0;">
+                        <li>Appellate</li>
+                        <li>Commercial</li>
+                        <li>Securities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 60px; color: #444; font-size: 12px; text-align: center;">
+            © 2025 Vanguard Legal. Concept Design by AUZA.
+        </div>
+    </footer>
+</body>
+
+</html>
