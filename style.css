@@ -2227,29 +2227,104 @@
       }
     }
 
+    .scroll-text {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      white-space: nowrap;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .scroll-text .highlight {
+      color: var(--crimson);
+    }
+
+    /* Reasons Section Styling */
+    .reasons-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    .reason-card {
+      padding: 32px;
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .reason-card:hover {
+      border-color: rgba(220, 20, 60, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.2), 0 0 16px rgba(220, 20, 60, 0.1);
+    }
+
+    .reason-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--crimson);
+      background: rgba(220, 20, 60, 0.1);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .reason-card:hover .reason-icon {
+      transform: scale(1.1) rotate(5deg);
+      background: rgba(220, 20, 60, 0.2);
+    }
+
+    .reason-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+    }
+
+    .reason-title {
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--off-white);
+    }
+
+    .reason-desc {
+      font-size: 13px;
+      color: var(--gray-500);
+      line-height: 1.6;
+    }
+
+    @media(max-width:1024px) {
+      .reasons-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width:640px) {
+      .reasons-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .logo-item {
       display: flex;
       align-items: center;
       justify-content: center;
       height: 40px;
       padding: 0 16px;
-      opacity: 0.3;
-      filter: grayscale(100%);
       transition: all 0.4s ease;
       flex-shrink: 0;
-    }
-
-    .logo-item:hover {
-      opacity: 1;
-      filter: grayscale(0%);
-      transform: scale(1.05);
-      text-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
-    }
-
-    /* Dummy Logo Styles */
-    .logo-item svg {
-      height: 28px;
-      width: auto;
     }
 
     .logo-text {
