@@ -528,7 +528,7 @@
     }
 
     .section {
-      padding: clamp(100px, 15vw, 160px) clamp(24px, 8vw, 120px);
+      padding: clamp(100px, 15vw, 160px) clamp(18px, 8vw, 120px);
       position: relative
     }
 
@@ -556,8 +556,9 @@
     .section-desc {
       font-size: 15px;
       color: var(--gray-500);
-      max-width: 1000px;
+      max-width: 100%;
       line-height: 1.75;
+      margin-top: 24px;
     }
 
     .stats-bar {
@@ -619,7 +620,7 @@
       .section-header .section-desc,
       .section-header .section-description {
         flex: 1;
-        max-width: 600px;
+        max-width: 100%;
         margin-bottom: 8px;
       }
     }
