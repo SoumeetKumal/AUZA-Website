@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Stratosphere Strategy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #F8F9FA;
+            --text-color: #121212;
+            --accent-blue: #0047AB;
+            --heading-font: 'Space Grotesk', sans-serif;
+            --body-font: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--body-font);
+            padding-top: 40px;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 5vw;
+        }
+
+        .announcement-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            z-index: 3000;
+            background: #DC143C;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .banner-back {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: white;
+            text-decoration: none;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .banner-back:hover {
+            opacity: 1;
+        }
+
+        .banner-back svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .banner-center {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .banner-cta {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 4px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .banner-cta:hover {
+            background: white;
+            color: #DC143C;
+        }
+
+        .banner-spacer {
+            width: 120px;
+        }
+
+        .strato-nav {
+            position: fixed;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 80px;
+            z-index: 2000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 71, 171, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5vw;
+        }
+
+        .strato-logo {
+            font-family: var(--heading-font);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .strato-logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--accent-blue);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .strato-logo-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .strato-nav-links {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .strato-nav-link {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #444;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .strato-nav-link:hover,
+        .strato-nav-link.active {
+            color: var(--accent-blue);
+        }
+
+        .strato-nav-cta {
+            background: var(--accent-blue);
+            color: white;
+            padding: 12px 28px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .strato-nav-cta:hover {
+            background: #003380;
+        }
+
+
+
+        .page-hero {
+            padding: 200px 0 80px;
+            text-align: center;
+            background: white;
+        }
+
+        .page-hero h1 {
+            font-family: var(--heading-font);
+            font-size: clamp(3rem, 6vw, 5rem);
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .page-hero p {
+            font-size: 1.35rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            padding: 80px 0;
+            background: var(--bg-color);
+        }
+
+        .about-content h2 {
+            font-family: var(--heading-font);
+            font-size: 2rem;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            color: var(--accent-blue);
+        }
+
+        .about-content p {
+            color: #555;
+            margin-bottom: 24px;
+            font-size: 1.1rem;
+        }
+
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: #111;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-family: var(--heading-font);
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .stat-item p {
+            color: var(--accent-blue);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            padding: 80px 0;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .value-card h3 {
+            font-family: var(--heading-font);
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            color: var(--accent-blue);
+        }
+
+        .value-card p {
+            color: #666;
+        }
+
+        footer {
+            background: #0a0a0a;
+            color: white;
+            padding: 80px 5vw 40px;
+            text-align: center;
+        }
+
+        footer p {
+            color: #666;
+            font-size: 12px;
+        }
+
+        @media (max-width: 900px) {
+            .strato-nav-links {
+                display: none;
+            }
+
+            .stats-bar,
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="announcement-banner">
+        <a href="stratosphere.html" class="banner-back">
+            <svg viewBox="0 0 16 16" fill="none">
+                <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            Case Study
+        </a>
+        <div class="banner-center">
+            🚀 Launch Offer: First 5 Clients Save 25%
+            <a href="index.html#contact" class="banner-cta">Claim Yours →</a>
+        </div>
+        <div class="banner-spacer"></div>
+    </div>
+
+    <nav class="strato-nav">
+        <a href="stratosphere-concept.html" class="strato-logo">
+            <div class="strato-logo-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white" />
+                    <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" />
+                    <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </div>
+            STRATOSPHERE
+        </a>
+        <div class="strato-nav-links">
+            <a href="stratosphere-services.html" class="strato-nav-link">Services</a>
+            <a href="stratosphere-industries.html" class="strato-nav-link">Industries</a>
+            <a href="stratosphere-insights.html" class="strato-nav-link">Insights</a>
+            <a href="stratosphere-about.html" class="strato-nav-link active">About</a>
+            <a href="#" class="strato-nav-cta">Contact</a>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>About Us</h1>
+            <p>Defining the future of business through rigorous analytical strategy since 1996.</p>
+        </div>
+    </section>
+
+    <div class="stats-bar">
+        <div class="stat-item">
+            <h3>$50B+</h3>
+            <p>Value Created</p>
+        </div>
+        <div class="stat-item">
+            <h3>32</h3>
+            <p>Fortune 100 Clients</p>
+        </div>
+        <div class="stat-item">
+            <h3>12</h3>
+            <p>Global Offices</p>
+        </div>
+        <div class="stat-item">
+            <h3>98%</h3>
+            <p>Retention Rate</p>
+        </div>
+    </div>
+
+    <section class="about-content">
+        <div class="container">
+            <h2>Our Story</h2>
+            <p>Founded in London in 1996, Stratosphere Strategy has grown from a boutique advisory firm to a global
+                leader in corporate strategy. Our partners bring decades of experience from the world's leading
+                consulting firms, investment banks, and Fortune 500 C-suites.</p>
+            <p>We believe in the power of rigorous analysis combined with bold strategic vision. Every engagement is led
+                by senior partners who bring their full expertise to bear on your most critical challenges.</p>
+        </div>
+    </section>
+
+    <section style="background: white; padding: 80px 0;">
+        <div class="container">
+            <h2
+                style="text-align: center; font-family: var(--heading-font); font-size: 2rem; text-transform: uppercase; margin-bottom: 60px;">
+                Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Excellence</h3>
+                    <p>We hold ourselves to the highest standards in every analysis, recommendation, and interaction.
+                    </p>
+                </div>
+                <div class="value-card">
+                    <h3>Integrity</h3>
+                    <p>We tell our clients what they need to hear, not what they want to hear.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Impact</h3>
+                    <p>Our work is measured by the tangible value we create for our clients and their stakeholders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Stratosphere Strategy. Concept Design by AUZA.</p>
+    </footer>
+</body>
+
+</html>

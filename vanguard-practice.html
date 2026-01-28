@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Areas | Vanguard Legal</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #050505;
+            --accent-gold: #D4AF37;
+            --text-light: #e5e5e5;
+            --heading-font: 'EB Garamond', serif;
+            --body-font: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: var(--body-font);
+            padding-top: 40px;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5vw;
+        }
+
+        .announcement-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            z-index: 3000;
+            background: #DC143C;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .banner-back {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: white;
+            text-decoration: none;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .banner-back:hover {
+            opacity: 1;
+        }
+
+        .banner-back svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .banner-center {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .banner-cta {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 4px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .banner-cta:hover {
+            background: white;
+            color: #DC143C;
+        }
+
+        .banner-spacer {
+            width: 120px;
+        }
+
+        .vanguard-nav {
+            position: fixed;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 80px;
+            z-index: 2000;
+            background: rgba(5, 5, 5, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5vw;
+        }
+
+        .vanguard-logo {
+            font-family: var(--heading-font);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .vanguard-logo-icon {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .vanguard-logo-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .vanguard-nav-links {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .vanguard-nav-link {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #888;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        .vanguard-nav-link:hover,
+        .vanguard-nav-link.active {
+            color: var(--accent-gold);
+        }
+
+        .vanguard-nav-cta {
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 12px 28px;
+            font-family: var(--heading-font);
+            font-style: italic;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .vanguard-nav-cta:hover {
+            background: var(--accent-gold);
+            color: #000;
+        }
+
+
+
+        .page-hero {
+            padding: 200px 0 100px;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-family: var(--heading-font);
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-style: italic;
+            margin-bottom: 24px;
+        }
+
+        .page-hero p {
+            font-size: 1.35rem;
+            color: #888;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .practice-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+        }
+
+        .practice-card {
+            padding: 60px;
+            border: 1px solid #1a1a1a;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .practice-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--accent-gold);
+            transition: width 0.4s ease;
+        }
+
+        .practice-card:hover::before {
+            width: 100%;
+        }
+
+        .practice-card:hover {
+            background: rgba(212, 175, 55, 0.03);
+        }
+
+        .practice-card h3 {
+            font-family: var(--heading-font);
+            font-size: 1.75rem;
+            font-style: italic;
+            margin-bottom: 16px;
+            color: var(--accent-gold);
+        }
+
+        .practice-card p {
+            color: #777;
+            line-height: 1.8;
+        }
+
+        footer {
+            background: #000;
+            color: white;
+            padding: 80px 5vw 40px;
+            text-align: center;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        footer p {
+            color: #555;
+            font-size: 12px;
+        }
+
+        @media (max-width: 900px) {
+            .practice-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .vanguard-nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="announcement-banner">
+        <a href="vanguard.html" class="banner-back">
+            <svg viewBox="0 0 16 16" fill="none">
+                <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            Case Study
+        </a>
+        <div class="banner-center">
+            🚀 Launch Offer: First 5 Clients Save 25%
+            <a href="index.html#contact" class="banner-cta">Claim Yours →</a>
+        </div>
+        <div class="banner-spacer"></div>
+    </div>
+
+    <nav class="vanguard-nav">
+        <a href="vanguard-concept.html" class="vanguard-logo">
+            <div class="vanguard-logo-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M12 3L3 8V10H21V8L12 3Z" fill="#D4AF37" />
+                    <path d="M5 12V18H7V12H5Z" fill="#D4AF37" />
+                    <path d="M11 12V18H13V12H11Z" fill="#D4AF37" />
+                    <path d="M17 12V18H19V12H17Z" fill="#D4AF37" />
+                    <path d="M3 20H21V22H3V20Z" fill="#D4AF37" />
+                </svg>
+            </div>
+            VANGUARD
+        </a>
+        <div class="vanguard-nav-links">
+            <a href="vanguard-practice.html" class="vanguard-nav-link active">Practice Areas</a>
+            <a href="vanguard-attorneys.html" class="vanguard-nav-link">Attorneys</a>
+            <a href="vanguard-victories.html" class="vanguard-nav-link">Victories</a>
+            <a href="vanguard-news.html" class="vanguard-nav-link">News</a>
+            <a href="#" class="vanguard-nav-cta">Consultation</a>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <h1>Practice Areas</h1>
+        <p>Uncompromising advocacy across the full spectrum of complex litigation.</p>
+    </section>
+
+    <section style="padding: 0 0 80px;">
+        <div class="container">
+            <div class="practice-grid">
+                <div class="practice-card">
+                    <h3>Corporate Litigation</h3>
+                    <p>High-stakes disputes involving M&A, breach of fiduciary duty, shareholder actions, and corporate
+                        governance.</p>
+                </div>
+                <div class="practice-card">
+                    <h3>Intellectual Property</h3>
+                    <p>Patent, trademark, and trade secret litigation for technology leaders and innovators.</p>
+                </div>
+                <div class="practice-card">
+                    <h3>Securities Enforcement</h3>
+                    <p>Defense of SEC, DOJ, and state regulatory investigations and enforcement actions.</p>
+                </div>
+                <div class="practice-card">
+                    <h3>White Collar Defense</h3>
+                    <p>Representation in complex fraud, FCPA, money laundering, and government investigation matters.
+                    </p>
+                </div>
+                <div class="practice-card">
+                    <h3>Antitrust</h3>
+                    <p>Merger clearance, cartel defense, and monopolization claims for global enterprises.</p>
+                </div>
+                <div class="practice-card">
+                    <h3>International Arbitration</h3>
+                    <p>Commercial and investor-state disputes in all major arbitral institutions worldwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Vanguard Legal LLP. Concept Design by AUZA.</p>
+    </footer>
+</body>
+
+</html>

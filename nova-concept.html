@@ -55,8 +55,82 @@
             transform: translateY(-1px);
         }
 
+        /* Back Button */
+        .back-btn {
+            position: fixed;
+            top: 8px;
+            left: 24px;
+            z-index: 4000;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 12px 20px;
+            font-family: var(--font-main);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-pink));
+            transform: translateX(-4px);
+        }
+
+        .back-btn svg {
+            transition: transform 0.3s ease;
+        }
+
+        .back-btn:hover svg {
+            transform: translateX(-4px);
+        }
+
+        .nav-app {
+            position: fixed;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 80px;
+            z-index: 2000;
+            background: rgba(11, 11, 20, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5vw;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-link {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #888;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-purple);
+        }
+
         .hero {
-            padding: 80px 5vw;
+            padding: 160px 5vw 80px;
+            /* Account for fixed nav */
             text-align: center;
             max-width: 1000px;
             margin: 0 auto;
@@ -169,17 +243,101 @@
             pointer-events: none;
             z-index: -1;
         }
+
+        .announcement-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            z-index: 3000;
+            background: #DC143C;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .banner-back {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: white;
+            text-decoration: none;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .banner-back:hover {
+            opacity: 1;
+        }
+
+        .banner-back svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .banner-center {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .banner-cta {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 4px 12px;
+            border-radius: 4px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+        }
+
+        .banner-cta:hover {
+            background: white;
+            color: #DC143C;
+        }
+
+        .banner-spacer {
+            width: 120px;
+        }
     </style>
 </head>
 
 <body>
-    <a href="index.html#work" class="back-link" target="_blank">← Back to AUZA</a>
+    <div class="announcement-banner">
+        <a href="nova.html" class="banner-back">
+            <svg viewBox="0 0 16 16" fill="none">
+                <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            Case Study
+        </a>
+        <div class="banner-center">
+            🚀 Launch Offer: First 5 Clients Save 25%
+            <a href="index.html#contact" class="banner-cta">Claim Yours →</a>
+        </div>
+        <div class="banner-spacer"></div>
+    </div>
 
     <div class="glare"></div>
 
     <nav class="nav-app">
         <div class="logo">Nova Wealth</div>
-        <a href="#" class="btn-launch" target="_blank">Launch App</a>
+        <div class="nav-links">
+            <a href="#" class="nav-link">Features</a>
+            <a href="#" class="nav-link">Pricing</a>
+            <a href="#" class="nav-link">Security</a>
+            <a href="#" class="nav-link">About</a>
+            <a href="#" class="btn-launch">Launch App</a>
+        </div>
     </nav>
 
     <section class="hero">

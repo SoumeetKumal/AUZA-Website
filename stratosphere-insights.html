@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights | Stratosphere Strategy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #F8F9FA;
+            --text-color: #121212;
+            --accent-blue: #0047AB;
+            --heading-font: 'Space Grotesk', sans-serif;
+            --body-font: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--body-font);
+            padding-top: 40px;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5vw;
+        }
+
+        .announcement-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            z-index: 3000;
+            background: #DC143C;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .banner-back {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: white;
+            text-decoration: none;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .banner-back:hover {
+            opacity: 1;
+        }
+
+        .banner-back svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .banner-center {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .banner-cta {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 4px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .banner-cta:hover {
+            background: white;
+            color: #DC143C;
+        }
+
+        .banner-spacer {
+            width: 120px;
+        }
+
+        .strato-nav {
+            position: fixed;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 80px;
+            z-index: 2000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 71, 171, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5vw;
+        }
+
+        .strato-logo {
+            font-family: var(--heading-font);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .strato-logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--accent-blue);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .strato-logo-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .strato-nav-links {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .strato-nav-link {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #444;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .strato-nav-link:hover,
+        .strato-nav-link.active {
+            color: var(--accent-blue);
+        }
+
+        .strato-nav-cta {
+            background: var(--accent-blue);
+            color: white;
+            padding: 12px 28px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .strato-nav-cta:hover {
+            background: #003380;
+        }
+
+
+
+        .page-hero {
+            padding: 200px 0 100px;
+            text-align: center;
+            background: white;
+        }
+
+        .page-hero h1 {
+            font-family: var(--heading-font);
+            font-size: clamp(3rem, 6vw, 5rem);
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .page-hero p {
+            font-size: 1.35rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            padding: 80px 0;
+        }
+
+        .insight-card {
+            background: white;
+            padding: 50px;
+            border: 1px solid #eee;
+            transition: all 0.4s ease;
+        }
+
+        .insight-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+        }
+
+        .insight-meta {
+            font-size: 0.8rem;
+            color: #999;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .insight-card h3 {
+            font-family: var(--heading-font);
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .insight-card p {
+            color: #666;
+            margin-bottom: 24px;
+        }
+
+        .insight-link {
+            color: var(--accent-blue);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+        }
+
+        .insight-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #0a0a0a;
+            color: white;
+            padding: 80px 5vw 40px;
+            text-align: center;
+        }
+
+        footer p {
+            color: #666;
+            font-size: 12px;
+        }
+
+        @media (max-width: 900px) {
+            .strato-nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="announcement-banner">
+        <a href="stratosphere.html" class="banner-back">
+            <svg viewBox="0 0 16 16" fill="none">
+                <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            Case Study
+        </a>
+        <div class="banner-center">
+            🚀 Launch Offer: First 5 Clients Save 25%
+            <a href="index.html#contact" class="banner-cta">Claim Yours →</a>
+        </div>
+        <div class="banner-spacer"></div>
+    </div>
+
+    <nav class="strato-nav">
+        <a href="stratosphere-concept.html" class="strato-logo">
+            <div class="strato-logo-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white" />
+                    <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" />
+                    <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </div>
+            STRATOSPHERE
+        </a>
+        <div class="strato-nav-links">
+            <a href="stratosphere-services.html" class="strato-nav-link">Services</a>
+            <a href="stratosphere-industries.html" class="strato-nav-link">Industries</a>
+            <a href="stratosphere-insights.html" class="strato-nav-link active">Insights</a>
+            <a href="stratosphere-about.html" class="strato-nav-link">About</a>
+            <a href="#" class="strato-nav-cta">Contact</a>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Insights</h1>
+            <p>Thought leadership and research from the world's leading strategic minds.</p>
+        </div>
+    </section>
+
+    <section style="background: var(--bg-color);">
+        <div class="container">
+            <div class="insights-grid">
+                <article class="insight-card">
+                    <div class="insight-meta">Oct 12, 2026 • Market Trends</div>
+                    <h3>The Algorithmic Boardroom: Governance in the AI Era</h3>
+                    <p>How multinational corporations are integrating predictive AI into their core decision-making
+                        frameworks.</p>
+                    <a href="#" class="insight-link">Read Report →</a>
+                </article>
+                <article class="insight-card">
+                    <div class="insight-meta">Sep 28, 2026 • Sustainability</div>
+                    <h3>Carbon Credit Markets: A 2030 Global Outlook</h3>
+                    <p>Navigating regulatory shifts and emerging opportunities in the green economy.</p>
+                    <a href="#" class="insight-link">Read Report →</a>
+                </article>
+                <article class="insight-card">
+                    <div class="insight-meta">Sep 15, 2026 • Technology</div>
+                    <h3>Quantum Computing: Strategic Implications</h3>
+                    <p>How enterprises should prepare for the quantum computing revolution.</p>
+                    <a href="#" class="insight-link">Read Report →</a>
+                </article>
+                <article class="insight-card">
+                    <div class="insight-meta">Aug 30, 2026 • M&A</div>
+                    <h3>Cross-Border M&A in Uncertain Times</h3>
+                    <p>Strategies for navigating geopolitical complexity in global transactions.</p>
+                    <a href="#" class="insight-link">Read Report →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Stratosphere Strategy. Concept Design by AUZA.</p>
+    </footer>
+</body>
+
+</html>

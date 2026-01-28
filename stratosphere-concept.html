@@ -35,8 +35,108 @@
             color: var(--text-color);
             font-family: var(--body-font);
             padding-top: 40px;
+            /* Announcement banner height */
             overflow-x: hidden;
             line-height: 1.7;
+        }
+
+        /* Stratosphere Navigation */
+        .strato-nav {
+            position: fixed;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 80px;
+            z-index: 2000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 71, 171, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5vw;
+            transition: all 0.3s ease;
+        }
+
+        .strato-logo {
+            font-family: var(--heading-font);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .strato-logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--accent-blue);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .strato-logo-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .strato-nav-links {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .strato-nav-link {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #444;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .strato-nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-blue);
+            transition: width 0.3s ease;
+        }
+
+        .strato-nav-link:hover {
+            color: var(--accent-blue);
+        }
+
+        .strato-nav-link:hover::after {
+            width: 100%;
+        }
+
+        .strato-nav-cta {
+            background: var(--accent-blue);
+            color: white;
+            padding: 12px 28px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .strato-nav-cta:hover {
+            background: #003380;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 71, 171, 0.3);
         }
 
         .container {
@@ -75,22 +175,107 @@
             animation: revealUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
         }
 
-        /* Content Bar */
-        .concept-bar {
-            background: #DC143C;
+        /* Back Button */
+        .back-btn {
+            position: fixed;
+            top: 8px;
+            left: 24px;
+            z-index: 4000;
+            /* Above announcement banner */
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 0, 0, 0.8);
             color: white;
-            text-align: center;
-            padding: 12px;
+            padding: 12px 20px;
+            font-family: var(--body-font);
+            font-size: 12px;
             font-weight: 700;
-            font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--accent-blue);
+            transform: translateX(-4px);
+        }
+
+        .back-btn svg {
+            transition: transform 0.3s ease;
+        }
+
+        .back-btn:hover svg {
+            transform: translateX(-4px);
+        }
+
+        .announcement-banner {
             position: fixed;
             top: 0;
-            width: 100%;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            left: 0;
+            right: 0;
+            height: 40px;
+            z-index: 3000;
+            background: #DC143C;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .banner-back {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: white;
+            text-decoration: none;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .banner-back:hover {
+            opacity: 1;
+        }
+
+        .banner-back svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .banner-center {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .banner-cta {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 4px 12px;
+            border-radius: 4px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+        }
+
+        .banner-cta:hover {
+            background: white;
+            color: #DC143C;
+        }
+
+        .banner-spacer {
+            width: 120px;
         }
 
         /* Hero Split Layout */
@@ -100,6 +285,8 @@
             min-height: 100vh;
             background: #fff;
             position: relative;
+            margin-top: 80px;
+            /* Account for fixed nav */
         }
 
         .hero-visual {
@@ -470,8 +657,43 @@
 </head>
 
 <body>
-    <div class="concept-bar">Design Concept By AUZA • <a href="stratosphere.html"
-            style="color: white; text-decoration: underline;">Back to Case Study</a></div>
+    <div class="announcement-banner">
+        <a href="stratosphere.html" class="banner-back">
+            <svg viewBox="0 0 16 16" fill="none">
+                <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            Case Study
+        </a>
+        <div class="banner-center">
+            🚀 Launch Offer: First 5 Clients Save 25%
+            <a href="index.html#contact" class="banner-cta">Claim Yours →</a>
+        </div>
+        <div class="banner-spacer"></div>
+    </div>
+
+    <!-- Stratosphere Navigation -->
+    <nav class="strato-nav">
+        <a href="#" class="strato-logo">
+            <div class="strato-logo-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white" />
+                    <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+            STRATOSPHERE
+        </a>
+        <div class="strato-nav-links">
+            <a href="stratosphere-services.html" class="strato-nav-link">Services</a>
+            <a href="stratosphere-industries.html" class="strato-nav-link">Industries</a>
+            <a href="stratosphere-insights.html" class="strato-nav-link">Insights</a>
+            <a href="stratosphere-about.html" class="strato-nav-link">About</a>
+            <a href="#" class="strato-nav-cta">Contact</a>
+        </div>
+    </nav>
 
     <section class="hero">
         <div class="hero-visual">

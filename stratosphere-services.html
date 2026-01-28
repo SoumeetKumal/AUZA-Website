@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Stratosphere Strategy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #F8F9FA;
+            --text-color: #121212;
+            --accent-blue: #0047AB;
+            --accent-light: #E0E7FF;
+            --heading-font: 'Space Grotesk', sans-serif;
+            --body-font: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--body-font);
+            padding-top: 40px;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5vw;
+        }
+
+        /* Back Button */
+        .back-btn {
+            position: fixed;
+            top: 8px;
+            left: 24px;
+            z-index: 4000;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 12px 20px;
+            font-family: var(--body-font);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--accent-blue);
+            transform: translateX(-4px);
+        }
+
+        /* Stratosphere Navigation */
+        .strato-nav {
+            position: fixed;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 80px;
+            z-index: 2000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 71, 171, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5vw;
+        }
+
+        .strato-logo {
+            font-family: var(--heading-font);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .strato-logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--accent-blue);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .strato-logo-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .strato-nav-links {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .strato-nav-link {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #444;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+        }
+
+        .strato-nav-link:hover,
+        .strato-nav-link.active {
+            color: var(--accent-blue);
+        }
+
+        .strato-nav-cta {
+            background: var(--accent-blue);
+            color: white;
+            padding: 12px 28px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .strato-nav-cta:hover {
+            background: #003380;
+            transform: translateY(-2px);
+        }
+
+        .announcement-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            z-index: 3000;
+            background: #DC143C;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .banner-back {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: white;
+            text-decoration: none;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .banner-back:hover {
+            opacity: 1;
+        }
+
+        .banner-back svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .banner-center {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .banner-cta {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 4px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .banner-cta:hover {
+            background: white;
+            color: #DC143C;
+        }
+
+        .banner-spacer {
+            width: 120px;
+        }
+
+        /* Page Content */
+        .page-hero {
+            padding: 200px 0 100px;
+            text-align: center;
+            background: white;
+        }
+
+        .page-hero h1 {
+            font-family: var(--heading-font);
+            font-size: clamp(3rem, 6vw, 5rem);
+            text-transform: uppercase;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+        }
+
+        .page-hero p {
+            font-size: 1.35rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            padding: 100px 0;
+        }
+
+        .service-card {
+            background: white;
+            padding: 60px 40px;
+            border: 1px solid rgba(0, 71, 171, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent-blue);
+        }
+
+        .service-num {
+            font-family: var(--heading-font);
+            font-size: 3rem;
+            color: rgba(0, 71, 171, 0.2);
+            margin-bottom: 24px;
+        }
+
+        .service-card:hover .service-num {
+            color: var(--accent-blue);
+        }
+
+        .service-card h3 {
+            font-family: var(--heading-font);
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        footer {
+            background: #0a0a0a;
+            color: white;
+            padding: 80px 5vw 40px;
+            text-align: center;
+        }
+
+        footer p {
+            color: #666;
+            font-size: 12px;
+        }
+
+        @media (max-width: 900px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .strato-nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="announcement-banner">
+        <a href="stratosphere.html" class="banner-back">
+            <svg viewBox="0 0 16 16" fill="none">
+                <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            Case Study
+        </a>
+        <div class="banner-center">
+            🚀 Launch Offer: First 5 Clients Save 25%
+            <a href="index.html#contact" class="banner-cta">Claim Yours →</a>
+        </div>
+        <div class="banner-spacer"></div>
+    </div>
+
+    <nav class="strato-nav">
+        <a href="stratosphere-concept.html" class="strato-logo">
+            <div class="strato-logo-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white" />
+                    <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" />
+                    <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </div>
+            STRATOSPHERE
+        </a>
+        <div class="strato-nav-links">
+            <a href="stratosphere-services.html" class="strato-nav-link active">Services</a>
+            <a href="stratosphere-industries.html" class="strato-nav-link">Industries</a>
+            <a href="stratosphere-insights.html" class="strato-nav-link">Insights</a>
+            <a href="stratosphere-about.html" class="strato-nav-link">About</a>
+            <a href="#" class="strato-nav-cta">Contact</a>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Services</h1>
+            <p>Comprehensive strategic solutions for organizations navigating complex global markets.</p>
+        </div>
+    </section>
+
+    <section style="background: var(--bg-color);">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-num">01</div>
+                    <h3>Corporate Strategy</h3>
+                    <p>Long-term strategic planning, market positioning, and competitive analysis for global
+                        enterprises.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-num">02</div>
+                    <h3>Digital Transformation</h3>
+                    <p>Tech stack validation, legacy modernization, and AI integration pathways for the algorithmic age.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-num">03</div>
+                    <h3>M&A Advisory</h3>
+                    <p>Due diligence, cultural integration strategies, and operational synergy identification.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-num">04</div>
+                    <h3>Risk Management</h3>
+                    <p>Enterprise risk assessment, regulatory compliance, and crisis response frameworks.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-num">05</div>
+                    <h3>Performance Optimization</h3>
+                    <p>Operational efficiency, cost reduction, and process improvement initiatives.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-num">06</div>
+                    <h3>Leadership Development</h3>
+                    <p>Executive coaching, succession planning, and organizational capability building.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Stratosphere Strategy. Concept Design by AUZA.</p>
+    </footer>
+</body>
+
+</html>
