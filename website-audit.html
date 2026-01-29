@@ -23,20 +23,7 @@
     <div class="grid-bg"></div>
 
     <!-- Navigation (Minimal) -->
-    <nav class="nav">
-        <div class="nav-inner">
-            <a href="index.html" class="logo">
-                <div style="position: relative;">
-                    <div class="logo-full">
-                        <img src="images/AUZA Wordmark White.png" alt="AUZA - Functional Design Studio" width="100">
-                    </div>
-                </div>
-            </a>
-            <div class="nav-links">
-                <a href="index.html" class="nav-link">Back to Home</a>
-            </div>
-        </div>
-    </nav>
+    <app-header variant="minimal"></app-header>
 
     <main class="audit-container">
         <!-- Header Section -->
@@ -115,19 +102,10 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer-inner">
-            <div class="footer-bottom">
-                <p class="footer-copy">© 2026 AUZA. Functional Design for Growth.</p>
-                <div class="footer-legal">
-                    <a href="https://www.linkedin.com/company/auza" class="footer-legal-link"
-                        target="_blank">LinkedIn</a>
-                    <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <app-footer variant="minimal"></app-footer>
 
+    <script src="js/components/AppHeader.js" defer></script>
+    <script src="js/components/AppFooter.js" defer></script>
     <script src="audit.js"></script>
 </body>
 

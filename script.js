@@ -1,5 +1,5 @@
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 80) });
+// Navbar and Mobile Menu logic moved to js/components/AppHeader.js
+
 const processData = [
   { num: '01', title: 'Discover', desc: 'We immerse ourselves in your business through workshops, stakeholder interviews, and competitive analysis. Understanding precedes design.' },
   { num: '02', title: 'Strategise', desc: 'Research becomes direction. We define information architecture, content strategy, and visual approach before any design work begins.' },
@@ -27,26 +27,6 @@ steps.forEach((step, i) => {
   });
 });
 
-// Mobile Menu Toggle
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const mobileMenu = document.querySelector('.mobile-menu');
-const mobileLinks = document.querySelectorAll('.mobile-nav-link');
-
-if (mobileMenuBtn) {
-  mobileMenuBtn.addEventListener('click', () => {
-    mobileMenuBtn.classList.toggle('active');
-    mobileMenu.classList.toggle('active');
-    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-  });
-
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenuBtn.classList.remove('active');
-      mobileMenu.classList.remove('active');
-      document.body.style.overflow = '';
-    });
-  });
-}
 // Hero Mouse Glow Effect
 const hero = document.querySelector('.hero');
 if (hero) {

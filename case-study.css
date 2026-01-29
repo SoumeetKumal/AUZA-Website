@@ -214,6 +214,14 @@
     margin-bottom: 20px;
 }
 
+/* Global Container for Case Studies */
+.investment-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5vw;
+    width: 100%;
+}
+
 /* Highlight Boxes */
 .highlight-box {
     background: #161616;
@@ -603,5 +611,11 @@
 
     .btn {
         width: 100%;
+    }
+
+    .investment-container {
+        padding: 0 4vw;
+        max-width: 100%;
+        overflow-x: hidden;
     }
 }

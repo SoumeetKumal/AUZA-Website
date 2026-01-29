@@ -135,42 +135,7 @@
     <div class="grid-bg"></div>
 
     <!-- Navigation -->
-    <nav class="nav" id="navbar">
-        <div class="nav-inner">
-            <a href="index.html" class="logo">
-                <div style="position: relative;">
-                    <div class="logo-full">
-                        <img src="images/AUZA Wordmark White.png" alt="AUZA - Functional Design Studio" width="100">
-                    </div>
-                    <div class="logo-compact">
-                        <img src="images/AUZA Logo White.png" alt="AUZA" width="25">
-                    </div>
-                </div>
-            </a>
-            <div class="nav-links">
-                <a href="index.html#work" class="nav-link">Work</a>
-                <a href="services.html" class="nav-link active">Services</a>
-
-                <a href="about.html" class="nav-link">About</a>
-                <a href="index.html#contact" class="nav-link">Contact</a>
-            </div>
-            <button class="mobile-menu-btn" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
-
-    <div class="mobile-menu">
-        <div class="mobile-menu-inner">
-            <a href="index.html#work" class="mobile-nav-link">Work</a>
-            <a href="services.html" class="mobile-nav-link active">Services</a>
-
-            <a href="about.html" class="mobile-nav-link">About</a>
-            <a href="index.html#contact" class="mobile-nav-link">Contact</a>
-            <a href="index.html#contact" class="mobile-nav-link highlight">Book Free 30-Min Consultation →</a>
-        </div>
-    </div>
+    <app-header active="services"></app-header>
 
     <section class="services-hero">
         <div class="fade-up">
@@ -568,48 +533,11 @@
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="footer-inner">
-            <div class="footer-top">
-                <div><a href="index.html" class="logo"><img src="images/AUZA Wordmark White.png"
-                            alt="AUZA - Functional Design Studio" width="50"></a>
-                    <p class="footer-brand-desc">Functional, accessible design for ambitious businesses.<br>Based in
-                        Mauritius,
-                        working globally.</p>
-                </div>
-                <div>
-                    <h4 class="footer-heading">Navigation</h4>
-                    <div class="footer-links"><a href="index.html#work" class="footer-link">Work</a><a
-                            href="services.html" class="footer-link active">Services</a><a href="index.html#process"
-                            class="footer-link">Process</a><a href="index.html#pricing"
-                            class="footer-link">Pricing</a><a href="index.html#contact" class="footer-link">Contact</a>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="footer-heading">Services</h4>
-                    <div class="footer-links"><a href="web-design.html" class="footer-link">Web Design</a><a
-                            href="development.html" class="footer-link">Development</a><a href="brand-strategy.html"
-                            class="footer-link">Brand Strategy</a><a href="accessibility-service.html"
-                            class="footer-link">Accessibility</a></div>
-                </div>
-                <div>
-                    <h4 class="footer-heading">Connect</h4>
-                    <div class="footer-links"><a href="mailto:hello@auza.mu" class="footer-link">hello@auza.mu</a><a
-                            href="https://www.linkedin.com/company/auza" class="footer-link">LinkedIn</a></div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p class="footer-copy">© 2026 AUZA. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
-                    <a href="terms-of-service.html" class="footer-legal-link">Terms of Service</a>
-                    <a href="accessibility.html" class="footer-legal-link">Accessibility Statement</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <app-footer></app-footer>
 
-    <script src="script.js"></script>
+    <script src="js/components/AppHeader.js" defer></script>
+    <script src="js/components/AppFooter.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>

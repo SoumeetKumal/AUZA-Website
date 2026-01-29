@@ -36,27 +36,7 @@
     </a>
     <div class="grid-bg"></div>
 
-    <nav class="nav" id="navbar">
-        <div class="nav-inner">
-            <a href="index.html" class="logo">
-                <div style="position: relative;">
-                    <div class="logo-full">
-                        <img src="images/AUZA Wordmark White.png" alt="AUZA - Functional Design Studio" width="100">
-                    </div>
-                    <div class="logo-compact">
-                        <img src="images/AUZA Logo White.png" alt="AUZA - Functional Design Studio" width="25">
-                    </div>
-                </div>
-            </a>
-            <div class="nav-links">
-                <a href="index.html#work" class="nav-link">Work</a>
-                <a href="services.html" class="nav-link">Services</a>
-
-                <a href="about.html" class="nav-link">About</a>
-                <a href="index.html#contact" class="nav-link">Contact</a>
-            </div>
-        </div>
-    </nav>
+    <app-header></app-header>
 
     <main class="legal-content">
         <header class="legal-header">
@@ -96,36 +76,11 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer-inner">
-            <div class="footer-top">
-                <div><a href="index.html" class="logo"><img src="images/AUZA Wordmark White.png" alt="AUZA - Functional Design Studio"
-                            width="50"></a>
-                    <p class="footer-brand-desc">Functional, accessible design for ambitious businesses.<br>Based in
-                        Mauritius, working globally.</p>
-                </div>
-                <div>
-                    <h4 class="footer-heading">Services</h4>
-                    <div class="footer-links">
-                        <a href="web-design.html" class="footer-link" target="_blank">Web Design</a>
-                        <a href="development.html" class="footer-link" target="_blank">Development</a>
-                        <a href="brand-strategy.html" class="footer-link" target="_blank">Brand Strategy</a>
-                        <a href="accessibility-service.html" class="footer-link" target="_blank">Accessibility</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p class="footer-copy">© 2026 AUZA. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="privacy-policy.html" class="footer-legal-link" target="_blank">Privacy Policy</a>
-                    <a href="terms-of-service.html" class="footer-legal-link" target="_blank">Terms of Service</a>
-                    <a href="accessibility.html" class="footer-legal-link" target="_blank">Accessibility Statement</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <app-footer></app-footer>
 
-    <script src="script.js"></script>
+    <script src="js/components/AppHeader.js" defer></script>
+    <script src="js/components/AppFooter.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>
