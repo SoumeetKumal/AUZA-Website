@@ -49,16 +49,18 @@
         }
 
         .comparison-section {
-            padding: 100px 8vw;
-            background: #f8f8f8;
+            padding: clamp(100px, 15vw, 160px) clamp(18px, 8vw, 120px);
+            background: #0A0A0A;
+            color: var(--off-white);
         }
 
         .comparison-table-wrapper {
             overflow-x: auto;
-            background: white;
+            background: #161616;
             border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
             padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         table {
@@ -71,23 +73,24 @@
         td {
             padding: 24px;
             text-align: center;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--gray-500);
         }
 
         th:first-child,
         td:first-child {
             text-align: left;
             font-weight: 600;
-            color: #111;
+            color: var(--off-white);
             position: sticky;
             left: 0;
-            background: white;
+            background: #161616;
             z-index: 10;
         }
 
         thead th {
             font-size: 1.5rem;
-            color: #111;
+            color: var(--off-white);
         }
 
         .price-row td {
@@ -106,14 +109,13 @@
         }
 
         .methodology {
-            padding: 100px 8vw;
+            padding: clamp(100px, 15vw, 160px) clamp(18px, 8vw, 120px);
         }
 
         .method-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 60px;
-            margin-top: 60px;
         }
 
         @media(max-width: 900px) {
@@ -147,7 +149,7 @@
             </a>
             <div class="nav-links">
                 <a href="index.html#work" class="nav-link">Work</a>
-                <a href="index.html#services" class="nav-link active">Services</a>
+                <a href="services.html" class="nav-link active">Investment</a>
 
                 <a href="about.html" class="nav-link">About</a>
                 <a href="index.html#contact" class="nav-link">Contact</a>
@@ -187,101 +189,89 @@
                 <thead>
                     <tr>
                         <th>Features</th>
-                        <th>Essentials</th>
-                        <th style="color: var(--crimson);">Foundation</th>
-                        <th>Growth</th>
+                        <th>Essential</th>
+                        <th style="color: var(--crimson);">Premium</th>
+                        <th>+Brand Add-On</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="price-row">
-                        <td>Starting Investment</td>
-                        <td>$3,200</td>
-                        <td style="color: var(--crimson);">$7,500</td>
-                        <td>$15,000+</td>
+                        <td>Investment</td>
+                        <td>As from $2,000</td>
+                        <td style="color: var(--crimson);">As from $4,500</td>
+                        <td>As from $2,500</td>
                     </tr>
                     <tr>
-                        <td>Ideal For</td>
-                        <td>Established Brands</td>
-                        <td>Growing Businesses</td>
-                        <td>Industry Leaders</td>
+                        <td>Timeline</td>
+                        <td>2-3 weeks</td>
+                        <td>3-4 weeks</td>
+                        <td>+1-2 weeks</td>
                     </tr>
                     <tr>
-                        <td><strong>Core Deliverables</strong></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>Pages</td>
+                        <td>4-6</td>
+                        <td>7-10</td>
+                        <td class="dash">—</td>
                     </tr>
                     <tr>
-                        <td>Custom Pages</td>
-                        <td>5-6 Pages</td>
-                        <td>6-8 Pages</td>
-                        <td>10+ Pages</td>
+                        <td>Revision Rounds</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>2-3 (logo)</td>
                     </tr>
                     <tr>
-                        <td>Figma Design System</td>
-                        <td><span class="check">✓</span></td>
-                        <td><span class="check">✓</span></td>
-                        <td><span class="check">✓</span></td>
+                        <td>CMS</td>
+                        <td>Optional</td>
+                        <td>Included</td>
+                        <td class="dash">—</td>
                     </tr>
                     <tr>
-                        <td>Responsive Development</td>
-                        <td><span class="check">✓</span></td>
-                        <td><span class="check">✓</span></td>
-                        <td><span class="check">✓</span></td>
+                        <td>Integrations</td>
+                        <td>Basic (1-2)</td>
+                        <td>Advanced (3-5+)</td>
+                        <td class="dash">—</td>
                     </tr>
                     <tr>
-                        <td>CMS Integration</td>
-                        <td>Basic</td>
+                        <td>Animations</td>
+                        <td>Standard</td>
                         <td>Advanced</td>
-                        <td>Enterprise</td>
+                        <td class="dash">—</td>
                     </tr>
                     <tr>
-                        <td><strong>Brand & Strategy</strong></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>Training</td>
+                        <td>Video only</td>
+                        <td>Video + live call</td>
+                        <td class="dash">—</td>
                     </tr>
                     <tr>
-                        <td>Visual Identity System</td>
-                        <td><span class="dash">—</span></td>
-                        <td><span class="check">✓</span></td>
-                        <td><span class="check">✓</span></td>
+                        <td>Logo Design</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td><span class="check">✅</span></td>
                     </tr>
                     <tr>
-                        <td>Strategy Workshop</td>
-                        <td><span class="dash">—</span></td>
-                        <td><span class="check">✓</span></td>
-                        <td>Multiple Sessions</td>
+                        <td>Brand Strategy</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td><span class="check">✅</span></td>
                     </tr>
                     <tr>
-                        <td>Copywriting Support</td>
-                        <td><span class="dash">—</span></td>
-                        <td>Content Guidelines</td>
-                        <td>Full Copywriting</td>
+                        <td>Brand Guide</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td><span class="check">✅</span></td>
                     </tr>
                     <tr>
-                        <td><strong>Tech & Compliance</strong></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>Color System</td>
+                        <td>Use existing</td>
+                        <td>Use existing</td>
+                        <td><span class="check">✅ Created</span></td>
                     </tr>
                     <tr>
-                        <td>WCAG 2.1 AA Compliance</td>
-                        <td><span class="check">✓</span></td>
-                        <td><span class="check">✓</span></td>
-                        <td><span class="check">✓</span></td>
-                    </tr>
-                    <tr>
-                        <td>SEO Foundation</td>
-                        <td>Basic Tags</td>
-                        <td>Technical SEO</td>
-                        <td>Advanced Strategy</td>
-                    </tr>
-                    <tr>
-                        <td>Performance Optimization</td>
-                        <td><span class="check">✓</span></td>
-                        <td><span class="check">✓</span></td>
-                        <td><span class="check">✓</span></td>
+                        <td>Typography</td>
+                        <td>Use existing</td>
+                        <td>Use existing</td>
+                        <td><span class="check">✅ Created</span></td>
                     </tr>
                 </tbody>
             </table>
@@ -292,42 +282,279 @@
         </div>
     </section>
 
+    <!-- Client Scenarios -->
+    <section class="scenarios-section">
+        <div class="section-header">
+            <div>
+                <span class="section-label">RECOMMENDATIONS</span>
+                <h2 class="section-title">Ideal Client Scenarios</h2>
+                <p class="section-desc">Not sure which package fits? Here are common situations we solve.</p>
+            </div>
+        </div>
+        <div class="scenarios-grid">
+            <div class="scenario-card">
+                <div class="scenario-recommendation">Scenario 1</div>
+                <h3 class="scenario-title">"We have a logo but need a website"</h3>
+                <ul class="scenario-features">
+                    <li>Essential Package (As from $2,000)</li>
+                    <li>Fast, affordable, professional</li>
+                    <li>Uses your existing brand assets</li>
+                </ul>
+            </div>
+            <div class="scenario-card">
+                <div class="scenario-recommendation">Scenario 2</div>
+                <h3 class="scenario-title">"We need a complex, feature-rich website"</h3>
+                <ul class="scenario-features">
+                    <li>Premium Package (As from $4,500)</li>
+                    <li>Content strategy (blog, portfolio)</li>
+                    <li>Multiple integrations</li>
+                    <li>Enterprise-level execution</li>
+                </ul>
+            </div>
+            <div class="scenario-card">
+                <div class="scenario-recommendation">Scenario 3</div>
+                <h3 class="scenario-title">"Starting fresh with no branding"</h3>
+                <ul class="scenario-features">
+                    <li>Essential + Brand Add-On (As from $4,500)</li>
+                    <li>Total package but unbundled</li>
+                    <li>Can do sequentially or concurrent</li>
+                </ul>
+            </div>
+            <div class="scenario-card">
+                <div class="scenario-recommendation">Scenario 4</div>
+                <h3 class="scenario-title">"We want everything, premium quality"</h3>
+                <ul class="scenario-features">
+                    <li>Premium + Brand Add-On (As from $7,000)</li>
+                    <li>Well-funded startups or rebrands</li>
+                    <li>Premium execution across brand & web</li>
+                </ul>
+            </div>
+            <div class="scenario-card">
+                <div class="scenario-recommendation">Scenario 5</div>
+                <h3 class="scenario-title">"Just brand identity, we'll build site ourselves"</h3>
+                <ul class="scenario-features">
+                    <li>Brand Identity Standalone (As from $2,500)</li>
+                    <li>DIY website builders who want professional brand</li>
+                    <li>Future potential for website project</li>
+                </ul>
+            </div>
+            <div class="scenario-card">
+                <div class="scenario-recommendation">Scenario 6</div>
+                <h3 class="scenario-title">"Our current site is slow and non-compliant"</h3>
+                <ul class="scenario-features">
+                    <li>Performance & Compliance Audit</li>
+                    <li>Full rebuild focused on Core Web Vitals</li>
+                    <li>WCAG 2.1 AA Certification</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Inclusions -->
+    <section class="detailed-package-section">
+        <div class="package-grid">
+
+            <!-- Essential Detailed -->
+            <div class="package-detail-card" id="essential-details">
+                <div class="package-detail-header">
+                    <h3>Essential Web Design</h3>
+                    <div class="package-detail-price">As from $2,000</div>
+                    <p style="color: var(--gray-500);">Best for established brands with existing assets needing a
+                        high-performance transformation.</p>
+                </div>
+                <div class="package-detail-groups">
+                    <div class="detail-group">
+                        <div class="detail-group-title">Strategy & Planning</div>
+                        <ul class="detail-list">
+                            <li>1-hour kickoff session</li>
+                            <li>Competitor analysis (3-5)</li>
+                            <li>User journey mapping</li>
+                            <li>Conversion strategy</li>
+                        </ul>
+                    </div>
+                    <div class="detail-group">
+                        <div class="detail-group-title">Design & Dev</div>
+                        <ul class="detail-list">
+                            <li>4-6 unique page layouts</li>
+                            <li>Mobile-first responsive</li>
+                            <li>Webflow (clean code)</li>
+                            <li>SEO Foundations</li>
+                        </ul>
+                    </div>
+                    <div class="detail-group">
+                        <div class="detail-group-title">Compliance & Support</div>
+                        <ul class="detail-list">
+                            <li>WCAG 2.1 AA compliance</li>
+                            <li>Performance optimization</li>
+                            <li>20-min training video</li>
+                            <li>30 days bug fixes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Premium Detailed -->
+            <div class="package-detail-card" id="premium-details">
+                <div class="package-detail-header">
+                    <h3>Premium Web Design</h3>
+                    <div class="package-detail-price">As from $4,500</div>
+                    <p style="color: var(--gray-500);">Advanced functionality, CMS architecture, and premium animations
+                        for growing businesses.</p>
+                </div>
+                <div class="package-detail-groups">
+                    <div class="detail-group">
+                        <div class="detail-group-title">Enhanced Scope</div>
+                        <ul class="detail-list">
+                            <li><strong>7-10 pages</strong> (vs 4-6)</li>
+                            <li><strong>3 revision rounds</strong> (vs 2)</li>
+                            <li>Advanced CMS implementation</li>
+                            <li>Custom cursor & transitions</li>
+                        </ul>
+                    </div>
+                    <div class="detail-group">
+                        <div class="detail-group-title">Advanced Tech</div>
+                        <ul class="detail-list">
+                            <li>Advanced integrations (CRM)</li>
+                            <li>Premium performance (95+)</li>
+                            <li>Custom forms with logic</li>
+                            <li>Analytics dashboard setup</li>
+                        </ul>
+                    </div>
+                    <div class="detail-group">
+                        <div class="detail-group-title">Premium Support</div>
+                        <ul class="detail-list">
+                            <li>30-minute <strong>live training</strong></li>
+                            <li>Advanced Editor techniques</li>
+                            <li>Component usage guide</li>
+                            <li>Priority email support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Brand Identity Detailed -->
+            <div class="package-detail-card" id="brand-details">
+                <div class="package-detail-header">
+                    <h3>Brand Identity Package</h3>
+                    <div class="package-detail-price">As from $2,500</div>
+                    <p style="color: var(--gray-500);">Complete visual strategy and identity system to anchor your
+                        professional presence.</p>
+                </div>
+                <div class="package-detail-groups">
+                    <div class="detail-group">
+                        <div class="detail-group-title">Strategy & Logo</div>
+                        <ul class="detail-list">
+                            <li>2-hour Strategy Session</li>
+                            <li>3 initial logo concepts</li>
+                            <li>2 rounds of revisions</li>
+                            <li>Full file suite (SVG, PNG, AI)</li>
+                        </ul>
+                    </div>
+                    <div class="detail-group">
+                        <div class="detail-group-title">Visual System</div>
+                        <ul class="detail-list">
+                            <li>Extended Color Palette</li>
+                            <li>Typography Pairings</li>
+                            <li>15-page <strong>Brand Guide PDF</strong></li>
+                            <li>Visual Style Guidelines</li>
+                        </ul>
+                    </div>
+                    <div class="detail-group">
+                        <div class="detail-group-title">Brand Assets</div>
+                        <ul class="detail-list">
+                            <li>Business card design</li>
+                            <li>Email signature template</li>
+                            <li>Social media profile set</li>
+                            <li>Presentation template</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <section class="methodology">
         <div class="section-header">
-            <span class="section-label">HOW WE WORK</span>
-            <h2 class="section-title">The "Functional Design" Methodology</h2>
-            <p class="section-desc">We don't just make things look good. We build digital assets that perform.</p>
+            <div>
+                <span class="section-label">HOW WE WORK</span>
+                <h2 class="section-title">The "Functional Design" Methodology</h2>
+                <p class="section-desc">We don't just make things look good. We build digital assets that perform.</p>
+            </div>
         </div>
 
         <div class="method-grid">
             <div>
                 <h3 style="font-size: 1.5rem; margin-bottom: 20px;">1. Inclusion as Standard</h3>
-                <p style="line-height: 1.6; color: #555;">Most agencies charge extra for accessibility. We don't. Every
+                <p style="line-height: 1.6; color: var(--gray-500);">Most agencies charge extra for accessibility. We
+                    don't. Every
                     line of code we write adheres to WCAG 2.1 AA standards because we believe the web should be open to
                     everyone. This also protects you from legal risk and boosts your SEO.</p>
             </div>
             <div>
                 <h3 style="font-size: 1.5rem; margin-bottom: 20px;">2. Performance is UX</h3>
-                <p style="line-height: 1.6; color: #555;">A slow site is a broken site. We optimize images, minify code,
+                <p style="line-height: 1.6; color: var(--gray-500);">A slow site is a broken site. We optimize images,
+                    minify code,
                     and use modern formats like WebP to ensure your site loads in under 2 seconds. This improves
                     conversion rates and Google rankings.</p>
             </div>
             <div>
                 <h3 style="font-size: 1.5rem; margin-bottom: 20px;">3. Strategy Before Pixels</h3>
-                <p style="line-height: 1.6; color: #555;">We never open design software without first understanding your
+                <p style="line-height: 1.6; color: var(--gray-500);">We never open design software without first
+                    understanding your
                     business goals. Who is your audience? What specific action do you want them to take? Your design
                     will be a direct answer to these questions.</p>
             </div>
             <div>
                 <h3 style="font-size: 1.5rem; margin-bottom: 20px;">4. Component-Based Build</h3>
-                <p style="line-height: 1.6; color: #555;">We build scalable design systems, not just static pages. This
+                <p style="line-height: 1.6; color: var(--gray-500);">We build scalable design systems, not just static
+                    pages. This
                     means your website can grow with your business. Adding new pages or features later becomes cheaper
                     and faster because the foundation is solid.</p>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Standalone or Bundled -->
+    <section class="scenarios-section" style="background: #111; border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="section-header">
+            <div>
+                <span class="section-label">HOW TO WORK WITH US</span>
+                <h2 class="section-title">Standalone or Bundled</h2>
+                <p class="section-desc">Flexible engagement options to suit your timeline and budget.</p>
+            </div>
+        </div>
+        <div class="scenarios-grid">
+            <div class="scenario-card">
+                <div class="scenario-recommendation">Option A</div>
+                <h3 class="scenario-title">Brand First, Website Later</h3>
+                <ul class="scenario-features">
+                    <li>Branding (As from $2,500)</li>
+                    <li>Website (As from $2,000)</li>
+                    <li>Saves time over sequential delivery</li>
+                </ul>
+            </div>
+            <div class="scenario-card" style="border-color: var(--crimson);">
+                <div class="scenario-recommendation">Option B (Recommended)</div>
+                <h3 class="scenario-title">Concurrent Delivery</h3>
+                <ul class="scenario-features">
+                    <li>Weeks 1-2: Brand development</li>
+                    <li>Weeks 2-4: Website design</li>
+                    <li>Saves 1-2 weeks vs sequential delivery</li>
+                </ul>
+            </div>
+            <div class="scenario-card">
+                <div class="scenario-recommendation">Option C</div>
+                <h3 class="scenario-title">Website Only</h3>
+                <ul class="scenario-features">
+                    <li>Client has existing brand assets</li>
+                    <li>We use your logo, colors, and fonts</li>
+                    <li>Total: $2,000 - $6,500 in 2-4 weeks</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="footer-inner">
             <div class="footer-top">
