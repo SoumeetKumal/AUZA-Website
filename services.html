@@ -53,12 +53,34 @@
         </div>
     </section>
 
-    <section class="comparison-section section">
-        <div class="comparison-table-wrapper fade-up">
+    <section class="comparison-section section" id="pricing-comparison" aria-labelledby="comparison-title">
+        <h2 id="comparison-title" class="sr-only">Service Packages Comparison Table</h2>
+        <div class="scroll-hint-container fade-up" aria-hidden="true">
+            <div class="scroll-hint">
+                <div class="hint-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8L22 12L18 16M6 8L2 12L6 16" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <span>Swipe to compare packages</span>
+            </div>
+        </div>
+
+        <div class="comparison-table-wrapper fade-up" tabindex="0" role="region"
+            aria-label="Packages comparison table (swipe or use arrow keys to scroll)">
             <table>
+                <caption class="sr-only">Detailed breakdown of Growth, Foundation, Professional, and Premium packages
+                </caption>
                 <thead>
                     <tr>
-                        <th>Strategic Web Tiers</th>
+                        <th scope="col">Strategic Web Tiers</th>
+                        <th scope="col" class="tier-growth">Growth</th>
+                        <th scope="col" class="tier-foundation">Foundation</th>
+                        <th scope="col" class="tier-professional" style="color: var(--crimson-text);">Professional</th>
+                        <th scope="col" class="tier-premium">Premium</th>
+                    </tr>
+                    <tr class="sticky-tier-names">
+                        <th></th>
                         <th>Growth</th>
                         <th>Foundation</th>
                         <th style="color: var(--crimson);">Professional</th>
@@ -67,60 +89,58 @@
                 </thead>
                 <tbody>
                     <tr class="price-row">
-                        <td>Pricing<br><span
-                                style="font-size: 0.8em; font-weight: normal; color: var(--gray-500);">(Starts
-                                at)</span></td>
+                        <th scope="row">Pricing<br><span
+                                style="font-size: 0.8em; font-weight: normal; color: var(--gray-300);">(Starts
+                                at)</span></th>
                         <td>$2,500</td>
                         <td>$6,000</td>
-                        <td style="color: var(--crimson);">$8,000</td>
+                        <td style="color: var(--crimson-text); font-weight: 800;">$8,000</td>
                         <td>$9,500</td>
                     </tr>
                     <tr>
-                        <td>Pages</td>
+                        <th scope="row">Pages</th>
                         <td>1 (Long-form)</td>
                         <td>5</td>
                         <td>6-8</td>
                         <td>10+</td>
                     </tr>
                     <tr>
-                        <td>Inclusions</td>
+                        <th scope="row">Inclusions</th>
                         <td>Landing Only</td>
                         <td>CMS Optional</td>
                         <td>Basic CMS</td>
                         <td>Full CMS Suite</td>
                     </tr>
                     <tr>
-                        <td>Interactions</td>
+                        <th scope="row">Interactions</th>
                         <td>Standard</td>
                         <td>Standard</td>
                         <td>Enhanced</td>
                         <td>Advanced</td>
                     </tr>
                     <tr>
-                        <td>Integration</td>
+                        <th scope="row">Integration</th>
                         <td>1 (Form)</td>
                         <td>2 External</td>
                         <td>3-4 External</td>
                         <td>Advanced (CRM)</td>
                     </tr>
                     <tr>
-                        <td>Strategy</td>
+                        <th scope="row">Strategy</th>
                         <td>Micro-Session</td>
                         <td>Core Session</td>
                         <td>Deep Dive</td>
                         <td>Enterprise Audit</td>
                     </tr>
                     <tr>
-                        <td>Support</td>
+                        <th scope="row">Support</th>
                         <td>30 Days</td>
                         <td>30 Days</td>
                         <td>30 Days</td>
                         <td>Priority (60 Days)</td>
                     </tr>
                     <tr>
-                        <td>WCAG 2.1 AA</td>
-                    <tr>
-                        <td>WCAG 2.1 AA</td>
+                        <th scope="row">Accessibility Standards</th>
                         <td><span class="check">✔ Included</span></td>
                         <td><span class="check">✔ Included</span></td>
                         <td><span class="check">✔ Included</span></td>

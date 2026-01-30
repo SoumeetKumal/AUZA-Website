@@ -990,21 +990,46 @@
     }
 
     .comparison-table-wrapper {
-        padding: 24px 16px !important;
-        margin: 0;
-        border-radius: 0;
-        border-left: none;
+        padding: 0 !important;
+        border-radius: 12px !important;
+        margin: 0 !important;
         border-right: none;
+        border-left: none;
     }
 
     .comparison-table-wrapper table {
-        min-width: 700px;
+        min-width: 650px;
+        /* Slightly narrower to fit content better */
     }
 
     .comparison-table-wrapper th,
     .comparison-table-wrapper td {
-        padding: 16px 12px !important;
-        font-size: 13px !important;
+        padding: 20px 14px !important;
+        font-size: 12px !important;
+        white-space: nowrap;
+    }
+
+    .comparison-table-wrapper th:first-child,
+    .comparison-table-wrapper td:first-child {
+        min-width: 120px;
+        font-size: 10px !important;
+        padding-left: 16px !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .scroll-hint-container {
+        display: flex;
+    }
+
+    /* Fixed header on mobile */
+    .comparison-table-wrapper table {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Adjust price row for mobile */
+    .comparison-table-wrapper .price-row td {
+        font-size: 1.1rem !important;
     }
 
     .methodology {
@@ -1030,14 +1055,31 @@
 }
 
 /* Package Detail Responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 770px) {
     .package-detail-groups {
         grid-template-columns: 1fr !important;
-        gap: 32px !important;
+        gap: 40px !important;
+        text-align: center;
+    }
+
+    .detail-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .detail-list li {
+        padding-left: 0 !important;
+        text-align: center;
+    }
+
+    .detail-list li::before {
+        display: none;
+        /* Remove arrow for centered text to keep it clean */
     }
 
     .package-detail-card {
-        padding: 32px 24px !important;
+        padding: 40px 24px !important;
         border-radius: 12px !important;
     }
 

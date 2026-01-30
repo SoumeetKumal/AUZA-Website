@@ -445,6 +445,7 @@
 .engagement-card.featured .card-features li::before {
     background: var(--crimson);
 }
+
 /* Comparison Section */
 .comparison-section {
     padding: clamp(100px, 15vw, 160px) clamp(18px, 8vw, 120px);
@@ -457,8 +458,29 @@
     background: #161616;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    padding: 40px;
+    padding: 0;
+    /* Removed padding to fix sticky column scroll-behind issue */
     border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.comparison-table-wrapper:focus-visible {
+    outline: 2px solid var(--crimson);
+    outline-offset: 4px;
+}
+
+/* Custom Thin Crimson Scrollbar */
+.comparison-table-wrapper::-webkit-scrollbar {
+    height: 4px;
+}
+
+.comparison-table-wrapper::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
+}
+
+.comparison-table-wrapper::-webkit-scrollbar-thumb {
+    background: var(--crimson);
+    border-radius: 10px;
 }
 
 .comparison-table-wrapper table {
@@ -469,21 +491,50 @@
 
 .comparison-table-wrapper th,
 .comparison-table-wrapper td {
-    padding: 24px;
+    padding: 24px 20px;
     text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
     color: var(--gray-500);
+    /* Restored to gray-500 for AAA contrast */
+    font-size: 14px;
+    transition: background 0.2s ease;
 }
 
 .comparison-table-wrapper th:first-child,
 .comparison-table-wrapper td:first-child {
+    padding-left: 32px;
     text-align: left;
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     color: var(--off-white);
     position: sticky;
     left: 0;
     background: #161616;
-    z-index: 10;
+    z-index: 20;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 4px 0 16px rgba(0, 0, 0, 0.15);
+    /* Soft shadow on the right side of sticky column */
+}
+
+.comparison-table-wrapper thead {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: #161616;
+}
+
+.comparison-table-wrapper thead th {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    background: #1A1A1A;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+.sticky-tier-names {
+    display: none;
+    /* Only show when needed or for specific mobile logic */
 }
 
 .comparison-table-wrapper thead th {
@@ -492,18 +543,108 @@
 }
 
 .comparison-table-wrapper .price-row td {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--crimson);
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--crimson-text);
+    /* Higher contrast crimson */
+    letter-spacing: -0.02em;
 }
 
 .comparison-table-wrapper .check {
-    color: var(--crimson);
+    color: var(--crimson-text);
     font-weight: 800;
 }
 
 .comparison-table-wrapper .dash {
-    color: #ddd;
+    color: var(--gray-700);
+}
+
+/* Accessibility Utility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Zebra Striping */
+.comparison-table-wrapper tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.comparison-table-wrapper tbody tr:hover {
+    background: rgba(220, 20, 60, 0.05);
+}
+
+/* Professional Column Highlight - World Class */
+.comparison-table-wrapper tr td:nth-child(4),
+.comparison-table-wrapper tr th:nth-child(4) {
+    background: rgba(220, 20, 60, 0.04);
+    position: relative;
+    border-left: 1px solid rgba(220, 20, 60, 0.15);
+    border-right: 1px solid rgba(220, 20, 60, 0.15);
+}
+
+.comparison-table-wrapper tr th:nth-child(4) {
+    background: rgba(220, 20, 60, 0.08);
+}
+
+/* Scroll Hint - Premium Independent Style */
+.scroll-hint-container {
+    display: none;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.scroll-hint {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 8px 20px;
+    background: rgba(220, 20, 60, 0.08);
+    border: 1px solid rgba(220, 20, 60, 0.2);
+    border-radius: 100px;
+    color: var(--off-white);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.hint-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: var(--crimson);
+    border-radius: 50%;
+    color: white;
+}
+
+.hint-icon svg {
+    width: 14px;
+    height: 14px;
+    animation: swipeHint 2s infinite ease-in-out;
+}
+
+@keyframes swipeHint {
+
+    0%,
+    100% {
+        transform: translateX(-2px);
+    }
+
+    50% {
+        transform: translateX(2px);
+    }
 }
 
 /* Enhanced Engagement Card Styles */
