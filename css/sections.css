@@ -3,7 +3,9 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 120px 48px 80px;
+    justify-content: center;
+    padding: 160px 48px 40px;
+    /* Offset for fixed header overlap */
     position: relative;
     overflow: hidden;
 }
@@ -65,6 +67,26 @@
     gap: 14px;
     flex-wrap: wrap;
     justify-content: center
+}
+
+/* Services Hero */
+.services-hero {
+    padding: 180px 8vw 100px;
+    background: #111;
+    color: white;
+    text-align: center;
+}
+
+.services-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 24px;
+}
+
+.services-hero p {
+    font-size: 1.25rem;
+    color: #ccc;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 /* Section Basics */
@@ -373,6 +395,11 @@
 }
 
 /* Services Section */
+.engagement-options {
+    background: #0A0A0A;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
 .services {
     background: var(--nero)
 }
@@ -900,6 +927,49 @@
     padding: 32px;
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Methodology Section */
+.methodology {
+    padding: clamp(100px, 15vw, 160px) clamp(18px, 8vw, 120px);
+}
+
+.method-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+}
+
+@media(max-width: 900px) {
+    .method-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.method-card {
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.method-card:hover {
+    border-color: var(--crimson);
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.method-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--off-white);
+}
+
+.method-desc {
+    line-height: 1.6;
+    color: var(--gray-500);
+    font-size: 15px;
 }
 
 .process-steps-list {

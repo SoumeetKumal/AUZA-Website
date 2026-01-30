@@ -28,102 +28,6 @@
 
     <link rel="icon" type="image/png" href="images/AUZA Logo White.png">
 
-    <style>
-        .services-hero {
-            padding: 180px 8vw 100px;
-            background: #111;
-            color: white;
-            text-align: center;
-        }
-
-        .services-hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 24px;
-        }
-
-        .services-hero p {
-            font-size: 1.25rem;
-            color: #ccc;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .comparison-section {
-            padding: clamp(100px, 15vw, 160px) clamp(18px, 8vw, 120px);
-            background: #0A0A0A;
-            color: var(--off-white);
-        }
-
-        .comparison-table-wrapper {
-            overflow-x: auto;
-            background: #161616;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            padding: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 800px;
-        }
-
-        th,
-        td {
-            padding: 24px;
-            text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            color: var(--gray-500);
-        }
-
-        th:first-child,
-        td:first-child {
-            text-align: left;
-            font-weight: 600;
-            color: var(--off-white);
-            position: sticky;
-            left: 0;
-            background: #161616;
-            z-index: 10;
-        }
-
-        thead th {
-            font-size: 1.5rem;
-            color: var(--off-white);
-        }
-
-        .price-row td {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--crimson);
-        }
-
-        .check {
-            color: var(--crimson);
-            font-weight: 800;
-        }
-
-        .dash {
-            color: #ddd;
-        }
-
-        .methodology {
-            padding: clamp(100px, 15vw, 160px) clamp(18px, 8vw, 120px);
-        }
-
-        .method-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 60px;
-        }
-
-        @media(max-width: 900px) {
-            .method-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -432,30 +336,30 @@
         </div>
 
         <div class="method-grid">
-            <div>
-                <h3 style="font-size: 1.5rem; margin-bottom: 20px;">1. Inclusion as Standard</h3>
-                <p style="line-height: 1.6; color: var(--gray-500);">Most agencies charge extra for accessibility. We
+            <div class="method-card">
+                <h3 class="method-title">1. Inclusion as Standard</h3>
+                <p class="method-desc">Most agencies charge extra for accessibility. We
                     don't. Every
                     line of code we write adheres to WCAG 2.1 AA standards because we believe the web should be open to
                     everyone. This also protects you from legal risk and boosts your SEO.</p>
             </div>
-            <div>
-                <h3 style="font-size: 1.5rem; margin-bottom: 20px;">2. Performance is UX</h3>
-                <p style="line-height: 1.6; color: var(--gray-500);">A slow site is a broken site. We optimize images,
+            <div class="method-card">
+                <h3 class="method-title">2. Performance is UX</h3>
+                <p class="method-desc">A slow site is a broken site. We optimize images,
                     minify code,
                     and use modern formats like WebP to ensure your site loads in under 2 seconds. This improves
                     conversion rates and Google rankings.</p>
             </div>
-            <div>
-                <h3 style="font-size: 1.5rem; margin-bottom: 20px;">3. Strategy Before Pixels</h3>
-                <p style="line-height: 1.6; color: var(--gray-500);">We never open design software without first
+            <div class="method-card">
+                <h3 class="method-title">3. Strategy Before Pixels</h3>
+                <p class="method-desc">We never open design software without first
                     understanding your
                     business goals. Who is your audience? What specific action do you want them to take? Your design
                     will be a direct answer to these questions.</p>
             </div>
-            <div>
-                <h3 style="font-size: 1.5rem; margin-bottom: 20px;">4. Component-Based Build</h3>
-                <p style="line-height: 1.6; color: var(--gray-500);">We build scalable design systems, not just static
+            <div class="method-card">
+                <h3 class="method-title">4. Component-Based Build</h3>
+                <p class="method-desc">We build scalable design systems, not just static
                     pages. This
                     means your website can grow with your business. Adding new pages or features later becomes cheaper
                     and faster because the foundation is solid.</p>
@@ -464,8 +368,7 @@
     </section>
 
     <!-- Standalone or Bundled -->
-    <section class="engagement-options"
-        style="background: #0A0A0A; padding: clamp(100px, 10vw, 140px) 0; border-top: 1px solid rgba(255,255,255,0.05);">
+    <section class="engagement-options section">
         <div class="section-inner">
             <div class="section-header">
                 <div>
@@ -475,25 +378,63 @@
                 </div>
             </div>
             <div class="engagement-grid">
-                <!-- Card 1 -->
+                <!-- Option A -->
                 <div class="engagement-card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                            <path d="M2 2l7.586 7.586"></path>
+                            <circle cx="11" cy="11" r="2"></circle>
+                        </svg>
+                    </div>
                     <span class="card-eyebrow">OPTION A</span>
                     <h3 class="card-title">Brand First</h3>
-                    <p class="card-desc">Ideal for phased investment. We establish your brand identity first, then
-                        tackle the web experience.</p>
+                    <p class="card-desc">Establish your brand identity first, then tackle the web experience. Ideal for
+                        phased investment.</p>
+
+                    <div class="card-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">INVESTMENT</span>
+                            <span class="meta-value">From $4,500 Total</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">TIMELINE</span>
+                            <span class="meta-value">4-6 Weeks</span>
+                        </div>
+                    </div>
+
                     <ul class="card-features">
-                        <li>Branding (As from $2,500)</li>
-                        <li>Website (As from $2,000)</li>
+                        <li>Branding (Starts at $2,500)</li>
+                        <li>Website (Starts at $2,000)</li>
                         <li>Standard sequential timeline</li>
                     </ul>
                 </div>
 
-                <!-- Card 2 -->
+                <!-- Option B -->
                 <div class="engagement-card featured">
-                    <span class="card-eyebrow">OPTION B (RECOMMENDED)</span>
+                    <div class="featured-tag">MOST EFFICIENT</div>
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                        </svg>
+                    </div>
+                    <span class="card-eyebrow">OPTION B</span>
                     <h3 class="card-title">Concurrent Delivery</h3>
-                    <p class="card-desc">The efficiency track. We run brand and web streams in parallel to launch
-                        faster.</p>
+                    <p class="card-desc">The efficiency track. We run brand and web streams in parallel to launch your
+                        business faster.</p>
+
+                    <div class="card-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">INVESTMENT</span>
+                            <span class="meta-value">From $4,500 Total</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">TIMELINE</span>
+                            <span class="meta-value">3-4 Weeks</span>
+                        </div>
+                    </div>
+
                     <ul class="card-features">
                         <li>Weeks 1-2: Brand Strategy & ID</li>
                         <li>Weeks 2-4: Website Design & Dev</li>
@@ -501,15 +442,35 @@
                     </ul>
                 </div>
 
-                <!-- Card 3 -->
+                <!-- Option C -->
                 <div class="engagement-card">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" cy="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
                     <span class="card-eyebrow">OPTION C</span>
                     <h3 class="card-title">Website Only</h3>
-                    <p class="card-desc">For clients with established brand books who just need execution.</p>
+                    <p class="card-desc">For clients with established brand books who just need premium design and
+                        development.</p>
+
+                    <div class="card-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">INVESTMENT</span>
+                            <span class="meta-value">$2,000 - $8,000+</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">TIMELINE</span>
+                            <span class="meta-value">1-4 Weeks</span>
+                        </div>
+                    </div>
+
                     <ul class="card-features">
                         <li>Requires existing vector logo</li>
                         <li>We use your fonts & palette</li>
-                        <li>Total: $2,000 - $6,500</li>
+                        <li>Full design system creation</li>
                     </ul>
                 </div>
             </div>

@@ -445,3 +445,211 @@
 .engagement-card.featured .card-features li::before {
     background: var(--crimson);
 }
+/* Comparison Section */
+.comparison-section {
+    padding: clamp(100px, 15vw, 160px) clamp(18px, 8vw, 120px);
+    background: #0A0A0A;
+    color: var(--off-white);
+}
+
+.comparison-table-wrapper {
+    overflow-x: auto;
+    background: #161616;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.comparison-table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.comparison-table-wrapper th,
+.comparison-table-wrapper td {
+    padding: 24px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--gray-500);
+}
+
+.comparison-table-wrapper th:first-child,
+.comparison-table-wrapper td:first-child {
+    text-align: left;
+    font-weight: 600;
+    color: var(--off-white);
+    position: sticky;
+    left: 0;
+    background: #161616;
+    z-index: 10;
+}
+
+.comparison-table-wrapper thead th {
+    font-size: 1.5rem;
+    color: var(--off-white);
+}
+
+.comparison-table-wrapper .price-row td {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--crimson);
+}
+
+.comparison-table-wrapper .check {
+    color: var(--crimson);
+    font-weight: 800;
+}
+
+.comparison-table-wrapper .dash {
+    color: #ddd;
+}
+
+/* Enhanced Engagement Card Styles */
+.engagement-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 60px;
+}
+
+.engagement-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 40px 32px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.engagement-card:hover {
+    border-color: rgba(220, 20, 60, 0.3);
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 24px;
+    color: var(--crimson);
+}
+
+.card-icon svg {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s ease;
+}
+
+.engagement-card:hover .card-icon svg {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.card-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    margin-bottom: 12px;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--off-white);
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.card-desc {
+    font-size: 14px;
+    color: var(--gray-500);
+    line-height: 1.6;
+    margin-bottom: 32px;
+    flex-grow: 1;
+}
+
+/* Card Meta (Investment/Timeline) */
+.card-meta {
+    display: flex;
+    gap: 24px;
+    padding: 20px 0;
+    margin-bottom: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.meta-label {
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--gray-500);
+    letter-spacing: 0.1em;
+}
+
+.meta-value {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--off-white);
+}
+
+.card-features {
+    list-style: none;
+    padding: 0;
+}
+
+.card-features li {
+    font-size: 13px;
+    color: var(--gray-400);
+    margin-bottom: 12px;
+    padding-left: 24px;
+    position: relative;
+    line-height: 1.4;
+}
+
+.card-features li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    color: var(--crimson);
+}
+
+/* Featured State Override */
+.engagement-card.featured {
+    background: linear-gradient(145deg, rgba(220, 20, 60, 0.08) 0%, rgba(10, 10, 10, 0.5) 100%) !important;
+    border-color: rgba(220, 20, 60, 0.3) !important;
+    box-shadow: 0 0 30px rgba(220, 20, 60, 0.1) !important;
+}
+
+.engagement-card.featured:hover {
+    border-color: var(--crimson) !important;
+    box-shadow: 0 0 40px rgba(220, 20, 60, 0.2) !important;
+}
+
+.featured-tag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--crimson);
+    color: white;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 6px 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom-left-radius: 12px;
+}
+
+.engagement-card.featured .card-eyebrow {
+    color: var(--crimson) !important;
+}
