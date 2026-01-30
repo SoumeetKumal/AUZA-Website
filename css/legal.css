@@ -14,9 +14,9 @@
 
 .legal-title {
     font-size: clamp(36px, 5vw, 64px);
-    font-weight: 900;
-    letter-spacing: -0.04em;
-    line-height: 1;
+    font-weight: var(--header-weight);
+    letter-spacing: var(--header-spacing);
+    line-height: var(--header-line-height);
     margin-bottom: 24px;
 }
 
@@ -29,7 +29,7 @@
 .legal-body h2 {
     color: var(--off-white);
     font-size: 24px;
-    font-weight: 800;
+    font-weight: var(--sub-header-weight);
     margin: 48px 0 24px;
-    letter-spacing: -0.02em;
+    letter-spacing: var(--sub-header-spacing);
 }

@@ -57,9 +57,10 @@
 
 .tier-name {
     font-size: 24px;
-    font-weight: 800;
+    font-weight: var(--sub-header-weight);
     color: #FAFAFA;
     margin-bottom: 8px;
+    letter-spacing: var(--sub-header-spacing);
 }
 
 .tier-tagline {
@@ -170,9 +171,10 @@
 
 .offer-title {
     font-size: 20px;
-    font-weight: 800;
+    font-weight: var(--sub-header-weight);
     color: #FAFAFA;
     margin-bottom: 8px;
+    letter-spacing: var(--sub-header-spacing);
 }
 
 .offer-description {
@@ -701,10 +703,11 @@
 
 .card-title {
     font-size: 24px;
-    font-weight: 900;
+    font-weight: var(--header-weight);
     color: var(--off-white);
     margin-bottom: 16px;
-    line-height: 1.2;
+    line-height: var(--header-line-height);
+    letter-spacing: var(--header-spacing);
 }
 
 .card-desc {

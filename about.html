@@ -37,15 +37,17 @@
 
         .about-hero h1 {
             font-size: clamp(2.5rem, 5vw, 4.5rem);
-            line-height: 1.1;
+            line-height: var(--header-line-height);
             margin-bottom: 40px;
             max-width: 900px;
+            font-weight: var(--header-weight);
+            letter-spacing: var(--header-spacing);
         }
 
         .about-hero p {
             font-size: 1.5rem;
             color: #ccc;
-            max-width: 700px;
+            max-width: 100%;
             line-height: 1.6;
         }
 
@@ -55,17 +57,22 @@
             grid-template-columns: 1fr 1fr;
             gap: 80px;
             align-items: center;
+            background: #111;
+            color: white;
         }
 
         .story-content h2 {
             font-size: 2.5rem;
             margin-bottom: 24px;
+            font-weight: var(--header-weight);
+            letter-spacing: var(--header-spacing);
+            line-height: var(--header-line-height);
         }
 
         .story-content p {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             line-height: 1.8;
-            color: #555;
+            color: #ccc;
             margin-bottom: 24px;
         }
 
@@ -90,34 +97,93 @@
         }
 
         .values-section {
-            padding: 100px 8vw;
-            background: #f8f8f8;
+            padding: 80px 8vw;
+            background: #0A0A0A;
+            color: white;
         }
 
         .values-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 40px;
-            margin-top: 60px;
+            margin-top: 20px;
         }
 
         .value-card {
-            background: white;
+            background: #161616;
             padding: 40px;
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--crimson);
         }
 
         .value-card h3 {
             font-size: 1.5rem;
             margin-bottom: 16px;
-            color: #111;
+            color: white;
+            font-weight: var(--sub-header-weight);
+            letter-spacing: var(--sub-header-spacing);
         }
 
         .value-card p {
             font-size: 1rem;
-            color: #666;
+            color: #aaa;
             line-height: 1.6;
+        }
+
+        /* Founder Section Styles */
+        .founder-section {
+            background: #111 !important;
+            color: white !important;
+        }
+
+        .founder-quote {
+            font-size: 1.2rem !important;
+            color: #eee !important;
+        }
+
+        .founder-story p {
+            color: #ccc !important;
+        }
+
+        .founder-signature {
+            color: white !important;
+        }
+
+        .btn-linkedin {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: transparent;
+            color: white;
+            padding: 14px 28px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: var(--body-font);
+            font-size: 14px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .btn-linkedin:hover {
+            background: white;
+            color: #111;
+            border-color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-linkedin svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
         }
 
         @media(max-width: 900px) {
@@ -180,8 +246,8 @@
             <div class="founder-grid"
                 style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items: center;">
                 <div class="founder-image-container" style="position: relative;">
-                    <img src="images/AUZA Logo White.png" alt="Soumeet - Founder of AUZA" class="founder-image"
-                        style="width: 100%; border-radius: 12px; filter: grayscale(1) contrast(1.1); transition: filter 0.5s ease; border: 1px solid rgba(0, 0, 0, 0.05); padding: 40px; background: #111;">
+                    <img src="images/Soumeet.jpg" alt="Soumeet - Founder of AUZA" class="founder-image"
+                        style="width: 100%; aspect-ratio: 4/5; border-radius: 12px; filter: grayscale(1) contrast(1.2) brightness(0.9); transition: all 0.5s ease; border: 1px solid rgba(255, 255, 255, 0.1); object-fit: cover; object-position: center 50%;">
                     <div
                         style="position: absolute; inset: -15px; border: 1px solid var(--crimson); border-radius: 16px; opacity: 0.2; z-index: -1;">
                     </div>
@@ -190,7 +256,9 @@
                     <div class="section-label"
                         style="font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--crimson); margin-bottom: 14px;">
                         Meet the Founder</div>
-                    <h2 style="font-size: 32px; font-weight: 900; margin-bottom: 24px;">Hi, I'm Soumeet.</h2>
+                    <h2
+                        style="font-size: 32px; font-weight: var(--header-weight); margin-bottom: 24px; letter-spacing: var(--header-spacing); line-height: var(--header-line-height);">
+                        Hi, I'm Soumeet.</h2>
                     <div class="founder-quote"
                         style="font-size: 18px; color: #111; font-style: italic; margin-bottom: 30px; border-left: 3px solid var(--crimson); padding-left: 24px;">
                         "I engineer digital experiences that solve real business problems through the lens of precision
@@ -207,11 +275,16 @@
                             strategically dominant.</p>
                     </div>
                     <div class="founder-signature"
-                        style="margin-top: 32px; font-family: serif; font-style: italic; font-size: 24px; color: #111;">
+                        style="margin-top: 32px; font-family: serif; font-style: italic; font-size: 24px;">
                         Soumeet</div>
-                    <div style="margin-top: 30px;">
-                        <a href="https://www.linkedin.com/in/soumeetkumal" target="_blank" class="btn btn-secondary"
-                            style="border-color: #ddd; color: #111;">Connect on LinkedIn</a>
+                    <div style="margin-top: 40px;">
+                        <a href="https://www.linkedin.com/in/soumeet/" target="_blank" class="btn-linkedin">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                            Connect on LinkedIn
+                        </a>
                     </div>
                 </div>
             </div>
@@ -219,11 +292,13 @@
     </section>
 
     <section class="values-section">
-        <div style="text-align: center; margin-bottom: 60px;">
+        <div style="text-align: center; margin-bottom: 40px;">
             <span class="badge-text"
                 style="color: var(--crimson); font-weight: 700; letter-spacing: 0.2em; display: block; margin-bottom: 20px;">OUR
                 PHILOSOPHY</span>
-            <h2 style="font-size: 2.5rem;">The Principles We Live By</h2>
+            <h2
+                style="font-size: 2.5rem; font-weight: var(--header-weight); letter-spacing: var(--header-spacing); line-height: var(--header-line-height);">
+                The Principles We Live By</h2>
         </div>
 
         <div class="values-grid">
@@ -246,7 +321,9 @@
     </section>
 
     <section style="padding: 100px 8vw; background: #111; color: white; text-align: center;">
-        <h2 style="font-size: 3rem; margin-bottom: 40px;">Ready to build something real?</h2>
+        <h2
+            style="font-size: 3rem; margin-bottom: 40px; font-weight: var(--header-weight); letter-spacing: var(--header-spacing); line-height: var(--header-line-height);">
+            Ready to build something real?</h2>
         <a href="index.html#contact" class="btn btn-primary">Book Free 30-Min Consultation →</a>
     </section>
 

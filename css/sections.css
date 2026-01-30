@@ -43,9 +43,9 @@
 
 .hero-title {
     font-size: clamp(36px, 5vw, 58px);
-    font-weight: 900;
-    line-height: 1.12;
-    letter-spacing: -0.03em;
+    font-weight: var(--header-weight);
+    line-height: var(--header-line-height);
+    letter-spacing: var(--header-spacing);
     margin-bottom: 24px;
     max-width: 900px
 }
@@ -111,9 +111,9 @@
 
 .section-title {
     font-size: clamp(30px, 4vw, 46px);
-    font-weight: 900;
-    letter-spacing: -0.02em;
-    line-height: 1.12
+    font-weight: var(--header-weight);
+    letter-spacing: var(--header-spacing);
+    line-height: var(--header-line-height)
 }
 
 .section-desc {
@@ -220,7 +220,8 @@
 
 .value-prop-title {
     font-size: 18px;
-    font-weight: 800;
+    font-weight: var(--sub-header-weight);
+    letter-spacing: var(--sub-header-spacing);
     margin-bottom: 10px
 }
 
@@ -359,7 +360,8 @@
 
 .project-title {
     font-size: 18px;
-    font-weight: 800;
+    font-weight: var(--sub-header-weight);
+    letter-spacing: var(--sub-header-spacing);
     margin-bottom: 8px
 }
 
@@ -475,7 +477,8 @@
 
 .service-title {
     font-size: 20px;
-    font-weight: 800;
+    font-weight: var(--sub-header-weight);
+    letter-spacing: var(--sub-header-spacing);
     margin-bottom: 12px;
     position: relative;
     color: var(--crimson) !important;
@@ -755,9 +758,10 @@
 
 .detail-title {
     font-size: clamp(28px, 3vw, 36px);
-    font-weight: 900;
+    font-weight: var(--header-weight);
     margin-bottom: 20px;
-    letter-spacing: -0.02em;
+    letter-spacing: var(--header-spacing);
+    line-height: var(--header-line-height);
 }
 
 .detail-desc {

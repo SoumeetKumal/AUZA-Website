@@ -32,10 +32,10 @@
 
 .audit-main-title {
     font-size: clamp(32px, 5vw, 64px);
-    font-weight: 900;
-    line-height: 1.1;
+    font-weight: var(--header-weight);
+    line-height: var(--header-line-height);
     margin-bottom: 24px;
-    letter-spacing: -0.03em;
+    letter-spacing: var(--header-spacing);
 }
 
 .audit-main-title .accent {
@@ -79,9 +79,10 @@
 
 .gate-content h2 {
     font-size: clamp(24px, 3vw, 32px);
-    font-weight: 900;
+    font-weight: var(--header-weight);
     margin-bottom: 12px;
-    letter-spacing: -0.02em;
+    letter-spacing: var(--header-spacing);
+    line-height: var(--header-line-height);
 }
 
 .gate-content p {
@@ -136,11 +137,11 @@
 
 .score-circle {
     font-size: 72px;
-    font-weight: 900;
+    font-weight: var(--header-weight);
     color: var(--crimson);
     line-height: 1;
     margin-bottom: 12px;
-    letter-spacing: -0.05em;
+    letter-spacing: var(--header-spacing);
 }
 
 .score-circle small {
@@ -150,9 +151,10 @@
 
 #score-label {
     font-size: 18px;
-    font-weight: 800;
+    font-weight: var(--sub-header-weight);
     margin-bottom: 8px;
     color: var(--off-white);
+    letter-spacing: var(--sub-header-spacing);
 }
 
 #score-feedback {
@@ -237,9 +239,10 @@
 
 .item-content h3 {
     font-size: 18px;
-    font-weight: 700;
+    font-weight: var(--sub-header-weight);
     margin-bottom: 4px;
     color: var(--off-white);
+    letter-spacing: var(--sub-header-spacing);
 }
 
 .item-content p {
@@ -261,9 +264,11 @@
 
 .audit-results-card h2 {
     font-size: 28px;
-    font-weight: 900;
+    font-weight: var(--header-weight);
     margin-bottom: 20px;
     color: var(--off-white);
+    letter-spacing: var(--header-spacing);
+    line-height: var(--header-line-height);
 }
 
 @keyframes slideUp {

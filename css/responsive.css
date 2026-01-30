@@ -33,7 +33,9 @@
 
     .hero-title {
         font-size: 32px;
-        line-height: 1.15;
+        font-weight: var(--header-weight);
+        line-height: var(--header-line-height);
+        letter-spacing: var(--header-spacing);
         margin-bottom: 20px;
     }
 
@@ -565,7 +567,9 @@
 
     .section-title {
         font-size: 24px;
-        line-height: 1.2;
+        font-weight: var(--header-weight);
+        line-height: var(--header-line-height);
+        letter-spacing: var(--header-spacing);
     }
 
     .section-desc {

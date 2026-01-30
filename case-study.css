@@ -50,12 +50,12 @@
 
 .hero-title {
     font-family: 'Inter', sans-serif;
-    font-weight: 900;
+    font-weight: var(--header-weight);
     font-size: 64px;
-    letter-spacing: -0.02em;
+    letter-spacing: var(--header-spacing);
     color: #FAFAFA;
     margin-bottom: 20px;
-    line-height: 1.1;
+    line-height: var(--header-line-height);
 }
 
 .hero-subtitle {
@@ -175,9 +175,9 @@
 
 .label-number {
     font-family: 'Inter', sans-serif;
-    font-weight: 900;
+    font-weight: var(--header-weight);
     font-size: 48px;
-    letter-spacing: -0.03em;
+    letter-spacing: var(--header-spacing);
     color: #DC143C;
     line-height: 1;
 }
@@ -197,9 +197,9 @@
 
 .section-title {
     font-family: 'Inter', sans-serif;
-    font-weight: 800;
+    font-weight: var(--sub-header-weight);
     font-size: 36px;
-    letter-spacing: -0.02em;
+    letter-spacing: var(--sub-header-spacing);
     color: #FAFAFA;
     margin-bottom: 30px;
     line-height: 1.2;
@@ -289,10 +289,11 @@
 
 .phase-title {
     font-family: 'Inter', sans-serif;
-    font-weight: 700;
+    font-weight: var(--sub-header-weight);
     font-size: 24px;
     color: #FAFAFA;
     margin-bottom: 15px;
+    letter-spacing: var(--sub-header-spacing);
 }
 
 .insights-box {
@@ -366,10 +367,11 @@
 
 .feature-title {
     font-family: 'Inter', sans-serif;
-    font-weight: 700;
+    font-weight: var(--sub-header-weight);
     font-size: 18px;
     color: #FAFAFA;
     margin-bottom: 10px;
+    letter-spacing: var(--sub-header-spacing);
 }
 
 .feature-description {
@@ -462,10 +464,11 @@
 
 .result-title {
     font-family: 'Inter', sans-serif;
-    font-weight: 700;
+    font-weight: var(--sub-header-weight);
     font-size: 18px;
     color: #FAFAFA;
     margin-bottom: 10px;
+    letter-spacing: var(--sub-header-spacing);
 }
 
 .result-description {
@@ -491,11 +494,12 @@
 
 .cta-title {
     font-family: 'Inter', sans-serif;
-    font-weight: 900;
+    font-weight: var(--header-weight);
     font-size: 48px;
-    letter-spacing: -0.02em;
+    letter-spacing: var(--header-spacing);
     color: #FAFAFA;
     margin-bottom: 20px;
+    line-height: var(--header-line-height);
 }
 
 .cta-description {

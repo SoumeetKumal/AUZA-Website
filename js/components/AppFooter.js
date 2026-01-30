@@ -11,7 +11,7 @@ class AppFooter extends HTMLElement {
                     <div class="footer-bottom">
                         <p class="footer-copy">© 2026 AUZA. Functional Design for Growth.</p>
                         <div class="footer-legal">
-                            <a href="https://www.linkedin.com/company/auza" class="footer-legal-link" target="_blank">LinkedIn</a>
+                            <a href="https://www.linkedin.com/company/auza/" class="footer-legal-link" target="_blank">LinkedIn</a>
                             <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
                         </div>
                     </div>
@@ -45,7 +45,7 @@ class AppFooter extends HTMLElement {
         <div>
           <h4 class="footer-heading">Connect</h4>
           <div class="footer-links"><a href="mailto:hello@auza.mu" class="footer-link"
-              target="_blank">hello@auza.mu</a><a href="https://www.linkedin.com/company/auza" class="footer-link"
+              target="_blank">hello@auza.mu</a><a href="https://www.linkedin.com/company/auza/" class="footer-link"
               target="_blank">LinkedIn</a></div>
         </div>
       </div>
