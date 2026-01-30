@@ -227,13 +227,17 @@
 }
 
 .banner-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background: rgba(255, 255, 255, 0.15);
-    padding: 4px 12px;
+    padding: 6px 16px;
     border-radius: 4px;
     font-size: 11px;
     backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
+    line-height: 1;
 }
 
 .announcement-banner:hover .banner-cta {

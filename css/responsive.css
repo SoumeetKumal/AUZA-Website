@@ -805,12 +805,14 @@
     /* Fix banner cutoff: Make banner relative and nav sticky so they stack naturally */
     .announcement-banner {
         position: relative;
-        min-height: 44px;
+        min-height: 52px;
+        /* Slightly taller for breathing room */
         height: auto;
-        padding: 12px 16px;
+        padding: 14px 20px;
+        /* Increased vertical padding */
         font-size: 11px;
-        gap: 8px;
-        line-height: 1.4;
+        gap: 12px;
+        line-height: 1.2;
         z-index: 5001;
         /* Above nav */
     }
@@ -825,8 +827,10 @@
 
     .banner-cta {
         font-size: 10px;
-        padding: 4px 10px;
+        padding: 6px 12px;
         white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
     }
 
     .nav {
