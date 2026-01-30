@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+:root {
+    --deep-black: #0A0A0A;
+    --nero: #161616;
+    --crimson: #DC143C;
+    --crimson-light: rgba(220, 20, 60, 0.1);
+    --off-white: #FAFAFA;
+    --gray-700: #3F3F46;
+    --gray-500: #A0A0A0;
+    --gray-400: #52525B;
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+}
