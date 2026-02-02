@@ -1,5 +1,6 @@
 /* Shared CSS for Concept Projects */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('css/banner.css');
 
 :root {
     --white: #ffffff;
@@ -53,4 +54,60 @@ a {
 .container {
     max-width: 1400px;
     margin: 0 auto;
+}
+
+/* --- Shared Banner & Navigation (Mobile Fixes) --- */
+
+/* Back to Case Study Button - Bottom Left */
+.back-to-case-study {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 4000;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 10px 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    border-radius: 6px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.back-to-case-study:hover {
+    background: white;
+    color: black;
+    transform: translateY(-2px);
+    border-color: white;
+}
+
+.back-to-case-study svg {
+    transition: transform 0.3s ease;
+}
+
+.back-to-case-study:hover svg {
+    transform: translateX(-4px);
+}
+
+/* Mobile Responsiveness for Back Button only - Banner handled by banner.css */
+@media (max-width: 768px) {
+    .banner-center {
+        display: flex !important;
+    }
+}
+
+/* Cleanup helpers */
+.banner-center {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }

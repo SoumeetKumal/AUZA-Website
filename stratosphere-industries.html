@@ -7,6 +7,7 @@
     <title>Industries | Stratosphere Strategy</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="projects.css">
     <style>
         :root {
             --bg-color: #F8F9FA;
@@ -30,7 +31,7 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             font-family: var(--body-font);
-            padding-top: 40px;
+            padding-top: 48px;
             line-height: 1.7;
         }
 
@@ -41,71 +42,12 @@
         }
 
         .announcement-banner {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 40px;
-            z-index: 3000;
-            background: #DC143C;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 20px;
-            font-weight: 700;
-            font-size: 13px;
-        }
-
-        .banner-back {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            color: white;
-            text-decoration: none;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            opacity: 0.9;
-            transition: opacity 0.3s ease;
-        }
-
-        .banner-back:hover {
-            opacity: 1;
-        }
-
-        .banner-back svg {
-            width: 14px;
-            height: 14px;
-        }
-
-        .banner-center {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .banner-cta {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 4px 12px;
-            border-radius: 4px;
-            text-decoration: none;
-            color: white;
-            transition: all 0.3s ease;
-        }
-
-        .banner-cta:hover {
-            background: white;
-            color: #DC143C;
-        }
-
-        .banner-spacer {
-            width: 120px;
+            display: none;
         }
 
         .strato-nav {
             position: fixed;
-            top: 40px;
+            top: 48px;
             left: 0;
             right: 0;
             height: 80px;
@@ -273,20 +215,16 @@
 </head>
 
 <body>
-    <div class="announcement-banner">
-        <a href="stratosphere.html" class="banner-back">
-            <svg viewBox="0 0 16 16" fill="none">
-                <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-            </svg>
-            Case Study
-        </a>
-        <div class="banner-center">
-            🚀 Launch Offer: First 5 Clients Save 25%
-            <a href="index.html#contact" class="banner-cta">Claim Yours →</a>
-        </div>
-        <div class="banner-spacer"></div>
-    </div>
+    <!-- Standard Announcement Banner -->
+    <script src="js/banner.js" defer></script>
+
+    <!-- Back to Case Study (Floating) -->
+    <a href="stratosphere-concept.html" class="back-to-case-study">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+        </svg>
+        Case Study
+    </a>
 
     <nav class="strato-nav">
         <a href="stratosphere-concept.html" class="strato-logo">

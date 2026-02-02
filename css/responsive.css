@@ -803,45 +803,7 @@
     }
 }
 
-/* Banner adjustments for all mobile */
-@media (max-width: 600px) {
 
-    /* Fix banner cutoff: Make banner relative and nav sticky so they stack naturally */
-    .announcement-banner {
-        position: relative;
-        min-height: 52px;
-        /* Slightly taller for breathing room */
-        height: auto;
-        padding: 14px 20px;
-        /* Increased vertical padding */
-        font-size: 11px;
-        gap: 12px;
-        line-height: 1.2;
-        z-index: 5001;
-        /* Above nav */
-    }
-
-    .banner-text {
-        display: inline;
-    }
-
-    .banner-extra {
-        display: none;
-    }
-
-    .banner-cta {
-        font-size: 10px;
-        padding: 6px 12px;
-        white-space: nowrap;
-        display: inline-flex;
-        align-items: center;
-    }
-
-    .nav {
-        position: sticky;
-        top: 0;
-    }
-}
 
 /* Very small screens */
 @media (max-width: 360px) {

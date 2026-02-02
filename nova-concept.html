@@ -57,50 +57,7 @@
             transform: translateY(-1px);
         }
 
-        /* Back to Case Study Button - Always visible, positioned relative to banner */
-        .back-to-case-study {
-            position: fixed;
-            top: 48px;
-            /* Below the banner */
-            left: 24px;
-            z-index: 4000;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(0, 0, 0, 0.85);
-            color: white;
-            padding: 10px 16px;
-            font-family: var(--font-main);
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            text-decoration: none;
-            border-radius: 6px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
 
-        .back-to-case-study:hover {
-            background: linear-gradient(90deg, var(--accent-purple), var(--accent-pink));
-            transform: translateX(-4px);
-            border-color: var(--accent-purple);
-        }
-
-        .back-to-case-study svg {
-            transition: transform 0.3s ease;
-        }
-
-        .back-to-case-study:hover svg {
-            transform: translateX(-4px);
-        }
-
-        /* When banner is NOT present, adjust back button position */
-        body.no-banner .back-to-case-study {
-            top: 8px;
-        }
 
         body.no-banner .nav-app {
             top: 0;
@@ -217,53 +174,47 @@
             opacity: 0.8;
         }
 
-        /* Banner overrides - removed, using standard centered layout */
-        .announcement-banner {
-            box-shadow: 0 4px 20px rgba(220, 20, 60, 0.3);
+        /* Reponsive Grids */
+        .responsive-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .banner-center {
-            display: flex;
+        .security-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
             align-items: center;
-            gap: 12px;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .responsive-grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
+            .nav-app {
+                top: 0;
+            }
+
             .nav-links {
-                display: none;
-            }
-
-            .banner-center {
-                display: none !important;
-            }
-
-            /* Floating Back Button on Mobile */
-            .announcement-banner {
-                background: transparent !important;
-                pointer-events: none;
-                box-shadow: none !important;
-                height: 0 !important;
-            }
-
-            .banner-back {
-                pointer-events: auto;
-                background: rgba(0, 0, 0, 0.85);
-                color: white;
-                padding: 8px 16px;
-                border-radius: 6px;
-                position: fixed;
-                top: 10px;
-                left: 10px;
-                z-index: 5000;
-                font-weight: 600;
-                backdrop-filter: blur(10px);
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            }
-
-            .banner-spacer {
                 display: none;
             }
 
@@ -292,6 +243,24 @@
 
             .chart-mock {
                 height: 150px;
+            }
+
+            .responsive-grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .security-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
             }
         }
 
@@ -410,128 +379,6 @@
             pointer-events: none;
             z-index: -1;
         }
-
-        .announcement-banner {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            min-height: 40px;
-            z-index: 3000;
-            background: #DC143C;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            padding: 10px 24px;
-            font-weight: 700;
-            font-size: 13px;
-            letter-spacing: 0.05em;
-            text-decoration: none;
-            transition: background 0.3s ease;
-        }
-
-        .announcement-banner:hover {
-            background: #c11235;
-        }
-
-        .banner-text {
-            display: inline;
-        }
-
-        .banner-extra {
-            display: none;
-        }
-
-        @media (min-width: 768px) {
-            .banner-extra {
-                display: inline;
-            }
-        }
-
-        .badge-dot {
-            width: 6px;
-            height: 6px;
-            background: white;
-            border-radius: 50%;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.4;
-            }
-        }
-
-        .banner-cta {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 4px 12px;
-            border-radius: 4px;
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-            color: white;
-        }
-
-        .announcement-banner:hover .banner-cta {
-            background: white;
-            color: #DC143C;
-        }
-
-        .banner-back {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            color: white;
-            text-decoration: none;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            opacity: 0.9;
-            transition: opacity 0.3s ease;
-        }
-
-        .banner-back:hover {
-            opacity: 1;
-        }
-
-        .banner-back svg {
-            width: 14px;
-            height: 14px;
-        }
-
-        .banner-center {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .banner-cta {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 4px 12px;
-            border-radius: 4px;
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: white;
-        }
-
-        .banner-cta:hover {
-            background: white;
-            color: #DC143C;
-        }
-
-        .banner-spacer {
-            width: 120px;
-        }
     </style>
 </head>
 
@@ -544,13 +391,8 @@
         Case Study
     </a>
 
-    <!-- Standard Promo Banner -->
-    <a href="index.html#contact" class="announcement-banner">
-        🚀 Launch Offer: <span class="banner-text">First 5 Clients Save 25% <span class="banner-extra">| Limited Slots
-                for Q1 2026</span></span>
-        <span class="badge-dot"></span>
-        <span class="banner-cta">Claim Yours →</span>
-    </a>
+    <!-- Banner injected by JS -->
+    <script src="js/banner.js"></script>
 
     <div class="glare"></div>
 
@@ -622,8 +464,7 @@
             <p style="color: #888;">Institutional-grade tools, available to everyone.</p>
         </div>
 
-        <div
-            style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto;">
+        <div class="responsive-grid-3">
             <div class="card" style="text-align: center; padding: 40px;">
                 <div style="font-size: 32px; margin-bottom: 20px;">⚡</div>
                 <h3 style="font-size: 1.25rem; margin-bottom: 12px;">Real-Time Data</h3>
@@ -718,8 +559,7 @@
 
     <!-- Security Deep Dive -->
     <section class="section" style="padding: 100px 5vw; background: #0B0B14;">
-        <div class="container"
-            style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+        <div class="security-container">
             <div>
                 <h2 style="font-size: 3rem; margin-bottom: 30px; line-height: 1.1;">Serious security<br>for serious
                     wealth.</h2>
@@ -759,8 +599,7 @@
         <div style="text-align: center; margin-bottom: 80px;">
             <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Don't just take our word for it.</h2>
         </div>
-        <div
-            style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto;">
+        <div class="responsive-grid-3">
             <div style="background: rgba(255,255,255,0.03); padding: 30px; border-radius: 16px;">
                 <div style="color: var(--accent-purple); margin-bottom: 15px;">★★★★★</div>
                 <p style="color: #ccc; margin-bottom: 20px; line-height: 1.6;">"The automated tax-loss harvesting alone
@@ -816,7 +655,7 @@
                 <p style="color: #888;">Scale up your tools as you grow your wealth.</p>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; align-items: center;">
+            <div class="pricing-grid">
                 <!-- Basic -->
                 <div
                     style="background: rgba(255,255,255,0.03); border-radius: 20px; padding: 40px; border: 1px solid rgba(255,255,255,0.05);">
