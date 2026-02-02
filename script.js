@@ -144,22 +144,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-
-/* =========================================================================
-   Scroll Progress Line
-   ========================================================================= */
-document.addEventListener('DOMContentLoaded', () => {
-  // Create the scroll progress element
-  const scrollLine = document.createElement('div');
-  scrollLine.className = 'scroll-progress-line';
-  document.body.appendChild(scrollLine);
-
-  // Update height based on scroll percentage
-  window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercent = (scrollTop / docHeight) * 100;
-
-    scrollLine.style.height = `${scrollPercent}%`;
-  });
-});
