@@ -12,8 +12,8 @@
 
     // Animation configuration
     const config = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.05,
+        rootMargin: '0px 0px -20px 0px' // Trigger sooner
     };
 
     // Initialize scroll animations
@@ -30,11 +30,9 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const el = entry.target;
-                    const delay = el.dataset.scrollDelay || 0;
 
-                    setTimeout(() => {
-                        el.classList.add('scroll-visible');
-                    }, delay);
+                    // Add class immediately; delay should be handled by CSS transition-delay
+                    el.classList.add('scroll-visible');
 
                     // Unobserve after animation (one-time animation)
                     observer.unobserve(el);
@@ -48,6 +46,9 @@
         });
     }
 
+    // Detect mobile for faster stagger defaults
+    const isMobile = window.innerWidth <= 768;
+
     // Stagger animation for groups
     function initStaggerAnimations() {
         if (prefersReducedMotion) return;
@@ -56,13 +57,21 @@
 
         groups.forEach(group => {
             const children = group.children;
-            const staggerDelay = parseInt(group.dataset.scrollStagger) || 100;
+            let staggerDelay = parseInt(group.dataset.scrollStagger) || 100;
+
+            // Half the stagger delay on mobile for faster visual feedback
+            if (isMobile) {
+                staggerDelay = staggerDelay * 0.5;
+            }
 
             Array.from(children).forEach((child, index) => {
                 if (!child.hasAttribute('data-scroll')) {
                     child.setAttribute('data-scroll', 'fade-up');
                 }
-                child.dataset.scrollDelay = index * staggerDelay;
+
+                // Set transition delay directly on the style object
+                const delay = index * staggerDelay;
+                child.style.transitionDelay = `${delay}ms`;
             });
         });
     }

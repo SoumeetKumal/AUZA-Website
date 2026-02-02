@@ -13,16 +13,32 @@ const detailTitle = document.getElementById('detail-title');
 const detailDesc = document.getElementById('detail-desc');
 steps.forEach((step, i) => {
   step.addEventListener('click', () => {
+    // Don't do anything if already active
+    if (step.classList.contains('active')) return;
+
+    const detailCard = document.getElementById('detail-card');
+
+    // Trigger transition out
+    detailCard.classList.add('switching');
+
     steps.forEach(s => s.classList.remove('active'));
     step.classList.add('active');
-    const d = processData[i];
-    detailNum.textContent = d.num;
-    detailTitle.textContent = d.title;
-    detailDesc.textContent = d.desc;
+
+    // Wait for fade out, then update content and fade in
+    setTimeout(() => {
+      const d = processData[i];
+      detailNum.textContent = d.num;
+      detailTitle.textContent = d.title;
+      detailDesc.textContent = d.desc;
+
+      detailCard.classList.remove('switching');
+    }, 250);
 
     // Mobile - Scroll to detail card
     if (window.innerWidth <= 768) {
-      document.getElementById('detail-card').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      setTimeout(() => {
+        detailCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 300);
     }
   });
 });
@@ -38,6 +54,30 @@ if (hero) {
     hero.style.setProperty('--mouse-y', `${y}px`);
   });
 }
+
+// Card Mouse Glow Effect (Why Partner With Us)
+const valueProps = document.querySelectorAll('.value-prop');
+valueProps.forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty('--mouse-x', `${x}px`);
+    card.style.setProperty('--mouse-y', `${y}px`);
+  });
+});
+
+// Card Mouse Glow Effect (What We Do)
+const serviceCards = document.querySelectorAll('.service-card');
+serviceCards.forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty('--mouse-x', `${x}px`);
+    card.style.setProperty('--mouse-y', `${y}px`);
+  });
+});
 
 // Scroll Indicator Fade Out
 const scrollIndicator = document.querySelector('.scroll-indicator');
