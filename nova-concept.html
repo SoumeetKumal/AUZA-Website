@@ -57,41 +57,53 @@
             transform: translateY(-1px);
         }
 
-        /* Back Button */
-        .back-btn {
+        /* Back to Case Study Button - Always visible, positioned relative to banner */
+        .back-to-case-study {
             position: fixed;
-            top: 8px;
+            top: 48px;
+            /* Below the banner */
             left: 24px;
             z-index: 4000;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.85);
             color: white;
-            padding: 12px 20px;
+            padding: 10px 16px;
             font-family: var(--font-main);
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 6px;
             backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .back-btn:hover {
+        .back-to-case-study:hover {
             background: linear-gradient(90deg, var(--accent-purple), var(--accent-pink));
             transform: translateX(-4px);
+            border-color: var(--accent-purple);
         }
 
-        .back-btn svg {
+        .back-to-case-study svg {
             transition: transform 0.3s ease;
         }
 
-        .back-btn:hover svg {
+        .back-to-case-study:hover svg {
             transform: translateX(-4px);
+        }
+
+        /* When banner is NOT present, adjust back button position */
+        body.no-banner .back-to-case-study {
+            top: 8px;
+        }
+
+        body.no-banner .nav-app {
+            top: 0;
         }
 
         .nav-app {
@@ -128,6 +140,159 @@
 
         .nav-link:hover {
             color: var(--accent-purple);
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            z-index: 3001;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 120px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(11, 11, 20, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 2500;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu a {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            opacity: 0.8;
+        }
+
+        /* Banner overrides - removed, using standard centered layout */
+        .announcement-banner {
+            box-shadow: 0 4px 20px rgba(220, 20, 60, 0.3);
+        }
+
+        .banner-center {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .banner-center {
+                display: none !important;
+            }
+
+            /* Floating Back Button on Mobile */
+            .announcement-banner {
+                background: transparent !important;
+                pointer-events: none;
+                box-shadow: none !important;
+                height: 0 !important;
+            }
+
+            .banner-back {
+                pointer-events: auto;
+                background: rgba(0, 0, 0, 0.85);
+                color: white;
+                padding: 8px 16px;
+                border-radius: 6px;
+                position: fixed;
+                top: 10px;
+                left: 10px;
+                z-index: 5000;
+                font-weight: 600;
+                backdrop-filter: blur(10px);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .banner-spacer {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            /* Layout Fixes */
+            .main-view {
+                grid-template-columns: 1fr;
+                margin-left: 0;
+                padding: 20px;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .stats-row {
+                flex-direction: column;
+            }
+
+            .chart-mock {
+                height: 150px;
+            }
         }
 
         .hero {
@@ -251,16 +416,73 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 40px;
+            min-height: 40px;
             z-index: 3000;
             background: #DC143C;
             color: white;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 0 20px;
+            justify-content: center;
+            gap: 12px;
+            padding: 10px 24px;
             font-weight: 700;
             font-size: 13px;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .announcement-banner:hover {
+            background: #c11235;
+        }
+
+        .banner-text {
+            display: inline;
+        }
+
+        .banner-extra {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .banner-extra {
+                display: inline;
+            }
+        }
+
+        .badge-dot {
+            width: 6px;
+            height: 6px;
+            background: white;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.4;
+            }
+        }
+
+        .banner-cta {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 4px 12px;
+            border-radius: 4px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        .announcement-banner:hover .banner-cta {
+            background: white;
+            color: #DC143C;
         }
 
         .banner-back {
@@ -314,20 +536,21 @@
 </head>
 
 <body>
-    <div class="announcement-banner">
-        <a href="nova.html" class="banner-back">
-            <svg viewBox="0 0 16 16" fill="none">
-                <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-            </svg>
-            Case Study
-        </a>
-        <div class="banner-center">
-            🚀 Launch Offer: First 5 Clients Save 25%
-            <a href="index.html#contact" class="banner-cta">Claim Yours →</a>
-        </div>
-        <div class="banner-spacer"></div>
-    </div>
+    <!-- Back to Case Study Button - Always visible -->
+    <a href="nova.html" class="back-to-case-study">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+        </svg>
+        Case Study
+    </a>
+
+    <!-- Standard Promo Banner -->
+    <a href="index.html#contact" class="announcement-banner">
+        🚀 Launch Offer: <span class="banner-text">First 5 Clients Save 25% <span class="banner-extra">| Limited Slots
+                for Q1 2026</span></span>
+        <span class="badge-dot"></span>
+        <span class="banner-cta">Claim Yours →</span>
+    </a>
 
     <div class="glare"></div>
 
@@ -340,7 +563,21 @@
             <a href="#" class="nav-link">About</a>
             <a href="#" class="btn-launch">Launch App</a>
         </div>
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="#">Features</a>
+        <a href="#">Pricing</a>
+        <a href="#">Security</a>
+        <a href="#">About</a>
+        <a href="#">Launch App</a>
+    </div>
 
     <section class="hero">
         <h1>Wealth management<br>on autopilot.</h1>
@@ -674,6 +911,28 @@
                 target="_blank">Privacy Policy</a>
         </div>
     </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            });
+
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuBtn.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+    </script>
 </body>
 
 </html>

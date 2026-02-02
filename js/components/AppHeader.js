@@ -9,7 +9,7 @@ class AppHeader extends HTMLElement {
       this.innerHTML = `
             <nav class="nav" id="navbar">
                 <div class="nav-inner">
-                    <a href="index.html" class="logo">
+                    <a href="./" class="logo">
                         <div style="position: relative;">
                             <div class="logo-full">
                                 <img src="images/AUZA Wordmark White.png" alt="AUZA - Functional Design Studio" width="100">
@@ -29,7 +29,7 @@ class AppHeader extends HTMLElement {
     this.innerHTML = `
     <nav class="nav" id="navbar">
     <div class="nav-inner">
-      <a href="index.html" class="logo">
+      <a href="./" class="logo">
         <div style="position: relative;">
           <div class="logo-full">
             <img src="images/AUZA Wordmark White.png" alt="AUZA - Functional Design Studio" width="100">

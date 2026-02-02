@@ -63,71 +63,108 @@
     color: var(--crimson)
 }
 
-/* Scroll Indicator */
+/* Scroll Indicator - Premium World-Class Design */
 .scroll-indicator {
     position: absolute;
-    bottom: 30px;
+    bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    opacity: 0.7;
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    gap: 12px;
+    opacity: 0.9;
+    transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     z-index: 10;
+    animation: scrollFloat 3s ease-in-out infinite;
 }
 
 .scroll-indicator:hover {
     opacity: 1;
+    animation-play-state: paused;
+    transform: translateX(-50%) scale(1.05);
 }
 
 .scroll-indicator.hidden {
     opacity: 0;
-    transform: translate(-50%, 20px);
+    transform: translate(-50%, 30px);
     pointer-events: none;
 }
 
+/* Premium Mouse Icon */
 .mouse {
-    width: 26px;
-    height: 40px;
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    border-radius: 20px;
+    width: 28px;
+    height: 44px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 24px;
     position: relative;
-    background: rgba(10, 10, 10, 0.2);
-    backdrop-filter: blur(4px);
+    background: rgba(10, 10, 10, 0.3);
+    backdrop-filter: blur(8px);
+    box-shadow:
+        0 0 20px rgba(220, 20, 60, 0.15),
+        inset 0 0 20px rgba(255, 255, 255, 0.03);
+    transition: all 0.3s ease;
 }
 
+.scroll-indicator:hover .mouse {
+    border-color: rgba(220, 20, 60, 0.6);
+    box-shadow:
+        0 0 30px rgba(220, 20, 60, 0.25),
+        inset 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+/* Animated Scroll Wheel */
 .wheel {
     width: 4px;
-    height: 8px;
-    background: var(--crimson);
-    border-radius: 2px;
+    height: 10px;
+    background: linear-gradient(180deg, var(--crimson) 0%, rgba(220, 20, 60, 0.3) 100%);
+    border-radius: 4px;
     position: absolute;
-    top: 6px;
+    top: 8px;
     left: 50%;
     transform: translateX(-50%);
-    animation: wheel 1.5s infinite;
+    animation: scrollWheel 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    box-shadow: 0 0 8px rgba(220, 20, 60, 0.5);
+}
+
+/* Premium Bouncing Arrows */
+.arrow-span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
 }
 
 .arrow-span span {
     display: block;
-    width: 10px;
-    height: 10px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-    border-right: 2px solid rgba(255, 255, 255, 0.3);
+    width: 12px;
+    height: 12px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    border-right: 2px solid rgba(255, 255, 255, 0.4);
     transform: rotate(45deg);
-    margin: -4px 0;
-    animation: arrow 2s infinite;
+    margin: -5px 0;
+    animation: bounceArrow 2s ease-in-out infinite;
+    transition: border-color 0.3s ease;
+}
+
+.scroll-indicator:hover .arrow-span span {
+    border-color: rgba(220, 20, 60, 0.7);
+}
+
+.arrow-span span:nth-child(1) {
+    animation-delay: 0s;
+    opacity: 0.3;
 }
 
 .arrow-span span:nth-child(2) {
-    animation-delay: -0.2s;
+    animation-delay: 0.15s;
+    opacity: 0.6;
 }
 
 .arrow-span span:nth-child(3) {
-    animation-delay: -0.4s;
+    animation-delay: 0.3s;
+    opacity: 1;
 }
 
 /* Value Prop Icons */
@@ -334,4 +371,19 @@
     height: 54px;
     justify-content: center;
     margin-top: auto;
+}
+
+/* Scroll Progress Line */
+.scroll-progress-line {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 0%;
+    background: var(--crimson);
+    box-shadow: 0 0 10px rgba(220, 20, 60, 0.3);
+    z-index: 9999;
+    transition: height 0.1s linear;
+    border-bottom-right-radius: 4px;
+    opacity: 0.8;
 }

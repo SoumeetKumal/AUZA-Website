@@ -52,6 +52,53 @@
     }
 }
 
+/* Premium Scroll Indicator Animations */
+@keyframes scrollFloat {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-8px);
+    }
+}
+
+@keyframes scrollWheel {
+    0% {
+        opacity: 1;
+        top: 8px;
+        height: 10px;
+    }
+
+    50% {
+        opacity: 0.4;
+        top: 18px;
+        height: 6px;
+    }
+
+    100% {
+        opacity: 0;
+        top: 26px;
+        height: 4px;
+    }
+}
+
+@keyframes bounceArrow {
+
+    0%,
+    100% {
+        opacity: var(--arrow-opacity, 0.5);
+        transform: rotate(45deg) translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: rotate(45deg) translateY(4px);
+    }
+}
+
 @keyframes arrow {
     0% {
         opacity: 0;
@@ -76,4 +123,247 @@
     100% {
         transform: translateX(-50%)
     }
+}
+
+/* ============================================
+   SCROLL-TRIGGERED ANIMATIONS
+   Subtle, world-class animations for AUZA
+   ============================================ */
+
+/* Base state for all scroll-triggered elements */
+[data-scroll] {
+    opacity: 0;
+    transition: opacity 1.0s cubic-bezier(0.2, 1, 0.3, 1),
+        transform 1.0s cubic-bezier(0.2, 1, 0.3, 1),
+        filter 1.0s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+/* Visible state */
+[data-scroll].scroll-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
+}
+
+/* Fade Up Animation */
+[data-scroll="fade-up"] {
+    transform: translate3d(0, 30px, 0);
+}
+
+/* Fade Down Animation */
+[data-scroll="fade-down"] {
+    transform: translate3d(0, -30px, 0);
+}
+
+/* Fade Left Animation */
+[data-scroll="fade-left"] {
+    transform: translate3d(40px, 0, 0);
+}
+
+/* Fade Right Animation */
+[data-scroll="fade-right"] {
+    transform: translate3d(-40px, 0, 0);
+}
+
+/* Scale Up Animation */
+[data-scroll="scale"] {
+    transform: scale(0.9);
+}
+
+/* Scale Up with Fade */
+[data-scroll="scale-fade"] {
+    transform: scale(0.95);
+    filter: blur(4px);
+}
+
+/* Zoom In Animation */
+[data-scroll="zoom"] {
+    transform: scale(0.8);
+}
+
+/* Blur In Animation */
+[data-scroll="blur"] {
+    filter: blur(10px);
+    transform: translate3d(0, 20px, 0);
+}
+
+/* Subtle float animation */
+[data-scroll="float"] {
+    transform: translate3d(0, 30px, 0);
+}
+
+/* Card reveal with lift */
+[data-scroll="card"] {
+    transform: translate3d(0, 60px, 0);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+[data-scroll="card"].scroll-visible {
+    box-shadow: var(--shadow-lg, 0 25px 50px -12px rgba(0, 0, 0, 0.25));
+}
+
+/* ============================================
+   STAGGER DELAY UTILITIES
+   ============================================ */
+
+[data-scroll-delay="100"] {
+    transition-delay: 100ms;
+}
+
+[data-scroll-delay="200"] {
+    transition-delay: 200ms;
+}
+
+[data-scroll-delay="300"] {
+    transition-delay: 300ms;
+}
+
+[data-scroll-delay="400"] {
+    transition-delay: 400ms;
+}
+
+[data-scroll-delay="500"] {
+    transition-delay: 500ms;
+}
+
+[data-scroll-delay="600"] {
+    transition-delay: 600ms;
+}
+
+[data-scroll-delay="700"] {
+    transition-delay: 700ms;
+}
+
+[data-scroll-delay="800"] {
+    transition-delay: 800ms;
+}
+
+/* ============================================
+   ENHANCED HOVER STATES
+   Premium micro-interactions
+   ============================================ */
+
+/* Card hover lift effect */
+.hover-lift {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Subtle glow on hover */
+.hover-glow {
+    transition: box-shadow 0.4s ease;
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 30px rgba(220, 20, 60, 0.15);
+}
+
+/* Scale on hover */
+.hover-scale {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-scale:hover {
+    transform: scale(1.02);
+}
+
+/* ============================================
+   REDUCED MOTION SUPPORT
+   Accessibility for users who prefer less motion
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    [data-scroll],
+    .fade-up,
+    .hover-lift,
+    .hover-scale,
+    .hover-glow {
+        transition: none !important;
+        animation: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+        filter: none !important;
+    }
+
+    [data-scroll] {
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   LOADING SHIMMER
+   Subtle loading state
+   ============================================ */
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.shimmer {
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.05) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* ============================================
+   GRADIENT TEXT ANIMATION
+   Subtle color shift for accent text
+   ============================================ */
+
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.animated-gradient {
+    background: linear-gradient(90deg,
+            var(--accent, #DC143C),
+            #FF6B6B,
+            var(--accent, #DC143C));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 4s ease infinite;
+}
+
+/* ============================================
+   SMOOTH SECTION TRANSITIONS
+   ============================================ */
+
+.section-transition {
+    position: relative;
+}
+
+.section-transition::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, var(--bg, #0A0A0A));
+    pointer-events: none;
 }
