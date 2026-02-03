@@ -133,7 +133,14 @@
     <script src="js/analytics.js" defer></script>
 </head>
 
-<body>
+<body class="has-banner">
+    <!-- Pre-rendered Banner to prevent CLS -->
+    <a href="./#contact" class="announcement-banner">
+        <span class="banner-prefix">🚀 Launch Offer: </span><span class="banner-text">First 5 Clients Save 25% <span
+                class="banner-extra">| Limited Slots for Q1 2026</span></span>
+        <span class="badge-dot"></span>
+        <span class="banner-cta">Claim Yours →</span>
+    </a>
     <script src="js/banner.js" defer></script>
     <div class="grid-bg"></div>
 

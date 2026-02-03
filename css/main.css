@@ -634,12 +634,16 @@ p {
     align-items: center;
     justify-content: center;
     transform: translateY(-100%);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s;
     padding: 40px;
 }
 
 .mobile-menu.active {
     transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .mobile-menu-inner {
@@ -794,7 +798,7 @@ p {
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--crimson);
+    color: var(--crimson-accessible);
     margin-bottom: 4px
 }
 

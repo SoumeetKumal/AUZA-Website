@@ -10,9 +10,8 @@
     /* Standardized height */
     z-index: 5000;
     /* High z-index to stay above nav */
-    background: #DC143C;
-    /* Crimson fallback */
-    background: var(--crimson, #DC143C);
+    background: #FF3366;
+    background: var(--crimson-accessible, #FF3366);
     color: white;
     color: var(--off-white, white);
     display: flex;
