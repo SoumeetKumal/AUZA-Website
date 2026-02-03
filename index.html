@@ -1,37 +1,159 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-  <link rel="preload" href="fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link as="font" crossorigin="" href="fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" rel="preload"
+    type="font/woff2" />
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>AUZA | Functional Design for Business Growth</title>
   <!-- Preconnect for performance -->
+  <!-- Critical CSS for Hero -->
+  <style>
+    /* variables.css */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
 
-  <!-- Local Fonts -->
-  <link rel="stylesheet" href="css/fonts.css">
+    :root {
+      --deep-black: #0A0A0A;
+      --nero: #161616;
+      --crimson: #DC143C;
+      --crimson-light: rgba(220, 20, 60, 0.1);
+      --off-white: #FAFAFA;
+      --gray-700: #3F3F46;
+      --gray-500: #D4D4D8;
+      --gray-400: #A1A1AA;
+      --gray-300: #E4E4E7;
+      --crimson-text: #FF4D6D;
+      --mouse-x: 50%;
+      --mouse-y: 50%;
+      --header-weight: 900;
+      --header-spacing: -0.04em;
+      --header-line-height: 1.1;
+      --sub-header-weight: 800;
+      --sub-header-spacing: -0.02em;
+    }
 
-  <!-- Consolidated CSS -->
-  <link rel="stylesheet" href="css/main.min.css">
+    /* base.css */
+    html {
+      scroll-behavior: smooth
+    }
 
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--deep-black);
+      color: var(--off-white);
+      line-height: 1.6;
+      overflow-x: hidden
+    }
+
+    .grid-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.2;
+      background-image: linear-gradient(rgba(220, 20, 60, 0.1) 3px, transparent 2px), linear-gradient(90deg, rgba(220, 20, 60, 0.1) 1px, transparent 2px), radial-gradient(circle at 50% 50%, rgba(220, 20, 60, 0.15) 0%, transparent 70%);
+      background-size: 80px 80px, 80px 80px, 100% 100%;
+      background-repeat: repeat, repeat, no-repeat;
+      z-index: 0
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 160px 48px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center
+    }
+
+    .hero-title {
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: var(--header-weight);
+      line-height: var(--header-line-height);
+      letter-spacing: var(--header-spacing);
+      margin-bottom: 24px;
+      max-width: 900px
+    }
+
+    .hero-title .accent {
+      color: var(--crimson)
+    }
+
+    .hero-desc {
+      font-size: 17px;
+      color: var(--gray-500);
+      max-width: 580px;
+      line-height: 1.75;
+      margin-bottom: 36px
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-up {
+      opacity: 0;
+      animation: fadeUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
+
+    .delay-1 {
+      animation-delay: 0.05s;
+    }
+
+    .delay-2 {
+      animation-delay: 0.10s;
+    }
+
+    .delay-3 {
+      animation-delay: 0.15s;
+    }
+  </style>
+  <!-- Deferred Main CSS -->
+  <link href="css/main.min.css" media="print" onload="this.media='all'" rel="stylesheet" />
+  <noscript>
+    <link href="css/main.min.css" rel="stylesheet" />
+  </noscript>
   <!-- Optimized Google Analytics -->
-  <script src="js/analytics.js" defer></script>
-
-  <meta name="description"
-    content="Strategic web design for ambitious businesses. WCAG 2.1 AA accessible, performance-optimized websites that drive measurable growth. Based in Mauritius, working globally.">
-
+  <script defer="" src="js/analytics.js"></script>
+  <meta
+    content="Strategic web design for ambitious businesses. WCAG 2.1 AA accessible, performance-optimized websites that drive measurable growth. Based in Mauritius, working globally."
+    name="description" />
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="images/AUZA Logo White.png">
-
+  <link href="images/AUZA Logo White.png" rel="icon" type="image/png" />
   <!-- Open Graph / Social Sharing -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://auza.mu/">
-  <meta property="og:title" content="AUZA | Functional Design for Business Growth">
-  <meta property="og:description"
-    content="Strategic web design for ambitious businesses. WCAG 2.1 AA accessible, performance-optimized websites that drive measurable growth. Based in Mauritius, working globally.">
-  <meta property="og:image" content="images/auza-og-share.png">
-
+  <meta content="website" property="og:type" />
+  <meta content="https://auza.mu/" property="og:url" />
+  <meta content="AUZA | Functional Design for Business Growth" property="og:title" />
+  <meta
+    content="Strategic web design for ambitious businesses. WCAG 2.1 AA accessible, performance-optimized websites that drive measurable growth. Based in Mauritius, working globally."
+    property="og:description" />
+  <meta content="images/auza-og-share.png" property="og:image" />
   <!-- Schema Markup -->
   <script type="application/ld+json">
   {
@@ -52,25 +174,24 @@
 </head>
 
 <body>
-  <script src="js/banner.js" defer></script>
+  <script defer="" src="js/banner.js"></script>
   <div class="grid-bg"></div>
   <!-- Navigation -->
   <app-header active="home"></app-header>
   <main id="main-content">
-
-
     <section class="hero">
       <div class="hero-inner">
         <div class="hero-badge fade-up">
           <div class="badge-dot"></div><span class="badge-text">Taking Projects for Q1 2026</span>
         </div>
-        <h1 class="hero-title fade-up delay-1">Turn Your Website Into a <br><span class="accent">Revenue Engine.</span>
+        <h1 class="hero-title fade-up delay-1">Turn Your Website Into a <br /><span class="accent">Revenue
+            Engine.</span>
         </h1>
         <p class="hero-desc fade-up delay-2">Web design for ambitious businesses that need more than a pretty website.
           We
           build strategic, accessible sites that turn visitors into loyal clients.</p>
         <div class="hero-buttons fade-up delay-3">
-          <a href="#contact" class="btn btn-primary">Book Free 30-Min Consultation →</a>
+          <a class="btn btn-primary" href="#contact">Book Free 30-Min Consultation →</a>
         </div>
       </div>
       <div class="scroll-indicator fade-up delay-3">
@@ -84,7 +205,6 @@
         </div>
       </div>
     </section>
-
     <section class="logo-scroll-section">
       <p class="logo-scroll-label">Beyond aesthetics. We build strategic digital assets that drive business growth.</p>
       <div class="logo-scroll-wrapper">
@@ -102,7 +222,6 @@
         </div>
       </div>
     </section>
-
     <section class="section reasons" id="why-us">
       <div class="section-inner">
         <div class="section-header" data-scroll="fade-up">
@@ -115,9 +234,9 @@
         </div>
         <div class="value-props-inner" data-scroll-stagger="100">
           <div class="value-prop">
-            <div class="value-prop-icon"><svg viewBox="0 0 24 24" aria-hidden="true">
+            <div class="value-prop-icon"><svg aria-hidden="true" viewbox="0 0 24 24">
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round"
-                  stroke-linejoin="round" />
+                  stroke-linejoin="round"></path>
               </svg></div>
             <h3 class="value-prop-title">Functional</h3>
             <p class="value-prop-desc">Business objectives drive every decision. No decoration for decoration's
@@ -125,26 +244,26 @@
               element serves a purpose.</p>
           </div>
           <div class="value-prop">
-            <div class="value-prop-icon"><svg viewBox="0 0 24 24" aria-hidden="true">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01" stroke-linecap="round" />
+            <div class="value-prop-icon"><svg aria-hidden="true" viewbox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01" stroke-linecap="round"></path>
               </svg></div>
             <h3 class="value-prop-title">Accessible</h3>
             <p class="value-prop-desc">WCAG 2.1 AA compliance on every project. Inclusive design expands reach and
               improves UX for everyone.</p>
           </div>
           <div class="value-prop">
-            <div class="value-prop-icon"><svg viewBox="0 0 24 24" aria-hidden="true">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" stroke-linecap="round" stroke-linejoin="round" />
+            <div class="value-prop-icon"><svg aria-hidden="true" viewbox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14" stroke-linecap="round" stroke-linejoin="round"></polyline>
               </svg></div>
             <h3 class="value-prop-title">Transparent</h3>
             <p class="value-prop-desc">Fixed-scope pricing. No hidden costs or endless timelines. You know exactly what
               you're getting.</p>
           </div>
           <div class="value-prop">
-            <div class="value-prop-icon"><svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round" />
+            <div class="value-prop-icon"><svg aria-hidden="true" viewbox="0 0 24 24">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"></path>
               </svg></div>
             <h3 class="value-prop-title">Fast</h3>
             <p class="value-prop-desc">Sub-2s load times. Lightweight, optimized sites that rank better and convert more
@@ -153,7 +272,6 @@
         </div>
       </div>
     </section>
-
     <section class="section process" id="process">
       <div class="section-inner">
         <div class="section-header" data-scroll="fade-up">
@@ -207,7 +325,6 @@
         </div>
       </div>
     </section>
-
     <section class="section work" id="work">
       <div class="section-inner">
         <div class="section-header" data-scroll="fade-up">
@@ -218,20 +335,19 @@
               measurable growth.</p>
           </div>
         </div>
-
         <div class="transparency-notice">
           <p><strong>Transparency Note:</strong> AUZA is launching Q1 2026. These are capability demonstrations showing
             our
             strategic approach across industries.</p>
         </div>
-
         <div class="project-grid" data-scroll-stagger="150">
           <!-- Project 1: Consulting -->
-          <a href="stratosphere" class="project-card" target="_blank">
+          <a class="project-card" href="stratosphere" target="_blank">
             <div class="project-image">
-              <img src="images/stratosphere-strategy-hero.webp"
+              <img
                 alt="Stratosphere Strategy corporate consulting website hero section featuring navigation, bold typography, and skyscraper imagery"
-                class="project-img-cover" loading="lazy" width="1920" height="1080">
+                class="project-img-cover" decoding="async" height="1080" loading="lazy"
+                src="images/stratosphere-strategy-hero.webp" width="1920" />
               <div class="concept-label">Concept Design</div>
             </div>
             <div class="project-info">
@@ -241,13 +357,13 @@
                 for a high-end management firm.</p>
             </div>
           </a>
-
           <!-- Project 2: Law -->
-          <a href="vanguard" class="project-card" target="_blank">
+          <a class="project-card" href="vanguard" target="_blank">
             <div class="project-image">
-              <img src="images/vanguard-legal-hero.webp"
+              <img
                 alt="Vanguard Legal modern litigation law firm website hero with elegant typography and courthouse imagery"
-                class="project-img-cover" loading="lazy" width="1920" height="1080">
+                class="project-img-cover" decoding="async" height="1080" loading="lazy"
+                src="images/vanguard-legal-hero.webp" width="1920" />
               <div class="concept-label">Concept Design</div>
             </div>
             <div class="project-info">
@@ -257,13 +373,13 @@
                 accessibility and professional authority.</p>
             </div>
           </a>
-
           <!-- Project 3: Medical -->
-          <a href="vitality-concept" class="project-card" target="_blank">
+          <a class="project-card" href="vitality-concept" target="_blank">
             <div class="project-image">
-              <img src="images/vitality-health-clinic-hero-v2.webp"
-                alt="Vitality Health patient-centered clinic website hero with welcoming healthcare imagery and teal accents"
-                class="project-img-cover" loading="lazy" width="1920" height="1080">
+              <img
+                alt="Vitality Health patient-centered clinic website hero featuring diagnostic tools, patient data visualization, and teal brand accents"
+                class="project-img-cover" decoding="async" height="1080" loading="lazy"
+                src="images/vitality-health-clinic-hero.webp" width="1920" />
               <div class="concept-label">Concept Design</div>
             </div>
             <div class="project-info">
@@ -273,13 +389,13 @@
                 WCAG AA compliance.</p>
             </div>
           </a>
-
           <!-- Project 4: FinTech -->
-          <a href="nova" class="project-card" target="_blank">
+          <a class="project-card" href="nova" target="_blank">
             <div class="project-image">
-              <img src="images/nova-wealth-dashboard-hero.webp"
+              <img
                 alt="Nova Wealth fintech dashboard featuring portfolio performance charts and market data visualization"
-                class="project-img-cover" loading="lazy" width="1920" height="1080">
+                class="project-img-cover" decoding="async" height="1080" loading="lazy"
+                src="images/nova-wealth-dashboard-hero.webp" width="1920" />
               <div class="concept-label">Concept Design</div>
             </div>
             <div class="project-info">
@@ -290,17 +406,8 @@
             </div>
           </a>
         </div>
-
-
       </div>
     </section>
-
-
-
-
-
-
-
     <section class="section services" id="services">
       <div class="section-inner">
         <div class="section-header" data-scroll="fade-up">
@@ -312,7 +419,7 @@
           </div>
         </div>
         <div class="services-grid" data-scroll-stagger="100">
-          <a href="web-design" class="service-card" target="_blank">
+          <a class="service-card" href="web-design" target="_blank">
             <h3 class="service-title">Web Design</h3>
             <p class="service-desc">Strategic, conversion-focused design where every element serves business goals.
               Experiences that engage and convert.</p>
@@ -320,7 +427,7 @@
                 class="service-tag">Wireframing</span><span class="service-tag">UI Design</span><span
                 class="service-tag">Prototyping</span></div>
           </a>
-          <a href="development" class="service-card" target="_blank">
+          <a class="service-card" href="development" target="_blank">
             <h3 class="service-title">Development</h3>
             <p class="service-desc">Clean, performant code on modern frameworks. Fast-loading, accessible, and
               engineered
@@ -329,7 +436,7 @@
                 class="service-tag">React</span><span class="service-tag">Performance</span><span
                 class="service-tag">CMS</span></div>
           </a>
-          <a href="brand-strategy" class="service-card" target="_blank">
+          <a class="service-card" href="brand-strategy" target="_blank">
             <h3 class="service-title">Brand Strategy</h3>
             <p class="service-desc">Define positioning and messaging before pixels are pushed. Strategy-first prevents
               costly revisions down the road.</p>
@@ -337,7 +444,7 @@
                 class="service-tag">Positioning</span><span class="service-tag">Messaging</span><span
                 class="service-tag">Visual Direction</span></div>
           </a>
-          <a href="accessibility-service" class="service-card" target="_blank">
+          <a class="service-card" href="accessibility-service" target="_blank">
             <h3 class="service-title">Accessibility</h3>
             <p class="service-desc">WCAG 2.1 AA compliance audits with actionable fixes. Inclusive design expands reach
               and improves UX for everyone.</p>
@@ -348,8 +455,7 @@
         </div>
       </div>
     </section>
-
-    <section id="pricing" class="section pricing-section">
+    <section class="section pricing-section" id="pricing">
       <div class="pricing-container">
         <!-- Section Header -->
         <div class="section-header" data-scroll="fade-up">
@@ -363,10 +469,8 @@
             </p>
           </div>
         </div>
-
         <!-- Pricing Tiers -->
         <div class="pricing-grid" data-scroll-stagger="150">
-
           <!-- Package 1: Growth -->
           <div class="pricing-tier">
             <div class="tier-header">
@@ -386,7 +490,6 @@
               <li>3-4 Week Delivery</li>
             </ul>
           </div>
-
           <!-- Package 2: Strategic Web (Featured) -->
           <div class="pricing-tier tier-featured">
             <div class="featured-badge">Flagship Choice</div>
@@ -407,7 +510,6 @@
               <li>6-8 Week Timeline</li>
             </ul>
           </div>
-
           <!-- Package 3: Brand Essentials -->
           <div class="pricing-tier">
             <div class="tier-header">
@@ -428,7 +530,6 @@
             </ul>
           </div>
         </div> <!-- End pricing-grid -->
-
         <!-- Full-Width Launch Offer -->
         <div class="launch-offer">
           <div class="launch-offer-inner">
@@ -441,35 +542,31 @@
                 and testimonial. Limited to 5 projects starting by end of March, 2026.
               </p>
             </div>
-            <a href="#contact" class="offer-cta">Book Free 30-Min Consultation →</a>
+            <a class="offer-cta" href="#contact">Book Free 30-Min Consultation →</a>
           </div>
         </div>
-
         <div class="investment-container">
           <div style="text-align: center; margin-top: 40px;">
-            <a href="services" class="inline-link"
-              style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em;">Compare All Packages & View
+            <a class="inline-link" href="services"
+              style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em;">Compare All Packages &amp; View
               Details →</a>
           </div>
-
           <!-- Additional Context -->
           <div class="pricing-footer">
             <p class="footer-text">
               Not sure which option fits your needs?
-              <a href="#contact" class="inline-link">Book a free 30-minute consultation</a>
+              <a class="inline-link" href="#contact">Book a free 30-minute consultation</a>
               to discuss your specific requirements.
             </p>
           </div>
-
         </div>
       </div>
     </section>
-
     <section class="section accessibility">
       <div class="accessibility-inner" data-scroll="fade-up">
         <div>
           <div class="accessibility-badge">✓ WCAG 2.1 AA Committed</div>
-          <h3>Accessibility isn't a checkbox.<br>It's our foundation.</h3>
+          <h3>Accessibility isn't a checkbox.<br />It's our foundation.</h3>
           <p>While other agencies treat accessibility as an afterthought, we build it into every project from day one.
             Inclusive design isn't just ethical—it's good business, expanding your reach and improving UX for everyone.
           </p>
@@ -477,7 +574,7 @@
         <div class="accessibility-features" data-scroll-stagger="100">
           <div class="accessibility-feature">
             <div class="accessibility-feature-title">Screen Reader Optimized</div>
-            <div class="accessibility-feature-desc">Semantic HTML & ARIA labels</div>
+            <div class="accessibility-feature-desc">Semantic HTML &amp; ARIA labels</div>
           </div>
           <div class="accessibility-feature">
             <div class="accessibility-feature-title">Keyboard Navigation</div>
@@ -494,9 +591,6 @@
         </div>
       </div>
     </section>
-
-
-
     <section class="section contact" id="contact">
       <div class="section-inner">
         <div class="contact-grid">
@@ -527,17 +621,16 @@
             </div>
           </div>
           <div>
-            <form class="form-grid" action="https://formsubmit.co/hello@auza.mu" method="POST">
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_next" value="https://auza.mu/">
-              <input type="hidden" name="_subject" value="New Inquiry from AUZA Website">
-
-              <div class="form-group"><label class="form-label" for="name">Name *</label><input type="text" id="name"
-                  name="name" class="form-input" placeholder="Your name" required></div>
-              <div class="form-group"><label class="form-label" for="email">Email *</label><input type="email"
-                  id="email" name="email" class="form-input" placeholder="you@company.com" required></div>
+            <form action="https://formsubmit.co/hello@auza.mu" class="form-grid" method="POST">
+              <input name="_captcha" type="hidden" value="false" />
+              <input name="_next" type="hidden" value="https://auza.mu/" />
+              <input name="_subject" type="hidden" value="New Inquiry from AUZA Website" />
+              <div class="form-group"><label class="form-label" for="name">Name *</label><input class="form-input"
+                  id="name" name="name" placeholder="Your name" required="" type="text" /></div>
+              <div class="form-group"><label class="form-label" for="email">Email *</label><input class="form-input"
+                  id="email" name="email" placeholder="you@company.com" required="" type="email" /></div>
               <div class="form-group"><label class="form-label" for="project_type">Project Type</label><select
-                  id="project_type" name="project_type" class="form-select">
+                  class="form-select" id="project_type" name="project_type">
                   <option value="">Select...</option>
                   <option>New Website</option>
                   <option>Website Redesign</option>
@@ -546,8 +639,8 @@
                   <option>Custom App / Development</option>
                   <option>General Inquiry</option>
                 </select></div>
-              <div class="form-group"><label class="form-label" for="budget">Budget Range</label><select id="budget"
-                  name="budget" class="form-select">
+              <div class="form-group"><label class="form-label" for="budget">Budget Range</label><select
+                  class="form-select" id="budget" name="budget">
                   <option value="">Select...</option>
                   <option>$2,500 - $5,000</option>
                   <option>$5,000 - $10,000</option>
@@ -556,11 +649,11 @@
                   <option>$50,000 +</option>
                 </select></div>
               <div class="form-group full"><label class="form-label" for="message">Tell us about your project
-                  *</label><textarea id="message" name="message" class="form-textarea"
-                  placeholder="Goals, challenges, timeline..." required></textarea>
+                  *</label><textarea class="form-textarea" id="message" name="message"
+                  placeholder="Goals, challenges, timeline..." required=""></textarea>
               </div>
               <div class="form-group"><label class="form-label" for="source">How did you hear about us?</label><select
-                  id="source" name="source" class="form-select">
+                  class="form-select" id="source" name="source">
                   <option value="">Select...</option>
                   <option>Google Search</option>
                   <option>LinkedIn</option>
@@ -568,29 +661,26 @@
                   <option>Social Media</option>
                   <option>Other</option>
                 </select></div>
-              <div class="form-group form-submit-container"><button type="submit" class="btn btn-primary">Book Free
+              <div class="form-group form-submit-container"><button class="btn btn-primary" type="submit">Book Free
                   30-Min Consultation →</button></div>
             </form>
           </div>
         </div>
       </div>
     </section>
-
   </main>
   <app-footer></app-footer>
-
-  <div id="toast" class="toast">
+  <div class="toast" id="toast">
     <div class="toast-icon">✓</div>
     <div class="toast-content">
       <div class="toast-title">Message Sent!</div>
       <div class="toast-message">We'll be in touch shortly.</div>
     </div>
   </div>
-
-  <script src="js/components/AppHeader.js" defer></script>
-  <script src="js/components/AppFooter.js" defer></script>
-  <script src="js/scroll-animations.js" defer></script>
-  <script src="script.js" defer></script>
+  <script defer="" src="js/components/AppHeader.js"></script>
+  <script defer="" src="js/components/AppFooter.js"></script>
+  <script defer="" src="js/scroll-animations.js"></script>
+  <script defer="" src="script.js"></script>
 </body>
 
 </html>

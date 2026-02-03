@@ -25,8 +25,8 @@ class AppFooter extends HTMLElement {
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-top">
-        <div class="footer-brand"><a href="./" class="logo"><img src="images/AUZA Wordmark White.png"
-              alt="AUZA - Functional Design Studio" width="50"></a>
+        <div class="footer-brand"><a href="./" class="logo"><img src="images/AUZA Wordmark White.webp"
+              alt="AUZA - Functional Design Studio" width="100" height="25" decoding="async" loading="lazy"></a>
           <p class="footer-brand-desc">Functional, accessible design for ambitious businesses.</p>
         </div>
         <div>

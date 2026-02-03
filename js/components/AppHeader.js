@@ -13,7 +13,7 @@ class AppHeader extends HTMLElement {
                     <a href="./" class="logo">
                         <div style="position: relative;">
                             <div class="logo-full">
-                                <img src="images/AUZA Wordmark White.png" alt="AUZA - Functional Design Studio" width="100" height="25">
+                                <img src="images/AUZA Wordmark White.webp" alt="AUZA - Functional Design Studio" width="100" height="25" decoding="async">
                             </div>
                         </div>
                     </a>
@@ -34,10 +34,10 @@ class AppHeader extends HTMLElement {
       <a href="./" class="logo">
         <div style="position: relative;">
           <div class="logo-full">
-            <img src="images/AUZA Wordmark White.png" alt="AUZA - Functional Design Studio" width="100" height="25">
+            <img src="images/AUZA Wordmark White.webp" alt="AUZA - Functional Design Studio" width="100" height="25" decoding="async">
           </div>
           <div class="logo-compact">
-            <img src="images/AUZA Logo White.png" alt="AUZA" width="25" height="25">
+            <img src="images/AUZA Logo White.webp" alt="AUZA" width="25" height="25" decoding="async">
           </div>
         </div>
       </a>

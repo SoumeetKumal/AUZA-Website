@@ -17,11 +17,106 @@
     <meta property="og:type" content="website">
     <!-- Preconnect for performance -->
 
-    <!-- Local Fonts -->
-    <link rel="stylesheet" href="css/fonts.css">
+    <!-- Critical CSS for Hero -->
+    <style>
+        /* variables.css */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
 
-    <!-- Consolidated CSS -->
-    <link rel="stylesheet" href="css/main.css">
+        :root {
+            --deep-black: #0A0A0A;
+            --nero: #161616;
+            --crimson: #DC143C;
+            --crimson-light: rgba(220, 20, 60, 0.1);
+            --off-white: #FAFAFA;
+            --gray-700: #3F3F46;
+            --gray-500: #D4D4D8;
+            --gray-400: #A1A1AA;
+            --gray-300: #E4E4E7;
+            --crimson-text: #FF4D6D;
+            --mouse-x: 50%;
+            --mouse-y: 50%;
+            --header-weight: 900;
+            --header-spacing: -0.04em;
+            --header-line-height: 1.1;
+            --sub-header-weight: 800;
+            --sub-header-spacing: -0.02em;
+        }
+
+        /* base.css */
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--deep-black);
+            color: var(--off-white);
+            line-height: 1.6;
+            overflow-x: hidden
+        }
+
+        .grid-bg {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.2;
+            background-image: linear-gradient(rgba(220, 20, 60, 0.1) 3px, transparent 2px), linear-gradient(90deg, rgba(220, 20, 60, 0.1) 1px, transparent 2px), radial-gradient(circle at 50% 50%, rgba(220, 20, 60, 0.15) 0%, transparent 70%);
+            background-size: 80px 80px, 80px 80px, 100% 100%;
+            background-repeat: repeat, repeat, no-repeat;
+            z-index: 0
+        }
+
+        /* Services Hero */
+        .services-hero {
+            padding: 180px 8vw 100px;
+            background: #111;
+            color: white;
+            text-align: center;
+        }
+
+        .services-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 24px;
+            font-weight: var(--header-weight);
+            letter-spacing: var(--header-spacing);
+            line-height: var(--header-line-height);
+        }
+
+        .services-hero p {
+            font-size: 1.25rem;
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            opacity: 0;
+            animation: fadeUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+    </style>
+
+    <!-- Deferred Main CSS -->
+    <link rel="stylesheet" href="css/main.min.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="css/main.min.css">
+    </noscript>
     <!-- GA4 -->
 
 
