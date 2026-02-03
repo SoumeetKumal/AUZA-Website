@@ -84,11 +84,7 @@
             left: 0;
             right: 0;
             height: 80px;
-<<<<<<< HEAD
             z-index: 11000;
-=======
-            z-index: 4000;
->>>>>>> 5871084392cd1e587e53d86a39e7fd5260b1dd7e
             background: rgba(5, 5, 5, 0.95);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid #1a1a1a;
@@ -169,11 +165,7 @@
             align-items: center;
             gap: 12px;
             cursor: pointer;
-<<<<<<< HEAD
             z-index: 11001;
-=======
-            z-index: 4002;
->>>>>>> 5871084392cd1e587e53d86a39e7fd5260b1dd7e
             background: none;
             border: none;
             padding: 0;
@@ -222,7 +214,6 @@
             display: none;
             position: fixed;
             top: 0;
-<<<<<<< HEAD
             right: 0;
             width: 100%;
             height: 100vh;
@@ -249,36 +240,6 @@
             width: 1px;
             background: linear-gradient(to bottom, transparent, var(--accent-gold), transparent);
             opacity: 0.3;
-=======
-            left: 0;
-            right: 0;
-            height: 100vh;
-            background: rgba(5, 5, 5, 0.99);
-            backdrop-filter: blur(25px);
-            z-index: 4001;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            padding-top: 160px;
-            gap: 40px;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .mobile-menu-close {
-            position: absolute;
-            top: 32px;
-            right: 24px;
-            background: none;
-            border: none;
-            color: var(--accent-gold);
-            cursor: pointer;
-            padding: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
->>>>>>> 5871084392cd1e587e53d86a39e7fd5260b1dd7e
         }
 
         .mobile-menu.active {
@@ -295,66 +256,31 @@
         }
 
         .mobile-menu a {
-<<<<<<< HEAD
             font-family: var(--heading-font);
             font-size: 1.4rem;
             font-weight: 500;
+            font-style: italic;
             color: #fff;
             text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 0.3em;
+            letter-spacing: 0.1em;
             transition: all 0.4s ease;
-            opacity: 0;
-            transform: translateX(30px);
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
-        .mobile-menu.active a {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* Staggered Link Animations */
-        .mobile-menu.active a:nth-child(1) {
-            transition-delay: 0.2s;
-        }
-
-        .mobile-menu.active a:nth-child(2) {
-            transition-delay: 0.3s;
-        }
-
-        .mobile-menu.active a:nth-child(3) {
-            transition-delay: 0.4s;
-        }
-
-        .mobile-menu.active a:nth-child(4) {
-            transition-delay: 0.5s;
-        }
-
-        .mobile-menu.active a:nth-child(5) {
-            transition-delay: 0.6s;
+        .mobile-menu a .num {
+            font-family: var(--body-font);
+            font-style: normal;
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            opacity: 0.5;
         }
 
         .mobile-menu a:hover {
             color: var(--accent-gold);
             padding-left: 10px;
-=======
-            font-family: var(--body-font);
-            font-size: 1.1rem;
-            font-weight: 500;
-            font-style: normal;
-            color: var(--accent-gold);
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.5em;
-            transition: all 0.4s ease;
-            opacity: 0.9;
-        }
-
-        .mobile-menu a:hover {
-            color: #fff;
-            letter-spacing: 0.6em;
-            opacity: 1;
->>>>>>> 5871084392cd1e587e53d86a39e7fd5260b1dd7e
         }
 
 
@@ -744,16 +670,10 @@
         </a>
         <!-- Standard Promo Banner -->
         <script defer="" src="js/banner.js"></script>
-<<<<<<< HEAD
         <script defer="" src="js/concept-nav.js"></script>
         <!-- Vanguard Navigation -->
         <nav class="vanguard-nav">
             <a class="vanguard-logo" href="vanguard-concept.html">
-=======
-        <!-- Vanguard Navigation -->
-        <nav class="vanguard-nav">
-            <a class="vanguard-logo" href="vanguard-concept">
->>>>>>> 5871084392cd1e587e53d86a39e7fd5260b1dd7e
                 <div class="vanguard-logo-icon">
                     <svg fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 3L3 8V10H21V8L12 3Z" fill="#D4AF37"></path>
@@ -766,7 +686,6 @@
                 VANGUARD
             </a>
             <div class="vanguard-nav-links">
-<<<<<<< HEAD
                 <a class="vanguard-nav-link" href="vanguard-practice.html">Practice Areas</a>
                 <a class="vanguard-nav-link" href="vanguard-attorneys.html">Attorneys</a>
                 <a class="vanguard-nav-link" href="vanguard-victories.html">Victories</a>
@@ -779,48 +698,30 @@
                     <span></span>
                     <span></span>
                 </div>
-=======
-                <a class="vanguard-nav-link" href="vanguard-practice">Practice Areas</a>
-                <a class="vanguard-nav-link" href="vanguard-attorneys">Attorneys</a>
-                <a class="vanguard-nav-link" href="vanguard-victories">Victories</a>
-                <a class="vanguard-nav-link" href="vanguard-news">News</a>
-                <a class="vanguard-nav-cta" href="#">Consultation</a>
-            </div>
-            <button aria-label="Toggle menu" class="mobile-menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
->>>>>>> 5871084392cd1e587e53d86a39e7fd5260b1dd7e
             </button>
         </nav>
         <!-- Mobile Menu -->
         <div class="mobile-menu">
-<<<<<<< HEAD
             <div class="mobile-menu-inner">
-                <a href="vanguard-practice.html">Practice Areas</a>
-                <a href="vanguard-attorneys.html">Attorneys</a>
-                <a href="vanguard-victories.html">Victories</a>
-                <a href="vanguard-news.html">News</a>
-                <a href="#">Consultation</a>
-
-                <div class="mobile-menu-footer">
+                <a href="vanguard-practice.html">
+                    <span class="num">01</span> Practice Areas
+                </a>
+                <a href="vanguard-attorneys.html">
+                    <span class="num">02</span> Attorneys
+                </a>
+                <a href="vanguard-victories.html">
+                    <span class="num">03</span> Victories
+                </a>
+                <a href="vanguard-news.html">
+                    <span class="num">04</span> News
+                </a>
+                <a href="#">
+                    <span class="num">05</span> Consultation
+                </a>
+                <div class="menu-footer">
                     Vanguard Legal / Est. 1984
                 </div>
             </div>
-=======
-            <button class="mobile-menu-close" aria-label="Close menu">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-            <a href="#about">About</a>
-            <a href="#victories">Victories</a>
-            <a href="#practice">Practice Areas</a>
-            <a href="#news">News</a>
-            <a href="#contact" class="vanguard-nav-cta">Consultation</a>
->>>>>>> 5871084392cd1e587e53d86a39e7fd5260b1dd7e
         </div>
         <header class="hero">
             <div class="fade-up" style="display: flex; flex-direction: column; align-items: center;">
@@ -842,18 +743,21 @@
             </div>
             <div class="area-card fade-up" style="animation-delay: 0.1s;">
                 <h3 class="area-title">Intellectual Property</h3>
-                <p style="color: #666; font-size: 1rem; line-height: 1.7;">Protecting your most valuable assets in total
+                <p style="color: #666; font-size: 1rem; line-height: 1.7;">Protecting your most valuable assets in
+                    total
                     market warfare through aggressive patent and trademark litigation.</p>
             </div>
             <div class="area-card fade-up" style="animation-delay: 0.2s;">
                 <h3 class="area-title">Antitrust</h3>
-                <p style="color: #666; font-size: 1rem; line-height: 1.7;">Navigating complex regulatory environments
+                <p style="color: #666; font-size: 1rem; line-height: 1.7;">Navigating complex regulatory
+                    environments
                     and
                     competitive landscapes to ensure market dominance remains protected.</p>
             </div>
             <div class="area-card fade-up" style="animation-delay: 0.3s;">
                 <div class="area-title">White Collar</div>
-                <p style="color: #666; font-size: 1rem; line-height: 1.7;">Discreet, effective defense for executives
+                <p style="color: #666; font-size: 1rem; line-height: 1.7;">Discreet, effective defense for
+                    executives
                     and
                     corporations facing high-profile regulatory investigations.</p>
             </div>
@@ -866,19 +770,22 @@
                 <div class="features-grid">
                     <div class="feature-item">
                         <h3>Global Reach</h3>
-                        <p>Strategically positioned in the world's financial centers to provide immediate response to
+                        <p>Strategically positioned in the world's financial centers to provide immediate response
+                            to
                             emerging
                             legal threats.</p>
                     </div>
                     <div class="feature-item">
                         <h3>Elite Talent</h3>
-                        <p>Our attorneys are recruited from the top 1% of the legal profession, bringing unparalleled
+                        <p>Our attorneys are recruited from the top 1% of the legal profession, bringing
+                            unparalleled
                             expertise
                             to every case.</p>
                     </div>
                     <div class="feature-item">
                         <h3>Aggressive Advocacy</h3>
-                        <p>We don't just defend; we take control of the narrative, using every legal tool available to
+                        <p>We don't just defend; we take control of the narrative, using every legal tool available
+                            to
                             secure a
                             favorable outcome.</p>
                     </div>
@@ -908,7 +815,8 @@
                         <div
                             style="color: var(--accent-gold); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.3em; margin-bottom: 32px; font-weight: 800;">
                             Securities Fraud</div>
-                        <p style="color: #666; font-size: 1.1rem; line-height: 1.8;">Full dismissal of class action suit
+                        <p style="color: #666; font-size: 1.1rem; line-height: 1.8;">Full dismissal of class action
+                            suit
                             against
                             Fortune 500 financial institution involving complex derivatives.</p>
                     </div>
@@ -949,7 +857,8 @@
                     </svg>
                     <p
                         style="color: #ccc; line-height: 1.8; font-size: 1.35rem; font-family: var(--heading-font); font-style: italic; position: relative; z-index: 1;">
-                        "In the courtroom, there is no substitute for preparation intertwined with clinical aggression.
+                        "In the courtroom, there is no substitute for preparation intertwined with clinical
+                        aggression.
                         We
                         expect to win because we work to win."
                     </p>
@@ -959,12 +868,9 @@
                     just
                     know the law; we shape how it's applied in the modern corporate era.
                 </p>
-<<<<<<< HEAD
-                <a href="vanguard-attorneys.html"
-=======
-                <a href="vanguard-attorneys"
->>>>>>> 5871084392cd1e587e53d86a39e7fd5260b1dd7e
-                    style="display: inline-flex; align-items: center; gap: 10px; color: var(--accent-gold); text-decoration: none; font-family: var(--heading-font); font-style: italic; font-size: 1.1rem; letter-spacing: 0.1em; text-transform: uppercase;">
+                <a href="vanguard-attorneys.html" style="display: inline-flex; align-items: center; gap: 10px; color: var(--accent-gold);
+                    text-decoration: none; font-family: var(--heading-font); font-style: italic; font-size: 1.1rem;
+                    letter-spacing: 0.1em; text-transform: uppercase;">
                     Meet Our Partners
                     <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"
                         width="20">
@@ -1019,7 +925,8 @@
                 <p
                     style="color: #666; max-width: 650px; margin: 0 auto 48px; line-height: 1.9; font-size: 1.25rem; font-weight: 300;">
                     Our intake committee reviews
-                    all inquiries within 12 hours. All communications are protected by attorney-client privilege.</p>
+                    all inquiries within 12 hours. All communications are protected by attorney-client privilege.
+                </p>
                 <a class="btn-gold" href="#">Request High-Level Consultation</a>
             </div>
         </section>
@@ -1027,7 +934,8 @@
             <div class="container footer-grid">
                 <div class="footer-brand">
                     <h2>VANGUARD</h2>
-                    <p>Representing the world's most innovative companies in their most critical disputes since 1984.
+                    <p>Representing the world's most innovative companies in their most critical disputes since
+                        1984.
                         Unrivaled
                         advocacy for the modern corporate era.</p>
                 </div>
@@ -1056,9 +964,6 @@
                 © 2026 Vanguard Legal. Concept Design by AUZA.
             </div>
         </footer>
-<<<<<<< HEAD
-
-=======
         <script>
             // Mobile Menu Toggle
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -1079,7 +984,6 @@
                 link.addEventListener('click', () => toggleMenu(false));
             });
         </script>
->>>>>>> 5871084392cd1e587e53d86a39e7fd5260b1dd7e
     </main>
 </body>
 
