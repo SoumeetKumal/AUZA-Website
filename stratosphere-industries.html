@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-  <link rel="preload" href="fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/fonts.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Industries | Stratosphere Strategy</title>
@@ -32,7 +32,7 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             font-family: var(--body-font);
-            padding-top: 48px;
+            padding-top: 0;
             line-height: 1.7;
         }
 
@@ -42,13 +42,11 @@
             padding: 0 5vw;
         }
 
-        .announcement-banner {
-            display: none;
-        }
+
 
         .strato-nav {
             position: fixed;
-            top: 48px;
+            top: var(--banner-height, 0);
             left: 0;
             right: 0;
             height: 80px;
@@ -216,82 +214,82 @@
 </head>
 
 <body>
-  <main id="main-content">
+    <main id="main-content">
 
-    <!-- Standard Announcement Banner -->
-    <script src="js/banner.js" defer></script>
+        <!-- Standard Announcement Banner -->
+        <script src="js/banner.js" defer></script>
 
-    <!-- Back to Case Study (Floating) -->
-    <a href="stratosphere-concept" class="back-to-case-study">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M19 12H5M12 19l-7-7 7-7" />
-        </svg>
-        Case Study
-    </a>
-
-    <nav class="strato-nav">
-        <a href="stratosphere-concept" class="strato-logo">
-            <div class="strato-logo-icon">
-                <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white" />
-                    <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" />
-                    <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" />
-                </svg>
-            </div>
-            STRATOSPHERE
+        <!-- Back to Case Study (Floating) -->
+        <a href="stratosphere-concept" class="back-to-case-study">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            Case Study
         </a>
-        <div class="strato-nav-links">
-            <a href="stratosphere-services" class="strato-nav-link">Services</a>
-            <a href="stratosphere-industries" class="strato-nav-link active">Industries</a>
-            <a href="stratosphere-insights" class="strato-nav-link">Insights</a>
-            <a href="stratosphere-about" class="strato-nav-link">About</a>
-            <a href="#" class="strato-nav-cta">Contact</a>
-        </div>
-    </nav>
 
-    <section class="page-hero">
-        <div class="container">
-            <h1>Industries</h1>
-            <p>Deep sector expertise across the world's most complex and competitive markets.</p>
-        </div>
-    </section>
+        <nav class="strato-nav">
+            <a href="stratosphere-concept" class="strato-logo">
+                <div class="strato-logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white" />
+                        <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" />
+                        <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </div>
+                STRATOSPHERE
+            </a>
+            <div class="strato-nav-links">
+                <a href="stratosphere-services" class="strato-nav-link">Services</a>
+                <a href="stratosphere-industries" class="strato-nav-link active">Industries</a>
+                <a href="stratosphere-insights" class="strato-nav-link">Insights</a>
+                <a href="stratosphere-about" class="strato-nav-link">About</a>
+                <a href="#" class="strato-nav-cta">Contact</a>
+            </div>
+        </nav>
 
-    <section style="background: var(--bg-color); padding: 80px 0;">
-        <div class="container">
-            <div class="industries-grid">
-                <div class="industry-card">
-                    <h3>Financial Services</h3>
-                    <p>Banking, asset management, insurance, and fintech transformation strategies for the digital
-                        economy.</p>
-                </div>
-                <div class="industry-card">
-                    <h3>Technology</h3>
-                    <p>Enterprise software, cloud infrastructure, and emerging technology go-to-market strategy.</p>
-                </div>
-                <div class="industry-card">
-                    <h3>Healthcare</h3>
-                    <p>Pharmaceutical, medical devices, and healthcare delivery system optimization.</p>
-                </div>
-                <div class="industry-card">
-                    <h3>Energy & Resources</h3>
-                    <p>Oil & gas, renewables, and mining sector transformation and sustainability initiatives.</p>
-                </div>
-                <div class="industry-card">
-                    <h3>Manufacturing</h3>
-                    <p>Industrial automation, supply chain optimization, and Industry 4.0 implementation.</p>
-                </div>
-                <div class="industry-card">
-                    <h3>Private Equity</h3>
-                    <p>Portfolio company optimization, value creation planning, and exit strategy development.</p>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Industries</h1>
+                <p>Deep sector expertise across the world's most complex and competitive markets.</p>
+            </div>
+        </section>
+
+        <section style="background: var(--bg-color); padding: 80px 0;">
+            <div class="container">
+                <div class="industries-grid">
+                    <div class="industry-card">
+                        <h3>Financial Services</h3>
+                        <p>Banking, asset management, insurance, and fintech transformation strategies for the digital
+                            economy.</p>
+                    </div>
+                    <div class="industry-card">
+                        <h3>Technology</h3>
+                        <p>Enterprise software, cloud infrastructure, and emerging technology go-to-market strategy.</p>
+                    </div>
+                    <div class="industry-card">
+                        <h3>Healthcare</h3>
+                        <p>Pharmaceutical, medical devices, and healthcare delivery system optimization.</p>
+                    </div>
+                    <div class="industry-card">
+                        <h3>Energy & Resources</h3>
+                        <p>Oil & gas, renewables, and mining sector transformation and sustainability initiatives.</p>
+                    </div>
+                    <div class="industry-card">
+                        <h3>Manufacturing</h3>
+                        <p>Industrial automation, supply chain optimization, and Industry 4.0 implementation.</p>
+                    </div>
+                    <div class="industry-card">
+                        <h3>Private Equity</h3>
+                        <p>Portfolio company optimization, value creation planning, and exit strategy development.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <p>© 2026 Stratosphere Strategy. Concept Design by AUZA.</p>
-    </footer>
-  </main>
+        <footer>
+            <p>© 2026 Stratosphere Strategy. Concept Design by AUZA.</p>
+        </footer>
+    </main>
 </body>
 
 </html>

@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Insert as the first child of body, or before the nav if appropriate
     // Ideally it's fixed, so prepending to body is fine.
     document.body.insertAdjacentHTML('afterbegin', bannerHTML);
+    document.body.classList.add('has-banner');
 
     // Ensure the css/banner.css is loaded if not already
     // (Most pages have style.css which might import it, or we can inject the link tag too if needed)
@@ -30,32 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const style = document.createElement('style');
     style.innerHTML = `
         :root {
-            --banner-height: 48px; /* Fallback */
+            --banner-height: 0px; 
         }
         
-        body {
-            /* Create space for fixed banner */
+        body.has-banner {
             padding-top: var(--banner-height) !important; 
         }
 
-        /* Adjust Navigation Top Position */
-        .nav, .nav-app, .vanguard-nav, .strato-nav {
-            top: var(--banner-height) !important;
-        }
-
-        /* Ensure banner is always on top */
         .announcement-banner {
             z-index: 9999 !important;
-        }
-
-        /* Nav needs to be just below */
-        .nav, .nav-app, .vanguard-nav, .strato-nav {
-            z-index: 9998 !important;
-        }
-        
-        /* Mobile menu needs to be high but below banner if possible, or cover all */
-        .mobile-menu {
-             z-index: 9997 !important;
         }
     `;
     document.head.appendChild(style);

@@ -467,12 +467,11 @@ p {
 /* Navigation */
 .nav {
     position: fixed;
-    top: 40px;
-    /* Adjusted for banner */
+    top: var(--banner-height, 0);
     left: 0;
     right: 0;
     z-index: 5000;
-    padding: clamp(20px, 3vw, 40px) clamp(24px, 5vw, 48px);
+    padding: clamp(32px, 4vw, 48px) clamp(24px, 5vw, 48px) clamp(24px, 3vw, 40px);
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     /* Premium Glass Effect */
     background: rgba(10, 10, 10, 0.6);
@@ -483,7 +482,7 @@ p {
 
 .nav.scrolled {
     background: rgba(10, 10, 10, 0.85);
-    padding: 14px 48px;
+    padding: 24px 48px 20px;
     border-bottom-color: rgba(220, 20, 60, 0.2);
 }
 
@@ -650,8 +649,8 @@ p {
 
 @media (max-width: 1024px) {
     .nav {
-        padding: 20px 24px;
-        top: 32px;
+        padding: 28px 24px 20px;
+        top: var(--banner-height, 0);
         /* Standardize for banner height */
     }
 
@@ -834,11 +833,13 @@ p {
 }
 
 .value-props-inner {
-    max-width: 1200px;
+    max-width: 1400px;
+    /* Increased to fit 4 columns better */
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    /* Reduced gap slightly for 4 columns */
 }
 
 .value-prop {
@@ -3779,9 +3780,14 @@ p {
         justify-content: center;
         text-align: center;
         flex-wrap: wrap;
-        /* Allow wrapping if needed */
         height: auto;
-        padding: 12px;
+        padding: 6px 16px;
+        font-size: 11px;
+    }
+
+    .banner-cta {
+        padding: 2px 8px;
+        font-size: 10px;
     }
 
     /* Ensure content stacks if very narrow */
@@ -3791,14 +3797,14 @@ p {
 }
 
 /* responsive.css */
-﻿@media (max-width: 768px) {
+@media (max-width: 768px) {
     .section {
         padding: 80px 24px !important;
     }
 
     /* Hero Section - Completely Reworked */
     .hero {
-        padding: 40px 24px;
+        padding: 140px 24px 40px;
         min-height: calc(100vh - 110px);
         /* Subtract banner and nav height */
         display: flex;
@@ -4869,4 +4875,3 @@ p {
         gap: 40px !important;
     }
 }
-

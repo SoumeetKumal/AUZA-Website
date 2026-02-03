@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-  <link rel="preload" href="fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/fonts.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insights | Stratosphere Strategy</title>
@@ -32,7 +32,7 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             font-family: var(--body-font);
-            padding-top: 48px;
+            padding-top: 0;
             line-height: 1.7;
         }
 
@@ -42,13 +42,11 @@
             padding: 0 5vw;
         }
 
-        .announcement-banner {
-            display: none;
-        }
+
 
         .strato-nav {
             position: fixed;
-            top: 48px;
+            top: var(--banner-height, 0);
             left: 0;
             right: 0;
             height: 80px;
@@ -218,82 +216,82 @@
 </head>
 
 <body>
-  <main id="main-content">
+    <main id="main-content">
 
-    <!-- Standard Announcement Banner -->
-    <script src="js/banner.js" defer></script>
+        <!-- Standard Announcement Banner -->
+        <script src="js/banner.js" defer></script>
 
-    <!-- Back to Case Study (Floating) -->
-    <a href="stratosphere-concept" class="back-to-case-study">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M19 12H5M12 19l-7-7 7-7" />
-        </svg>
-        Case Study
-    </a>
-
-    <nav class="strato-nav">
-        <a href="stratosphere-concept" class="strato-logo">
-            <div class="strato-logo-icon">
-                <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white" />
-                    <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" />
-                    <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" />
-                </svg>
-            </div>
-            STRATOSPHERE
+        <!-- Back to Case Study (Floating) -->
+        <a href="stratosphere-concept" class="back-to-case-study">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            Case Study
         </a>
-        <div class="strato-nav-links">
-            <a href="stratosphere-services" class="strato-nav-link">Services</a>
-            <a href="stratosphere-industries" class="strato-nav-link">Industries</a>
-            <a href="stratosphere-insights" class="strato-nav-link active">Insights</a>
-            <a href="stratosphere-about" class="strato-nav-link">About</a>
-            <a href="#" class="strato-nav-cta">Contact</a>
-        </div>
-    </nav>
 
-    <section class="page-hero">
-        <div class="container">
-            <h1>Insights</h1>
-            <p>Thought leadership and research from the world's leading strategic minds.</p>
-        </div>
-    </section>
-
-    <section style="background: var(--bg-color);">
-        <div class="container">
-            <div class="insights-grid">
-                <article class="insight-card">
-                    <div class="insight-meta">Oct 12, 2026 • Market Trends</div>
-                    <h3>The Algorithmic Boardroom: Governance in the AI Era</h3>
-                    <p>How multinational corporations are integrating predictive AI into their core decision-making
-                        frameworks.</p>
-                    <a href="#" class="insight-link">Read Report →</a>
-                </article>
-                <article class="insight-card">
-                    <div class="insight-meta">Sep 28, 2026 • Sustainability</div>
-                    <h3>Carbon Credit Markets: A 2030 Global Outlook</h3>
-                    <p>Navigating regulatory shifts and emerging opportunities in the green economy.</p>
-                    <a href="#" class="insight-link">Read Report →</a>
-                </article>
-                <article class="insight-card">
-                    <div class="insight-meta">Sep 15, 2026 • Technology</div>
-                    <h3>Quantum Computing: Strategic Implications</h3>
-                    <p>How enterprises should prepare for the quantum computing revolution.</p>
-                    <a href="#" class="insight-link">Read Report →</a>
-                </article>
-                <article class="insight-card">
-                    <div class="insight-meta">Aug 30, 2026 • M&A</div>
-                    <h3>Cross-Border M&A in Uncertain Times</h3>
-                    <p>Strategies for navigating geopolitical complexity in global transactions.</p>
-                    <a href="#" class="insight-link">Read Report →</a>
-                </article>
+        <nav class="strato-nav">
+            <a href="stratosphere-concept" class="strato-logo">
+                <div class="strato-logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white" />
+                        <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" />
+                        <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </div>
+                STRATOSPHERE
+            </a>
+            <div class="strato-nav-links">
+                <a href="stratosphere-services" class="strato-nav-link">Services</a>
+                <a href="stratosphere-industries" class="strato-nav-link">Industries</a>
+                <a href="stratosphere-insights" class="strato-nav-link active">Insights</a>
+                <a href="stratosphere-about" class="strato-nav-link">About</a>
+                <a href="#" class="strato-nav-cta">Contact</a>
             </div>
-        </div>
-    </section>
+        </nav>
 
-    <footer>
-        <p>© 2026 Stratosphere Strategy. Concept Design by AUZA.</p>
-    </footer>
-  </main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Insights</h1>
+                <p>Thought leadership and research from the world's leading strategic minds.</p>
+            </div>
+        </section>
+
+        <section style="background: var(--bg-color);">
+            <div class="container">
+                <div class="insights-grid">
+                    <article class="insight-card">
+                        <div class="insight-meta">Oct 12, 2026 • Market Trends</div>
+                        <h3>The Algorithmic Boardroom: Governance in the AI Era</h3>
+                        <p>How multinational corporations are integrating predictive AI into their core decision-making
+                            frameworks.</p>
+                        <a href="#" class="insight-link">Read Report →</a>
+                    </article>
+                    <article class="insight-card">
+                        <div class="insight-meta">Sep 28, 2026 • Sustainability</div>
+                        <h3>Carbon Credit Markets: A 2030 Global Outlook</h3>
+                        <p>Navigating regulatory shifts and emerging opportunities in the green economy.</p>
+                        <a href="#" class="insight-link">Read Report →</a>
+                    </article>
+                    <article class="insight-card">
+                        <div class="insight-meta">Sep 15, 2026 • Technology</div>
+                        <h3>Quantum Computing: Strategic Implications</h3>
+                        <p>How enterprises should prepare for the quantum computing revolution.</p>
+                        <a href="#" class="insight-link">Read Report →</a>
+                    </article>
+                    <article class="insight-card">
+                        <div class="insight-meta">Aug 30, 2026 • M&A</div>
+                        <h3>Cross-Border M&A in Uncertain Times</h3>
+                        <p>Strategies for navigating geopolitical complexity in global transactions.</p>
+                        <a href="#" class="insight-link">Read Report →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 Stratosphere Strategy. Concept Design by AUZA.</p>
+        </footer>
+    </main>
 </body>
 
 </html>

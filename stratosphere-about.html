@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-  <link rel="preload" href="fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/fonts.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Stratosphere Strategy</title>
@@ -32,8 +32,7 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             font-family: var(--body-font);
-            padding-top: 48px;
-            /* Adjusted for standard banner height */
+            padding-top: 0;
             line-height: 1.7;
         }
 
@@ -43,15 +42,11 @@
             padding: 0 5vw;
         }
 
-        .announcement-banner {
-            /* Handled by projects.css */
-            display: none;
-            /* Just in case */
-        }
+
 
         .strato-nav {
             position: fixed;
-            top: 48px;
+            top: var(--banner-height, 0);
             left: 0;
             right: 0;
             height: 80px;
@@ -239,103 +234,106 @@
 </head>
 
 <body>
-  <main id="main-content">
+    <main id="main-content">
 
-    <!-- Standard Announcement Banner -->
-    <script src="js/banner.js" defer></script>
+        <!-- Standard Announcement Banner -->
+        <script src="js/banner.js" defer></script>
 
-    <!-- Back to Case Study (Floating) -->
-    <a href="stratosphere-concept" class="back-to-case-study">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M19 12H5M12 19l-7-7 7-7" />
-        </svg>
-        Case Study
-    </a>
-
-    <nav class="strato-nav">
-        <a href="stratosphere-concept" class="strato-logo">
-            <div class="strato-logo-icon">
-                <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white" />
-                    <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" />
-                    <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" />
-                </svg>
-            </div>
-            STRATOSPHERE
+        <!-- Back to Case Study (Floating) -->
+        <a href="stratosphere-concept" class="back-to-case-study">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            Case Study
         </a>
-        <div class="strato-nav-links">
-            <a href="stratosphere-services" class="strato-nav-link">Services</a>
-            <a href="stratosphere-industries" class="strato-nav-link">Industries</a>
-            <a href="stratosphere-insights" class="strato-nav-link">Insights</a>
-            <a href="stratosphere-about" class="strato-nav-link active">About</a>
-            <a href="#" class="strato-nav-cta">Contact</a>
-        </div>
-    </nav>
 
-    <section class="page-hero">
-        <div class="container">
-            <h1>About Us</h1>
-            <p>Defining the future of business through rigorous analytical strategy since 1996.</p>
-        </div>
-    </section>
-
-    <div class="stats-bar">
-        <div class="stat-item">
-            <h3>$50B+</h3>
-            <p>Value Created</p>
-        </div>
-        <div class="stat-item">
-            <h3>32</h3>
-            <p>Fortune 100 Clients</p>
-        </div>
-        <div class="stat-item">
-            <h3>12</h3>
-            <p>Global Offices</p>
-        </div>
-        <div class="stat-item">
-            <h3>98%</h3>
-            <p>Retention Rate</p>
-        </div>
-    </div>
-
-    <section class="about-content">
-        <div class="container">
-            <h2>Our Story</h2>
-            <p>Founded in London in 1996, Stratosphere Strategy has grown from a boutique advisory firm to a global
-                leader in corporate strategy. Our partners bring decades of experience from the world's leading
-                consulting firms, investment banks, and Fortune 500 C-suites.</p>
-            <p>We believe in the power of rigorous analysis combined with bold strategic vision. Every engagement is led
-                by senior partners who bring their full expertise to bear on your most critical challenges.</p>
-        </div>
-    </section>
-
-    <section style="background: white; padding: 80px 0;">
-        <div class="container">
-            <h2
-                style="text-align: center; font-family: var(--heading-font); font-size: 2rem; text-transform: uppercase; margin-bottom: 60px;">
-                Our Values</h2>
-            <div class="values-grid">
-                <div class="value-card">
-                    <h3>Excellence</h3>
-                    <p>We hold ourselves to the highest standards in every analysis, recommendation, and interaction.
-                    </p>
+        <nav class="strato-nav">
+            <a href="stratosphere-concept" class="strato-logo">
+                <div class="strato-logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white" />
+                        <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" />
+                        <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" />
+                    </svg>
                 </div>
-                <div class="value-card">
-                    <h3>Integrity</h3>
-                    <p>We tell our clients what they need to hear, not what they want to hear.</p>
-                </div>
-                <div class="value-card">
-                    <h3>Impact</h3>
-                    <p>Our work is measured by the tangible value we create for our clients and their stakeholders.</p>
-                </div>
+                STRATOSPHERE
+            </a>
+            <div class="strato-nav-links">
+                <a href="stratosphere-services" class="strato-nav-link">Services</a>
+                <a href="stratosphere-industries" class="strato-nav-link">Industries</a>
+                <a href="stratosphere-insights" class="strato-nav-link">Insights</a>
+                <a href="stratosphere-about" class="strato-nav-link active">About</a>
+                <a href="#" class="strato-nav-cta">Contact</a>
+            </div>
+        </nav>
+
+        <section class="page-hero">
+            <div class="container">
+                <h1>About Us</h1>
+                <p>Defining the future of business through rigorous analytical strategy since 1996.</p>
+            </div>
+        </section>
+
+        <div class="stats-bar">
+            <div class="stat-item">
+                <h3>$50B+</h3>
+                <p>Value Created</p>
+            </div>
+            <div class="stat-item">
+                <h3>32</h3>
+                <p>Fortune 100 Clients</p>
+            </div>
+            <div class="stat-item">
+                <h3>12</h3>
+                <p>Global Offices</p>
+            </div>
+            <div class="stat-item">
+                <h3>98%</h3>
+                <p>Retention Rate</p>
             </div>
         </div>
-    </section>
 
-    <footer>
-        <p>© 2026 Stratosphere Strategy. Concept Design by AUZA.</p>
-    </footer>
-  </main>
+        <section class="about-content">
+            <div class="container">
+                <h2>Our Story</h2>
+                <p>Founded in London in 1996, Stratosphere Strategy has grown from a boutique advisory firm to a global
+                    leader in corporate strategy. Our partners bring decades of experience from the world's leading
+                    consulting firms, investment banks, and Fortune 500 C-suites.</p>
+                <p>We believe in the power of rigorous analysis combined with bold strategic vision. Every engagement is
+                    led
+                    by senior partners who bring their full expertise to bear on your most critical challenges.</p>
+            </div>
+        </section>
+
+        <section style="background: white; padding: 80px 0;">
+            <div class="container">
+                <h2
+                    style="text-align: center; font-family: var(--heading-font); font-size: 2rem; text-transform: uppercase; margin-bottom: 60px;">
+                    Our Values</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <h3>Excellence</h3>
+                        <p>We hold ourselves to the highest standards in every analysis, recommendation, and
+                            interaction.
+                        </p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Integrity</h3>
+                        <p>We tell our clients what they need to hear, not what they want to hear.</p>
+                    </div>
+                    <div class="value-card">
+                        <h3>Impact</h3>
+                        <p>Our work is measured by the tangible value we create for our clients and their stakeholders.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 Stratosphere Strategy. Concept Design by AUZA.</p>
+        </footer>
+    </main>
 </body>
 
 </html>

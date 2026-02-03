@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-  <link rel="preload" href="fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/fonts.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | Stratosphere Strategy</title>
@@ -33,7 +33,7 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             font-family: var(--body-font);
-            padding-top: 48px;
+            padding-top: 0;
             overflow-x: hidden;
             line-height: 1.7;
         }
@@ -76,7 +76,7 @@
         /* Stratosphere Navigation */
         .strato-nav {
             position: fixed;
-            top: 48px;
+            top: var(--banner-height, 0);
             left: 0;
             right: 0;
             height: 80px;
@@ -155,9 +155,7 @@
             transform: translateY(-2px);
         }
 
-        .announcement-banner {
-            display: none;
-        }
+
 
         /* Page Content */
         .page-hero {
@@ -249,89 +247,90 @@
 </head>
 
 <body>
-  <main id="main-content">
+    <main id="main-content">
 
-    <!-- Standard Announcement Banner -->
-    <script src="js/banner.js" defer></script>
+        <!-- Standard Announcement Banner -->
+        <script src="js/banner.js" defer></script>
 
-    <!-- Back to Case Study (Floating) -->
-    <a href="stratosphere-concept" class="back-to-case-study">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M19 12H5M12 19l-7-7 7-7" />
-        </svg>
-        Case Study
-    </a>
-
-    <nav class="strato-nav">
-        <a href="stratosphere-concept" class="strato-logo">
-            <div class="strato-logo-icon">
-                <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white" />
-                    <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" />
-                    <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" />
-                </svg>
-            </div>
-            STRATOSPHERE
+        <!-- Back to Case Study (Floating) -->
+        <a href="stratosphere-concept" class="back-to-case-study">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            Case Study
         </a>
-        <div class="strato-nav-links">
-            <a href="stratosphere-services" class="strato-nav-link active">Services</a>
-            <a href="stratosphere-industries" class="strato-nav-link">Industries</a>
-            <a href="stratosphere-insights" class="strato-nav-link">Insights</a>
-            <a href="stratosphere-about" class="strato-nav-link">About</a>
-            <a href="#" class="strato-nav-cta">Contact</a>
-        </div>
-    </nav>
 
-    <section class="page-hero">
-        <div class="container">
-            <h1>Our Services</h1>
-            <p>Comprehensive strategic solutions for organizations navigating complex global markets.</p>
-        </div>
-    </section>
+        <nav class="strato-nav">
+            <a href="stratosphere-concept" class="strato-logo">
+                <div class="strato-logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white" />
+                        <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" />
+                        <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </div>
+                STRATOSPHERE
+            </a>
+            <div class="strato-nav-links">
+                <a href="stratosphere-services" class="strato-nav-link active">Services</a>
+                <a href="stratosphere-industries" class="strato-nav-link">Industries</a>
+                <a href="stratosphere-insights" class="strato-nav-link">Insights</a>
+                <a href="stratosphere-about" class="strato-nav-link">About</a>
+                <a href="#" class="strato-nav-cta">Contact</a>
+            </div>
+        </nav>
 
-    <section style="background: var(--bg-color);">
-        <div class="container">
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-num">01</div>
-                    <h3>Corporate Strategy</h3>
-                    <p>Long-term strategic planning, market positioning, and competitive analysis for global
-                        enterprises.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-num">02</div>
-                    <h3>Digital Transformation</h3>
-                    <p>Tech stack validation, legacy modernization, and AI integration pathways for the algorithmic age.
-                    </p>
-                </div>
-                <div class="service-card">
-                    <div class="service-num">03</div>
-                    <h3>M&A Advisory</h3>
-                    <p>Due diligence, cultural integration strategies, and operational synergy identification.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-num">04</div>
-                    <h3>Risk Management</h3>
-                    <p>Enterprise risk assessment, regulatory compliance, and crisis response frameworks.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-num">05</div>
-                    <h3>Performance Optimization</h3>
-                    <p>Operational efficiency, cost reduction, and process improvement initiatives.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-num">06</div>
-                    <h3>Leadership Development</h3>
-                    <p>Executive coaching, succession planning, and organizational capability building.</p>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Our Services</h1>
+                <p>Comprehensive strategic solutions for organizations navigating complex global markets.</p>
+            </div>
+        </section>
+
+        <section style="background: var(--bg-color);">
+            <div class="container">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-num">01</div>
+                        <h3>Corporate Strategy</h3>
+                        <p>Long-term strategic planning, market positioning, and competitive analysis for global
+                            enterprises.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-num">02</div>
+                        <h3>Digital Transformation</h3>
+                        <p>Tech stack validation, legacy modernization, and AI integration pathways for the algorithmic
+                            age.
+                        </p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-num">03</div>
+                        <h3>M&A Advisory</h3>
+                        <p>Due diligence, cultural integration strategies, and operational synergy identification.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-num">04</div>
+                        <h3>Risk Management</h3>
+                        <p>Enterprise risk assessment, regulatory compliance, and crisis response frameworks.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-num">05</div>
+                        <h3>Performance Optimization</h3>
+                        <p>Operational efficiency, cost reduction, and process improvement initiatives.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-num">06</div>
+                        <h3>Leadership Development</h3>
+                        <p>Executive coaching, succession planning, and organizational capability building.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <p>© 2026 Stratosphere Strategy. Concept Design by AUZA.</p>
-    </footer>
-  </main>
+        <footer>
+            <p>© 2026 Stratosphere Strategy. Concept Design by AUZA.</p>
+        </footer>
+    </main>
 </body>
 
 </html>
