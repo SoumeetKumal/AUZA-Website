@@ -78,7 +78,7 @@
             left: 0;
             right: 0;
             height: 80px;
-            z-index: 5000;
+            z-index: 11000;
             background: rgba(11, 11, 20, 0.95);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -119,7 +119,7 @@
             width: 28px;
             height: 28px;
             cursor: pointer;
-            z-index: 3001;
+            z-index: 11001;
             background: none;
             border: none;
             padding: 0;
@@ -134,7 +134,7 @@
         }
 
         .mobile-menu-btn.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
+            transform: translateY(7px) rotate(45deg);
         }
 
         .mobile-menu-btn.active span:nth-child(2) {
@@ -142,7 +142,7 @@
         }
 
         .mobile-menu-btn.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
+            transform: translateY(-7px) rotate(-45deg);
         }
 
         .mobile-menu {
@@ -155,7 +155,7 @@
             bottom: 0;
             background: rgba(11, 11, 20, 0.98);
             backdrop-filter: blur(20px);
-            z-index: 4999;
+            z-index: 10000;
             /* Below nav button */
             flex-direction: column;
             align-items: center;
