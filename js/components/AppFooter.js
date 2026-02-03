@@ -12,7 +12,7 @@ class AppFooter extends HTMLElement {
                         <p class="footer-copy">© 2026 AUZA. Functional Design for Growth.</p>
                         <div class="footer-legal">
                             <a href="https://www.linkedin.com/company/auza/" class="footer-legal-link" target="_blank">LinkedIn</a>
-                            <a href="privacy-policy.html" class="footer-legal-link">Privacy Policy</a>
+                            <a href="privacy-policy" class="footer-legal-link">Privacy Policy</a>
                         </div>
                     </div>
                 </div>
@@ -25,21 +25,21 @@ class AppFooter extends HTMLElement {
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-top">
-        <div class="footer-brand"><a href="index.html" class="logo"><img src="images/AUZA Wordmark White.png"
+        <div class="footer-brand"><a href="./" class="logo"><img src="images/AUZA Wordmark White.png"
               alt="AUZA - Functional Design Studio" width="50"></a>
           <p class="footer-brand-desc">Functional, accessible design for ambitious businesses.</p>
         </div>
         <div>
           <h4 class="footer-heading">Navigation</h4>
-          <div class="footer-links"><a href="index.html#work" class="footer-link">Work</a><a href="services.html"
-              class="footer-link">Services</a><a href="index.html#process" class="footer-link">Process</a><a href="index.html#pricing"
-              class="footer-link">Pricing</a><a href="index.html#contact" class="footer-link">Contact</a></div>
+          <div class="footer-links"><a href="./#work" class="footer-link">Work</a><a href="services"
+              class="footer-link">Services</a><a href="./#process" class="footer-link">Process</a><a href="./#pricing"
+              class="footer-link">Pricing</a><a href="./#contact" class="footer-link">Contact</a></div>
         </div>
         <div>
           <h4 class="footer-heading">Services</h4>
-          <div class="footer-links"><a href="web-design.html" class="footer-link" target="_blank">Web Design</a><a
-              href="development.html" class="footer-link" target="_blank">Development</a><a href="brand-strategy.html"
-              class="footer-link" target="_blank">Brand Strategy</a><a href="accessibility-service.html"
+          <div class="footer-links"><a href="web-design" class="footer-link" target="_blank">Web Design</a><a
+              href="development" class="footer-link" target="_blank">Development</a><a href="brand-strategy"
+              class="footer-link" target="_blank">Brand Strategy</a><a href="accessibility-service"
               class="footer-link" target="_blank">Accessibility</a></div>
         </div>
         <div>
@@ -52,10 +52,10 @@ class AppFooter extends HTMLElement {
       <div class="footer-bottom">
         <p class="footer-copy">© 2026 AUZA. All rights reserved.</p>
         <div class="footer-legal">
-          <a href="website-audit.html" class="footer-legal-link">Free Website Audit</a>
-          <a href="privacy-policy.html" class="footer-legal-link" target="_blank">Privacy Policy</a>
-          <a href="terms-of-service.html" class="footer-legal-link" target="_blank">Terms of Service</a>
-          <a href="accessibility.html" class="footer-legal-link" target="_blank">Accessibility Statement</a>
+          <a href="website-audit" class="footer-legal-link">Free Website Audit</a>
+          <a href="privacy-policy" class="footer-legal-link" target="_blank">Privacy Policy</a>
+          <a href="terms-of-service" class="footer-legal-link" target="_blank">Terms of Service</a>
+          <a href="accessibility" class="footer-legal-link" target="_blank">Accessibility Statement</a>
         </div>
       </div>
     </div>

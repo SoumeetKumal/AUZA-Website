@@ -17,7 +17,7 @@ class AppHeader extends HTMLElement {
                         </div>
                     </a>
                     <div class="nav-links">
-                        <a href="index.html" class="nav-link">Back to Home</a>
+                        <a href="./" class="nav-link">Back to Home</a>
                     </div>
                 </div>
             </nav>
@@ -40,10 +40,10 @@ class AppHeader extends HTMLElement {
         </div>
       </a>
       <div class="nav-links">
-        <a href="index.html#work" class="nav-link">Work</a>
-        <a href="services.html" class="nav-link ${activePage === 'services' ? 'active' : ''}">Services</a>
-        <a href="about.html" class="nav-link ${activePage === 'about' ? 'active' : ''}">About</a>
-        <a href="index.html#contact" class="nav-link">Contact</a>
+        <a href="./#work" class="nav-link">Work</a>
+        <a href="services" class="nav-link ${activePage === 'services' ? 'active' : ''}">Services</a>
+        <a href="about" class="nav-link ${activePage === 'about' ? 'active' : ''}">About</a>
+        <a href="./#contact" class="nav-link">Contact</a>
       </div>
       <button class="mobile-menu-btn" aria-label="Toggle menu">
         <span></span>
@@ -55,11 +55,11 @@ class AppHeader extends HTMLElement {
 
   <div class="mobile-menu">
     <div class="mobile-menu-inner">
-      <a href="index.html#work" class="mobile-nav-link">Work</a>
-      <a href="services.html" class="mobile-nav-link">Services</a>
-      <a href="about.html" class="mobile-nav-link">About</a>
-      <a href="index.html#contact" class="mobile-nav-link">Contact</a>
-      <a href="index.html#contact" class="mobile-nav-link highlight">Book Free 30-Min Consultation →</a>
+      <a href="./#work" class="mobile-nav-link">Work</a>
+      <a href="services" class="mobile-nav-link">Services</a>
+      <a href="about" class="mobile-nav-link">About</a>
+      <a href="./#contact" class="mobile-nav-link">Contact</a>
+      <a href="./#contact" class="mobile-nav-link highlight">Book Free 30-Min Consultation →</a>
     </div>
   </div>
         `;

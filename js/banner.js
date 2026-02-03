@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.announcement-banner')) return;
 
     const bannerHTML = `
-    <a href="index.html#contact" class="announcement-banner">
+    <a href="./#contact" class="announcement-banner">
         <span class="banner-prefix">🚀 Launch Offer: </span><span class="banner-text">First 5 Clients Save 25% <span class="banner-extra">| Limited Slots for
                 Q1 2026</span></span>
         <span class="badge-dot"></span>
