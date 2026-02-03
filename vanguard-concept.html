@@ -251,36 +251,54 @@
         .mobile-menu-inner {
             display: flex;
             flex-direction: column;
-            gap: 32px;
+            gap: 20px;
             position: relative;
         }
 
         .mobile-menu a {
             font-family: var(--heading-font);
-            font-size: 1.4rem;
-            font-weight: 500;
+            font-size: 1.75rem;
+            font-weight: 400;
             font-style: italic;
             color: #fff;
             text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            transition: all 0.4s ease;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .mobile-menu a .num {
-            font-family: var(--body-font);
-            font-style: normal;
-            font-size: 0.8rem;
-            color: var(--accent-gold);
-            opacity: 0.5;
+            padding: 0;
+            display: block;
+            text-align: left;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: 0.5s ease;
+            letter-spacing: 0.02em;
         }
 
         .mobile-menu a:hover {
             color: var(--accent-gold);
-            padding-left: 10px;
+            transform: scale(1.05);
+        }
+
+        .mobile-menu.active a {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mobile-menu.active a:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        .mobile-menu.active a:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        .mobile-menu.active a:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+
+        .mobile-menu.active a:nth-child(4) {
+            transition-delay: 0.4s;
+        }
+
+        .mobile-menu.active a:nth-child(5) {
+            transition-delay: 0.5s;
         }
 
 
@@ -704,19 +722,19 @@
         <div class="mobile-menu">
             <div class="mobile-menu-inner">
                 <a href="vanguard-practice.html">
-                    <span class="num">01</span> Practice Areas
+                    Practice Areas
                 </a>
                 <a href="vanguard-attorneys.html">
-                    <span class="num">02</span> Attorneys
+                    Attorneys
                 </a>
                 <a href="vanguard-victories.html">
-                    <span class="num">03</span> Victories
+                    Victories
                 </a>
                 <a href="vanguard-news.html">
-                    <span class="num">04</span> News
+                    News
                 </a>
                 <a href="#">
-                    <span class="num">05</span> Consultation
+                    Consultation
                 </a>
                 <div class="menu-footer">
                     Vanguard Legal / Est. 1984
@@ -964,26 +982,7 @@
                 © 2026 Vanguard Legal. Concept Design by AUZA.
             </div>
         </footer>
-        <script>
-            // Mobile Menu Toggle
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const mobileMenuClose = document.querySelector('.mobile-menu-close');
-            const mobileLinks = document.querySelectorAll('.mobile-menu a');
 
-            function toggleMenu(show) {
-                mobileMenu.classList.toggle('active', show);
-                mobileMenuBtn.classList.toggle('active', show);
-                document.body.style.overflow = show ? 'hidden' : '';
-            }
-
-            mobileMenuBtn.addEventListener('click', () => toggleMenu(true));
-            mobileMenuClose.addEventListener('click', () => toggleMenu(false));
-
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => toggleMenu(false));
-            });
-        </script>
     </main>
 </body>
 

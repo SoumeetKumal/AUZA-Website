@@ -712,13 +712,6 @@
             </nav>
             <!-- Mobile Menu -->
             <div class="mobile-menu">
-                <button class="mobile-menu-close" aria-label="Close menu">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                </button>
                 <a href="stratosphere-services.html">Services</a>
                 <a href="stratosphere-industries.html">Industries</a>
                 <a href="stratosphere-insights.html">Insights</a>
@@ -970,26 +963,7 @@
             </div>
         </footer>
     </main>
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const mobileMenuClose = document.querySelector('.mobile-menu-close');
-        const mobileLinks = document.querySelectorAll('.mobile-menu a');
 
-        function toggleMenu(show) {
-            mobileMenu.classList.toggle('active', show);
-            mobileMenuBtn.classList.toggle('active', show);
-            document.body.style.overflow = show ? 'hidden' : '';
-        }
-
-        mobileMenuBtn.addEventListener('click', () => toggleMenu(true));
-        mobileMenuClose.addEventListener('click', () => toggleMenu(false));
-
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => toggleMenu(false));
-        });
-    </script>
 </body>
 
 </html>

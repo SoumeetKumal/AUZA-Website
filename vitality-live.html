@@ -331,24 +331,6 @@
         <script src="js/concept-nav.js" defer></script>
         <script>
             // Any bespoke logic for this page can go here
-            // Mobile Menu Logic
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const mobileMenuClose = document.querySelector('.mobile-menu-close');
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const mobileLinks = document.querySelectorAll('.mobile-menu-nav-link');
-
-            function toggleMenu(show) {
-                mobileMenu.classList.toggle('active', show);
-                mobileMenuBtn.classList.toggle('active', show);
-                document.body.style.overflow = show ? 'hidden' : '';
-            }
-
-            mobileMenuBtn.addEventListener('click', () => toggleMenu(true));
-            mobileMenuClose.addEventListener('click', () => toggleMenu(false));
-
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => toggleMenu(false));
-            });
         </script>
     </main>
 </body>

@@ -18,6 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = isActive ? 'hidden' : '';
         });
 
+        // Close menu with Close Button (if exists)
+        const closeBtn = document.querySelector('.mobile-menu-close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
+
         // Close menu when clicking a link
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
