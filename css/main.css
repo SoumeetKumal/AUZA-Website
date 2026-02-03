@@ -4297,6 +4297,8 @@ p {
     }
 
     /* Increased spacing for requested sections */
+
+
     .accessibility,
     .contact {
         padding: 80px 24px !important;
@@ -4906,4 +4908,46 @@ p {
     .card-meta {
         gap: 40px !important;
     }
+}
+
+/* ============================================
+   ACCESSIBILITY CONTRAST FIXES
+   Overrides for specific elements to meet WCAG AA
+   ============================================ */
+
+/* Fix inline-link contrast on dark backgrounds */
+.inline-link {
+    color: #FF99AD !important;
+    /* Lighter pink for >4.5:1 ratio */
+    text-decoration: underline;
+}
+
+/* Fix gray text in pricing section */
+.pricing-section .tier-tagline,
+.pricing-section .price-label,
+.pricing-section .offer-description {
+    color: var(--gray-500) !important;
+    /* Forces #D4D4D8 */
+}
+
+/* Fix contact section text */
+.contact-expect-title {
+    color: var(--off-white) !important;
+    font-weight: 700;
+}
+
+.contact-process {
+    color: var(--gray-500);
+}
+
+.contact-process strong {
+    color: var(--off-white);
+}
+
+/* Ensure links in footer/dark areas pass */
+a.inline-link:focus,
+a.inline-link:hover {
+    color: #fff !important;
+    background: rgba(220, 20, 60, 0.2);
+    outline: 2px solid var(--crimson);
 }
