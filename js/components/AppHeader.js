@@ -7,6 +7,7 @@ class AppHeader extends HTMLElement {
     const activePage = this.getAttribute('active') || '';
     if (this.getAttribute('variant') === 'minimal') {
       this.innerHTML = `
+            <a href="#main-content" class="skip-link">Skip to main content</a>
             <nav class="nav" id="navbar">
                 <div class="nav-inner">
                     <a href="./" class="logo">
@@ -27,6 +28,7 @@ class AppHeader extends HTMLElement {
     }
 
     this.innerHTML = `
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <nav class="nav" id="navbar">
     <div class="nav-inner">
       <a href="./" class="logo">

@@ -30,20 +30,20 @@ class AppFooter extends HTMLElement {
           <p class="footer-brand-desc">Functional, accessible design for ambitious businesses.</p>
         </div>
         <div>
-          <h4 class="footer-heading">Navigation</h4>
+          <h3 class="footer-heading">Navigation</h3>
           <div class="footer-links"><a href="./#work" class="footer-link">Work</a><a href="services"
               class="footer-link">Services</a><a href="./#process" class="footer-link">Process</a><a href="./#pricing"
               class="footer-link">Pricing</a><a href="./#contact" class="footer-link">Contact</a></div>
         </div>
         <div>
-          <h4 class="footer-heading">Services</h4>
+          <h3 class="footer-heading">Services</h3>
           <div class="footer-links"><a href="web-design" class="footer-link" target="_blank">Web Design</a><a
               href="development" class="footer-link" target="_blank">Development</a><a href="brand-strategy"
               class="footer-link" target="_blank">Brand Strategy</a><a href="accessibility-service"
               class="footer-link" target="_blank">Accessibility</a></div>
         </div>
         <div>
-          <h4 class="footer-heading">Connect</h4>
+          <h3 class="footer-heading">Connect</h3>
           <div class="footer-links"><a href="mailto:hello@auza.mu" class="footer-link"
               target="_blank">hello@auza.mu</a><a href="https://www.linkedin.com/company/auza/" class="footer-link"
               target="_blank">LinkedIn</a></div>

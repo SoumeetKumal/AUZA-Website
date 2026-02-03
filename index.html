@@ -8,9 +8,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
   <!-- Preconnect for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
+    <!-- Local Fonts -->
+  <link rel="stylesheet" href="css/fonts.css">
+
   <!-- Modular CSS -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
@@ -72,6 +73,8 @@
   <div class="grid-bg"></div>
   <!-- Navigation -->
   <app-header active="home"></app-header>
+  <main id="main-content">
+
 
   <section class="hero">
     <div class="hero-inner">
@@ -537,11 +540,11 @@
             <input type="hidden" name="_next" value="https://auza.mu/">
             <input type="hidden" name="_subject" value="New Inquiry from AUZA Website">
 
-            <div class="form-group"><label class="form-label">Name *</label><input type="text" name="name"
+            <div class="form-group"><label class="form-label" for="name">Name *</label><input type="text" id="name" name="name"
                 class="form-input" placeholder="Your name" required></div>
-            <div class="form-group"><label class="form-label">Email *</label><input type="email" name="email"
+            <div class="form-group"><label class="form-label" for="email">Email *</label><input type="email" id="email" name="email"
                 class="form-input" placeholder="you@company.com" required></div>
-            <div class="form-group"><label class="form-label">Project Type</label><select name="project_type"
+            <div class="form-group"><label class="form-label" for="project_type">Project Type</label><select id="project_type" name="project_type"
                 class="form-select">
                 <option value="">Select...</option>
                 <option>New Website</option>
@@ -551,7 +554,7 @@
                 <option>Custom App / Development</option>
                 <option>General Inquiry</option>
               </select></div>
-            <div class="form-group"><label class="form-label">Budget Range</label><select name="budget"
+            <div class="form-group"><label class="form-label" for="budget">Budget Range</label><select id="budget" name="budget"
                 class="form-select">
                 <option value="">Select...</option>
                 <option>$2,500 - $5,000</option>
@@ -560,10 +563,10 @@
                 <option>$20,000 - $50,000</option>
                 <option>$50,000 +</option>
               </select></div>
-            <div class="form-group full"><label class="form-label">Tell us about your project *</label><textarea
+            <div class="form-group full"><label class="form-label" for="message">Tell us about your project *</label><textarea id="message"
                 name="message" class="form-textarea" placeholder="Goals, challenges, timeline..." required></textarea>
             </div>
-            <div class="form-group"><label class="form-label">How did you hear about us?</label><select name="source"
+            <div class="form-group"><label class="form-label" for="source">How did you hear about us?</label><select id="source" name="source"
                 class="form-select">
                 <option value="">Select...</option>
                 <option>Google Search</option>
@@ -580,7 +583,8 @@
     </div>
   </section>
 
-  <app-footer></app-footer>
+    </main>
+<app-footer></app-footer>
 
   <div id="toast" class="toast">
     <div class="toast-icon">✓</div>

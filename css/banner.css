@@ -67,7 +67,7 @@
     /* Fix for alignment */
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.2);
     padding: 4px 12px;
     border-radius: 4px;
     backdrop-filter: blur(4px);
