@@ -46,37 +46,58 @@ steps.forEach((step, i) => {
 // Hero Mouse Glow Effect
 const hero = document.querySelector('.hero');
 if (hero) {
+  let ticking = false;
   hero.addEventListener('mousemove', (e) => {
-    const rect = hero.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    hero.style.setProperty('--mouse-x', `${x}px`);
-    hero.style.setProperty('--mouse-y', `${y}px`);
-  });
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const rect = hero.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        hero.style.setProperty('--mouse-x', `${x}px`);
+        hero.style.setProperty('--mouse-y', `${y}px`);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
 }
 
 // Card Mouse Glow Effect (Why Partner With Us)
 const valueProps = document.querySelectorAll('.value-prop');
 valueProps.forEach(card => {
+  let ticking = false;
   card.addEventListener('mousemove', (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    card.style.setProperty('--mouse-x', `${x}px`);
-    card.style.setProperty('--mouse-y', `${y}px`);
-  });
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
 });
 
 // Card Mouse Glow Effect (What We Do)
 const serviceCards = document.querySelectorAll('.service-card');
 serviceCards.forEach(card => {
+  let ticking = false;
   card.addEventListener('mousemove', (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    card.style.setProperty('--mouse-x', `${x}px`);
-    card.style.setProperty('--mouse-y', `${y}px`);
-  });
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
 });
 
 // Scroll Indicator Fade Out
@@ -88,7 +109,7 @@ if (scrollIndicator) {
     } else {
       scrollIndicator.classList.remove('hidden');
     }
-  });
+  }, { passive: true });
 
   scrollIndicator.addEventListener('click', () => {
     // Scroll to the next section or just a bit down
@@ -175,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       goTopBtn.classList.remove('visible');
     }
-  });
+  }, { passive: true });
 
   goTopBtn.addEventListener('click', () => {
     window.scrollTo({

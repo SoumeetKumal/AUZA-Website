@@ -1,25 +1,26 @@
 /*
   AUZA Design System - Modular CSS manifest
   Refactored to improve maintainability and performance.
+  NOTE: These are now loaded directly in HTML files to avoid critical request chains.
 */
 
 /* Core & Variables */
-@import url('css/variables.css');
-@import url('css/base.css');
-@import url('css/animations.css');
+/* @import url('css/variables.css'); */
+/* @import url('css/base.css'); */
+/* @import url('css/animations.css'); */
 
 /* Layout & Global Sections */
-@import url('css/navigation.css');
-@import url('css/sections.css');
+/* @import url('css/navigation.css'); */
+/* @import url('css/sections.css'); */
 
 /* Components */
-@import url('css/components.css');
+/* @import url('css/components.css'); */
 
 /* Specialized Styles */
-@import url('css/mockups.css');
-@import url('css/pricing.css');
-@import url('css/legal.css');
-@import url('css/banner.css');
+/* @import url('css/mockups.css'); */
+/* @import url('css/pricing.css'); */
+/* @import url('css/legal.css'); */
+/* @import url('css/banner.css'); */
 
 /* Media Queries */
-@import url('css/responsive.css');
+/* @import url('css/responsive.css'); */
