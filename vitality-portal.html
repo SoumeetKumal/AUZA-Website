@@ -2,13 +2,15 @@
 <html lang="en">
 
 <head>
-  <link rel="preload" href="fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/fonts.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Portal | Vitality Health</title>
     <link rel="stylesheet" href="projects.css">
+    <meta name="description"
+        content="Access your health records and manage appointments securely through the Vitality Health patient portal.">
     <style>
         :root {
             --primary: #2A9D8F;
@@ -159,54 +161,54 @@
 </head>
 
 <body>
-  <main id="main-content">
+    <main id="main-content">
 
-    <!-- Back to Case Study Button - Always visible -->
-    <a href="vitality-concept" class="back-to-case-study">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M19 12H5M12 19l-7-7 7-7" />
-        </svg>
-        Case Study
-    </a>
-
-    <!-- Standard Promo Banner -->
-    <script src="js/banner.js" defer></script>
-    <header class="header">
-        <a href="vitality-live" class="logo">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+        <!-- Back to Case Study Button - Always visible -->
+        <a href="vitality-concept" class="back-to-case-study">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
             </svg>
-            Vitality
+            Case Study
         </a>
-        <a href="vitality-live"
-            style="text-decoration: none; color: var(--secondary); font-weight: 500; font-size: 0.9rem;">← Back to
-            Home</a>
-    </header>
 
-    <div class="login-container">
-        <div class="login-card">
-            <div class="login-header">
-                <h1>Patient Portal</h1>
-                <p>Securely access your health records</p>
-            </div>
-            <form onsubmit="event.preventDefault();">
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" class="form-input" placeholder="you@example.com">
+        <!-- Standard Promo Banner -->
+        <script src="js/banner.js" defer></script>
+        <header class="header">
+            <a href="vitality-live" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+                Vitality
+            </a>
+            <a href="vitality-live"
+                style="text-decoration: none; color: var(--secondary); font-weight: 500; font-size: 0.9rem;">← Back to
+                Home</a>
+        </header>
+
+        <div class="login-container">
+            <div class="login-card">
+                <div class="login-header">
+                    <h1>Patient Portal</h1>
+                    <p>Securely access your health records</p>
                 </div>
-                <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" class="form-input" placeholder="••••••••">
+                <form onsubmit="event.preventDefault();">
+                    <div class="form-group">
+                        <label for="email-input">Email Address</label>
+                        <input type="email" id="email-input" class="form-input" placeholder="you@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="password-input">Password</label>
+                        <input type="password" id="password-input" class="form-input" placeholder="••••••••">
+                    </div>
+                    <button type="submit" class="btn-submit">Sign In</button>
+                </form>
+                <div class="help-text">
+                    <p>New patient? <a href="#">Create an account</a></p>
+                    <p style="margin-top: 8px;"><a href="#">Forgot password?</a></p>
                 </div>
-                <button type="submit" class="btn-submit">Sign In</button>
-            </form>
-            <div class="help-text">
-                <p>New patient? <a href="#">Create an account</a></p>
-                <p style="margin-top: 8px;"><a href="#">Forgot password?</a></p>
             </div>
         </div>
-    </div>
-  </main>
+    </main>
 </body>
 
 </html>

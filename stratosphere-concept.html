@@ -45,8 +45,8 @@
 
         /* Stratosphere Navigation */
         .strato-nav {
-            position: fixed;
-            top: var(--banner-height, 0);
+            position: absolute;
+            top: 0;
             left: 0;
             right: 0;
             height: 80px;
@@ -59,6 +59,10 @@
             justify-content: space-between;
             padding: 0 5vw;
             transition: all 0.3s ease;
+        }
+
+        .strato-nav.scrolled {
+            position: fixed;
         }
 
         .strato-logo {
@@ -180,7 +184,7 @@
         .mobile-menu {
             display: none;
             position: fixed;
-            top: 120px;
+            top: calc(var(--banner-height, 0) + 80px);
             left: 0;
             right: 0;
             bottom: 0;
@@ -274,6 +278,11 @@
 
 
 
+        /* Hero Wrapper - includes nav */
+        .hero-wrapper {
+            position: relative;
+        }
+
         /* Hero Split Layout */
         .hero {
             display: grid;
@@ -281,8 +290,8 @@
             min-height: 100vh;
             background: #fff;
             position: relative;
-            margin-top: 80px;
-            /* Account for fixed nav */
+            padding-top: 80px;
+            /* Nav height */
         }
 
         .hero-visual {
@@ -667,58 +676,61 @@
         <!-- Standard Promo Banner -->
         <script src="js/banner.js" defer></script>
 
-        <!-- Stratosphere Navigation -->
-        <nav class="strato-nav">
-            <a href="stratosphere-concept" class="strato-logo">
-                <div class="strato-logo-icon">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white" />
-                        <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                        <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
+        <!-- Hero Wrapper - Nav is visually part of hero for screenshots -->
+        <div class="hero-wrapper">
+            <!-- Stratosphere Navigation -->
+            <nav class="strato-nav">
+                <a href="stratosphere-concept" class="strato-logo">
+                    <div class="strato-logo-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white" />
+                            <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    STRATOSPHERE
+                </a>
+                <div class="strato-nav-links">
+                    <a href="stratosphere-services" class="strato-nav-link">Services</a>
+                    <a href="stratosphere-industries" class="strato-nav-link">Industries</a>
+                    <a href="stratosphere-insights" class="strato-nav-link">Insights</a>
+                    <a href="stratosphere-about" class="strato-nav-link">About</a>
+                    <a href="#" class="strato-nav-cta">Contact</a>
                 </div>
-                STRATOSPHERE
-            </a>
-            <div class="strato-nav-links">
-                <a href="stratosphere-services" class="strato-nav-link">Services</a>
-                <a href="stratosphere-industries" class="strato-nav-link">Industries</a>
-                <a href="stratosphere-insights" class="strato-nav-link">Insights</a>
-                <a href="stratosphere-about" class="strato-nav-link">About</a>
-                <a href="#" class="strato-nav-cta">Contact</a>
-            </div>
-            <button class="mobile-menu-btn" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
 
-        <!-- Mobile Menu -->
-        <div class="mobile-menu">
-            <a href="stratosphere-services">Services</a>
-            <a href="stratosphere-industries">Industries</a>
-            <a href="stratosphere-insights">Insights</a>
-            <a href="stratosphere-about">About</a>
-            <a href="#">Contact</a>
+            <!-- Mobile Menu -->
+            <div class="mobile-menu">
+                <a href="stratosphere-services">Services</a>
+                <a href="stratosphere-industries">Industries</a>
+                <a href="stratosphere-insights">Insights</a>
+                <a href="stratosphere-about">About</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <section class="hero">
+                <div class="hero-visual">
+                    <img src="images/stratosphere-hero.webp" alt="Corporate Skyscraper" width="1024" height="1024">
+                </div>
+                <div class="hero-content fade-up">
+                    <span class="tagline">Global Headquarters / London</span>
+                    <h1>Navigate.<br>Elevate.<br>Dominate.</h1>
+                    <p class="description">
+                        Crafting future-proof strategies for industry leaders. We blend analytical rigor with creative
+                        foresight
+                        to navigate complex markets and deliver sustainable growth.
+                    </p>
+                    <a href="#" class="btn-consult">Explore Capabilities</a>
+                </div>
+            </section>
         </div>
-
-        <section class="hero">
-            <div class="hero-visual">
-                <img src="images/stratosphere-hero.webp" alt="Corporate Skyscraper">
-            </div>
-            <div class="hero-content fade-up">
-                <span class="tagline">Global Headquarters / London</span>
-                <h1>Navigate.<br>Elevate.<br>Dominate.</h1>
-                <p class="description">
-                    Crafting future-proof strategies for industry leaders. We blend analytical rigor with creative
-                    foresight
-                    to navigate complex markets and deliver sustainable growth.
-                </p>
-                <a href="#" class="btn-consult">Explore Capabilities</a>
-            </div>
-        </section>
 
         <section class="services section">
             <div class="container">

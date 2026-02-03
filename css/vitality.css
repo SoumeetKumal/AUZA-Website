@@ -1,0 +1,683 @@
+/* =========================================
+   VITALITY HEALTH - World Class Design System V2
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+:root {
+    /* Brand Colors - Deep & Trustworthy */
+    --primary: #2A9D8F;
+    --primary-dark: #21867a;
+    /* A bit darker for contract */
+    --secondary: #264653;
+    /* Dark Blue-Green */
+
+    /* Warm & Premium Neutrals */
+    --bg-cream: #FDFBF7;
+    /* Warmer background */
+    --white: #FFFFFF;
+    --mint-light: #F0F9F8;
+
+    --text-main: #264653;
+    --text-muted: #5F7D8B;
+
+    /* Spacing & Layout */
+    --radius-sm: 8px;
+    --radius-md: 20px;
+    --radius-lg: 32px;
+
+    /* Shadows - Soft & Diffused */
+    --shadow-soft: 0 10px 40px -10px rgba(38, 70, 83, 0.08);
+    --shadow-hover: 0 20px 60px -15px rgba(42, 157, 143, 0.15);
+}
+
+/* Base Reset & Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-cream);
+    overflow-x: hidden;
+    line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Playfair Display', serif;
+    /* Premium Serif */
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Utilities */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5vw;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    border-radius: 100px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+    border: none;
+    font-size: 0.95rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--secondary);
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.btn-primary:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 10px 30px rgba(38, 70, 83, 0.15);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid rgba(38, 70, 83, 0.2);
+    color: var(--secondary);
+}
+
+.btn-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: white;
+}
+
+/* =========================================
+   NAVIGATION (Updated Logo)
+   ========================================= */
+.nav {
+    position: fixed;
+    top: var(--banner-height, 0);
+    left: 0;
+    right: 0;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5vw;
+    z-index: 2000;
+    transition: all 0.3s ease;
+    background: rgba(253, 251, 247, 0.85);
+    /* Matches --bg-cream */
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--secondary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 48px;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* =========================================
+   HERO SECTION (Preserved but Refined)
+   ========================================= */
+.hero {
+    margin-top: calc(var(--banner-height, 0) + 100px);
+    padding: 40px 5vw 120px;
+    /* Soft organic gradient */
+    background: radial-gradient(circle at 100% 0%, #E9F5F4 0%, transparent 40%),
+        radial-gradient(circle at 0% 100%, #FDFBF7 0%, transparent 40%),
+        linear-gradient(135deg, #FDFBF7 0%, #FFFFFF 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 24px;
+    display: block;
+}
+
+.hero-content h1 {
+    font-size: clamp(3.5rem, 6vw, 5rem);
+    color: var(--secondary);
+    margin-bottom: 32px;
+    letter-spacing: -0.02em;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 48px;
+    line-height: 1.8;
+    max-width: 520px;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 60px;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.stat-item h3 {
+    font-family: 'Inter', sans-serif;
+    /* Stats look better in sans usually */
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 4px;
+}
+
+.stat-item p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Hero Image with Organic Clip */
+.hero-image-wrapper {
+    position: relative;
+    border-radius: 40px 40px 40px 0;
+    /* Asymmetric */
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+}
+
+.hero-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transform: scale(1.02);
+    /* Slight zoom usually looks better */
+}
+
+/* =========================================
+   BOOKING SECTION (Floating & Bespoke)
+   ========================================= */
+.booking-section {
+    position: relative;
+    margin-top: -80px;
+    z-index: 100;
+}
+
+.booking-container {
+    max-width: 1100px;
+    /* Tighter container */
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    border-radius: 40px;
+    box-shadow: 0 30px 60px rgba(38, 70, 83, 0.06);
+    padding: 60px 80px;
+    border: 1px solid white;
+}
+
+.booking-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.booking-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+    color: var(--secondary);
+}
+
+.widget-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.widget-tab {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    padding-bottom: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+.widget-tab.active {
+    color: var(--secondary);
+    border-bottom-color: var(--primary);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    /* Taller inputs */
+    background: var(--bg-cream);
+    border-radius: 20px;
+    padding: 0 24px;
+    border: 1px solid transparent;
+    /* Prepare for border transition */
+    transition: all 0.3s;
+}
+
+.input-box:hover {
+    background: white;
+    border-color: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+}
+
+.input-box:focus-within {
+    background: white;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(42, 157, 143, 0.1);
+}
+
+.input-box svg {
+    color: var(--primary);
+    margin-right: 16px;
+    width: 24px;
+    height: 24px;
+}
+
+.input-box input,
+.input-box select {
+    border: none;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: var(--secondary);
+    outline: none;
+    font-weight: 500;
+}
+
+/* =========================================
+   SERVICES SECTION (Bespoke Grid)
+   ========================================= */
+.services-section {
+    padding: 160px 5vw;
+}
+
+.section-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 80px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title-wrapper {
+    max-width: 600px;
+}
+
+.section-title {
+    font-size: 3.5rem;
+    color: var(--secondary);
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.link-arrow {
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* First card spans 2 columns */
+.service-card {
+    background: white;
+    padding: 60px 48px;
+    border-radius: 32px;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 480px;
+}
+
+.service-card span.num {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--secondary);
+    opacity: 0.05;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-family: 'Playfair Display', serif;
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    /* Circle icon bg */
+    background: var(--mint-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary);
+    margin-bottom: auto;
+    /* Push content down */
+    transition: all 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+    border-color: transparent;
+}
+
+.service-card:hover .card-icon {
+    background: var(--primary);
+    color: white;
+}
+
+.service-title {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    color: var(--secondary);
+}
+
+.service-desc {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+}
+
+.service-link {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--gray-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary);
+    transition: all 0.3s;
+}
+
+.service-card:hover .service-link {
+    background: var(--secondary);
+    color: white;
+    border-color: var(--secondary);
+}
+
+/* =========================================
+   DOCTORS SECTION (Premium Cards)
+   ========================================= */
+.doctors-section {
+    background: var(--white);
+    padding: 140px 5vw;
+    border-radius: 60px 60px 0 0;
+    /* Organic section divider */
+    margin-top: -60px;
+}
+
+.doctor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.doctor-card {
+    background: transparent;
+}
+
+.doc-image-wrapper {
+    height: 420px;
+    border-radius: 32px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 32px;
+}
+
+.doc-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.doctor-card:hover .doc-image {
+    transform: scale(1.05);
+}
+
+.doc-badges {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    display: flex;
+    gap: 12px;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--secondary);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.doc-content h3 {
+    font-size: 1.75rem;
+    margin-bottom: 8px;
+    color: var(--secondary);
+}
+
+.doc-role {
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    display: block;
+}
+
+.doc-rating {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+/* =========================================
+   FOOTER (Clean & Minimal)
+   ========================================= */
+.footer {
+    background: var(--secondary);
+    color: white;
+    padding: 120px 5vw 60px;
+    border-radius: 60px 60px 0 0;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto 100px;
+    align-items: flex-start;
+}
+
+.footer-brand h2 {
+    font-size: 3rem;
+    margin-bottom: 24px;
+    color: white;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 80px;
+}
+
+.footer-col h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 24px;
+}
+
+.footer-links li {
+    list-style: none;
+    margin-bottom: 16px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+}
+
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .booking-container {
+        padding: 40px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .footer-nav {
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+}

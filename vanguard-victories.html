@@ -2,14 +2,16 @@
 <html lang="en">
 
 <head>
-  <link rel="preload" href="fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/fonts.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Victories | Vanguard Legal</title>
-    
+
     <link rel="stylesheet" href="projects.css">
+    <meta name="description"
+        content="View the landmark results and legal victories achieved by Vanguard Legal for our distinguished clients.">
     <style>
         :root {
             --bg-dark: #050505;
@@ -29,8 +31,6 @@
             background-color: var(--bg-dark);
             color: var(--text-light);
             font-family: var(--body-font);
-            padding-top: 48px;
-            /* Adjusted for standard banner height */
             line-height: 1.7;
         }
 
@@ -42,7 +42,7 @@
 
         .vanguard-nav {
             position: fixed;
-            top: 48px;
+            top: var(--banner-height, 0);
             /* Adjusted for standard banner */
             left: 0;
             right: 0;
@@ -189,6 +189,74 @@
             font-size: 12px;
         }
 
+        /* Mobile Menu Styles */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            z-index: 3001;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--accent-gold);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(5, 5, 5, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 2500;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu a {
+            font-family: var(--heading-font);
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
         @media (max-width: 900px) {
             .victory-item {
                 grid-template-columns: 1fr;
@@ -198,88 +266,131 @@
             .vanguard-nav-links {
                 display: none;
             }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
         }
     </style>
 </head>
 
 <body>
-  <main id="main-content">
+    <main id="main-content">
 
-    <!-- Standard Announcement Banner -->
-    <script src="js/banner.js" defer></script>
+        <!-- Standard Announcement Banner -->
+        <script src="js/banner.js" defer></script>
 
-    <!-- Back to Case Study (Floating) -->
-    <a href="vanguard-concept" class="back-to-case-study">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M19 12H5M12 19l-7-7 7-7" />
-        </svg>
-        Case Study
-    </a>
-
-    <nav class="vanguard-nav">
-        <a href="vanguard-concept" class="vanguard-logo">
-            <div class="vanguard-logo-icon">
-                <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M12 3L3 8V10H21V8L12 3Z" fill="#D4AF37" />
-                    <path d="M5 12V18H7V12H5Z" fill="#D4AF37" />
-                    <path d="M11 12V18H13V12H11Z" fill="#D4AF37" />
-                    <path d="M17 12V18H19V12H17Z" fill="#D4AF37" />
-                    <path d="M3 20H21V22H3V20Z" fill="#D4AF37" />
-                </svg>
-            </div>
-            VANGUARD
+        <!-- Back to Case Study (Floating) -->
+        <a href="vanguard-concept" class="back-to-case-study">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            Case Study
         </a>
-        <div class="vanguard-nav-links">
-            <a href="vanguard-practice" class="vanguard-nav-link">Practice Areas</a>
-            <a href="vanguard-attorneys" class="vanguard-nav-link">Attorneys</a>
-            <a href="vanguard-victories" class="vanguard-nav-link active">Victories</a>
-            <a href="vanguard-news" class="vanguard-nav-link">News</a>
-            <a href="#" class="vanguard-nav-cta">Consultation</a>
+
+        <nav class="vanguard-nav">
+            <a href="vanguard-concept" class="vanguard-logo">
+                <div class="vanguard-logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M12 3L3 8V10H21V8L12 3Z" fill="#D4AF37" />
+                        <path d="M5 12V18H7V12H5Z" fill="#D4AF37" />
+                        <path d="M11 12V18H13V12H11Z" fill="#D4AF37" />
+                        <path d="M17 12V18H19V12H17Z" fill="#D4AF37" />
+                        <path d="M3 20H21V22H3V20Z" fill="#D4AF37" />
+                    </svg>
+                </div>
+                VANGUARD
+            </a>
+            <div class="vanguard-nav-links">
+                <a href="vanguard-practice" class="vanguard-nav-link">Practice Areas</a>
+                <a href="vanguard-attorneys" class="vanguard-nav-link">Attorneys</a>
+                <a href="vanguard-victories" class="vanguard-nav-link active">Victories</a>
+                <a href="vanguard-news" class="vanguard-nav-link">News</a>
+                <a href="#" class="vanguard-nav-cta">Consultation</a>
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <a href="vanguard-practice">Practice Areas</a>
+            <a href="vanguard-attorneys">Attorneys</a>
+            <a href="vanguard-victories">Victories</a>
+            <a href="vanguard-news">News</a>
+            <a href="#">Consultation</a>
         </div>
-    </nav>
 
-    <section class="page-hero">
-        <h1>Selected Victories</h1>
-        <p>A track record of landmark results for the world's most demanding clients.</p>
-    </section>
+        <section class="page-hero">
+            <h1>Selected Victories</h1>
+            <p>A track record of landmark results for the world's most demanding clients.</p>
+        </section>
 
-    <section>
-        <div class="container">
-            <div class="victories-list">
-                <div class="victory-item">
-                    <div class="victory-amount">$1.2B</div>
-                    <div class="victory-content">
-                        <h3>Securities Fraud Defense</h3>
-                        <p>Complete dismissal of securities fraud claims against Fortune 100 technology company and
-                            executive team.</p>
-                        <div class="victory-meta">Southern District of New York • 2025</div>
+        <section>
+            <div class="container">
+                <div class="victories-list">
+                    <div class="victory-item">
+                        <div class="victory-amount">$1.2B</div>
+                        <div class="victory-content">
+                            <h3>Securities Fraud Defense</h3>
+                            <p>Complete dismissal of securities fraud claims against Fortune 100 technology company and
+                                executive team.</p>
+                            <div class="victory-meta">Southern District of New York • 2025</div>
+                        </div>
                     </div>
-                </div>
-                <div class="victory-item">
-                    <div class="victory-amount">$780M</div>
-                    <div class="victory-content">
-                        <h3>Patent Infringement Victory</h3>
-                        <p>Jury verdict in favor of semiconductor client in complex multi-patent dispute.</p>
-                        <div class="victory-meta">Eastern District of Texas • 2024</div>
+                    <div class="victory-item">
+                        <div class="victory-amount">$780M</div>
+                        <div class="victory-content">
+                            <h3>Patent Infringement Victory</h3>
+                            <p>Jury verdict in favor of semiconductor client in complex multi-patent dispute.</p>
+                            <div class="victory-meta">Eastern District of Texas • 2024</div>
+                        </div>
                     </div>
-                </div>
-                <div class="victory-item">
-                    <div class="victory-amount">$450M</div>
-                    <div class="victory-content">
-                        <h3>M&A Litigation Settlement</h3>
-                        <p>Favorable settlement in disputed acquisition involving alleged breach of fiduciary duties.
-                        </p>
-                        <div class="victory-meta">Delaware Chancery Court • 2024</div>
+                    <div class="victory-item">
+                        <div class="victory-amount">$450M</div>
+                        <div class="victory-content">
+                            <h3>M&A Litigation Settlement</h3>
+                            <p>Favorable settlement in disputed acquisition involving alleged breach of fiduciary
+                                duties.
+                            </p>
+                            <div class="victory-meta">Delaware Chancery Court • 2024</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <p>© 2026 Vanguard Legal LLP. Concept Design by AUZA.</p>
-    </footer>
-  </main>
+        <footer>
+            <p>© 2026 Vanguard Legal LLP. Concept Design by AUZA.</p>
+        </footer>
+        <script>
+            const btn = document.querySelector('.mobile-menu-btn');
+            const menu = document.querySelector('.mobile-menu');
+
+            if (btn && menu) {
+                btn.addEventListener('click', () => {
+                    btn.classList.toggle('active');
+                    menu.classList.toggle('active');
+                    document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+                });
+
+                menu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        btn.classList.remove('active');
+                        menu.classList.remove('active');
+                        document.body.style.overflow = '';
+                    });
+                });
+            }
+        </script>
+    </main>
 </body>
 
 </html>

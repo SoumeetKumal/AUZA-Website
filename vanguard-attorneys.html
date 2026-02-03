@@ -8,8 +8,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attorneys | Vanguard Legal</title>
-    
+
     <link rel="stylesheet" href="projects.css">
+    <meta name="description"
+        content="Meet the elite legal team at Vanguard Legal. Our attorneys represent the top 1% of the profession in modern litigation.">
     <style>
         :root {
             --bg-dark: #050505;
@@ -29,75 +31,80 @@
             background-color: var(--bg-dark);
             color: var(--text-light);
             font-family: var(--body-font);
-            padding-top: 48px;
             line-height: 1.7;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
             padding: 0 5vw;
         }
 
-        .announcement-banner {
-            display: none;
-        }
-
         .vanguard-nav {
             position: fixed;
-            top: 48px;
+            top: var(--banner-height, 0);
             left: 0;
             right: 0;
-            height: 80px;
+            height: 90px;
             z-index: 2000;
-            background: rgba(5, 5, 5, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid #1a1a1a;
+            background: rgba(5, 5, 5, 0.85);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 0 5vw;
+            transition: all 0.4s ease;
+        }
+
+        .vanguard-nav.scrolled {
+            height: 70px;
+            background: rgba(5, 5, 5, 0.95);
+            border-bottom-color: rgba(212, 175, 55, 0.2);
         }
 
         .vanguard-logo {
             font-family: var(--heading-font);
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: #fff;
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 14px;
+            letter-spacing: 0.05em;
         }
 
         .vanguard-logo-icon {
-            width: 40px;
-            height: 40px;
-            border: 2px solid var(--accent-gold);
+            width: 44px;
+            height: 44px;
+            border: 1.5px solid var(--accent-gold);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .vanguard-logo-icon svg {
-            width: 20px;
-            height: 20px;
+        .vanguard-logo:hover .vanguard-logo-icon {
+            transform: rotate(15deg);
         }
 
         .vanguard-nav-links {
             display: flex;
             align-items: center;
-            gap: 40px;
+            gap: 48px;
         }
 
         .vanguard-nav-link {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #888;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.5);
             text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.2em;
+            transition: color 0.3s ease;
         }
 
         .vanguard-nav-link:hover,
@@ -108,120 +115,230 @@
         .vanguard-nav-cta {
             border: 1px solid var(--accent-gold);
             color: var(--accent-gold);
-            padding: 12px 28px;
+            padding: 12px 32px;
             font-family: var(--heading-font);
             font-style: italic;
-            font-size: 0.95rem;
+            font-size: 1rem;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
         }
 
         .vanguard-nav-cta:hover {
             background: var(--accent-gold);
             color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.15);
         }
 
-
-
         .page-hero {
-            padding: 200px 0 100px;
+            padding: calc(180px + var(--banner-height, 0)) 0 120px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, var(--accent-gold), transparent);
         }
 
         .page-hero h1 {
             font-family: var(--heading-font);
-            font-size: clamp(3rem, 6vw, 5rem);
+            font-size: clamp(3.5rem, 8vw, 6.5rem);
             font-style: italic;
             margin-bottom: 24px;
+            line-height: 1;
+            font-weight: 500;
+            background: linear-gradient(to bottom, #fff, #888);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .page-hero p {
-            font-size: 1.35rem;
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
             color: #888;
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
+            font-weight: 300;
+            letter-spacing: 0.02em;
+        }
+
+        .grid-section {
+            padding: 0 0 150px;
+            position: relative;
+        }
+
+        .grid-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 2px 2px, rgba(212, 175, 55, 0.03) 1px, transparent 0);
+            background-size: 40px 40px;
+            pointer-events: none;
         }
 
         .attorneys-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            padding: 0 0 100px;
+            gap: 60px 40px;
         }
 
         .attorney-card {
-            text-align: center;
+            text-align: left;
+            position: relative;
+            transition: transform 0.4s ease;
+        }
+
+        .attorney-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .attorney-photo-wrapper {
+            position: relative;
+            margin-bottom: 32px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .attorney-photo {
             width: 100%;
             aspect-ratio: 4/5;
-            background: #111;
-            margin-bottom: 24px;
+            background: #0f0f0f;
             position: relative;
             overflow: hidden;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .attorney-card:hover .attorney-photo {
+            transform: scale(1.05);
         }
 
         .attorney-photo::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, transparent 60%, rgba(5, 5, 5, 0.8));
+            background: linear-gradient(180deg, transparent 50%, rgba(5, 5, 5, 0.9));
+            opacity: 0.8;
+            transition: opacity 0.4s ease;
+        }
+
+        .attorney-card:hover .attorney-photo::after {
+            opacity: 0.4;
+        }
+
+        .attorney-info {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .attorney-info::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            bottom: 10px;
+            width: 1px;
+            background: var(--accent-gold);
+            transform: scaleY(0.3);
+            transition: transform 0.4s ease;
+            transform-origin: top;
+        }
+
+        .attorney-card:hover .attorney-info::before {
+            transform: scaleY(1);
         }
 
         .attorney-card h3 {
             font-family: var(--heading-font);
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-style: italic;
+            color: #fff;
+            margin-bottom: 4px;
+            transition: color 0.3s ease;
+        }
+
+        .attorney-card:hover h3 {
             color: var(--accent-gold);
-            margin-bottom: 8px;
         }
 
         .attorney-card p {
             color: #666;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.2em;
+            font-weight: 700;
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         footer {
-            background: #000;
+            background: #050505;
             color: white;
-            padding: 80px 5vw 40px;
+            padding: 100px 5vw 60px;
             text-align: center;
-            border-top: 1px solid #1a1a1a;
+            border-top: 1px solid rgba(212, 175, 55, 0.05);
         }
 
         footer p {
-            color: #555;
-            font-size: 12px;
+            color: #444;
+            font-size: 13px;
+            letter-spacing: 0.05em;
         }
 
-        /* Mobile Menu Styles */
+        /* Mobile Menu */
         .mobile-menu-btn {
             display: none;
-            flex-direction: column;
-            justify-content: center;
-            gap: 5px;
-            width: 28px;
-            height: 28px;
+            width: 32px;
+            height: 32px;
+            position: relative;
             cursor: pointer;
             z-index: 3001;
             background: none;
             border: none;
-            padding: 0;
         }
 
         .mobile-menu-btn span {
             display: block;
             width: 100%;
-            height: 2px;
+            height: 1px;
             background: var(--accent-gold);
-            transition: all 0.3s ease;
+            position: absolute;
+            left: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mobile-menu-btn span:nth-child(1) {
+            top: 10px;
+        }
+
+        .mobile-menu-btn span:nth-child(2) {
+            top: 16px;
+        }
+
+        .mobile-menu-btn span:nth-child(3) {
+            top: 22px;
         }
 
         .mobile-menu-btn.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
+            transform: translateY(6px) rotate(45deg);
         }
 
         .mobile-menu-btn.active span:nth-child(2) {
@@ -229,26 +346,22 @@
         }
 
         .mobile-menu-btn.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
+            transform: translateY(-6px) rotate(-45deg);
         }
 
         .mobile-menu {
-            display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(5, 5, 5, 0.98);
-            backdrop-filter: blur(20px);
-            z-index: 2500;
+            inset: 0;
+            background: #050505;
+            z-index: 3000;
+            display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 40px;
+            gap: 32px;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.4s ease, visibility 0.4s ease;
+            transition: all 0.5s ease;
         }
 
         .mobile-menu.active {
@@ -258,25 +371,50 @@
 
         .mobile-menu a {
             font-family: var(--heading-font);
-            font-size: 1.5rem;
-            color: var(--accent-gold);
+            font-size: 2.5rem;
+            font-style: italic;
+            color: #fff;
             text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+            transition: color 0.3s ease;
         }
 
-
-
-        .mobile-menu {
-            display: flex;
+        .mobile-menu a:hover {
+            color: var(--accent-gold);
         }
 
-        .attorneys-grid {
-            grid-template-columns: 1fr;
+        @media (max-width: 1024px) {
+            .attorneys-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
         }
 
-        .vanguard-nav-links {
-            display: none;
+        @media (max-width: 900px) {
+            .vanguard-nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .vanguard-nav {
+                height: 80px;
+            }
+
+            .page-hero {
+                padding: 180px 0 80px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .attorneys-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-hero h1 {
+                font-size: 3.5rem;
+            }
         }
     </style>
 </head>
@@ -336,69 +474,99 @@
             <p>Former DOJ prosecutors, distinguished academics, and trial-tested advocates.</p>
         </section>
 
-        <section>
+        <section class="grid-section">
             <div class="container">
                 <div class="attorneys-grid">
-                    <div class="attorney-card">
-                        <div class="attorney-photo"
-                            style="background: url('images/vanguard-attorney.png'); background-size: cover; background-position: top center;">
+                    <div class="attorney-card fade-up">
+                        <div class="attorney-photo-wrapper">
+                            <div class="attorney-photo">
+                                <img src="images/vanguard-attorney.webp" alt="Alexander Vance, Managing Partner"
+                                    width="400" height="500" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
                         </div>
-                        <h3>Alexander Vance</h3>
-                        <p>Managing Partner</p>
+                        <div class="attorney-info">
+                            <h3>Alexander Vance</h3>
+                            <p>Managing Partner</p>
+                        </div>
                     </div>
-                    <div class="attorney-card">
-                        <div class="attorney-photo"
-                            style="background: linear-gradient(135deg, #1a1a1a 0%, #333 100%); display: flex; align-items: center; justify-content: center;">
-                            <span
-                                style="font-family: var(--heading-font); color: var(--accent-gold); font-size: 3rem; opacity: 0.3;">MC</span>
+
+                    <div class="attorney-card fade-up">
+                        <div class="attorney-photo-wrapper">
+                            <div class="attorney-photo" role="img" aria-label="Photo of Marcus Chen"
+                                style="background: linear-gradient(135deg, #1a1a1a 0%, #333 100%); display: flex; align-items: center; justify-content: center;">
+                                <span
+                                    style="font-family: var(--heading-font); color: var(--accent-gold); font-size: 3rem; opacity: 0.3;">MC</span>
+                            </div>
                         </div>
-                        <h3>Marcus Chen</h3>
-                        <p>Partner, Litigation</p>
+                        <div class="attorney-info">
+                            <h3>Marcus Chen</h3>
+                            <p>Partner, Litigation</p>
+                        </div>
                     </div>
-                    <div class="attorney-card">
-                        <div class="attorney-photo"
-                            style="background: linear-gradient(135deg, #0f0f0f 0%, #2a2a2a 100%); display: flex; align-items: center; justify-content: center;">
-                            <span
-                                style="font-family: var(--heading-font); color: var(--accent-gold); font-size: 3rem; opacity: 0.3;">EV</span>
+
+                    <div class="attorney-card fade-up">
+                        <div class="attorney-photo-wrapper">
+                            <div class="attorney-photo" role="img" aria-label="Photo of Elena Vasquez"
+                                style="background: linear-gradient(135deg, #0f0f0f 0%, #2a2a2a 100%); display: flex; align-items: center; justify-content: center;">
+                                <span
+                                    style="font-family: var(--heading-font); color: var(--accent-gold); font-size: 3rem; opacity: 0.3;">EV</span>
+                            </div>
                         </div>
-                        <h3>Elena Vasquez</h3>
-                        <p>Partner, White Collar</p>
+                        <div class="attorney-info">
+                            <h3>Elena Vasquez</h3>
+                            <p>Partner, White Collar</p>
+                        </div>
                     </div>
-                    <div class="attorney-card">
-                        <div class="attorney-photo"
-                            style="background: linear-gradient(135deg, #111 0%, #222 100%); display: flex; align-items: center; justify-content: center;">
-                            <span
-                                style="font-family: var(--heading-font); color: var(--accent-gold); font-size: 3rem; opacity: 0.3;">JB</span>
+
+                    <div class="attorney-card fade-up">
+                        <div class="attorney-photo-wrapper">
+                            <div class="attorney-photo" role="img" aria-label="Photo of James Blackwood"
+                                style="background: linear-gradient(135deg, #111 0%, #222 100%); display: flex; align-items: center; justify-content: center;">
+                                <span
+                                    style="font-family: var(--heading-font); color: var(--accent-gold); font-size: 3rem; opacity: 0.3;">JB</span>
+                            </div>
                         </div>
-                        <h3>James Blackwood</h3>
-                        <p>Partner, IP</p>
+                        <div class="attorney-info">
+                            <h3>James Blackwood</h3>
+                            <p>Partner, IP</p>
+                        </div>
                     </div>
-                    <div class="attorney-card">
-                        <div class="attorney-photo"
-                            style="background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%); display: flex; align-items: center; justify-content: center;">
-                            <span
-                                style="font-family: var(--heading-font); color: var(--accent-gold); font-size: 3rem; opacity: 0.3;">SM</span>
+
+                    <div class="attorney-card fade-up">
+                        <div class="attorney-photo-wrapper">
+                            <div class="attorney-photo" role="img" aria-label="Photo of Sarah Mitchell"
+                                style="background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%); display: flex; align-items: center; justify-content: center;">
+                                <span
+                                    style="font-family: var(--heading-font); color: var(--accent-gold); font-size: 3rem; opacity: 0.3;">SM</span>
+                            </div>
                         </div>
-                        <h3>Sarah Mitchell</h3>
-                        <p>Of Counsel</p>
+                        <div class="attorney-info">
+                            <h3>Sarah Mitchell</h3>
+                            <p>Of Counsel</p>
+                        </div>
                     </div>
-                    <div class="attorney-card">
-                        <div class="attorney-photo"
-                            style="background: linear-gradient(135deg, #111 0%, #1f1f1f 100%); display: flex; align-items: center; justify-content: center;">
-                            <span
-                                style="font-family: var(--heading-font); color: var(--accent-gold); font-size: 3rem; opacity: 0.3;">DP</span>
+
+                    <div class="attorney-card fade-up">
+                        <div class="attorney-photo-wrapper">
+                            <div class="attorney-photo" role="img" aria-label="Photo of David Park"
+                                style="background: linear-gradient(135deg, #111 0%, #1f1f1f 100%); display: flex; align-items: center; justify-content: center;">
+                                <span
+                                    style="font-family: var(--heading-font); color: var(--accent-gold); font-size: 3rem; opacity: 0.3;">DP</span>
+                            </div>
                         </div>
-                        <h3>David Park</h3>
-                        <p>Senior Associate</p>
+                        <div class="attorney-info">
+                            <h3>David Park</h3>
+                            <p>Senior Associate</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-
         <footer>
             <p>© 2026 Vanguard Legal LLP. Concept Design by AUZA.</p>
         </footer>
         <script>
+            // Mobile Menu
             const btn = document.querySelector('.mobile-menu-btn');
             const menu = document.querySelector('.mobile-menu');
 
@@ -417,6 +585,31 @@
                     });
                 });
             }
+
+            // Scroll animations
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+            // Navbar scroll effect
+            const nav = document.querySelector('.vanguard-nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
         </script>
     </main>
 </body>
