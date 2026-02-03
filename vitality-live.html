@@ -56,7 +56,25 @@
             </button>
         </nav>
 
-        <!-- Hero Section (Content Preserved, Layout Refined) -->
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <button class="mobile-menu-close" aria-label="Close menu">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="mobile-menu-links">
+                <a href="#doctors" class="mobile-menu-nav-link">Doctors</a>
+                <a href="#services" class="mobile-menu-nav-link">Services</a>
+                <a href="#locations" class="mobile-menu-nav-link">Locations</a>
+                <a href="vitality-portal" class="mobile-menu-nav-link">Patient Portal</a>
+                <a href="#" class="btn btn-primary" style="margin-top: 20px;">Book Now</a>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
         <section class="hero">
             <div class="hero-grid">
                 <div class="hero-content">
@@ -94,7 +112,7 @@
             </div>
         </section>
 
-        <!-- Booking Section - Bespoke Floating Card -->
+        <!-- Booking Section -->
         <section class="booking-section">
             <div class="booking-container">
                 <div class="booking-header">
@@ -135,7 +153,7 @@
             </div>
         </section>
 
-        <!-- Services Section - Bespoke Layout -->
+        <!-- Services Section -->
         <section class="services-section" id="services">
             <div class="section-header-row">
                 <div class="section-title-wrapper">
@@ -214,7 +232,7 @@
             </div>
         </section>
 
-        <!-- Doctors Section - Premium Visuals -->
+        <!-- Doctors Section -->
         <section class="doctors-section" id="doctors">
             <div class="section-header-row">
                 <div class="section-title-wrapper">
@@ -279,7 +297,7 @@
             </div>
         </section>
 
-        <!-- Footer - Clean Typographic -->
+        <!-- Footer -->
         <footer class="footer">
             <div class="footer-top">
                 <div class="footer-brand">
@@ -323,8 +341,23 @@
 
         <script>
             // Mobile Menu Logic
-            const btn = document.querySelector('.mobile-menu-btn');
-            // ... (Existing logic can be added if needed, or inline here)
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileMenuClose = document.querySelector('.mobile-menu-close');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-menu-nav-link');
+
+            function toggleMenu(show) {
+                mobileMenu.classList.toggle('active', show);
+                mobileMenuBtn.classList.toggle('active', show);
+                document.body.style.overflow = show ? 'hidden' : '';
+            }
+
+            mobileMenuBtn.addEventListener('click', () => toggleMenu(true));
+            mobileMenuClose.addEventListener('click', () => toggleMenu(false));
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => toggleMenu(false));
+            });
         </script>
     </main>
 </body>
