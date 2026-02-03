@@ -1,9 +1,0 @@
---- vitality-live.html ---
-- Image missing dimensions and file not found: images/vitality-hero.png
-- Image missing dimensions and file not found: images/vitality-doctor.png
-- Form input missing associated <label>: specialty-select
-- Form input missing associated <label>: location-input
-- Interactive element missing accessible name: a ['service-link']
-- Interactive element missing accessible name: a ['service-link']
-- Interactive element missing accessible name: a ['service-link']
-

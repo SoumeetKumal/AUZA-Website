@@ -40,6 +40,27 @@
     <link rel="icon" type="image/png" href="images/AUZA Logo White.png">
     <!-- Optimized Google Analytics -->
     <script src="js/analytics.js" defer></script>
+
+    <style>
+        /* Vitality Navigation Overrides */
+        .mobile-menu-btn span {
+            background: var(--primary) !important;
+        }
+
+        .mobile-menu {
+            top: 0 !important;
+            height: 100vh !important;
+            transform: translateY(-100%) !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+        }
+
+        .mobile-menu.active {
+            transform: translateY(0) !important;
+            visibility: visible !important;
+            pointer-events: auto !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -100,6 +121,8 @@
         <section class="case-image-full">
             <div class="container-wide">
                 <img src="images/vitality-health-clinic-hero.webp"
+                    srcset="images/vitality-health-clinic-hero-500w.webp 500w, images/vitality-health-clinic-hero-800w.webp 800w, images/vitality-health-clinic-hero-1200w.webp 1200w"
+                    sizes="(max-width: 768px) 100vw, 100vw"
                     alt="Vitality Health patient-centered clinic website hero featuring diagnostic tools, patient data visualization, and teal brand accents"
                     class="hero-image" width="1920" height="1080" loading="lazy" decoding="async">
             </div>

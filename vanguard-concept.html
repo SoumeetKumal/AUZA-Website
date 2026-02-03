@@ -84,7 +84,11 @@
             left: 0;
             right: 0;
             height: 80px;
+<<<<<<< HEAD
             z-index: 11000;
+=======
+            z-index: 4000;
+>>>>>>> 5871084392cd1e587e53d86a39e7fd5260b1dd7e
             background: rgba(5, 5, 5, 0.95);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid #1a1a1a;
@@ -165,7 +169,11 @@
             align-items: center;
             gap: 12px;
             cursor: pointer;
+<<<<<<< HEAD
             z-index: 11001;
+=======
+            z-index: 4002;
+>>>>>>> 5871084392cd1e587e53d86a39e7fd5260b1dd7e
             background: none;
             border: none;
             padding: 0;
@@ -214,6 +222,7 @@
             display: none;
             position: fixed;
             top: 0;
+<<<<<<< HEAD
             right: 0;
             width: 100%;
             height: 100vh;
@@ -240,6 +249,36 @@
             width: 1px;
             background: linear-gradient(to bottom, transparent, var(--accent-gold), transparent);
             opacity: 0.3;
+=======
+            left: 0;
+            right: 0;
+            height: 100vh;
+            background: rgba(5, 5, 5, 0.99);
+            backdrop-filter: blur(25px);
+            z-index: 4001;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 160px;
+            gap: 40px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 32px;
+            right: 24px;
+            background: none;
+            border: none;
+            color: var(--accent-gold);
+            cursor: pointer;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+>>>>>>> 5871084392cd1e587e53d86a39e7fd5260b1dd7e
         }
 
         .mobile-menu.active {
@@ -256,6 +295,7 @@
         }
 
         .mobile-menu a {
+<<<<<<< HEAD
             font-family: var(--heading-font);
             font-size: 1.4rem;
             font-weight: 500;
@@ -297,6 +337,24 @@
         .mobile-menu a:hover {
             color: var(--accent-gold);
             padding-left: 10px;
+=======
+            font-family: var(--body-font);
+            font-size: 1.1rem;
+            font-weight: 500;
+            font-style: normal;
+            color: var(--accent-gold);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5em;
+            transition: all 0.4s ease;
+            opacity: 0.9;
+        }
+
+        .mobile-menu a:hover {
+            color: #fff;
+            letter-spacing: 0.6em;
+            opacity: 1;
+>>>>>>> 5871084392cd1e587e53d86a39e7fd5260b1dd7e
         }
 
 
@@ -343,7 +401,7 @@
             background:
                 radial-gradient(circle at center, var(--gold-glow) 0%, transparent 70%),
                 linear-gradient(to bottom, rgba(5, 5, 5, 0.7), rgba(5, 5, 5, 1)),
-                url('images/vanguard-hero.png');
+                url('images/vanguard-hero.webp');
             background-size: 100%, 100%, cover;
             background-position: center;
             position: relative;
@@ -537,7 +595,7 @@
             padding: 200px 5vw;
             background:
                 linear-gradient(rgba(5, 5, 5, 0.8), rgba(5, 5, 5, 0.95)),
-                url('images/vanguard-office.png');
+                url('images/vanguard-legal-hero.webp');
             background-size: cover;
             background-attachment: fixed;
             text-align: center;
@@ -686,10 +744,16 @@
         </a>
         <!-- Standard Promo Banner -->
         <script defer="" src="js/banner.js"></script>
+<<<<<<< HEAD
         <script defer="" src="js/concept-nav.js"></script>
         <!-- Vanguard Navigation -->
         <nav class="vanguard-nav">
             <a class="vanguard-logo" href="vanguard-concept.html">
+=======
+        <!-- Vanguard Navigation -->
+        <nav class="vanguard-nav">
+            <a class="vanguard-logo" href="vanguard-concept">
+>>>>>>> 5871084392cd1e587e53d86a39e7fd5260b1dd7e
                 <div class="vanguard-logo-icon">
                     <svg fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 3L3 8V10H21V8L12 3Z" fill="#D4AF37"></path>
@@ -702,6 +766,7 @@
                 VANGUARD
             </a>
             <div class="vanguard-nav-links">
+<<<<<<< HEAD
                 <a class="vanguard-nav-link" href="vanguard-practice.html">Practice Areas</a>
                 <a class="vanguard-nav-link" href="vanguard-attorneys.html">Attorneys</a>
                 <a class="vanguard-nav-link" href="vanguard-victories.html">Victories</a>
@@ -714,10 +779,23 @@
                     <span></span>
                     <span></span>
                 </div>
+=======
+                <a class="vanguard-nav-link" href="vanguard-practice">Practice Areas</a>
+                <a class="vanguard-nav-link" href="vanguard-attorneys">Attorneys</a>
+                <a class="vanguard-nav-link" href="vanguard-victories">Victories</a>
+                <a class="vanguard-nav-link" href="vanguard-news">News</a>
+                <a class="vanguard-nav-cta" href="#">Consultation</a>
+            </div>
+            <button aria-label="Toggle menu" class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+>>>>>>> 5871084392cd1e587e53d86a39e7fd5260b1dd7e
             </button>
         </nav>
         <!-- Mobile Menu -->
         <div class="mobile-menu">
+<<<<<<< HEAD
             <div class="mobile-menu-inner">
                 <a href="vanguard-practice.html">Practice Areas</a>
                 <a href="vanguard-attorneys.html">Attorneys</a>
@@ -729,6 +807,20 @@
                     Vanguard Legal / Est. 1984
                 </div>
             </div>
+=======
+            <button class="mobile-menu-close" aria-label="Close menu">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <a href="#about">About</a>
+            <a href="#victories">Victories</a>
+            <a href="#practice">Practice Areas</a>
+            <a href="#news">News</a>
+            <a href="#contact" class="vanguard-nav-cta">Consultation</a>
+>>>>>>> 5871084392cd1e587e53d86a39e7fd5260b1dd7e
         </div>
         <header class="hero">
             <div class="fade-up" style="display: flex; flex-direction: column; align-items: center;">
@@ -867,7 +959,11 @@
                     just
                     know the law; we shape how it's applied in the modern corporate era.
                 </p>
+<<<<<<< HEAD
                 <a href="vanguard-attorneys.html"
+=======
+                <a href="vanguard-attorneys"
+>>>>>>> 5871084392cd1e587e53d86a39e7fd5260b1dd7e
                     style="display: inline-flex; align-items: center; gap: 10px; color: var(--accent-gold); text-decoration: none; font-family: var(--heading-font); font-style: italic; font-size: 1.1rem; letter-spacing: 0.1em; text-transform: uppercase;">
                     Meet Our Partners
                     <svg fill="none" height="20" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"
@@ -960,7 +1056,30 @@
                 © 2026 Vanguard Legal. Concept Design by AUZA.
             </div>
         </footer>
+<<<<<<< HEAD
 
+=======
+        <script>
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const mobileMenuClose = document.querySelector('.mobile-menu-close');
+            const mobileLinks = document.querySelectorAll('.mobile-menu a');
+
+            function toggleMenu(show) {
+                mobileMenu.classList.toggle('active', show);
+                mobileMenuBtn.classList.toggle('active', show);
+                document.body.style.overflow = show ? 'hidden' : '';
+            }
+
+            mobileMenuBtn.addEventListener('click', () => toggleMenu(true));
+            mobileMenuClose.addEventListener('click', () => toggleMenu(false));
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => toggleMenu(false));
+            });
+        </script>
+>>>>>>> 5871084392cd1e587e53d86a39e7fd5260b1dd7e
     </main>
 </body>
 

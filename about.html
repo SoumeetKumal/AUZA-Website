@@ -21,8 +21,177 @@
     <!-- Preconnect for performance -->
     <!-- Local Fonts -->
     <link href="css/fonts.css" rel="stylesheet" />
-    <!-- Consolidated CSS -->
-    <link href="css/main.css" rel="stylesheet" />
+    <!-- Critical CSS for Performance -->
+    <style>
+        /* AUZA Critical CSS - v2 (Desktop & Mobile optimized) */
+        :root {
+            --deep-black: #0A0A0A;
+            --nero: #161616;
+            --crimson: #DC143C;
+            --crimson-accessible: #FF3366;
+            --crimson-light: rgba(220, 20, 60, 0.1);
+            --off-white: #FAFAFA;
+            --gray-700: #3F3F46;
+            --gray-500: #D4D4D8;
+            --gray-400: #A1A1AA;
+            --gray-300: #E4E4E7;
+            --header-weight: 900;
+            --header-spacing: -0.04em;
+            --header-line-height: 1.1;
+            --banner-height: 0px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background: var(--deep-black);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--deep-black);
+            color: var(--off-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .announcement-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            min-height: 48px;
+            z-index: 6000;
+            background: var(--crimson-accessible, #FF3366);
+            color: var(--off-white, white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 10px 24px;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            width: 100%;
+        }
+
+        body.has-banner {
+            padding-top: var(--banner-height, 48px);
+        }
+
+        .nav {
+            position: fixed;
+            top: var(--banner-height, 0);
+            left: 0;
+            right: 0;
+            z-index: 5000;
+            padding: clamp(32px, 4vw, 48px) clamp(24px, 5vw, 48px) clamp(24px, 3vw, 40px);
+            background: rgba(10, 10, 10, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--off-white);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 160px 48px 40px;
+            position: relative;
+        }
+
+        .hero-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center
+        }
+
+        .hero-title {
+            font-size: clamp(36px, 5vw, 58px);
+            font-weight: var(--header-weight);
+            line-height: var(--header-line-height);
+            letter-spacing: var(--header-spacing);
+            margin-bottom: 24px;
+        }
+
+        .hero-title .accent {
+            color: var(--crimson-accessible)
+        }
+
+        .grid-bg {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.2;
+            background-image: linear-gradient(rgba(220, 20, 60, 0.1) 3px, transparent 2px), linear-gradient(90deg, rgba(220, 20, 60, 0.1) 1px, transparent 2px), radial-gradient(circle at 50% 50%, rgba(220, 20, 60, 0.15) 0%, transparent 70%);
+            background-size: 80px 80px, 80px 80px, 100% 100%;
+            z-index: 0
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            opacity: 0;
+            animation: fadeUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                padding: 20px;
+            }
+
+            .hero {
+                padding: 120px 24px 40px;
+            }
+
+            .announcement-banner {
+                font-size: 11px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+    <!-- Deferred Main CSS -->
+    <link href="css/main.min.css" media="print" onload="this.media='all'" rel="stylesheet" />
+    <noscript>
+        <link href="css/main.min.css" rel="stylesheet" />
+    </noscript>
     <!-- GA4 -->
     <link href="images/AUZA Logo White.png" rel="icon" type="image/png" />
     <style>
@@ -197,7 +366,14 @@
     <script defer="" src="js/analytics.js"></script>
 </head>
 
-<body>
+<body class="has-banner">
+    <!-- Pre-rendered Banner to prevent CLS -->
+    <a href="./#contact" class="announcement-banner">
+        <span class="banner-prefix">🚀 Launch Offer: </span><span class="banner-text">First 5 Clients Save 25% <span
+                class="banner-extra">| Limited Slots for Q1 2026</span></span>
+        <span class="badge-dot"></span>
+        <span class="banner-cta">Claim Yours →</span>
+    </a>
     <script defer="" src="js/banner.js"></script>
     <div class="grid-bg"></div>
     <!-- Navigation -->
@@ -231,9 +407,9 @@
             <div class="story-image fade-up">
                 <div
                     style="width: 100%; height: 100%; background: #ddd; display: flex; align-items: center; justify-content: center; color: #888;">
-                    <img alt="Stratosphere Strategy - AUZA concept design showcase" decoding="async" height="1024"
-                        loading="lazy" src="images/consulting-mockup.webp" style="object-fit: cover; opacity: 0.8;"
-                        width="1024" />
+                    <img alt="Vanguard Legal - AUZA concept design showcase" decoding="async" height="1080"
+                        loading="lazy" src="images/vanguard-legal-hero.webp" style="object-fit: cover; opacity: 0.8;"
+                        width="1920" />
                 </div>
             </div>
         </section>

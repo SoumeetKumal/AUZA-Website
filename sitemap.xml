@@ -2,134 +2,147 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://auza.mu/</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://auza.mu/about</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://auza.mu/services</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://auza.mu/web-design</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://auza.mu/development</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://auza.mu/brand-strategy</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://auza.mu/accessibility-service</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://auza.mu/website-audit</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <priority>0.7</priority>
   </url>
-  <!-- Concepts -->
+  <!-- Concepts: Stratosphere -->
   <url>
     <loc>https://auza.mu/stratosphere</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://auza.mu/stratosphere-concept</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://auza.mu/stratosphere-services</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://auza.mu/stratosphere-industries</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://auza.mu/stratosphere-insights</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://auza.mu/stratosphere-about</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <priority>0.4</priority>
   </url>
+  <!-- Concepts: Vanguard -->
   <url>
     <loc>https://auza.mu/vanguard</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://auza.mu/vanguard-concept</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://auza.mu/vanguard-practice</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://auza.mu/vanguard-attorneys</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://auza.mu/vanguard-victories</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://auza.mu/vanguard-news</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <priority>0.4</priority>
   </url>
+  <!-- Concepts: Nova -->
   <url>
     <loc>https://auza.mu/nova</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://auza.mu/nova-concept</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-04</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <!-- Concepts: Vitality -->
+  <url>
+    <loc>https://auza.mu/vitality-concept</loc>
+    <lastmod>2026-02-04</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://auza.mu/vitality-concept</loc>
-    <lastmod>2026-01-29</lastmod>
+    <loc>https://auza.mu/vitality-live</loc>
+    <lastmod>2026-02-04</lastmod>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://auza.mu/vitality-portal</loc>
+    <lastmod>2026-02-04</lastmod>
+    <priority>0.4</priority>
   </url>
   <!-- Legal -->
   <url>
     <loc>https://auza.mu/privacy-policy</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://auza.mu/terms-of-service</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://auza.mu/accessibility</loc>
-    <lastmod>2026-01-29</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <priority>0.3</priority>
   </url>
 </urlset>

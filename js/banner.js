@@ -1,74 +1,26 @@
 /**
- * Centralized Promo Banner
- * Source of truth for all pages.
+ * Centralized Promo Banner - Client Side Logic
+ * This script now only handles dynamic adjustments.
+ * HTML is pre-rendered for performance (Zero CLS).
  */
 document.addEventListener('DOMContentLoaded', () => {
-    // Prevent duplicate banners
-    if (document.querySelector('.announcement-banner')) return;
+    const banner = document.querySelector('.announcement-banner');
+    if (!banner) return;
 
-    const bannerHTML = `
-    <a href="./#contact" class="announcement-banner">
-        <span class="banner-prefix">🚀 Launch Offer: </span><span class="banner-text">First 5 Clients Save 25% <span class="banner-extra">| Limited Slots for
-                Q1 2026</span></span>
-        <span class="badge-dot"></span>
-        <span class="banner-cta">Claim Yours →</span>
-    </a>
-    `;
-
-    // Insert as the first child of body, or before the nav if appropriate
-    // Ideally it's fixed, so prepending to body is fine.
-    document.body.insertAdjacentHTML('afterbegin', bannerHTML);
-    document.body.classList.add('has-banner');
-
-    // Ensure the css/banner.css is loaded if not already
-    // (Most pages have style.css which might import it, or we can inject the link tag too if needed)
-    // Checking if banner.css is linked would be good practice, but for now assuming existing css structure handles it
-    // or we can inject the styles directly here to be truly self-contained?
-    // The user has a css/banner.css file. Let's make sure it's used.
-    // simpler to just expect the page to have the CSS, but to be safe:
-
-    // Inject Styles for Layout Shift
-    const style = document.createElement('style');
-    style.innerHTML = `
-        :root {
-            --banner-height: 0px; 
-        }
-        
-        body.has-banner {
-            padding-top: var(--banner-height) !important; 
-        }
-
-        .announcement-banner {
-            z-index: 9999 !important;
-        }
-    `;
-    document.head.appendChild(style);
-
-    // Initial check for CSS
-    if (!document.querySelector('link[href*="banner.css"]')) {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = 'css/banner.css';
-        document.head.appendChild(link);
+    // Use a CSS variable for the header to offset
+    function updateBannerHeight() {
+        const height = banner.offsetHeight;
+        document.documentElement.style.setProperty('--banner-height', `${height}px`);
     }
 
-    // Dynamic Height Calculation
-    function updateBannerHeight() {
-        const banner = document.querySelector('.announcement-banner');
-        if (banner) {
-            const height = banner.offsetHeight;
+    // Use ResizeObserver for efficient main-thread management (no layout thrashing)
+    const observer = new ResizeObserver(entries => {
+        for (let entry of entries) {
+            const height = entry.target.offsetHeight;
             document.documentElement.style.setProperty('--banner-height', `${height}px`);
         }
-    }
+    });
 
-    // Run on load and resize
-    window.addEventListener('load', updateBannerHeight);
-    window.addEventListener('resize', updateBannerHeight);
-    // Observe DOM changes just in case (e.g. font loading)
-    const observer = new ResizeObserver(updateBannerHeight);
-    const banner = document.querySelector('.announcement-banner');
-    if (banner) observer.observe(banner);
-
-    // Immediate run
+    observer.observe(banner);
     updateBannerHeight();
 });

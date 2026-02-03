@@ -119,8 +119,9 @@
             width: 28px;
             height: 28px;
             cursor: pointer;
-            z-index: 11001;
-            background: none;
+            <<<<<<< HEAD z-index: 11001;
+            =======z-index: 4002;
+            >>>>>>>5871084392cd1e587e53d86a39e7fd5260b1dd7e background: none;
             border: none;
             padding: 0;
         }
@@ -149,6 +150,7 @@
             display: none;
             position: fixed;
             top: 0;
+            <<<<<<< HEAD
             /* Cover full screen */
             left: 0;
             right: 0;
@@ -157,14 +159,37 @@
             backdrop-filter: blur(20px);
             z-index: 10000;
             /* Below nav button */
-            flex-direction: column;
+            =======left: 0;
+            right: 0;
+            height: 100vh;
+            background: rgba(11, 11, 20, 0.99);
+            backdrop-filter: blur(25px);
+            z-index: 4001;
+            >>>>>>>5871084392cd1e587e53d86a39e7fd5260b1dd7e flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
+            padding-top: 140px;
             gap: 40px;
             opacity: 0;
             visibility: hidden;
-            transform: translateY(-100%);
+            <<<<<<< HEAD transform: translateY(-100%);
             transition: all 0.5s ease, visibility 0.5s ease;
+            =======transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 32px;
+            right: 24px;
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            >>>>>>>5871084392cd1e587e53d86a39e7fd5260b1dd7e
         }
 
         .mobile-menu.active {
@@ -223,7 +248,15 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .nav-links {
+            <<<<<<< HEAD=======
+        }
+
+        @media (max-width: 768px) {
+            .nav-app {
+                top: var(--banner-height, 0);
+            }
+
+            >>>>>>>5871084392cd1e587e53d86a39e7fd5260b1dd7e .nav-links {
                 display: none;
             }
 
@@ -394,372 +427,426 @@
 <body>
     <main id="main-content">
         <!-- Back to Case Study Button - Always visible -->
-        <a class="back-to-case-study" href="nova.html">
-            <svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16">
-                <path d="M19 12H5M12 19l-7-7 7-7"></path>
-            </svg>
-            Case Study
-        </a>
-        <!-- Banner injected by JS -->
-        <script src="js/banner.js"></script>
-        <div class="glare"></div>
-        <nav class="nav-app">
-            <a class="logo" href="nova-concept.html" style="text-decoration:none;">Nova Wealth</a>
-            <div class="nav-links">
-                <a class="nav-link" href="#features">Features</a>
-                <a class="nav-link" href="#pricing">Pricing</a>
-                <a class="nav-link" href="#security">Security</a>
-                <a class="nav-link" href="#about">About</a>
-                <a class="btn-launch" href="#">Launch App</a>
-            </div>
-            <button aria-label="Toggle menu" class="mobile-menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
-        <!-- Mobile Menu -->
-        <div class="mobile-menu">
-            <a href="#features">Features</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#security">Security</a>
-            <a href="#about">About</a>
-            <a href="#">Launch App</a>
-        </div>
-        <section class="hero">
-            <h1>Wealth management<br />on autopilot.</h1>
-            <p>Advanced algorithmic trading meets intuitive design. Grow your portfolio with the precision of a hedge
-                fund.
-            </p>
-            <div style="display: flex; gap: 16px; justify-content: center;">
-                <a class="btn-launch" href="#" target="_blank">Get Started</a>
-                <a href="#" style="padding: 10px 24px; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;"
-                    target="_blank">View
-                    Demo</a>
-            </div>
-        </section>
-        <div class="dashboard-container">
-            <!-- Replaced CSS Mockup with Actual Design Asset -->
-            <img alt="Nova Wealth Dashboard Interface" decoding="async" height="1024" loading="lazy"
-                src="images/fintech-mockup.webp" style="width: 100%; height: auto; border-radius: 12px; display: block;"
-                width="1024" />
-        </div>
-        <!-- Trust Strip -->
-        <div
-            style="background: rgba(255,255,255,0.02); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 30px 0; margin-bottom: 100px;">
-            <div class="container" style="text-align: center; max-width: 1000px; margin: 0 auto;">
-                <p
-                    style="color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">
-                    Trusted by current and future leaders at</p>
-                <div
-                    style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; opacity: 0.5; filter: grayscale(100%);">
-                    <span style="font-weight: 700; font-size: 1.2rem; color: #fff;">Google</span>
-                    <span style="font-weight: 700; font-size: 1.2rem; color: #fff;">Goldman Sachs</span>
-                    <span style="font-weight: 700; font-size: 1.2rem; color: #fff;">McKinsey</span>
-                    <span style="font-weight: 700; font-size: 1.2rem; color: #fff;">Tesla</span>
-                    <span style="font-weight: 700; font-size: 1.2rem; color: #fff;">SpaceX</span>
-                </div>
-            </div>
-        </div>
-        <!-- Features Grid -->
-        <section id="features" style="padding: 0 5vw 100px;">
-            <div style="text-align: center; margin-bottom: 80px;">
-                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Built for the next generation of investors.</h2>
-                <p style="color: #888;">Institutional-grade tools, available to everyone.</p>
-            </div>
-            <div class="responsive-grid-3">
-                <div class="card" style="text-align: center; padding: 40px;">
-                    <div style="font-size: 32px; margin-bottom: 20px;">⚡</div>
-                    <h3 style="font-size: 1.25rem; margin-bottom: 12px;">Real-Time Data</h3>
-                    <p style="color: #888; font-size: 0.9rem; line-height: 1.6;">Direct market access with zero
-                        latency. Execute trades at the exact moment you intend.</p>
-                </div>
-                <div class="card" style="text-align: center; padding: 40px;">
-                    <div style="font-size: 32px; margin-bottom: 20px;">🔒</div>
-                    <h3 style="font-size: 1.25rem; margin-bottom: 12px;">Bank-Grade Security</h3>
-                    <p style="color: #888; font-size: 0.9rem; line-height: 1.6;">Your assets are protected by
-                        256-bit encryption and are fully insured up to $500k.</p>
-                </div>
-                <div class="card" style="text-align: center; padding: 40px;">
-                    <div style="font-size: 32px; margin-bottom: 20px;">🤖</div>
-                    <h3 style="font-size: 1.25rem; margin-bottom: 12px;">AI-Powered Insights</h3>
-                    <p style="color: #888; font-size: 0.9rem; line-height: 1.6;">Our ML models analyze news
-                        sentiment and market trends to flag opportunities.</p>
-                </div>
-            </div>
-        </section>
-        <!-- Comparison Table -->
-        <section class="section" id="about"
-            style="padding: 100px 5vw; background: #0e0e1a; border-top: 1px solid rgba(255,255,255,0.05);">
-            <div class="container" style="max-width: 1000px; margin: 0 auto;">
-                <div style="text-align: center; margin-bottom: 60px;">
-                    <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Why choose Nova?</h2>
-                    <p style="color: #888;">See how we stack up against traditional brokerages.</p>
-                </div>
-                <div style="overflow-x: auto;">
-                    <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
-                        <thead>
-                            <tr>
-                                <th
-                                    style="text-align: left; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); color: #888; font-weight: 500;">
-                                    Feature</th>
-                                <th
-                                    style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--accent-purple); font-weight: 700; font-size: 1.2rem;">
-                                    Nova Wealth</th>
-                                <th
-                                    style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); color: #888; font-weight: 500;">
-                                    Traditional Firms</th>
-                            </tr>
-                        </thead>
-                        <tbody style="font-size: 1.1rem;">
-                            <tr>
-                                <td style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                                    Management Fees</td>
-                                <td
-                                    style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center; font-weight: 600;">
-                                    0.25%</td>
-                                <td
-                                    style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center; color: #888;">
-                                    1% - 2%</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05);">Account
-                                    Minimum</td>
-                                <td
-                                    style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center; font-weight: 600;">
-                                    $0</td>
-                                <td
-                                    style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center; color: #888;">
-                                    $5,000+</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                                    Automated Rebalancing</td>
-                                <td
-                                    style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center; color: #4ade80;">
-                                    Included</td>
-                                <td
-                                    style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center; color: #888;">
-                                    Manual / Extra Fee</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05);">Tax-Loss
-                                    Harvesting</td>
-                                <td
-                                    style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center; color: #4ade80;">
-                                    Included</td>
-                                <td
-                                    style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center; color: #888;">
-                                    Not Available</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-        <!-- Security Deep Dive -->
-        <section class="section" id="security" style="padding: 100px 5vw; background: #0B0B14;">
-            <div class="security-container">
-                <div>
-                    <h2 style="font-size: 3rem; margin-bottom: 30px; line-height: 1.1;">Serious security<br />for
-                        serious
-                        wealth.</h2>
-                    <div style="display: flex; gap: 20px; margin-bottom: 30px;">
-                        <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px; flex: 1;">
-                            <h4 style="color: var(--accent-purple); margin-bottom: 10px;">AES-256</h4>
-                            <p style="font-size: 0.9rem; color: #888;">Military-grade encryption for all your data, at
-                                rest
-                                and in transit.</p>
-                        </div>
-                        <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px; flex: 1;">
-                            <h4 style="color: var(--accent-pink); margin-bottom: 10px;">SIPC Insured</h4>
-                            <p style="font-size: 0.9rem; color: #888;">Your securities are protected up to $500,000 by
-                                SIPC.
-                            </p>
-                        </div>
+        <<<<<<< HEAD <a class="back-to-case-study" href="nova.html">
+            =======
+            <a class="back-to-case-study" href="nova">
+                >>>>>>> 5871084392cd1e587e53d86a39e7fd5260b1dd7e
+                <svg fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16">
+                    <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                </svg>
+                Case Study
+            </a>
+            <!-- Banner injected by JS -->
+            <script src="js/banner.js"></script>
+            <div class="glare"></div>
+            <nav class="nav-app">
+                <<<<<<< HEAD <a class="logo" href="nova-concept.html" style="text-decoration:none;">Nova Wealth</a>
+                    =======
+                    <a class="logo" href="nova-concept" style="text-decoration:none;">Nova Wealth</a>
+                    >>>>>>> 5871084392cd1e587e53d86a39e7fd5260b1dd7e
+                    <div class="nav-links">
+                        <a class="nav-link" href="#features">Features</a>
+                        <a class="nav-link" href="#pricing">Pricing</a>
+                        <a class="nav-link" href="#security">Security</a>
+                        <a class="nav-link" href="#about">About</a>
+                        <a class="btn-launch" href="#">Launch App</a>
                     </div>
-                    <p style="color: #666; font-size: 0.9rem; line-height: 1.6;">We employ biometric authentication,
-                        real-time fraud monitoring, and are regularly audited by top security firms.</p>
-                </div>
-                <div
-                    style="background: linear-gradient(135deg, #111 0%, #050505 100%); border-radius: 20px; padding: 40px; border: 1px solid rgba(255,255,255,0.1); position: relative;">
-                    <div style="font-size: 1.5rem; margin-bottom: 20px; text-align: center;">🛡️ Security Status: <span
-                            style="color: #4ade80;">Active</span></div>
-                    <div
-                        style="font-family: monospace; color: #4ade80; background: rgba(0,0,0,0.5); padding: 20px; border-radius: 8px; font-size: 0.8rem; overflow: hidden;">
-                        &gt; Initializing handshake...<br />
-                        &gt; Verifying SSL certificate...<br />
-                        &gt; Connection encrypted (TLS 1.3)<br />
-                        &gt; User authenticated via FaceID<br />
-                        &gt; Access granted.
-                    </div>
-                </div>
+                    <button aria-label="Toggle menu" class="mobile-menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+            </nav>
+            <!-- Mobile Menu -->
+            <div class="mobile-menu">
+                <<<<<<< HEAD <a href="#features">Features</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#security">Security</a>
+                    <a href="#about">About</a>
+                    <a href="#">Launch App</a>
+                    =======
+                    <button class="mobile-menu-close" aria-label="Close menu">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#work">Work</a>
+                    <a href="#results">Results</a>
+                    <a href="#contact" class="nav-cta" style="margin: 0; padding: 16px 40px; border-radius: 100px;">Get
+                        Started</a>
+                    >>>>>>> 5871084392cd1e587e53d86a39e7fd5260b1dd7e
             </div>
-        </section>
-        <!-- Testimonials -->
-        <section class="section" style="padding: 100px 5vw; border-top: 1px solid rgba(255,255,255,0.05);">
-            <div style="text-align: center; margin-bottom: 80px;">
-                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Don't just take our word for it.</h2>
+            <section class="hero">
+                <h1>Wealth management<br />on autopilot.</h1>
+                <p>Advanced algorithmic trading meets intuitive design. Grow your portfolio with the precision of a
+                    hedge
+                    fund.
+                </p>
+                <div style="display: flex; gap: 16px; justify-content: center;">
+                    <a class="btn-launch" href="#" target="_blank">Get Started</a>
+                    <a href="#" style="padding: 10px 24px; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px;"
+                        target="_blank">View
+                        Demo</a>
+                </div>
+            </section>
+            <div class="dashboard-container">
+                <!-- Replaced CSS Mockup with Actual Design Asset -->
+                <img alt="Nova Wealth Dashboard Interface" decoding="async" height="1024" loading="lazy"
+                    src="images/fintech-mockup.webp"
+                    style="width: 100%; height: auto; border-radius: 12px; display: block;" width="1024" />
             </div>
-            <div class="responsive-grid-3">
-                <div style="background: rgba(255,255,255,0.03); padding: 30px; border-radius: 16px;">
-                    <div style="color: var(--accent-purple); margin-bottom: 15px;">★★★★★</div>
-                    <p style="color: #ccc; margin-bottom: 20px; line-height: 1.6;">"The automated tax-loss harvesting
-                        alone
-                        has paid for my subscription ten times over. It's a no-brainer."</p>
-                    <div style="font-weight: 600;">Marcus T.</div>
-                    <div style="font-size: 0.8rem; color: #666;">Pro Plan • 3 years</div>
-                </div>
-                <div style="background: rgba(255,255,255,0.03); padding: 30px; border-radius: 16px;">
-                    <div style="color: var(--accent-purple); margin-bottom: 15px;">★★★★★</div>
-                    <p style="color: #ccc; margin-bottom: 20px; line-height: 1.6;">"I used to spend weekends managing my
-                        portfolio. Now Nova handles it all, and my returns are actually better."</p>
-                    <div style="font-weight: 600;">Sarah J.</div>
-                    <div style="font-size: 0.8rem; color: #666;">Starter Plan • 6 months</div>
-                </div>
-                <div style="background: rgba(255,255,255,0.03); padding: 30px; border-radius: 16px;">
-                    <div style="color: var(--accent-purple); margin-bottom: 15px;">★★★★★</div>
-                    <p style="color: #ccc; margin-bottom: 20px; line-height: 1.6;">"The interface is gorgeous, but the
-                        data
-                        depth is what keeps me here. Institutional tools for the retail investor."</p>
-                    <div style="font-weight: 600;">David C.</div>
-                    <div style="font-size: 0.8rem; color: #666;">Premium Plan • 1 year</div>
-                </div>
-            </div>
-        </section>
-        <!-- FAQ -->
-        <section class="section" style="padding: 100px 5vw; max-width: 800px; margin: 0 auto;">
-            <h2 style="font-size: 2.5rem; margin-bottom: 40px; text-align: center;">Frequently Asked Questions</h2>
-            <div style="display: flex; flex-direction: column; gap: 20px;">
-                <details
-                    style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 12px; cursor: pointer;">
-                    <summary style="font-weight: 600; color: #fff;">Is my money safe?</summary>
-                    <p style="margin-top: 10px; color: #888; line-height: 1.6;">Yes. Your accounts are SIPC insured up
-                        to
-                        $500,000. We use bank-grade encryption and do not lend your securities without explicit
-                        permission.
-                    </p>
-                </details>
-                <details
-                    style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 12px; cursor: pointer;">
-                    <summary style="font-weight: 600; color: #fff;">How do I withdraw my funds?</summary>
-                    <p style="margin-top: 10px; color: #888; line-height: 1.6;">You can withdraw funds to your linked
-                        bank
-                        account at any time. Standard transfers take 1-3 business days.</p>
-                </details>
-                <details
-                    style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 12px; cursor: pointer;">
-                    <summary style="font-weight: 600; color: #fff;">Can I talk to a human advisor?</summary>
-                    <p style="margin-top: 10px; color: #888; line-height: 1.6;">Yes! Premium plan members get a
-                        dedicated
-                        financial advisor. Pro and Starter plans have access to 24/7 chat support.</p>
-                </details>
-            </div>
-        </section>
-        <!-- Pricing Plans -->
-        <section class="section" id="pricing" style="padding: 0 5vw 100px;">
-            <div class="container" style="max-width: 1000px; margin: 0 auto;">
-                <div style="text-align: center; margin-bottom: 80px;">
-                    <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Membership Plans</h2>
-                    <p style="color: #888;">Scale up your tools as you grow your wealth.</p>
-                </div>
-                <div class="pricing-grid">
-                    <!-- Basic -->
-                    <div
-                        style="background: rgba(255,255,255,0.03); border-radius: 20px; padding: 40px; border: 1px solid rgba(255,255,255,0.05);">
-                        <div style="font-size: 1.2rem; font-weight: 600; margin-bottom: 10px;">Starter</div>
-                        <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 20px;">Free</div>
-                        <p style="color: #888; font-size: 0.9rem; margin-bottom: 30px;">Perfect for getting started
-                            with automated investing.</p>
-                        <ul
-                            style="list-style: none; margin-bottom: 30px; color: #ccc; line-height: 2; font-size: 0.9rem;">
-                            <li>✓ $0 Commission Trading</li>
-                            <li>✓ Basic Portfolio Analysis</li>
-                            <li>✓ Mobile App Access</li>
-                        </ul>
-                        <a href="#"
-                            style="display: block; text-align: center; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); transition: 0.3s; color: white;"
-                            target="_blank">Start
-                            Free</a>
-                    </div>
-                    <!-- Pro (Highlight) -->
-                    <div
-                        style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%); border-radius: 20px; padding: 40px; border: 1px solid var(--accent-purple); position: relative; transform: scale(1.05);">
-                        <div
-                            style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent-purple); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700;">
-                            MOST POPULAR</div>
-                        <div
-                            style="font-size: 1.2rem; font-weight: 600; margin-bottom: 10px; color: var(--accent-pink);">
-                            Pro</div>
-                        <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 20px;">$10<span
-                                style="font-size: 1rem; color: #888; font-weight: 400;">/mo</span></div>
-                        <p style="color: #bbb; font-size: 0.9rem; margin-bottom: 30px;">Power tools for the active
-                            investor.</p>
-                        <ul
-                            style="list-style: none; margin-bottom: 30px; color: white; line-height: 2; font-size: 0.9rem;">
-                            <li>✓ Everything in Starter</li>
-                            <li>✓ Tax-Loss Harvesting</li>
-                            <li>✓ Level 2 Data Access</li>
-                            <li>✓ Priority Support</li>
-                        </ul>
-                        <a href="#"
-                            style="display: block; text-align: center; padding: 12px; border-radius: 8px; background: linear-gradient(90deg, var(--accent-purple), var(--accent-pink)); transition: 0.3s; color: white; font-weight: 600;"
-                            target="_blank">Go
-                            Pro</a>
-                    </div>
-                    <!-- Institutional -->
-                    <div
-                        style="background: rgba(255,255,255,0.03); border-radius: 20px; padding: 40px; border: 1px solid rgba(255,255,255,0.05);">
-                        <div style="font-size: 1.2rem; font-weight: 600; margin-bottom: 10px;">Premium</div>
-                        <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 20px;">$50<span
-                                style="font-size: 1rem; color: #888; font-weight: 400;">/mo</span></div>
-                        <p style="color: #888; font-size: 0.9rem; margin-bottom: 30px;">Dedicated support and custom
-                            indexing.</p>
-                        <ul
-                            style="list-style: none; margin-bottom: 30px; color: #ccc; line-height: 2; font-size: 0.9rem;">
-                            <li>✓ Everything in Pro</li>
-                            <li>✓ Dedicated Advisor</li>
-                            <li>✓ Estate Planning Tools</li>
-                        </ul>
-                        <a href="#"
-                            style="display: block; text-align: center; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); transition: 0.3s; color: white;"
-                            target="_blank">Contact
-                            Us</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <footer style="border-top: 1px solid rgba(255,255,255,0.05); padding: 80px 5vw;">
+            <!-- Trust Strip -->
             <div
-                style="display: flex; justify-content: space-between; align-items: flex-start; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; gap: 40px;">
-                <div>
-                    <div class="logo" style="margin-bottom: 20px;">Nova Wealth</div>
-                    <div style="color: #666; font-size: 0.9rem; max-width: 300px;">
-                        Investing involves risk, including loss of principal. Nova Wealth is a registered investment
-                        advisor.
-                    </div>
-                </div>
-                <div style="display: flex; gap: 60px;">
-                    <div>
-                        <h4 style="font-size: 14px; color: #fff; margin-bottom: 16px;">Platform</h4>
-                        <p style="color: #888; font-size: 14px; margin-bottom: 10px;">Invest</p>
-                        <p style="color: #888; font-size: 14px; margin-bottom: 10px;">Retire</p>
-                        <p style="color: #888; font-size: 14px; margin-bottom: 10px;">Save</p>
-                    </div>
-                    <div>
-                        <h4 style="font-size: 14px; color: #fff; margin-bottom: 16px;">Support</h4>
-                        <p style="color: #888; font-size: 14px; margin-bottom: 10px;">Help Center</p>
-                        <p style="color: #888; font-size: 14px; margin-bottom: 10px;">Contact Us</p>
-                        <p style="color: #888; font-size: 14px; margin-bottom: 10px;">System Status</p>
+                style="background: rgba(255,255,255,0.02); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 30px 0; margin-bottom: 100px;">
+                <div class="container" style="text-align: center; max-width: 1000px; margin: 0 auto;">
+                    <p
+                        style="color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">
+                        Trusted by current and future leaders at</p>
+                    <div
+                        style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; opacity: 0.5; filter: grayscale(100%);">
+                        <span style="font-weight: 700; font-size: 1.2rem; color: #fff;">Google</span>
+                        <span style="font-weight: 700; font-size: 1.2rem; color: #fff;">Goldman Sachs</span>
+                        <span style="font-weight: 700; font-size: 1.2rem; color: #fff;">McKinsey</span>
+                        <span style="font-weight: 700; font-size: 1.2rem; color: #fff;">Tesla</span>
+                        <span style="font-weight: 700; font-size: 1.2rem; color: #fff;">SpaceX</span>
                     </div>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 60px; color: #444; font-size: 12px;">
-                © 2026 Nova Wealth Technologies. • <a href="privacy-policy" style="color: #444; text-decoration: none;"
-                    target="_blank">Privacy Policy</a>
-            </div>
-        </footer>
-        <script src="js/concept-nav.js" defer></script>
+            <!-- Features Grid -->
+            <section id="features" style="padding: 0 5vw 100px;">
+                <div style="text-align: center; margin-bottom: 80px;">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Built for the next generation of investors.</h2>
+                    <p style="color: #888;">Institutional-grade tools, available to everyone.</p>
+                </div>
+                <div class="responsive-grid-3">
+                    <div class="card" style="text-align: center; padding: 40px;">
+                        <div style="font-size: 32px; margin-bottom: 20px;">⚡</div>
+                        <h3 style="font-size: 1.25rem; margin-bottom: 12px;">Real-Time Data</h3>
+                        <p style="color: #888; font-size: 0.9rem; line-height: 1.6;">Direct market access with zero
+                            latency. Execute trades at the exact moment you intend.</p>
+                    </div>
+                    <div class="card" style="text-align: center; padding: 40px;">
+                        <div style="font-size: 32px; margin-bottom: 20px;">🔒</div>
+                        <h3 style="font-size: 1.25rem; margin-bottom: 12px;">Bank-Grade Security</h3>
+                        <p style="color: #888; font-size: 0.9rem; line-height: 1.6;">Your assets are protected by
+                            256-bit encryption and are fully insured up to $500k.</p>
+                    </div>
+                    <div class="card" style="text-align: center; padding: 40px;">
+                        <div style="font-size: 32px; margin-bottom: 20px;">🤖</div>
+                        <h3 style="font-size: 1.25rem; margin-bottom: 12px;">AI-Powered Insights</h3>
+                        <p style="color: #888; font-size: 0.9rem; line-height: 1.6;">Our ML models analyze news
+                            sentiment and market trends to flag opportunities.</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Comparison Table -->
+            <section class="section" id="about"
+                style="padding: 100px 5vw; background: #0e0e1a; border-top: 1px solid rgba(255,255,255,0.05);">
+                <div class="container" style="max-width: 1000px; margin: 0 auto;">
+                    <div style="text-align: center; margin-bottom: 60px;">
+                        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Why choose Nova?</h2>
+                        <p style="color: #888;">See how we stack up against traditional brokerages.</p>
+                    </div>
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
+                            <thead>
+                                <tr>
+                                    <th
+                                        style="text-align: left; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); color: #888; font-weight: 500;">
+                                        Feature</th>
+                                    <th
+                                        style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); color: var(--accent-purple); font-weight: 700; font-size: 1.2rem;">
+                                        Nova Wealth</th>
+                                    <th
+                                        style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); color: #888; font-weight: 500;">
+                                        Traditional Firms</th>
+                                </tr>
+                            </thead>
+                            <tbody style="font-size: 1.1rem;">
+                                <tr>
+                                    <td style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                        Management Fees</td>
+                                    <td
+                                        style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center; font-weight: 600;">
+                                        0.25%</td>
+                                    <td
+                                        style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center; color: #888;">
+                                        1% - 2%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05);">Account
+                                        Minimum</td>
+                                    <td
+                                        style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center; font-weight: 600;">
+                                        $0</td>
+                                    <td
+                                        style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center; color: #888;">
+                                        $5,000+</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                        Automated Rebalancing</td>
+                                    <td
+                                        style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center; color: #4ade80;">
+                                        Included</td>
+                                    <td
+                                        style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center; color: #888;">
+                                        Manual / Extra Fee</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05);">Tax-Loss
+                                        Harvesting</td>
+                                    <td
+                                        style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center; color: #4ade80;">
+                                        Included</td>
+                                    <td
+                                        style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center; color: #888;">
+                                        Not Available</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <!-- Security Deep Dive -->
+            <section class="section" id="security" style="padding: 100px 5vw; background: #0B0B14;">
+                <div class="security-container">
+                    <div>
+                        <h2 style="font-size: 3rem; margin-bottom: 30px; line-height: 1.1;">Serious security<br />for
+                            serious
+                            wealth.</h2>
+                        <div style="display: flex; gap: 20px; margin-bottom: 30px;">
+                            <div
+                                style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px; flex: 1;">
+                                <h4 style="color: var(--accent-purple); margin-bottom: 10px;">AES-256</h4>
+                                <p style="font-size: 0.9rem; color: #888;">Military-grade encryption for all your data,
+                                    at
+                                    rest
+                                    and in transit.</p>
+                            </div>
+                            <div
+                                style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px; flex: 1;">
+                                <h4 style="color: var(--accent-pink); margin-bottom: 10px;">SIPC Insured</h4>
+                                <p style="font-size: 0.9rem; color: #888;">Your securities are protected up to $500,000
+                                    by
+                                    SIPC.
+                                </p>
+                            </div>
+                        </div>
+                        <p style="color: #666; font-size: 0.9rem; line-height: 1.6;">We employ biometric authentication,
+                            real-time fraud monitoring, and are regularly audited by top security firms.</p>
+                    </div>
+                    <div
+                        style="background: linear-gradient(135deg, #111 0%, #050505 100%); border-radius: 20px; padding: 40px; border: 1px solid rgba(255,255,255,0.1); position: relative;">
+                        <div style="font-size: 1.5rem; margin-bottom: 20px; text-align: center;">🛡️ Security Status:
+                            <span style="color: #4ade80;">Active</span></div>
+                        <div
+                            style="font-family: monospace; color: #4ade80; background: rgba(0,0,0,0.5); padding: 20px; border-radius: 8px; font-size: 0.8rem; overflow: hidden;">
+                            &gt; Initializing handshake...<br />
+                            &gt; Verifying SSL certificate...<br />
+                            &gt; Connection encrypted (TLS 1.3)<br />
+                            &gt; User authenticated via FaceID<br />
+                            &gt; Access granted.
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Testimonials -->
+            <section class="section" style="padding: 100px 5vw; border-top: 1px solid rgba(255,255,255,0.05);">
+                <div style="text-align: center; margin-bottom: 80px;">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Don't just take our word for it.</h2>
+                </div>
+                <div class="responsive-grid-3">
+                    <div style="background: rgba(255,255,255,0.03); padding: 30px; border-radius: 16px;">
+                        <div style="color: var(--accent-purple); margin-bottom: 15px;">★★★★★</div>
+                        <p style="color: #ccc; margin-bottom: 20px; line-height: 1.6;">"The automated tax-loss
+                            harvesting
+                            alone
+                            has paid for my subscription ten times over. It's a no-brainer."</p>
+                        <div style="font-weight: 600;">Marcus T.</div>
+                        <div style="font-size: 0.8rem; color: #666;">Pro Plan • 3 years</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 30px; border-radius: 16px;">
+                        <div style="color: var(--accent-purple); margin-bottom: 15px;">★★★★★</div>
+                        <p style="color: #ccc; margin-bottom: 20px; line-height: 1.6;">"I used to spend weekends
+                            managing my
+                            portfolio. Now Nova handles it all, and my returns are actually better."</p>
+                        <div style="font-weight: 600;">Sarah J.</div>
+                        <div style="font-size: 0.8rem; color: #666;">Starter Plan • 6 months</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); padding: 30px; border-radius: 16px;">
+                        <div style="color: var(--accent-purple); margin-bottom: 15px;">★★★★★</div>
+                        <p style="color: #ccc; margin-bottom: 20px; line-height: 1.6;">"The interface is gorgeous, but
+                            the
+                            data
+                            depth is what keeps me here. Institutional tools for the retail investor."</p>
+                        <div style="font-weight: 600;">David C.</div>
+                        <div style="font-size: 0.8rem; color: #666;">Premium Plan • 1 year</div>
+                    </div>
+                </div>
+            </section>
+            <!-- FAQ -->
+            <section class="section" style="padding: 100px 5vw; max-width: 800px; margin: 0 auto;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 40px; text-align: center;">Frequently Asked Questions</h2>
+                <div style="display: flex; flex-direction: column; gap: 20px;">
+                    <details
+                        style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 12px; cursor: pointer;">
+                        <summary style="font-weight: 600; color: #fff;">Is my money safe?</summary>
+                        <p style="margin-top: 10px; color: #888; line-height: 1.6;">Yes. Your accounts are SIPC insured
+                            up
+                            to
+                            $500,000. We use bank-grade encryption and do not lend your securities without explicit
+                            permission.
+                        </p>
+                    </details>
+                    <details
+                        style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 12px; cursor: pointer;">
+                        <summary style="font-weight: 600; color: #fff;">How do I withdraw my funds?</summary>
+                        <p style="margin-top: 10px; color: #888; line-height: 1.6;">You can withdraw funds to your
+                            linked
+                            bank
+                            account at any time. Standard transfers take 1-3 business days.</p>
+                    </details>
+                    <details
+                        style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 12px; cursor: pointer;">
+                        <summary style="font-weight: 600; color: #fff;">Can I talk to a human advisor?</summary>
+                        <p style="margin-top: 10px; color: #888; line-height: 1.6;">Yes! Premium plan members get a
+                            dedicated
+                            financial advisor. Pro and Starter plans have access to 24/7 chat support.</p>
+                    </details>
+                </div>
+            </section>
+            <!-- Pricing Plans -->
+            <section class="section" id="pricing" style="padding: 0 5vw 100px;">
+                <div class="container" style="max-width: 1000px; margin: 0 auto;">
+                    <div style="text-align: center; margin-bottom: 80px;">
+                        <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Membership Plans</h2>
+                        <p style="color: #888;">Scale up your tools as you grow your wealth.</p>
+                    </div>
+                    <div class="pricing-grid">
+                        <!-- Basic -->
+                        <div
+                            style="background: rgba(255,255,255,0.03); border-radius: 20px; padding: 40px; border: 1px solid rgba(255,255,255,0.05);">
+                            <div style="font-size: 1.2rem; font-weight: 600; margin-bottom: 10px;">Starter</div>
+                            <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 20px;">Free</div>
+                            <p style="color: #888; font-size: 0.9rem; margin-bottom: 30px;">Perfect for getting started
+                                with automated investing.</p>
+                            <ul
+                                style="list-style: none; margin-bottom: 30px; color: #ccc; line-height: 2; font-size: 0.9rem;">
+                                <li>✓ $0 Commission Trading</li>
+                                <li>✓ Basic Portfolio Analysis</li>
+                                <li>✓ Mobile App Access</li>
+                            </ul>
+                            <a href="#"
+                                style="display: block; text-align: center; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); transition: 0.3s; color: white;"
+                                target="_blank">Start
+                                Free</a>
+                        </div>
+                        <!-- Pro (Highlight) -->
+                        <div
+                            style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%); border-radius: 20px; padding: 40px; border: 1px solid var(--accent-purple); position: relative; transform: scale(1.05);">
+                            <div
+                                style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent-purple); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700;">
+                                MOST POPULAR</div>
+                            <div
+                                style="font-size: 1.2rem; font-weight: 600; margin-bottom: 10px; color: var(--accent-pink);">
+                                Pro</div>
+                            <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 20px;">$10<span
+                                    style="font-size: 1rem; color: #888; font-weight: 400;">/mo</span></div>
+                            <p style="color: #bbb; font-size: 0.9rem; margin-bottom: 30px;">Power tools for the active
+                                investor.</p>
+                            <ul
+                                style="list-style: none; margin-bottom: 30px; color: white; line-height: 2; font-size: 0.9rem;">
+                                <li>✓ Everything in Starter</li>
+                                <li>✓ Tax-Loss Harvesting</li>
+                                <li>✓ Level 2 Data Access</li>
+                                <li>✓ Priority Support</li>
+                            </ul>
+                            <a href="#"
+                                style="display: block; text-align: center; padding: 12px; border-radius: 8px; background: linear-gradient(90deg, var(--accent-purple), var(--accent-pink)); transition: 0.3s; color: white; font-weight: 600;"
+                                target="_blank">Go
+                                Pro</a>
+                        </div>
+                        <!-- Institutional -->
+                        <div
+                            style="background: rgba(255,255,255,0.03); border-radius: 20px; padding: 40px; border: 1px solid rgba(255,255,255,0.05);">
+                            <div style="font-size: 1.2rem; font-weight: 600; margin-bottom: 10px;">Premium</div>
+                            <div style="font-size: 2.5rem; font-weight: 700; margin-bottom: 20px;">$50<span
+                                    style="font-size: 1rem; color: #888; font-weight: 400;">/mo</span></div>
+                            <p style="color: #888; font-size: 0.9rem; margin-bottom: 30px;">Dedicated support and custom
+                                indexing.</p>
+                            <ul
+                                style="list-style: none; margin-bottom: 30px; color: #ccc; line-height: 2; font-size: 0.9rem;">
+                                <li>✓ Everything in Pro</li>
+                                <li>✓ Dedicated Advisor</li>
+                                <li>✓ Estate Planning Tools</li>
+                            </ul>
+                            <a href="#"
+                                style="display: block; text-align: center; padding: 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); transition: 0.3s; color: white;"
+                                target="_blank">Contact
+                                Us</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer style="border-top: 1px solid rgba(255,255,255,0.05); padding: 80px 5vw;">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: flex-start; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; gap: 40px;">
+                    <div>
+                        <div class="logo" style="margin-bottom: 20px;">Nova Wealth</div>
+                        <div style="color: #666; font-size: 0.9rem; max-width: 300px;">
+                            Investing involves risk, including loss of principal. Nova Wealth is a registered investment
+                            advisor.
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 60px;">
+                        <div>
+                            <h4 style="font-size: 14px; color: #fff; margin-bottom: 16px;">Platform</h4>
+                            <p style="color: #888; font-size: 14px; margin-bottom: 10px;">Invest</p>
+                            <p style="color: #888; font-size: 14px; margin-bottom: 10px;">Retire</p>
+                            <p style="color: #888; font-size: 14px; margin-bottom: 10px;">Save</p>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 14px; color: #fff; margin-bottom: 16px;">Support</h4>
+                            <p style="color: #888; font-size: 14px; margin-bottom: 10px;">Help Center</p>
+                            <p style="color: #888; font-size: 14px; margin-bottom: 10px;">Contact Us</p>
+                            <p style="color: #888; font-size: 14px; margin-bottom: 10px;">System Status</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 60px; color: #444; font-size: 12px;">
+                    © 2026 Nova Wealth Technologies. • <a href="privacy-policy"
+                        style="color: #444; text-decoration: none;" target="_blank">Privacy Policy</a>
+                </div>
+            </footer>
+            <<<<<<< HEAD <script src="js/concept-nav.js" defer>
+                </script>
+                =======
+                <script>
+                    // Mobile Menu Toggle
+                    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+                    const mobileMenu = document.querySelector('.mobile-menu');
+                    const mobileMenuClose = document.querySelector('.mobile-menu-close');
+                    const mobileLinks = document.querySelectorAll('.mobile-menu a');
+
+                    function toggleMenu(show) {
+                        mobileMenu.classList.toggle('active', show);
+                        mobileMenuBtn.classList.toggle('active', show);
+                        document.body.style.overflow = show ? 'hidden' : '';
+                    }
+
+                    mobileMenuBtn.addEventListener('click', () => toggleMenu(true));
+                    mobileMenuClose.addEventListener('click', () => toggleMenu(false));
+
+                    mobileLinks.forEach(link => {
+                        link.addEventListener('click', () => toggleMenu(false));
+                    });
+                </script>
+                >>>>>>> 5871084392cd1e587e53d86a39e7fd5260b1dd7e
     </main>
 </body>
 
