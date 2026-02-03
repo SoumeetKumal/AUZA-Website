@@ -43,62 +43,46 @@ steps.forEach((step, i) => {
   });
 });
 
-// Hero Mouse Glow Effect
-const hero = document.querySelector('.hero');
-if (hero) {
-  let ticking = false;
-  hero.addEventListener('mousemove', (e) => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        const rect = hero.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        hero.style.setProperty('--mouse-x', `${x}px`);
-        hero.style.setProperty('--mouse-y', `${y}px`);
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
+// Logic for Mouse Glow Effects
+function initGlowEffects() {
+  const elements = [
+    ...document.querySelectorAll('.hero'),
+    ...document.querySelectorAll('.value-prop'),
+    ...document.querySelectorAll('.service-card')
+  ];
+
+  elements.forEach(el => {
+    let rect;
+    let ticking = false;
+
+    // Cache the rect on mouseenter to avoid reading it during move
+    el.addEventListener('mouseenter', () => {
+      rect = el.getBoundingClientRect();
+    }, { passive: true });
+
+    el.addEventListener('mousemove', (e) => {
+      if (!rect) rect = el.getBoundingClientRect();
+
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          el.style.setProperty('--mouse-x', `${x}px`);
+          el.style.setProperty('--mouse-y', `${y}px`);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Update rect on resize
+    window.addEventListener('resize', () => {
+      rect = null; // Reset and it will be re-cached on next move/enter
+    }, { passive: true });
+  });
 }
 
-// Card Mouse Glow Effect (Why Partner With Us)
-const valueProps = document.querySelectorAll('.value-prop');
-valueProps.forEach(card => {
-  let ticking = false;
-  card.addEventListener('mousemove', (e) => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        card.style.setProperty('--mouse-x', `${x}px`);
-        card.style.setProperty('--mouse-y', `${y}px`);
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
-});
-
-// Card Mouse Glow Effect (What We Do)
-const serviceCards = document.querySelectorAll('.service-card');
-serviceCards.forEach(card => {
-  let ticking = false;
-  card.addEventListener('mousemove', (e) => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        card.style.setProperty('--mouse-x', `${x}px`);
-        card.style.setProperty('--mouse-y', `${y}px`);
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
-});
+initGlowEffects();
 
 // Scroll Indicator Fade Out
 const scrollIndicator = document.querySelector('.scroll-indicator');

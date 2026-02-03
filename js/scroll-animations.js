@@ -76,28 +76,40 @@
         });
     }
 
-    // Parallax effect for hero elements
+    // Optimized Parallax effect
     function initParallax() {
         if (prefersReducedMotion) return;
 
         const parallaxElements = document.querySelectorAll('[data-parallax]');
-
         if (parallaxElements.length === 0) return;
+
+        // Use IntersectionObserver to track which elements are visible
+        const visibleElements = new Set();
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    visibleElements.add(entry.target);
+                } else {
+                    visibleElements.delete(entry.target);
+                }
+            });
+        }, { threshold: 0 });
+
+        parallaxElements.forEach(el => obs.observe(el));
 
         let ticking = false;
 
         function updateParallax() {
-            const scrollY = window.scrollY;
+            const scrollY = window.pageYOffset || document.documentElement.scrollTop;
 
-            parallaxElements.forEach(el => {
+            visibleElements.forEach(el => {
                 const speed = parseFloat(el.dataset.parallax) || 0.5;
-                const rect = el.getBoundingClientRect();
-
-                // Only animate if element is in viewport
-                if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    const yPos = -(scrollY * speed);
-                    el.style.transform = `translate3d(0, ${yPos}px, 0)`;
-                }
+                // Avoid getBoundingClientRect in the loop. 
+                // Using offsetTop or just the scroll value for transform.
+                // For a more precise parallax, we can use the element's cached offset.
+                const offset = el.dataset.parallaxOffset || 0;
+                const yPos = -(scrollY * speed);
+                el.style.transform = `translate3d(0, ${yPos}px, 0)`;
             });
 
             ticking = false;
