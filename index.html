@@ -9,38 +9,37 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>AUZA | Functional Design for Business Growth</title>
   <!-- Preconnect for performance -->
-  <!-- Critical CSS for Hero -->
+  <!-- Local Fonts -->
+  <link href="css/fonts.css" rel="stylesheet" />
+  <!-- Critical CSS for Performance -->
   <style>
-    /* variables.css */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box
-    }
-
+    /* AUZA Critical CSS - v2 (Desktop & Mobile optimized) */
     :root {
       --deep-black: #0A0A0A;
       --nero: #161616;
       --crimson: #DC143C;
+      --crimson-accessible: #FF3366;
       --crimson-light: rgba(220, 20, 60, 0.1);
       --off-white: #FAFAFA;
       --gray-700: #3F3F46;
       --gray-500: #D4D4D8;
       --gray-400: #A1A1AA;
       --gray-300: #E4E4E7;
-      --crimson-text: #FF4D6D;
-      --mouse-x: 50%;
-      --mouse-y: 50%;
       --header-weight: 900;
       --header-spacing: -0.04em;
       --header-line-height: 1.1;
-      --sub-header-weight: 800;
-      --sub-header-spacing: -0.02em;
+      --banner-height: 0px;
     }
 
-    /* base.css */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
     html {
-      scroll-behavior: smooth
+      scroll-behavior: smooth;
+      background: var(--deep-black);
     }
 
     body {
@@ -48,21 +47,63 @@
       background: var(--deep-black);
       color: var(--off-white);
       line-height: 1.6;
-      overflow-x: hidden
+      overflow-x: hidden;
     }
 
-    .grid-bg {
+    .announcement-banner {
       position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.2;
-      background-image: linear-gradient(rgba(220, 20, 60, 0.1) 3px, transparent 2px), linear-gradient(90deg, rgba(220, 20, 60, 0.1) 1px, transparent 2px), radial-gradient(circle at 50% 50%, rgba(220, 20, 60, 0.15) 0%, transparent 70%);
-      background-size: 80px 80px, 80px 80px, 100% 100%;
-      background-repeat: repeat, repeat, no-repeat;
-      z-index: 0
+      top: 0;
+      left: 0;
+      right: 0;
+      min-height: 48px;
+      z-index: 6000;
+      background: var(--crimson-accessible, #FF3366);
+      color: var(--off-white, white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 10px 24px;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      width: 100%;
     }
 
-    /* Hero Section */
+    body.has-banner {
+      padding-top: var(--banner-height, 48px);
+    }
+
+    .nav {
+      position: fixed;
+      top: var(--banner-height, 0);
+      left: 0;
+      right: 0;
+      z-index: 5000;
+      padding: clamp(32px, 4vw, 48px) clamp(24px, 5vw, 48px) clamp(24px, 3vw, 40px);
+      background: rgba(10, 10, 10, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--off-white);
+    }
+
     .hero {
       min-height: 100vh;
       display: flex;
@@ -70,7 +111,6 @@
       justify-content: center;
       padding: 160px 48px 40px;
       position: relative;
-      overflow: hidden;
     }
 
     .hero-inner {
@@ -89,22 +129,22 @@
       line-height: var(--header-line-height);
       letter-spacing: var(--header-spacing);
       margin-bottom: 24px;
-      max-width: 900px
     }
 
     .hero-title .accent {
-      color: var(--crimson)
+      color: var(--crimson-accessible)
     }
 
-    .hero-desc {
-      font-size: 17px;
-      color: var(--gray-500);
-      max-width: 580px;
-      line-height: 1.75;
-      margin-bottom: 36px
+    .grid-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.2;
+      background-image: linear-gradient(rgba(220, 20, 60, 0.1) 3px, transparent 2px), linear-gradient(90deg, rgba(220, 20, 60, 0.1) 1px, transparent 2px), radial-gradient(circle at 50% 50%, rgba(220, 20, 60, 0.15) 0%, transparent 70%);
+      background-size: 80px 80px, 80px 80px, 100% 100%;
+      z-index: 0
     }
 
-    /* Animations */
     @keyframes fadeUp {
       from {
         opacity: 0;
@@ -122,16 +162,19 @@
       animation: fadeUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
     }
 
-    .delay-1 {
-      animation-delay: 0.05s;
-    }
+    @media (max-width: 768px) {
+      .nav {
+        padding: 20px;
+      }
 
-    .delay-2 {
-      animation-delay: 0.10s;
-    }
+      .hero {
+        padding: 120px 24px 40px;
+      }
 
-    .delay-3 {
-      animation-delay: 0.15s;
+      .announcement-banner {
+        font-size: 11px;
+        padding: 8px 12px;
+      }
     }
   </style>
   <!-- Deferred Main CSS -->
