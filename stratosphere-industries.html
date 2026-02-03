@@ -203,13 +203,28 @@
             font-size: 12px;
         }
 
+        @media (max-width: 1024px) {
+            .strato-nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+                margin-left: auto;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .industry-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 900px) {
             .industries-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .strato-nav-links {
-                display: none;
             }
         }
     </style>
@@ -220,6 +235,7 @@
 
         <!-- Standard Announcement Banner -->
         <script src="js/banner.js" defer></script>
+        <script src="js/concept-nav.js" defer></script>
 
         <!-- Back to Case Study (Floating) -->
         <a href="stratosphere-concept" class="back-to-case-study">
@@ -241,13 +257,27 @@
                 STRATOSPHERE
             </a>
             <div class="strato-nav-links">
-                <a href="stratosphere-services" class="strato-nav-link">Services</a>
-                <a href="stratosphere-industries" class="strato-nav-link active">Industries</a>
-                <a href="stratosphere-insights" class="strato-nav-link">Insights</a>
-                <a href="stratosphere-about" class="strato-nav-link">About</a>
+                <a href="stratosphere-services.html" class="strato-nav-link">Services</a>
+                <a href="stratosphere-industries.html" class="strato-nav-link active">Industries</a>
+                <a href="stratosphere-insights.html" class="strato-nav-link">Insights</a>
+                <a href="stratosphere-about.html" class="strato-nav-link">About</a>
                 <a href="#" class="strato-nav-cta">Contact</a>
             </div>
+            <button aria-label="Toggle menu" class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <a href="stratosphere-services.html">Services</a>
+            <a href="stratosphere-industries.html">Industries</a>
+            <a href="stratosphere-insights.html">Insights</a>
+            <a href="stratosphere-about.html">About</a>
+            <a href="#">Contact</a>
+        </div>
 
         <section class="page-hero">
             <div class="container">

@@ -222,9 +222,93 @@
             font-size: 12px;
         }
 
-        @media (max-width: 900px) {
+        /* Mobile Navigation */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            z-index: 10001;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(248, 249, 250, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 10000;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-100%);
+            transition: all 0.5s ease, visibility 0.5s ease;
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .mobile-menu a {
+            font-family: var(--heading-font);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--accent-blue);
+        }
+
+        @media (max-width: 1024px) {
             .strato-nav-links {
                 display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+                margin-left: auto;
+            }
+
+            .mobile-menu {
+                display: flex;
             }
 
             .stats-bar,
@@ -240,6 +324,7 @@
 
         <!-- Standard Announcement Banner -->
         <script src="js/banner.js" defer></script>
+        <script src="js/concept-nav.js" defer></script>
 
         <!-- Back to Case Study (Floating) -->
         <a href="stratosphere-concept" class="back-to-case-study">
@@ -261,13 +346,27 @@
                 STRATOSPHERE
             </a>
             <div class="strato-nav-links">
-                <a href="stratosphere-services" class="strato-nav-link">Services</a>
-                <a href="stratosphere-industries" class="strato-nav-link">Industries</a>
-                <a href="stratosphere-insights" class="strato-nav-link">Insights</a>
-                <a href="stratosphere-about" class="strato-nav-link active">About</a>
+                <a href="stratosphere-services.html" class="strato-nav-link">Services</a>
+                <a href="stratosphere-industries.html" class="strato-nav-link">Industries</a>
+                <a href="stratosphere-insights.html" class="strato-nav-link">Insights</a>
+                <a href="stratosphere-about.html" class="strato-nav-link active">About</a>
                 <a href="#" class="strato-nav-cta">Contact</a>
             </div>
+            <button aria-label="Toggle menu" class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <a href="stratosphere-services.html">Services</a>
+            <a href="stratosphere-industries.html">Industries</a>
+            <a href="stratosphere-insights.html">Insights</a>
+            <a href="stratosphere-about.html">About</a>
+            <a href="#">Contact</a>
+        </div>
 
         <section class="page-hero">
             <div class="container">
