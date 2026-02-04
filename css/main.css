@@ -697,7 +697,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 160px 48px 40px;
+    padding: 200px 48px 40px;
     /* Offset for fixed header overlap */
     position: relative;
     overflow: hidden;
@@ -766,7 +766,7 @@ p {
 
 /* Services Hero */
 .services-hero {
-    padding: 180px 8vw 100px;
+    padding: 220px 8vw 100px;
     background: #111;
     color: white;
     text-align: center;
@@ -786,7 +786,7 @@ p {
 
 /* Section Basics */
 .section {
-    padding: clamp(100px, 15vw, 160px) clamp(18px, 8vw, 120px);
+    padding: clamp(60px, 8vw, 100px) clamp(18px, 8vw, 120px);
     position: relative
 }
 

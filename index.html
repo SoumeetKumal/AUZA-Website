@@ -29,6 +29,13 @@
       --header-spacing: -0.04em;
       --header-line-height: 1.1;
       --banner-height: 0px;
+      --crimson-text: #FF4D6D;
+    }
+
+    /* Standardize Pricing Highlight to match Services */
+    .pricing-tier.tier-featured {
+      background: linear-gradient(135deg, rgba(220, 20, 60, 0.1) 0%, #161616 100%) !important;
+      border-left: 3px solid var(--crimson) !important;
     }
 
     * {
@@ -198,9 +205,13 @@
     }
   </style>
   <!-- Deferred Main CSS -->
-  <link href="css/main.css?v=5" media="print" onload="this.media='all'" rel="stylesheet" />
+  <link href="css/main.css?v=11" media="print" onload="this.media='all'" rel="stylesheet" />
+  <link href="css/pricing.css?v=6" media="print" onload="this.media='all'" rel="stylesheet" />
+  <link href="css/responsive.css?v=2" media="print" onload="this.media='all'" rel="stylesheet" />
   <noscript>
-    <link href="css/main.css?v=5" rel="stylesheet" />
+    <link href="css/main.css?v=11" rel="stylesheet" />
+    <link href="css/pricing.css?v=6" rel="stylesheet" />
+    <link href="css/responsive.css?v=2" rel="stylesheet" />
   </noscript>
   <!-- Optimized Google Analytics -->
   <script defer="" src="js/analytics.js"></script>
@@ -547,7 +558,10 @@
             </p>
           </div>
         </div>
-        <!-- Pricing Tiers -->
+        <!-- Pricing Tiers Category -->
+        <div class="category-divider" style="margin-bottom: 32px; justify-content: center;">
+          <span class="category-label">WEBSITE PACKAGES</span>
+        </div>
         <div class="pricing-grid" data-scroll-stagger="150">
           <!-- Package 1: Growth -->
           <div class="pricing-tier">
@@ -568,11 +582,31 @@
               <li>3-4 Week Delivery</li>
             </ul>
           </div>
-          <!-- Package 2: Authority (Merged Professional + Premium) -->
+          <!-- Package 2: Strategic (Featured) -->
+          <div class="pricing-tier tier-featured">
+            <div class="featured-badge">Flagship Offer</div>
+            <div class="tier-header">
+              <h3 class="tier-name">Strategic Web Design</h3>
+              <p class="tier-tagline">Custom flagship website for scaling businesses and brands.</p>
+            </div>
+            <div class="tier-price">
+              <span class="price-label">Starting at</span>
+              <span class="price-amount">$6,000</span>
+            </div>
+            <ul class="tier-features">
+              <li>Deep Discovery & Strategy</li>
+              <li>Custom High-Fidelity Design</li>
+              <li>Basic CMS Integration</li>
+              <li>Advanced Visual Polish</li>
+              <li><strong>WCAG 2.1 AA Compliance</strong></li>
+              <li>30 Days Post-Launch Support</li>
+            </ul>
+          </div>
+          <!-- Package 3: Authority -->
           <div class="pricing-tier">
             <div class="tier-header">
               <h3 class="tier-name">Authority</h3>
-              <p class="tier-tagline">Comprehensive digital transformation for market leaders.</p>
+              <p class="tier-tagline">Enterprise-grade digital transformation for market leaders.</p>
             </div>
             <div class="tier-price">
               <span class="price-label">Starting at</span>
@@ -584,27 +618,7 @@
               <li>Copywriting & Content Strategy</li>
               <li>Conversion & Analytics Setup</li>
               <li><strong>WCAG 2.1 AA Compliance</strong></li>
-              <li>3 Months Post-Launch Support</li>
-            </ul>
-          </div>
-          <!-- Package 3: Foundation (Featured) -->
-          <div class="pricing-tier tier-featured">
-            <div class="featured-badge">Detailed Foundation</div>
-            <div class="tier-header">
-              <h3 class="tier-name">Foundation</h3>
-              <p class="tier-tagline">Visual strategy and identity system for a solid foundation.</p>
-            </div>
-            <div class="tier-price">
-              <span class="price-label">Starting at</span>
-              <span class="price-amount">$2,500</span>
-            </div>
-            <ul class="tier-features">
-              <li>Logo Suite (Primary + Icon)</li>
-              <li>Visual Strategy Session</li>
-              <li>Accessible Color System</li>
-              <li>Typography Hierarchy</li>
-              <li>"One-Page" Brand Guide</li>
-              <li>Source Files Included</li>
+              <li>60 Days Priority Support</li>
             </ul>
           </div>
         </div> <!-- End pricing-grid -->

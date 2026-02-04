@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>AUZA | Services & Packages</title>
     <!-- Local Fonts -->
     <link href="css/fonts.css" rel="stylesheet" />
     <!-- Critical CSS for Performance -->
@@ -22,6 +25,28 @@
             --header-spacing: -0.04em;
             --header-line-height: 1.1;
             --banner-height: 0px;
+            --crimson-text: #FF4D6D;
+        }
+
+        /* Force Only Strategic Highlight */
+        .comparison-table-wrapper tr td:nth-child(4),
+        .comparison-table-wrapper tr th:nth-child(4) {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        .comparison-table-wrapper tr td:nth-child(3),
+        .comparison-table-wrapper tr th:nth-child(3) {
+            background: rgba(220, 20, 60, 0.08) !important;
+            border-left: 1px solid rgba(220, 20, 60, 0.2) !important;
+            border-right: 1px solid rgba(220, 20, 60, 0.2) !important;
+            position: relative;
+        }
+
+        .package-detail-card.featured {
+            background: linear-gradient(135deg, rgba(220, 20, 60, 0.05) 0%, #161616 100%) !important;
+            border-color: rgba(220, 20, 60, 0.3) !important;
         }
 
         * {
@@ -116,6 +141,12 @@
             text-align: center
         }
 
+        @media (max-width: 768px) {
+            .hero {
+                padding: 240px 24px 60px !important;
+            }
+        }
+
         .hero-title {
             font-size: clamp(36px, 5vw, 58px);
             font-weight: var(--header-weight);
@@ -170,12 +201,13 @@
             }
         }
     </style>
-    <!-- Deferred Main CSS -->
-    <link href="css/main.css?v=7" media="print" onload="this.media='all'" rel="stylesheet" />
-    <link href="css/pricing.css?v=2" media="print" onload="this.media='all'" rel="stylesheet" />
+    <link href="css/main.css?v=12" media="print" onload="this.media='all'" rel="stylesheet" />
+    <link href="css/pricing.css?v=7" media="print" onload="this.media='all'" rel="stylesheet" />
+    <link href="css/responsive.css?v=3" media="print" onload="this.media='all'" rel="stylesheet" />
     <noscript>
-        <link href="css/main.css?v=7" rel="stylesheet" />
-        <link href="css/pricing.css?v=2" rel="stylesheet" />
+        <link href="css/main.css?v=12" rel="stylesheet" />
+        <link href="css/pricing.css?v=7" rel="stylesheet" />
+        <link href="css/responsive.css?v=3" rel="stylesheet" />
     </noscript>
     <!-- GA4 -->
 
@@ -237,9 +269,8 @@
             <div class="comparison-table-wrapper fade-up" tabindex="0" role="region"
                 aria-label="Packages comparison table (swipe or use arrow keys to scroll)">
                 <table>
-                    <caption class="sr-only">Detailed breakdown of Growth, Foundation, Professional, and Premium
-                        packages
-                    </caption>
+                    <caption class="sr-only">Detailed breakdown of Growth, Strategic, Authority, and Brand Signature
+                        packages.</caption>
                     <thead>
                         <tr>
                             <th scope="col">Strategic Web Tiers</th>
@@ -408,6 +439,11 @@
         <section class="detailed-package-section">
             <div class="package-grid">
 
+                <!-- Website Packages Category -->
+                <div class="category-divider">
+                    <span class="category-label">WEBSITE PACKAGES</span>
+                </div>
+
                 <!-- Package 1: Growth -->
                 <div class="package-detail-card" id="essential-details">
                     <div class="package-detail-header">
@@ -526,10 +562,15 @@
                     </div>
                 </div>
 
-                <!-- Package 4: Foundation (Branding) -->
-                <div class="package-detail-card" id="foundation-details">
+                <!-- Branding Category -->
+                <div class="category-divider" style="margin-top: 60px;">
+                    <span class="category-label">BRANDING PACKAGES</span>
+                </div>
+
+                <!-- Package 4: Brand Signature (Branding) -->
+                <div class="package-detail-card" id="identity-details">
                     <div class="package-detail-header">
-                        <h3>Foundation (Branding)</h3>
+                        <h3>Brand Signature</h3>
                         <div class="package-detail-price">Starts at $2,500</div>
                         <p style="color: var(--gray-500);">Visual identity system for a solid foundation.</p>
                     </div>

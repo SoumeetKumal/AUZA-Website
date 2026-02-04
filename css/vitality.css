@@ -263,8 +263,8 @@ h6 {
    HERO SECTION (Preserved but Refined)
    ========================================= */
 .hero {
-    margin-top: calc(var(--banner-height, 0) + 100px);
-    padding: 40px 5vw 120px;
+    margin-top: calc(var(--banner-height, 0) + 140px);
+    padding: 80px 5vw 120px;
     /* Soft organic gradient */
     background: radial-gradient(circle at 100% 0%, #E9F5F4 0%, transparent 40%),
         radial-gradient(circle at 0% 100%, #FDFBF7 0%, transparent 40%),
@@ -865,7 +865,7 @@ h6 {
 
 @media (max-width: 480px) {
     .hero {
-        padding-top: 20px;
+        padding-top: 100px;
     }
 
     .hero-content h1 {

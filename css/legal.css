@@ -1,35 +1,111 @@
 /* Legal Pages */
 .legal-content {
     padding: clamp(120px, 15vw, 160px) clamp(24px, 5vw, 48px) clamp(60px, 8vw, 100px);
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
 }
 
 .legal-header {
-    margin-bottom: 64px;
+    margin-bottom: 80px;
     text-align: left;
+    position: relative;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.legal-header::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -10%;
+    width: 300px;
+    height: 300px;
+    background: var(--crimson);
+    filter: blur(120px);
+    opacity: 0.15;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.legal-subtitle {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 16px;
 }
 
 .legal-title {
-    font-size: clamp(36px, 5vw, 64px);
+    font-size: clamp(40px, 6vw, 72px);
     font-weight: var(--header-weight);
     letter-spacing: var(--header-spacing);
-    line-height: var(--header-line-height);
-    margin-bottom: 24px;
+    line-height: 1.0;
+    margin-bottom: 0;
 }
 
 .legal-body {
-    color: var(--gray-500);
-    font-size: 16px;
+    color: var(--gray-400);
+    font-size: 17px;
     line-height: 1.8;
 }
 
 .legal-body h2 {
     color: var(--off-white);
-    font-size: 24px;
+    font-size: 28px;
     font-weight: var(--sub-header-weight);
-    margin: 48px 0 24px;
+    margin: 64px 0 24px;
     letter-spacing: var(--sub-header-spacing);
+    border-left: 3px solid var(--crimson);
+    padding-left: 20px;
+}
+
+.legal-body ul {
+    margin: 24px 0;
+    padding-left: 20px;
+    list-style: none;
+}
+
+.legal-body li {
+    margin-bottom: 16px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.legal-body li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--crimson);
+    font-weight: 700;
+}
+
+.legal-body strong {
+    color: var(--off-white);
+}
+
+.legal-body a {
+    color: var(--crimson);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.legal-body a:hover {
+    color: var(--off-white);
+    border-bottom-color: var(--crimson);
+}
+
+@media (max-width: 768px) {
+    .legal-header {
+        margin-bottom: 48px;
+    }
+
+    .legal-body h2 {
+        font-size: 22px;
+        margin: 48px 0 20px;
+    }
 }
