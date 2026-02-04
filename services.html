@@ -171,9 +171,11 @@
         }
     </style>
     <!-- Deferred Main CSS -->
-    <link href="css/main.min.css" media="print" onload="this.media='all'" rel="stylesheet" />
+    <link href="css/main.css?v=7" media="print" onload="this.media='all'" rel="stylesheet" />
+    <link href="css/pricing.css?v=2" media="print" onload="this.media='all'" rel="stylesheet" />
     <noscript>
-        <link href="css/main.min.css" rel="stylesheet" />
+        <link href="css/main.css?v=7" rel="stylesheet" />
+        <link href="css/pricing.css?v=2" rel="stylesheet" />
     </noscript>
     <!-- GA4 -->
 
@@ -242,17 +244,14 @@
                         <tr>
                             <th scope="col">Strategic Web Tiers</th>
                             <th scope="col" class="tier-growth">Growth</th>
-                            <th scope="col" class="tier-foundation">Foundation</th>
-                            <th scope="col" class="tier-professional" style="color: var(--crimson-text);">Professional
-                            </th>
-                            <th scope="col" class="tier-premium">Premium</th>
+                            <th scope="col" class="tier-strategic" style="color: var(--crimson-text);">Strategic</th>
+                            <th scope="col" class="tier-authority">Authority</th>
                         </tr>
                         <tr class="sticky-tier-names">
                             <th></th>
                             <th>Growth</th>
-                            <th>Foundation</th>
-                            <th style="color: var(--crimson);">Professional</th>
-                            <th>Premium</th>
+                            <th style="color: var(--crimson);">Strategic</th>
+                            <th>Authority</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -261,55 +260,53 @@
                                     style="font-size: 0.8em; font-weight: normal; color: var(--gray-300);">(Starts
                                     at)</span></th>
                             <td>$2,500</td>
-                            <td>$6,000</td>
-                            <td style="color: var(--crimson-text); font-weight: 800;">$8,000</td>
-                            <td>$9,500</td>
+                            <td style="color: var(--crimson-text); font-weight: 800;">$6,000</td>
+                            <td>$10,000</td>
                         </tr>
                         <tr>
                             <th scope="row">Pages</th>
                             <td>1 (Long-form)</td>
-                            <td>5</td>
-                            <td>6-8</td>
-                            <td>10+</td>
+                            <td>5+ Custom Pages</td>
+                            <td>10+ Custom Pages</td>
                         </tr>
                         <tr>
-                            <th scope="row">Inclusions</th>
-                            <td>Landing Only</td>
-                            <td>CMS Optional</td>
-                            <td>Basic CMS</td>
-                            <td>Full CMS Suite</td>
+                            <th scope="row">CMS</th>
+                            <td>Not Included</td>
+                            <td>Basic Integration</td>
+                            <td>Advanced / Custom</td>
                         </tr>
                         <tr>
                             <th scope="row">Interactions</th>
+                            <td>Basic</td>
                             <td>Standard</td>
-                            <td>Standard</td>
-                            <td>Enhanced</td>
                             <td>Advanced</td>
                         </tr>
                         <tr>
-                            <th scope="row">Integration</th>
-                            <td>1 (Form)</td>
-                            <td>2 External</td>
-                            <td>3-4 External</td>
-                            <td>Advanced (CRM)</td>
+                            <th scope="row">Integrations</th>
+                            <td>Basic</td>
+                            <td>Standard</td>
+                            <td>Advanced</td>
                         </tr>
                         <tr>
                             <th scope="row">Strategy</th>
                             <td>Micro-Session</td>
-                            <td>Core Session</td>
+                            <td>Discovery</td>
                             <td>Deep Dive</td>
-                            <td>Enterprise Audit</td>
                         </tr>
                         <tr>
                             <th scope="row">Support</th>
                             <td>30 Days</td>
                             <td>30 Days</td>
-                            <td>30 Days</td>
-                            <td>Priority (60 Days)</td>
+                            <td>60 Days Priority</td>
                         </tr>
                         <tr>
-                            <th scope="row">Accessibility Standards</th>
-                            <td><span class="check">✔ Included</span></td>
+                            <th scope="row">Copywriting</th>
+                            <td>Client Provided</td>
+                            <td>Guidance Included</td>
+                            <td>Content Strategy</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Accessibility</th>
                             <td><span class="check">✔ Included</span></td>
                             <td><span class="check">✔ Included</span></td>
                             <td><span class="check">✔ Included</span></td>
@@ -491,13 +488,50 @@
                     </div>
                 </div>
 
-                <!-- Package 3: Brand Essentials -->
-                <div class="package-detail-card" id="brand-details">
+                <!-- Package 3: Authority (New Merged Tier) -->
+                <div class="package-detail-card" id="authority-details">
                     <div class="package-detail-header">
-                        <h3>Brand Essentials</h3>
+                        <h3>Authority</h3>
+                        <div class="package-detail-price">Starts at $10,000</div>
+                        <p style="color: var(--gray-500);">Comprehensive digital transformation for market leaders.</p>
+                    </div>
+                    <div class="package-detail-groups">
+                        <div class="detail-group">
+                            <div class="detail-group-title">Phase 1: Blueprint</div>
+                            <ul class="detail-list">
+                                <li>Stakeholder Workshops</li>
+                                <li>Advanced Competitive Audit</li>
+                                <li>Content Strategy & Voice</li>
+                                <li>Flow & Architecture</li>
+                            </ul>
+                        </div>
+                        <div class="detail-group">
+                            <div class="detail-group-title">Phase 2: Experience</div>
+                            <ul class="detail-list">
+                                <li>**Bespoke Interactions**</li>
+                                <li>Interactive Prototypes</li>
+                                <li>3D Elements / Advanced Visuals</li>
+                                <li>Motion Design System</li>
+                            </ul>
+                        </div>
+                        <div class="detail-group">
+                            <div class="detail-group-title">Phase 3: Scale</div>
+                            <ul class="detail-list">
+                                <li>Headless CMS Architecture</li>
+                                <li>CRM/ERP Integrations</li>
+                                <li>**60 Days Priority Support**</li>
+                                <li>Advanced Analytics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 4: Foundation (Branding) -->
+                <div class="package-detail-card" id="foundation-details">
+                    <div class="package-detail-header">
+                        <h3>Foundation (Branding)</h3>
                         <div class="package-detail-price">Starts at $2,500</div>
-                        <p style="color: var(--gray-500);">Visual identity foundation for new ventures. Professional,
-                            accessible, and lean.</p>
+                        <p style="color: var(--gray-500);">Visual identity system for a solid foundation.</p>
                     </div>
                     <div class="package-detail-groups">
                         <div class="detail-group">

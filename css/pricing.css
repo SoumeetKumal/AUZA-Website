@@ -584,16 +584,24 @@
 }
 
 /* Professional Column Highlight - World Class */
-.comparison-table-wrapper tr td:nth-child(4),
-.comparison-table-wrapper tr th:nth-child(4) {
+.comparison-table-wrapper tr td:nth-child(3),
+.comparison-table-wrapper tr th:nth-child(3) {
     background: rgba(220, 20, 60, 0.04);
     position: relative;
     border-left: 1px solid rgba(220, 20, 60, 0.15);
     border-right: 1px solid rgba(220, 20, 60, 0.15);
 }
 
-.comparison-table-wrapper tr th:nth-child(4) {
+.comparison-table-wrapper tr th:nth-child(3) {
     background: rgba(220, 20, 60, 0.08);
+}
+
+/* Force Clear Authority Highlight */
+.comparison-table-wrapper tr td:nth-child(4),
+.comparison-table-wrapper tr th:nth-child(4) {
+    background: transparent !important;
+    border-left: none !important;
+    border-right: none !important;
 }
 
 /* Scroll Hint - Premium Independent Style */
