@@ -961,18 +961,17 @@
 }
 
 .process-steps {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 32px;
-    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
 }
 
 .process-step {
     position: relative;
-    padding: 32px;
+    padding: 16px 24px;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
+    border-radius: 8px;
     transition: all 0.3s ease;
 }
 
